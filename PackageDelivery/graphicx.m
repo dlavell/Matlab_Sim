@@ -12,6 +12,7 @@ Rcam = angle2dcm(pi,0,0,'YZX');
 p_i = Rcam*p.signals.values';
 pdt = Rcam*ref.signals.values(:,1:3)';
 t = ref.time;
+
 %draw
 P0 = zeros(3);
 P1 = Rcam;
