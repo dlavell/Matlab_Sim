@@ -1,12 +1,10 @@
 %--------------------------------------------------------------------------
-% qrmodel.m
+% PointMass.m
 %
-% Quadrotor dynamic model implemented in s-function
+% Point Mass dynamic model implemented in s-function
 %
-% David Cabecinhas
-% Jun   2012
 %--------------------------------------------------------------------------
-function [sys,x0,str,ts] = mQX_model(t,x,u,flag)
+function [sys,x0,str,ts] = PointMass(t,x,u,flag)
 
 % Parameters
 ideal_motors = 1;

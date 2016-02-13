@@ -11,6 +11,7 @@ OBJECTS = \
 	"c2_PackageDeliverySim.obj"\
 	"c3_PackageDeliverySim.obj"\
 	"c4_PackageDeliverySim.obj"\
+	"c5_PackageDeliverySim.obj"\
 	"PackageDeliverySim_sfun_registry.obj"\
 	"lccstub.obj"\
 	"PackageDeliverySim_sfun.def"\
@@ -42,6 +43,8 @@ c3_PackageDeliverySim.obj :	"c3_PackageDeliverySim.c"
 	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c3_PackageDeliverySim.c"
 c4_PackageDeliverySim.obj :	"c4_PackageDeliverySim.c"
 	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c4_PackageDeliverySim.c"
+c5_PackageDeliverySim.obj :	"c5_PackageDeliverySim.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c5_PackageDeliverySim.c"
 PackageDeliverySim_sfun_registry.obj :	"PackageDeliverySim_sfun_registry.c"
 	$(CC) $(CFLAGS) $(INCLUDE_PATH) "PackageDeliverySim_sfun_registry.c"
 lccstub.obj :	"C:\Program Files\MATLAB\R2014b\sys\lcc64\lcc64\mex\lccstub.c"

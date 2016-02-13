@@ -6,6 +6,7 @@
 #include "c2_PackageDeliverySim.h"
 #include "c3_PackageDeliverySim.h"
 #include "c4_PackageDeliverySim.h"
+#include "c5_PackageDeliverySim.h"
 
 /* Type Definitions */
 
@@ -51,6 +52,11 @@ unsigned int sf_PackageDeliverySim_method_dispatcher(SimStruct *simstructPtr,
     return 1;
   }
 
+  if (chartFileNumber==5) {
+    c5_PackageDeliverySim_method_dispatcher(simstructPtr, method, data);
+    return 1;
+  }
+
   return 0;
 }
 
@@ -90,10 +96,10 @@ unsigned int sf_PackageDeliverySim_process_check_sum_call( int nlhs, mxArray *
       ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(0U);
       ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(0U);
     } else if (!strcmp(commandName,"makefile")) {
-      ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(2415824755U);
-      ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(396014895U);
-      ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(3568733914U);
-      ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(537362215U);
+      ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(2430329014U);
+      ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(2485695585U);
+      ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(2662139557U);
+      ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(1056081791U);
     } else if (nrhs==3 && !strcmp(commandName,"chart")) {
       unsigned int chartFileNumber;
       chartFileNumber = (unsigned int)mxGetScalar(prhs[2]);
@@ -126,6 +132,13 @@ unsigned int sf_PackageDeliverySim_process_check_sum_call( int nlhs, mxArray *
           break;
         }
 
+       case 5:
+        {
+          extern void sf_c5_PackageDeliverySim_get_check_sum(mxArray *plhs[]);
+          sf_c5_PackageDeliverySim_get_check_sum(plhs);
+          break;
+        }
+
        default:
         ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(0.0);
         ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(0.0);
@@ -141,10 +154,10 @@ unsigned int sf_PackageDeliverySim_process_check_sum_call( int nlhs, mxArray *
       return 0;
     }
   } else {
-    ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(983558650U);
-    ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(4269329188U);
-    ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(3910437234U);
-    ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(396803204U);
+    ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(982570243U);
+    ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(1158959085U);
+    ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(2413625723U);
+    ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(2117560849U);
   }
 
   return 1;
@@ -218,9 +231,21 @@ unsigned int sf_PackageDeliverySim_autoinheritance_info( int nlhs, mxArray *
 
      case 4:
       {
-        if (strcmp(aiChksum, "mS4ecP81cLL7C2v5wnvsuD") == 0) {
+        if (strcmp(aiChksum, "O1exH3vWfhrl65QAWI4uFB") == 0) {
           extern mxArray *sf_c4_PackageDeliverySim_get_autoinheritance_info(void);
           plhs[0] = sf_c4_PackageDeliverySim_get_autoinheritance_info();
+          break;
+        }
+
+        plhs[0] = mxCreateDoubleMatrix(0,0,mxREAL);
+        break;
+      }
+
+     case 5:
+      {
+        if (strcmp(aiChksum, "Sf9vY1VlGktrG5PHu5MWmD") == 0) {
+          extern mxArray *sf_c5_PackageDeliverySim_get_autoinheritance_info(void);
+          plhs[0] = sf_c5_PackageDeliverySim_get_autoinheritance_info();
           break;
         }
 
@@ -307,6 +332,17 @@ unsigned int sf_PackageDeliverySim_get_eml_resolved_functions_info( int nlhs,
         break;
       }
 
+     case 5:
+      {
+        extern const mxArray
+          *sf_c5_PackageDeliverySim_get_eml_resolved_functions_info(void);
+        mxArray *persistentMxArray = (mxArray *)
+          sf_c5_PackageDeliverySim_get_eml_resolved_functions_info();
+        plhs[0] = mxDuplicateArray(persistentMxArray);
+        mxDestroyArray(persistentMxArray);
+        break;
+      }
+
      default:
       plhs[0] = mxCreateDoubleMatrix(0,0,mxREAL);
     }
@@ -371,9 +407,18 @@ unsigned int sf_PackageDeliverySim_third_party_uses_info( int nlhs, mxArray *
 
      case 4:
       {
-        if (strcmp(tpChksum, "jym5CIJ2PPWWKcJuj3MXsG") == 0) {
+        if (strcmp(tpChksum, "xZpJAN7GQStUShYDiimT5F") == 0) {
           extern mxArray *sf_c4_PackageDeliverySim_third_party_uses_info(void);
           plhs[0] = sf_c4_PackageDeliverySim_third_party_uses_info();
+          break;
+        }
+      }
+
+     case 5:
+      {
+        if (strcmp(tpChksum, "LcyTGPNDeMw4735uYrZaCE") == 0) {
+          extern mxArray *sf_c5_PackageDeliverySim_third_party_uses_info(void);
+          plhs[0] = sf_c5_PackageDeliverySim_third_party_uses_info();
           break;
         }
       }
@@ -435,9 +480,18 @@ unsigned int sf_PackageDeliverySim_jit_fallback_info( int nlhs, mxArray * plhs[]
 
      case 4:
       {
-        if (strcmp(tpChksum, "jym5CIJ2PPWWKcJuj3MXsG") == 0) {
+        if (strcmp(tpChksum, "xZpJAN7GQStUShYDiimT5F") == 0) {
           extern mxArray *sf_c4_PackageDeliverySim_jit_fallback_info(void);
           plhs[0] = sf_c4_PackageDeliverySim_jit_fallback_info();
+          break;
+        }
+      }
+
+     case 5:
+      {
+        if (strcmp(tpChksum, "LcyTGPNDeMw4735uYrZaCE") == 0) {
+          extern mxArray *sf_c5_PackageDeliverySim_jit_fallback_info(void);
+          plhs[0] = sf_c5_PackageDeliverySim_jit_fallback_info();
           break;
         }
       }
@@ -502,10 +556,20 @@ unsigned int sf_PackageDeliverySim_updateBuildInfo_args_info( int nlhs, mxArray 
 
      case 4:
       {
-        if (strcmp(tpChksum, "jym5CIJ2PPWWKcJuj3MXsG") == 0) {
+        if (strcmp(tpChksum, "xZpJAN7GQStUShYDiimT5F") == 0) {
           extern mxArray *sf_c4_PackageDeliverySim_updateBuildInfo_args_info
             (void);
           plhs[0] = sf_c4_PackageDeliverySim_updateBuildInfo_args_info();
+          break;
+        }
+      }
+
+     case 5:
+      {
+        if (strcmp(tpChksum, "LcyTGPNDeMw4735uYrZaCE") == 0) {
+          extern mxArray *sf_c5_PackageDeliverySim_updateBuildInfo_args_info
+            (void);
+          plhs[0] = sf_c5_PackageDeliverySim_updateBuildInfo_args_info();
           break;
         }
       }
@@ -558,9 +622,19 @@ void sf_PackageDeliverySim_get_post_codegen_info( int nlhs, mxArray * plhs[],
 
    case 4:
     {
-      if (strcmp(tpChksum, "jym5CIJ2PPWWKcJuj3MXsG") == 0) {
+      if (strcmp(tpChksum, "xZpJAN7GQStUShYDiimT5F") == 0) {
         extern mxArray *sf_c4_PackageDeliverySim_get_post_codegen_info(void);
         plhs[0] = sf_c4_PackageDeliverySim_get_post_codegen_info();
+        return;
+      }
+    }
+    break;
+
+   case 5:
+    {
+      if (strcmp(tpChksum, "LcyTGPNDeMw4735uYrZaCE") == 0) {
+        extern mxArray *sf_c5_PackageDeliverySim_get_post_codegen_info(void);
+        plhs[0] = sf_c5_PackageDeliverySim_get_post_codegen_info();
         return;
       }
     }
@@ -577,7 +651,7 @@ void PackageDeliverySim_debug_initialize(struct SfDebugInstanceStruct*
   debugInstance)
 {
   _PackageDeliverySimMachineNumber_ = sf_debug_initialize_machine(debugInstance,
-    "PackageDeliverySim","sfun",0,4,0,0,0);
+    "PackageDeliverySim","sfun",0,5,0,0,0);
   sf_debug_set_machine_event_thresholds(debugInstance,
     _PackageDeliverySimMachineNumber_,0,0);
   sf_debug_set_machine_data_thresholds(debugInstance,

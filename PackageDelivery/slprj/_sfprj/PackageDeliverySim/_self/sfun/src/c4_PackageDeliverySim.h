@@ -25,7 +25,7 @@ typedef struct {
   real_T *c4_clock;
   real_T (*c4_trajectory)[21];
   real_T (*c4_origin)[3];
-  real_T (*c4_destinations)[9];
+  real_T *c4_destinations;
   real_T *c4_altitude;
 } SFc4_PackageDeliverySimInstanceStruct;
 
