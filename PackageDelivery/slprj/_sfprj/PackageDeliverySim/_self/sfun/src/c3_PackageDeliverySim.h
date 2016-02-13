@@ -20,7 +20,13 @@ typedef struct {
   boolean_T c3_isStable;
   boolean_T c3_doneDoubleBufferReInit;
   uint8_T c3_is_active_c3_PackageDeliverySim;
-  real_T (*c3_trajectory)[15];
+  real_T *c3_curr_tp_address;
+  int32_T c3_curr_tp_index;
+  real_T *c3_curr_wp_address;
+  int32_T c3_curr_wp_index;
+  real_T *c3_num_delivered_address;
+  int32_T c3_num_delivered_index;
+  real_T (*c3_trajectory)[21];
   real_T (*c3_waypoint)[15];
   real_T (*c3_state)[18];
 } SFc3_PackageDeliverySimInstanceStruct;

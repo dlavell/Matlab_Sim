@@ -20,16 +20,13 @@ typedef struct {
   boolean_T c4_isStable;
   boolean_T c4_doneDoubleBufferReInit;
   uint8_T c4_is_active_c4_PackageDeliverySim;
-  real_T *c4_clock_offset_address;
-  int32_T c4_clock_offset_index;
   real_T *c4_num_delivered_address;
   int32_T c4_num_delivered_index;
   real_T *c4_clock;
-  real_T (*c4_trajectory)[12];
+  real_T (*c4_trajectory)[21];
   real_T (*c4_origin)[3];
   real_T (*c4_destinations)[9];
   real_T *c4_altitude;
-  real_T (*c4_p)[15];
 } SFc4_PackageDeliverySimInstanceStruct;
 
 #endif                                 /*typedef_SFc4_PackageDeliverySimInstanceStruct*/

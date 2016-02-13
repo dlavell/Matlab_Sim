@@ -1498,7 +1498,7 @@ section  section   address    tsize
                    801a76e              __imp_ssGetDTypeIdFromMxArray
                    801a5a6              _ssBadLevel2ZeroDirectFeedMsg2
                    801a696              __imp_ssGetIsZeroCrossControlDisabled
-         .data     801b6d0   2d8   2d8  packagedeliverysim_acc_data.obj
+         .data     801b6d0   2e0   2e0  packagedeliverysim_acc_data.obj
                    801b6d0              krmhsmofha
          .data     801b9b0    28    28  rtgetinf.obj
                    801b9b8              __imp_rtGetInfF
@@ -1653,7 +1653,7 @@ Section .rdata: 2236
 Section .data: 15192
 	lccstub.obj:  8
 	packagedeliverysim_acc.obj:  5816
-	packagedeliverysim_acc_data.obj:  728
+	packagedeliverysim_acc_data.obj:  736
 	rtgetinf.obj:  40
 	rtgetnan.obj:  32
 	rt_nonfinite.obj:  40

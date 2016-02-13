@@ -27,7 +27,7 @@ OBJECTS = \
 	"C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\libmwsimulink.lib"\
 	"C:\Program Files\MATLAB\R2014b\lib\win64\libmwipp.lib"\
 
-INCLUDE_PATH= -I"C:\Program Files\MATLAB\R2014b\sys\lcc64\lcc64\include64"  -I"C:\Program Files\MATLAB\R2014b\extern\include"  -I"C:\Program Files\MATLAB\R2014b\simulink\include"  -I"C:\Program Files\MATLAB\R2014b\stateflow\c\mex\include"  -I"C:\Program Files\MATLAB\R2014b\rtw\c\src"  -I"C:\Users\dlavell\Documents\GitHub\Matlab_Sim\PackageDelivery\slprj\_sfprj\PackageDeliverySim\_self\sfun\src" 
+INCLUDE_PATH= -I"C:\Program Files\MATLAB\R2014b\sys\lcc64\lcc64\include64"  -I"C:\Program Files\MATLAB\R2014b\extern\include"  -I"C:\Program Files\MATLAB\R2014b\simulink\include"  -I"C:\Program Files\MATLAB\R2014b\stateflow\c\mex\include"  -I"C:\Program Files\MATLAB\R2014b\rtw\c\src"  -I"C:\Users\dlavell\Desktop\SeniorDesign\Matlab_Sim\PackageDelivery\slprj\_sfprj\PackageDeliverySim\_self\sfun\src" 
  
 
 PackageDeliverySim_sfun.mexw64 : $(MAKEFILE) $(OBJECTS)
