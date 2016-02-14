@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.2388"
+    ComputedModelVersion    "1.2401"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -66,7 +66,7 @@ Model {
 	LoadSaveID		"0"
 	Extents			[1886.0, 922.0]
 	ZoomFactor		[1.5]
-	Offset			[32.210000228882144, -128.82729200732052]
+	Offset			[127.34333760738403, -128.82729200732052]
       }
     }
   }
@@ -76,9 +76,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "dlavell"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat Feb 13 15:35:56 2016"
-  RTWModifiedTimeStamp	  377278596
-  ModelVersionFormat	  "1.%<AutoIncrement:2388>"
+  LastModifiedDate	  "Sat Feb 13 18:12:54 2016"
+  RTWModifiedTimeStamp	  377363329
+  ModelVersionFormat	  "1.%<AutoIncrement:2401>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -4545,12 +4545,12 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "150"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "1003"
+    SIDHighWatermark	    "1008"
     Block {
       BlockType		      DataStoreMemory
       Name		      " "
       SID		      "977"
-      Position		      [475, 385, 587, 420]
+      Position		      [475, 370, 587, 405]
       ZOrder		      51
       DataStoreName	      "num_delivered"
       ReadBeforeWriteMsg      "warning"
@@ -4563,7 +4563,7 @@ Model {
       BlockType		      DataStoreMemory
       Name		      "       "
       SID		      "981"
-      Position		      [475, 275, 587, 310]
+      Position		      [475, 265, 587, 300]
       ZOrder		      55
       DataStoreName	      "curr_wp"
       ReadBeforeWriteMsg      "warning"
@@ -4576,7 +4576,7 @@ Model {
       BlockType		      DataStoreMemory
       Name		      "          "
       SID		      "982"
-      Position		      [475, 335, 587, 370]
+      Position		      [475, 320, 587, 355]
       ZOrder		      56
       DataStoreName	      "curr_tp"
       ReadBeforeWriteMsg      "warning"
@@ -4712,7 +4712,7 @@ Model {
 	  }
 	  System {
 	    Name		    "Integrator System"
-	    Location		    [-1928, 0, 8, 1096]
+	    Location		    [-1928, -8, 8, 1088]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -4771,7 +4771,7 @@ Model {
 	      RequestExecContextInheritance off
 	      System {
 		Name			"CT dynamics"
-		Location		[423, 185, 734, 668]
+		Location		[-1928, -8, 8, 1088]
 		Open			off
 		ModelBrowserVisibility	off
 		ModelBrowserWidth	200
@@ -4922,7 +4922,7 @@ Model {
 	      RequestExecContextInheritance off
 	      System {
 		Name			"Jump logic"
-		Location		[469, 117, 1181, 729]
+		Location		[-1928, -8, 8, 1088]
 		Open			off
 		ModelBrowserVisibility	off
 		ModelBrowserWidth	200
@@ -5210,7 +5210,7 @@ Model {
 	      RequestExecContextInheritance off
 	      System {
 		Name			"Stop logic"
-		Location		[-1928, 0, 8, 1096]
+		Location		[-1928, -8, 8, 1088]
 		Open			off
 		ModelBrowserVisibility	off
 		ModelBrowserWidth	200
@@ -5407,7 +5407,7 @@ Model {
 	      RequestExecContextInheritance off
 	      System {
 		Name			"Update logic"
-		Location		[697, 44, 1138, 583]
+		Location		[-1928, -8, 8, 1088]
 		Open			off
 		ModelBrowserVisibility	off
 		ModelBrowserWidth	200
@@ -7445,39 +7445,6 @@ Model {
       }
     }
     Block {
-      BlockType		      Demux
-      Name		      "Demux"
-      SID		      "697"
-      Ports		      [1, 4]
-      Position		      [1185, 219, 1190, 421]
-      ZOrder		      -7
-      ShowName		      off
-      Outputs		      "[3 3 9 3]"
-      DisplayOption	      "bar"
-    }
-    Block {
-      BlockType		      Mux
-      Name		      "Mux1"
-      SID		      "688"
-      Ports		      [2, 1]
-      Position		      [1185, 19, 1190, 101]
-      ZOrder		      -14
-      ShowName		      off
-      Inputs		      "2"
-      DisplayOption	      "bar"
-    }
-    Block {
-      BlockType		      Mux
-      Name		      "Mux4"
-      SID		      "689"
-      Ports		      [2, 1]
-      Position		      [1185, 119, 1190, 201]
-      ZOrder		      -15
-      ShowName		      off
-      Inputs		      "2"
-      DisplayOption	      "bar"
-    }
-    Block {
       BlockType		      S-Function
       Name		      "S-Function1"
       SID		      "979"
@@ -7489,44 +7456,479 @@ Model {
       EnableBusSupport	      off
     }
     Block {
-      BlockType		      Selector
-      Name		      "Selector"
-      SID		      "690"
-      Ports		      [1, 1]
-      Position		      [1100, 27, 1130, 53]
-      ZOrder		      -17
-      InputPortWidth	      "15"
-      Indices		      "[1 2 3]"
-    }
-    Block {
-      BlockType		      Selector
-      Name		      "Selector1"
-      SID		      "694"
-      Ports		      [1, 1]
-      Position		      [1100, 67, 1130, 93]
-      ZOrder		      -17
-      InputPortWidth	      "18"
-      Indices		      "[1 2 3]"
-    }
-    Block {
-      BlockType		      Selector
-      Name		      "Selector2"
-      SID		      "695"
-      Ports		      [1, 1]
-      Position		      [1100, 167, 1130, 193]
-      ZOrder		      -17
-      InputPortWidth	      "18"
-      Indices		      "[4 5 6]"
-    }
-    Block {
-      BlockType		      Selector
-      Name		      "Selector4"
-      SID		      "691"
-      Ports		      [1, 1]
-      Position		      [1100, 127, 1130, 153]
-      ZOrder		      -17
-      InputPortWidth	      "15"
-      Indices		      "[4 5 6]"
+      BlockType		      SubSystem
+      Name		      "Subsystem"
+      SID		      "1004"
+      Ports		      [2]
+      Position		      [1045, 160, 1085, 220]
+      ZOrder		      66
+      RequestExecContextInheritance off
+      System {
+	Name			"Subsystem"
+	Location		[-1928, -8, 8, 1088]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"150"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  SID			  "1005"
+	  Position		  [21, 33, 51, 47]
+	  ZOrder		  1
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "In2"
+	  SID			  "1006"
+	  Position		  [102, 120, 132, 135]
+	  ZOrder		  2
+	  BlockRotation		  270
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  "Demux"
+	  SID			  "697"
+	  Ports			  [1, 4]
+	  Position		  [615, 219, 620, 421]
+	  ZOrder		  -7
+	  ShowName		  off
+	  Outputs		  "[3 3 9 3]"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux1"
+	  SID			  "688"
+	  Ports			  [2, 1]
+	  Position		  [615, 19, 620, 101]
+	  ZOrder		  -14
+	  ShowName		  off
+	  Inputs		  "2"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux4"
+	  SID			  "689"
+	  Ports			  [2, 1]
+	  Position		  [615, 119, 620, 201]
+	  ZOrder		  -15
+	  ShowName		  off
+	  Inputs		  "2"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Selector
+	  Name			  "Selector"
+	  SID			  "690"
+	  Ports			  [1, 1]
+	  Position		  [530, 27, 560, 53]
+	  ZOrder		  -17
+	  InputPortWidth	  "15"
+	  Indices		  "[1 2 3]"
+	}
+	Block {
+	  BlockType		  Selector
+	  Name			  "Selector1"
+	  SID			  "694"
+	  Ports			  [1, 1]
+	  Position		  [530, 67, 560, 93]
+	  ZOrder		  -17
+	  InputPortWidth	  "18"
+	  Indices		  "[1 2 3]"
+	}
+	Block {
+	  BlockType		  Selector
+	  Name			  "Selector2"
+	  SID			  "695"
+	  Ports			  [1, 1]
+	  Position		  [530, 167, 560, 193]
+	  ZOrder		  -17
+	  InputPortWidth	  "18"
+	  Indices		  "[4 5 6]"
+	}
+	Block {
+	  BlockType		  Selector
+	  Name			  "Selector4"
+	  SID			  "691"
+	  Ports			  [1, 1]
+	  Position		  [530, 127, 560, 153]
+	  ZOrder		  -17
+	  InputPortWidth	  "15"
+	  Indices		  "[4 5 6]"
+	}
+	Block {
+	  BlockType		  Scope
+	  Name			  "o"
+	  SID			  "702"
+	  Ports			  [1]
+	  Position		  [645, 379, 675, 411]
+	  ZOrder		  -3
+	  Floating		  off
+	  Location		  [-1989, 396, -98, 783]
+	  Open			  off
+	  NumInputPorts		  "1"
+	  ZoomMode		  "yonly"
+	  List {
+	    ListType		    AxesTitles
+	    axes1		    "%<SignalLabel>"
+	  }
+	  List {
+	    ListType		    ScopeGraphics
+	    FigureColor		    "[0.501960784313725 0.501960784313725 0.501960784313725]"
+	    AxesColor		    "[0 0 0]"
+	    AxesTickColor	    "[1 1 1]"
+	    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	    LineStyles		    "-|-|-|-|-|-"
+	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
+	    MarkerStyles	    "none|none|none|none|none|none"
+	  }
+	  ShowLegends		  off
+	  TimeRange		  "20"
+	  YMin			  "-10"
+	  YMax			  "25"
+	  SaveToWorkspace	  on
+	  SaveName		  "o"
+	  DataFormat		  "StructureWithTime"
+	  LimitDataPoints	  off
+	  SampleTime		  "0"
+	  ScrollMode		  off
+	}
+	Block {
+	  BlockType		  Scope
+	  Name			  "p"
+	  SID			  "703"
+	  Ports			  [1]
+	  Position		  [645, 229, 675, 261]
+	  ZOrder		  -3
+	  Floating		  off
+	  Location		  [-1552, 178, -272, 540]
+	  Open			  off
+	  NumInputPorts		  "1"
+	  ZoomMode		  "yonly"
+	  List {
+	    ListType		    AxesTitles
+	    axes1		    "%<SignalLabel>"
+	  }
+	  List {
+	    ListType		    ScopeGraphics
+	    FigureColor		    "[0.501960784313725 0.501960784313725 0.501960784313725]"
+	    AxesColor		    "[0 0 0]"
+	    AxesTickColor	    "[1 1 1]"
+	    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	    LineStyles		    "-|-|-|-|-|-"
+	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
+	    MarkerStyles	    "none|none|none|none|none|none"
+	  }
+	  ShowLegends		  off
+	  TimeRange		  "30              "
+	  YMin			  "-3.25"
+	  YMax			  "1.5"
+	  SaveToWorkspace	  on
+	  SaveName		  "p"
+	  DataFormat		  "StructureWithTime"
+	  LimitDataPoints	  off
+	  SampleTime		  "0"
+	  ScrollMode		  off
+	}
+	Block {
+	  BlockType		  Scope
+	  Name			  "p comparison"
+	  SID			  "692"
+	  Ports			  [1]
+	  Position		  [665, 44, 695, 76]
+	  ZOrder		  -3
+	  Floating		  off
+	  Location		  [10, 177, 1294, 548]
+	  Open			  off
+	  NumInputPorts		  "1"
+	  ZoomMode		  "xonly"
+	  List {
+	    ListType		    AxesTitles
+	    axes1		    "%<SignalLabel>"
+	  }
+	  List {
+	    ListType		    ScopeGraphics
+	    FigureColor		    "[0.501960784313725 0.501960784313725 0.501960784313725]"
+	    AxesColor		    "[0 0 0]"
+	    AxesTickColor	    "[1 1 1]"
+	    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	    LineStyles		    "-|-|-|-|-|-"
+	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
+	    MarkerStyles	    "none|none|none|none|none|none"
+	  }
+	  ShowLegends		  off
+	  TimeRange		  "0.25"
+	  YMin			  "-3e+305"
+	  YMax			  "5e+304"
+	  SaveToWorkspace	  on
+	  SaveName		  "comp_p"
+	  DataFormat		  "StructureWithTime"
+	  LimitDataPoints	  off
+	  SampleTime		  "0"
+	  ScrollMode		  off
+	}
+	Block {
+	  BlockType		  Scope
+	  Name			  "v"
+	  SID			  "704"
+	  Ports			  [1]
+	  Position		  [645, 279, 675, 311]
+	  ZOrder		  -3
+	  Floating		  off
+	  Location		  [10, 585, 1859, 990]
+	  Open			  off
+	  NumInputPorts		  "1"
+	  ZoomMode		  "xonly"
+	  List {
+	    ListType		    AxesTitles
+	    axes1		    "%<SignalLabel>"
+	  }
+	  List {
+	    ListType		    ScopeGraphics
+	    FigureColor		    "[0.501960784313725 0.501960784313725 0.501960784313725]"
+	    AxesColor		    "[0 0 0]"
+	    AxesTickColor	    "[1 1 1]"
+	    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	    LineStyles		    "-|-|-|-|-|-"
+	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
+	    MarkerStyles	    "none|none|none|none|none|none"
+	  }
+	  ShowLegends		  off
+	  TimeRange		  "20              "
+	  YMin			  "-0.5"
+	  YMax			  "7.5"
+	  SaveToWorkspace	  on
+	  SaveName		  "v"
+	  DataFormat		  "StructureWithTime"
+	  LimitDataPoints	  off
+	  SampleTime		  "0"
+	  ScrollMode		  off
+	}
+	Block {
+	  BlockType		  Scope
+	  Name			  "v comparison"
+	  SID			  "693"
+	  Ports			  [1]
+	  Position		  [665, 144, 695, 176]
+	  ZOrder		  -3
+	  Floating		  off
+	  Location		  [10, 221, 1294, 663]
+	  Open			  off
+	  NumInputPorts		  "1"
+	  ZoomMode		  "xonly"
+	  List {
+	    ListType		    AxesTitles
+	    axes1		    "%<SignalLabel>"
+	  }
+	  List {
+	    ListType		    ScopeGraphics
+	    FigureColor		    "[0.501960784313725 0.501960784313725 0.501960784313725]"
+	    AxesColor		    "[0 0 0]"
+	    AxesTickColor	    "[1 1 1]"
+	    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	    LineStyles		    "-|-|-|-|-|-"
+	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
+	    MarkerStyles	    "none|none|none|none|none|none"
+	  }
+	  ShowLegends		  off
+	  TimeRange		  "20"
+	  YMin			  "-6"
+	  YMax			  "6"
+	  SaveToWorkspace	  on
+	  SaveName		  "comp_v"
+	  DataFormat		  "StructureWithTime"
+	  LimitDataPoints	  off
+	  SampleTime		  "0"
+	  ScrollMode		  off
+	}
+	Line {
+	  FontName		  "Helvetica"
+	  FontSize		  9
+	  FontWeight		  "normal"
+	  FontAngle		  "normal"
+	  ZOrder		  1
+	  SrcBlock		  "Mux1"
+	  SrcPort		  1
+	  DstBlock		  "p comparison"
+	  DstPort		  1
+	}
+	Line {
+	  FontName		  "Helvetica"
+	  FontSize		  9
+	  FontWeight		  "normal"
+	  FontAngle		  "normal"
+	  ZOrder		  8
+	  SrcBlock		  "Demux"
+	  SrcPort		  1
+	  DstBlock		  "p"
+	  DstPort		  1
+	}
+	Line {
+	  FontName		  "Helvetica"
+	  FontSize		  9
+	  FontWeight		  "normal"
+	  FontAngle		  "normal"
+	  ZOrder		  3
+	  SrcBlock		  "Mux4"
+	  SrcPort		  1
+	  DstBlock		  "v comparison"
+	  DstPort		  1
+	}
+	Line {
+	  FontName		  "Helvetica"
+	  FontSize		  9
+	  FontWeight		  "normal"
+	  FontAngle		  "normal"
+	  ZOrder		  11
+	  SrcBlock		  "Demux"
+	  SrcPort		  4
+	  DstBlock		  "o"
+	  DstPort		  1
+	}
+	Line {
+	  FontName		  "Helvetica"
+	  FontSize		  9
+	  FontWeight		  "normal"
+	  FontAngle		  "normal"
+	  ZOrder		  5
+	  SrcBlock		  "Selector1"
+	  SrcPort		  1
+	  DstBlock		  "Mux1"
+	  DstPort		  2
+	}
+	Line {
+	  FontName		  "Helvetica"
+	  FontSize		  9
+	  FontWeight		  "normal"
+	  FontAngle		  "normal"
+	  ZOrder		  10
+	  SrcBlock		  "Demux"
+	  SrcPort		  2
+	  DstBlock		  "v"
+	  DstPort		  1
+	}
+	Line {
+	  FontName		  "Helvetica"
+	  FontSize		  9
+	  FontWeight		  "normal"
+	  FontAngle		  "normal"
+	  ZOrder		  4
+	  SrcBlock		  "Selector"
+	  SrcPort		  1
+	  DstBlock		  "Mux1"
+	  DstPort		  1
+	}
+	Line {
+	  FontName		  "Helvetica"
+	  FontSize		  9
+	  FontWeight		  "normal"
+	  FontAngle		  "normal"
+	  ZOrder		  2
+	  SrcBlock		  "Selector4"
+	  SrcPort		  1
+	  DstBlock		  "Mux4"
+	  DstPort		  1
+	}
+	Line {
+	  FontName		  "Helvetica"
+	  FontSize		  9
+	  FontWeight		  "normal"
+	  FontAngle		  "normal"
+	  ZOrder		  6
+	  SrcBlock		  "Selector2"
+	  SrcPort		  1
+	  DstBlock		  "Mux4"
+	  DstPort		  2
+	}
+	Line {
+	  FontName		  "Helvetica"
+	  FontSize		  9
+	  FontWeight		  "normal"
+	  FontAngle		  "normal"
+	  ZOrder		  207
+	  SrcBlock		  "In2"
+	  SrcPort		  1
+	  Points		  [0, -35; 328, 0]
+	  Branch {
+	    ZOrder		    151
+	    Points		    [0, 100]
+	    Branch {
+	      ZOrder		      149
+	      DstBlock		      "Selector2"
+	      DstPort		      1
+	    }
+	    Branch {
+	      ZOrder		      106
+	      Points		      [0, 140]
+	      DstBlock		      "Demux"
+	      DstPort		      1
+	    }
+	  }
+	  Branch {
+	    ZOrder		    108
+	    DstBlock		    "Selector1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  FontName		  "Helvetica"
+	  FontSize		  9
+	  FontWeight		  "normal"
+	  FontAngle		  "normal"
+	  ZOrder		  206
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  Points		  [411, 0]
+	  Branch {
+	    ZOrder		    154
+	    Points		    [0, 100]
+	    DstBlock		    "Selector4"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    153
+	    DstBlock		    "Selector"
+	    DstPort		    1
+	  }
+	}
+	Annotation {
+	  SID			  "705"
+	  Position		  [616, 266, 618, 281]
+	  InternalMargins	  [0, 0, 0, 0]
+	  FixedHeight		  off
+	  FixedWidth		  off
+	  ZOrder		  -1
+	  FontName		  "Helvetica"
+	  FontSize		  10
+	  FontWeight		  "normal"
+	  FontAngle		  "normal"
+	}
+	Annotation {
+	  SID			  "706"
+	  Position		  [620, 266, 622, 281]
+	  InternalMargins	  [0, 0, 0, 0]
+	  FixedHeight		  off
+	  FixedWidth		  off
+	  ZOrder		  -2
+	  FontName		  "Helvetica"
+	  FontSize		  10
+	  FontWeight		  "normal"
+	  FontAngle		  "normal"
+	}
+      }
     }
     Block {
       BlockType		      SubSystem
@@ -8210,117 +8612,6 @@ Model {
     }
     Block {
       BlockType		      Scope
-      Name		      "o"
-      SID		      "702"
-      Ports		      [1]
-      Position		      [1215, 379, 1245, 411]
-      ZOrder		      -3
-      Floating		      off
-      Location		      [-1989, 396, -98, 783]
-      Open		      off
-      NumInputPorts	      "1"
-      ZoomMode		      "yonly"
-      List {
-	ListType		AxesTitles
-	axes1			"%<SignalLabel>"
-      }
-      List {
-	ListType		ScopeGraphics
-	FigureColor		"[0.501960784313725 0.501960784313725 0.501960784313725]"
-	AxesColor		"[0 0 0]"
-	AxesTickColor		"[1 1 1]"
-	LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
-	LineStyles		"-|-|-|-|-|-"
-	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
-	MarkerStyles		"none|none|none|none|none|none"
-      }
-      ShowLegends	      off
-      TimeRange		      "20"
-      YMin		      "-10"
-      YMax		      "25"
-      SaveToWorkspace	      on
-      SaveName		      "o"
-      DataFormat	      "StructureWithTime"
-      LimitDataPoints	      off
-      SampleTime	      "0"
-      ScrollMode	      off
-    }
-    Block {
-      BlockType		      Scope
-      Name		      "p"
-      SID		      "703"
-      Ports		      [1]
-      Position		      [1215, 229, 1245, 261]
-      ZOrder		      -3
-      Floating		      off
-      Location		      [-1552, 178, -272, 540]
-      Open		      off
-      NumInputPorts	      "1"
-      ZoomMode		      "yonly"
-      List {
-	ListType		AxesTitles
-	axes1			"%<SignalLabel>"
-      }
-      List {
-	ListType		ScopeGraphics
-	FigureColor		"[0.501960784313725 0.501960784313725 0.501960784313725]"
-	AxesColor		"[0 0 0]"
-	AxesTickColor		"[1 1 1]"
-	LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
-	LineStyles		"-|-|-|-|-|-"
-	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
-	MarkerStyles		"none|none|none|none|none|none"
-      }
-      ShowLegends	      off
-      TimeRange		      "30              "
-      YMin		      "-3.25"
-      YMax		      "1.5"
-      SaveToWorkspace	      on
-      SaveName		      "p"
-      DataFormat	      "StructureWithTime"
-      LimitDataPoints	      off
-      SampleTime	      "0"
-      ScrollMode	      off
-    }
-    Block {
-      BlockType		      Scope
-      Name		      "p comparison"
-      SID		      "692"
-      Ports		      [1]
-      Position		      [1235, 44, 1265, 76]
-      ZOrder		      -3
-      Floating		      off
-      Location		      [10, 177, 1294, 548]
-      Open		      off
-      NumInputPorts	      "1"
-      ZoomMode		      "xonly"
-      List {
-	ListType		AxesTitles
-	axes1			"%<SignalLabel>"
-      }
-      List {
-	ListType		ScopeGraphics
-	FigureColor		"[0.501960784313725 0.501960784313725 0.501960784313725]"
-	AxesColor		"[0 0 0]"
-	AxesTickColor		"[1 1 1]"
-	LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
-	LineStyles		"-|-|-|-|-|-"
-	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
-	MarkerStyles		"none|none|none|none|none|none"
-      }
-      ShowLegends	      off
-      TimeRange		      "0.25"
-      YMin		      "-3e+305"
-      YMax		      "5e+304"
-      SaveToWorkspace	      on
-      SaveName		      "comp_p"
-      DataFormat	      "StructureWithTime"
-      LimitDataPoints	      off
-      SampleTime	      "0"
-      ScrollMode	      off
-    }
-    Block {
-      BlockType		      Scope
       Name		      "ref"
       SID		      "617"
       Ports		      [1]
@@ -8357,143 +8648,6 @@ Model {
       SampleTime	      "0"
       ScrollMode	      off
     }
-    Block {
-      BlockType		      Scope
-      Name		      "v"
-      SID		      "704"
-      Ports		      [1]
-      Position		      [1215, 279, 1245, 311]
-      ZOrder		      -3
-      Floating		      off
-      Location		      [10, 585, 1859, 990]
-      Open		      off
-      NumInputPorts	      "1"
-      ZoomMode		      "xonly"
-      List {
-	ListType		AxesTitles
-	axes1			"%<SignalLabel>"
-      }
-      List {
-	ListType		ScopeGraphics
-	FigureColor		"[0.501960784313725 0.501960784313725 0.501960784313725]"
-	AxesColor		"[0 0 0]"
-	AxesTickColor		"[1 1 1]"
-	LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
-	LineStyles		"-|-|-|-|-|-"
-	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
-	MarkerStyles		"none|none|none|none|none|none"
-      }
-      ShowLegends	      off
-      TimeRange		      "20              "
-      YMin		      "-0.5"
-      YMax		      "7.5"
-      SaveToWorkspace	      on
-      SaveName		      "v"
-      DataFormat	      "StructureWithTime"
-      LimitDataPoints	      off
-      SampleTime	      "0"
-      ScrollMode	      off
-    }
-    Block {
-      BlockType		      Scope
-      Name		      "v comparison"
-      SID		      "693"
-      Ports		      [1]
-      Position		      [1235, 144, 1265, 176]
-      ZOrder		      -3
-      Floating		      off
-      Location		      [10, 221, 1294, 663]
-      Open		      off
-      NumInputPorts	      "1"
-      ZoomMode		      "xonly"
-      List {
-	ListType		AxesTitles
-	axes1			"%<SignalLabel>"
-      }
-      List {
-	ListType		ScopeGraphics
-	FigureColor		"[0.501960784313725 0.501960784313725 0.501960784313725]"
-	AxesColor		"[0 0 0]"
-	AxesTickColor		"[1 1 1]"
-	LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
-	LineStyles		"-|-|-|-|-|-"
-	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
-	MarkerStyles		"none|none|none|none|none|none"
-      }
-      ShowLegends	      off
-      TimeRange		      "20"
-      YMin		      "-6"
-      YMax		      "6"
-      SaveToWorkspace	      on
-      SaveName		      "comp_v"
-      DataFormat	      "StructureWithTime"
-      LimitDataPoints	      off
-      SampleTime	      "0"
-      ScrollMode	      off
-    }
-    Line {
-      ZOrder		      1
-      SrcBlock		      "Mux1"
-      SrcPort		      1
-      DstBlock		      "p comparison"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      2
-      SrcBlock		      "Selector4"
-      SrcPort		      1
-      DstBlock		      "Mux4"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      3
-      SrcBlock		      "Mux4"
-      SrcPort		      1
-      DstBlock		      "v comparison"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      4
-      SrcBlock		      "Selector"
-      SrcPort		      1
-      DstBlock		      "Mux1"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      5
-      SrcBlock		      "Selector1"
-      SrcPort		      1
-      DstBlock		      "Mux1"
-      DstPort		      2
-    }
-    Line {
-      ZOrder		      6
-      SrcBlock		      "Selector2"
-      SrcPort		      1
-      DstBlock		      "Mux4"
-      DstPort		      2
-    }
-    Line {
-      ZOrder		      8
-      SrcBlock		      "Demux"
-      SrcPort		      1
-      DstBlock		      "p"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      10
-      SrcBlock		      "Demux"
-      SrcPort		      2
-      DstBlock		      "v"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      11
-      SrcBlock		      "Demux"
-      SrcPort		      4
-      DstBlock		      "o"
-      DstPort		      1
-    }
     Line {
       ZOrder		      101
       SrcBlock		      "S-Function1"
@@ -8502,35 +8656,14 @@ Model {
       Branch {
 	ZOrder			167
 	Points			[0, -125]
-	Branch {
-	  ZOrder		  165
-	  Points		  [0, -35; 328, 0]
-	  Branch {
-	    ZOrder		    151
-	    Points		    [0, 100]
-	    Branch {
-	      ZOrder		      149
-	      DstBlock		      "Selector2"
-	      DstPort		      1
-	    }
-	    Branch {
-	      ZOrder		      106
-	      Points		      [0, 140]
-	      DstBlock		      "Demux"
-	      DstPort		      1
-	    }
-	  }
-	  Branch {
-	    ZOrder		    108
-	    DstBlock		    "Selector1"
-	    DstPort		    1
-	  }
-	}
-	Branch {
-	  ZOrder		  102
-	  DstBlock		  "Controlador Casau"
-	  DstPort		  1
-	}
+	DstBlock		"Controlador Casau"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			207
+	Points			[0, 104; 343, 0]
+	DstBlock		"Subsystem"
+	DstPort			2
       }
       Branch {
 	ZOrder			166
@@ -8540,6 +8673,10 @@ Model {
       }
     }
     Line {
+      FontName		      "Helvetica"
+      FontSize		      9
+      FontWeight	      "normal"
+      FontAngle		      "normal"
       ZOrder		      22
       SrcBlock		      "Controlador Casau"
       SrcPort		      1
@@ -8570,19 +8707,10 @@ Model {
 	ZOrder			192
 	Points			[0, -100]
 	Branch {
-	  ZOrder		  170
-	  Points		  [411, 0]
-	  Branch {
-	    ZOrder		    154
-	    Points		    [0, 100]
-	    DstBlock		    "Selector4"
-	    DstPort		    1
-	  }
-	  Branch {
-	    ZOrder		    153
-	    DstBlock		    "Selector"
-	    DstPort		    1
-	  }
+	  ZOrder		  206
+	  Points		  [400, 0; 0, 135]
+	  DstBlock		  "Subsystem"
+	  DstPort		  1
 	}
 	Branch {
 	  ZOrder		  160
@@ -8597,22 +8725,6 @@ Model {
       SrcPort		      1
       DstBlock		      "Waypoint Generator"
       DstPort		      1
-    }
-    Annotation {
-      SID		      "705"
-      Position		      [1186, 266, 1188, 281]
-      InternalMargins	      [0, 0, 0, 0]
-      FixedHeight	      off
-      FixedWidth	      off
-      ZOrder		      -1
-    }
-    Annotation {
-      SID		      "706"
-      Position		      [1190, 266, 1192, 281]
-      InternalMargins	      [0, 0, 0, 0]
-      FixedHeight	      off
-      FixedWidth	      off
-      ZOrder		      -2
     }
   }
 }
@@ -8642,7 +8754,6 @@ Stateflow {
     firstTransition	    19
     firstJunction	    18
     viewObj		    2
-    visible		    1
     machine		    1
     subviewS {
     }
@@ -9052,7 +9163,6 @@ Stateflow {
     firstTransition	    56
     firstJunction	    55
     viewObj		    21
-    visible		    1
     machine		    1
     subviewS {
     }
@@ -9105,109 +9215,82 @@ Stateflow {
       "i(I) = 1;\n%         s = linspace(0,abs(ei'*z),1000)';\n%         V0 = V0+trapz(s,sat_atan(s));\n%         s = l"
       "inspace(0,abs(ei'*b),1000)';\n%         V0 = V0+trapz(s,inv_sat_atan(s));\n%     end\n%     V0 = V0+kz*bar_V0-b'"
       "*z;\n%     dot_V0 = kz*grad_bar_V0'*[v0;dot_v-dot_vd]+sat_atan(z)'*dot_z-b'*dot_z;\n    \n    %quaternion error\n"
-      "    q1 = zeros(4,1);\n    q1 = quatmultiply(q',quatinv(q0'))';\n    %R1 = R*R0';\n%     dot_V0 = kz*grad_bar_V0'"
-      "*[v0;-R1*R0*e3*T/m+g*e3+b-dot_vd]+sat_atan(z)'*dot_z-b'*dot_z;\n%     dot_V0 = kz*grad_bar_V0'*[v0;R1*mu+g*e3+b-"
-      "dot_vd]+sat_atan(z)'*dot_z-b'*dot_z;\n%     dot_V0 = kz*grad_bar_V0'*[v0;u0]+kz*grad_bar_V0(4:6)'*(R1-eye(3))*mu"
-      ";\n    %compensation for underactuation\n    w1 = -(h*kz*kV0/k)*(2*q1(1)*S(mu)-2*S(mu)*S(q1(2:4)))*[zeros(3),eye"
-      "(3)]*grad_bar_V0-h*kq*q1(2:4);\n    %estimate of w0\n    hat_dot_v = -R*e3*T/m+g*e3+hat_b;\n    hat_dot_mu = -sa"
-      "t_atan_dot(kp*p0+kv*v0).*(kp*v0+kv*(hat_dot_v-dot_vd))+ddot_vd-sat_atan_dot(z).*dot_z;\n    hat_dot_r3 = S(r3)^2"
-      "*hat_dot_mu/norm(mu);\n    hat_w0 = -0.5*R0'*Gamma(R0)'*Dr3_R0*hat_dot_r3;\n    \n    w_star = hat_w0+R0'*w1;\n "
-      "   \n%     dot_q1 = zeros(4,1);\n%     dot_q1 = 0.5*quatmultiply(q1',[0 (R0*(w-w0))'])';\n%     dot_q = 0.5*quat"
-      "multiply(q',[0 w'])';\n    \n    %b estimator\n    Dv0_r3 = -(S(r3)^2/norm(mu))*kv*diag(sat_atan_dot(u));\n    D"
-      "v0_R0 = Dr3_R0*Dv0_r3;\n    dot_hat_b = kb*k*h*Dv0_R0'*Gamma(R0)*q1(2:4)/2;\n    \n    %Lyapunov function V1\n% "
-      "    tilde_b = hat_b-b;\n%     V1 = kV0*V0*0+2*k*(1-h*q1(1))+0.5*norm(tilde_b)^2/kb*0;\n%     dot_V1 = kV0*kz*gra"
-      "d_bar_V0'*[v0;u0]*0+kV0*kz*grad_bar_V0(4:6)'*(R1-eye(3))*mu*0+...\n%         +k*h*q1(2:4)'*R0*(w-w0)+tilde_b'*do"
-      "t_hat_b/kb*0;\n%     dot_V1 = kV0*kz*grad_bar_V0'*[v0;u0]+kV0*kz*grad_bar_V0(4:6)'*(R1-eye(3))*mu+...\n%        "
-      " k*h*q1(2:4)'*R0*(w-w0)+tilde_b'*dot_hat_b/kb;\n%     dot_V1 = kV0*kz*grad_bar_V0'*[v0;u0]+kV0*kz*grad_bar_V0(4:"
-      "6)'*(2*q1(1)*S(q1(2:4))+2*S(q1(2:4))^2)*mu+...\n%         k*h*q1(2:4)'*R0*(w-w0)+tilde_b'*dot_hat_b/kb;\n%     d"
-      "ot_V1 = kV0*kz*grad_bar_V0'*[v0;u0]+(kz*kV0)*q1(2:4)'*(2*q1(1)*S(mu)-2*S(mu)*S(q1(2:4)))*[zeros(3),eye(3)]*grad_"
-      "bar_V0+...\n%         k*h*q1(2:4)'*R0*(w-w0)+tilde_b'*dot_hat_b/kb;\n%     dot_V1 = kV0*kz*grad_bar_V0'*[v0;u0]+"
-      "...\n%         k*h*q1(2:4)'*R0*(hat_w0-w0)+tilde_b'*dot_hat_b/kb-k*kq*q1(2:4)'*q1(2:4)+k*h*q1(2:4)'*R0*(w-w_star"
-      ");\n%     dot_V1 = kV0*kz*grad_bar_V0'*[v0;u0]-k*kq*q1(2:4)'*q1(2:4)+k*h*q1(2:4)'*R0*(w-w_star);\n    %%%%%%%%%%"
-      "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n%     V1 = 0;\n%     dot_V1 = 0;\n    %%%%%%%%%%%"
-      "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n    \n    \n        %estimate of w0-2\n    hat_dot"
-      "_v2 = -R*e3*T/m+g*e3+hat_b2;\n    hat_dot_mu2 = -sat_atan_dot(kp*p0+kv*v0).*(kp*v0+kv*(hat_dot_v2-dot_vd))+ddot_"
-      "vd-sat_atan_dot(z).*dot_z;\n    hat_dot_r32 = S(r3)^2*hat_dot_mu2/norm(mu);\n    hat_w02 = -0.5*R0'*Gamma(R0)'*D"
-      "r3_R0*hat_dot_r32;\n    %tilde_b2 = hat_b2-b;\n    %v\n    %dot_hat_dot_v = -R*S(w)*e3*T/m-R*e3*mu'*dot_mu/norm("
-      "mu)+dot_hat_b;\n    hat_dot_hat_dot_v2 = -R*S(w)*e3*T/m-R*e3*mu'*hat_dot_mu2/norm(mu)+dot_hat_b;\n    %ddot_v = "
-      "-R*S(w)*e3*T/m-R*e3*mu'*dot_mu/norm(mu);\n    %u\n    %dot_u = kp*v0+kv*(dot_v-dot_vd);\n    hat_dot_u = kp*v0+k"
-      "v*(hat_dot_v-dot_vd);\n    hat_dot_u2 = kp*v0+kv*(hat_dot_v2-dot_vd);\n    %ddot_u = kp*(dot_v-dot_vd)+kv*(ddot_"
-      "v-ddot_vd);\n    %dot_hat_dot_u = kp*(dot_v-dot_vd)+kv*(dot_hat_dot_v-ddot_vd);\n    hat_dot_hat_dot_u2 = kp*(ha"
-      "t_dot_v2-dot_vd)+kv*(hat_dot_hat_dot_v2-ddot_vd);\n    %z\n    hess_bar_V0 = zeros(6);\n    for I=1:3\n        e"
-      "i = zeros(3,1);\n        ei(I) = 1;\n        hess_bar_V0 = hess_bar_V0 +...\n            kron([sat_atan(ei'*u) e"
-      "i'*v0]*P,eye(6))*...\n            sat_atan_ddot(ei'*u)*...\n            [kp*(ei*ei')*[kp*eye(3) kv*eye(3)];\n   "
-      "          kv*(ei*ei')*[kp*eye(3) kv*eye(3)];\n             zeros(6)]+sat_atan_dot(ei'*u)*...\n             [kp*e"
-      "ye(3);kv*eye(3)]*(ei*ei')*...\n             [kp*eye(3) kv*eye(3)]+...\n             [sat_atan_dot(ei'*u)*kp*ei,z"
-      "eros(3,1);\n             sat_atan_dot(ei'*u)*kv*ei,ei]*P*...\n             [sat_atan_dot(ei'*u)*ei'*[kp*eye(3) k"
-      "v*eye(3)];\n             zeros(1,3),ei'];\n    end\n    %ddot_z = kz*[zeros(3) eye(3)]*hess_bar_V0*[v0;dot_v-dot"
-      "_vd];\n    hat_ddot_z2 = kz*[zeros(3) eye(3)]*hess_bar_V0*[v0;hat_dot_v2-dot_vd];\n    %mu\n    hat_dot_mu = -sa"
-      "t_atan_dot(u).*(hat_dot_u)+ddot_vd-sat_atan_dot(z).*dot_z;\n    %dot_hat_dot_mu = -sat_atan_ddot(u).*dot_u.*hat_"
-      "dot_u+d3dot_vd-...\n    %    sat_atan_dot(u).*dot_hat_dot_u-sat_atan_ddot(z).*(dot_z.^2)-sat_atan_dot(z).*ddot_z"
-      ";\n    hat_dot_hat_dot_mu2 = -sat_atan_ddot(u).*(hat_dot_u).*(hat_dot_u2)+d3dot_vd-...\n        sat_atan_dot(u)."
-      "*hat_dot_hat_dot_u2-sat_atan_ddot(z).*(dot_z.^2)-sat_atan_dot(z).*hat_ddot_z2;\n%     dot_mu = -sat_atan_dot(u)."
-      "*dot_u+ddot_vd-sat_atan_dot(z).*dot_z;\n%     ddot_mu = -sat_atan_ddot(u).*(dot_u.^2)-sat_atan_dot(u).*ddot_u+d3"
-      "dot_vd-...\n%         sat_atan_ddot(z).*dot_z.^2-sat_atan_dot(z).*ddot_z;\n    %r3\n    Dmu_r3 = S(r3)^2/norm(mu"
-      ");\n    D2mu_r3 = -norm(mu)^(-1)*(kron(S(r3)',eye(3))+kron(eye(3),S(r3)))*Gamma(eye(3))*S(mu/norm(mu))^2/norm(mu"
-      ")-...\n        kron(eye(3),S(r3)^2)*vec(eye(3))*mu'/norm(mu)^3;\n    %ddot_r3  = kron(dot_mu',eye(3))*D2mu_r3*do"
-      "t_mu+Dmu_r3*ddot_mu;\n    hat_dot_r3 = S(r3)^2*hat_dot_mu/norm(mu);\n    %dot_hat_dot_r3 = -kron(hat_dot_mu'/nor"
-      "m(mu),eye(3))*(kron(S(r3)',eye(3))+kron(eye(3),S(r3)))*Gamma(eye(3))*dot_r3+...\n    %    S(r3)^2*(dot_hat_dot_m"
-      "u/norm(mu)-hat_dot_mu*mu'*dot_mu/norm(mu)^3);\n    %dot_hat_dot_r3 = kron(hat_dot_mu',eye(3))*D2mu_r3*dot_mu+Dmu"
-      "_r3*dot_hat_dot_mu;\n    hat_dot_hat_dot_r32 = -kron(hat_dot_mu'/norm(mu),eye(3))*(kron(S(r3)',eye(3))+kron(eye("
-      "3),S(r3)))*Gamma(eye(3))*hat_dot_r32+...\n        S(r3)^2*(hat_dot_hat_dot_mu2/norm(mu)-hat_dot_mu*mu'*hat_dot_m"
-      "u2/norm(mu)^3);\n    %R0\n    Dr3_H1 = -(kron(K(3,3),eye(3))*kron(eye(3),vec(eye(3)))+...\n        kron(eye(3),k"
-      "ron(K(1,3),eye(3)))*kron(vec(eye(3)),eye(3)))*H2;\n    %Y  = S(gm/norm(gm))^2;\n    Dr3_Y = kron(Rd*e3,eye(9))*("
-      "kron(eye(3),S(gm/norm(gm)))-kron(S(gm/norm(gm)),eye(3)))*Gamma(eye(3))*S(gm/norm(gm))^2*S(Rd*e3)/norm(gm);\n    "
-      "H2 = S(gm/norm(gm))^2*S(Rd*e3)/norm(gm);\n    Dr3_H2 = kron(S(Rd*e3)'/norm(gm),eye(3))*(kron(eye(3),S(gm/norm(gm"
-      ")))-kron(S(gm/norm(gm)),eye(3)))*Gamma(eye(3))*S(gm/norm(gm))^2*S(Rd*e3)/norm(gm)+...\n        kron(eye(3),S(gm/"
-      "norm(gm))^2)*Gamma(eye(3))*Rd*e3*gm'*S(Rd*e3)/norm(gm)^3;\n    \n    H = H1*H2;\n    Dr3_H = kron(H2',eye(9))*Dr"
-      "3_H1+kron(eye(3),H1)*Dr3_H2;\n    \n    %X = (1-e3'*Rd'*r3)*H;\n    Dr3_X = -kron(H',eye(9))*vec(eye(9))*e3'*Rd'"
-      "+(1-e3'*Rd'*r3)*Dr3_H;\n\n    D2r3_R0 = kron(eye(3),kron(Rd',eye(3)))*(-Dr3_Y-Dr3_X);\n    \n    %w0\n    %dot_w"
-      "0=-0.5*R0'*Gamma(R0)'*(kron(dot_r3',eye(9))*D2r3_R0*dot_r3+Dr3_R0*ddot_r3);\n    hat_w0= -0.5*R0'*Gamma(R0)'*Dr3"
-      "_R0*hat_dot_r3;\n    %dot_hat_w0=S(hat_w0)*w0-0.5*R0'*Gamma(reshape(Dr3_R0*hat_dot_r3,[3 3]))'*Gamma(R0)*R0*w0-0"
-      ".5*R0'*Gamma(R0)'*(kron(hat_dot_r3',eye(9))*D2r3_R0*dot_r3+Dr3_R0*dot_hat_dot_r3);\n    hat_dot_hat_w0 = S(hat_w"
-      "0)*hat_w02-0.5*R0'*Gamma(reshape(Dr3_R0*hat_dot_r3,[3 3]))'*Gamma(R0)*R0*hat_w02-0.5*R0'*Gamma(R0)'*(kron(hat_do"
-      "t_r3',eye(9))*D2r3_R0*hat_dot_r32+Dr3_R0*hat_dot_hat_dot_r32);\n    \n    %hat_b\n    Dv0_mu=-diag(sat_atan_dot("
-      "u)*kv);\n    Dv0_R0 = Dr3_R0*Dmu_r3*Dv0_mu;\n    Lambda = -R0'*Gamma(R0)'*Dv0_R0;\n    tilde_dot_hat_dot_mu = -("
-      "diag(sat_atan_ddot(u))*diag(hat_dot_u)*kv+diag(sat_atan_dot(u))*(kp*eye(3)-kv^2*R*e3*r3'*diag(sat_atan_dot(u)))+"
-      "kz*diag(sat_atan_dot(z))*[zeros(3),eye(3)]*hess_bar_V0*[zeros(3);eye(3)]);\n    tilde_dot_hat_w0 = S(hat_w0)*(0."
-      "5*Lambda)-...\n        0.5*R0'*Gamma(reshape(Dr3_R0*hat_dot_r3,[3 3]))'*Gamma(R0)*R0*(0.5*Lambda)-...\n        0"
-      ".5*R0'*Gamma(R0)'*(kron(hat_dot_r3',eye(9))*D2r3_R0*Dmu_r3*kv*diag(-sat_atan_dot(u))+...\n        Dr3_R0*(kron(h"
-      "at_dot_mu',eye(3))*D2mu_r3*(-diag(sat_atan_dot(u))*kv)+Dmu_r3*tilde_dot_hat_dot_mu));\n    %dot_w1\n%     dot_w1"
-      " = -(h*kz*kV0*2/k)*(kron(([zeros(3),eye(3)]*grad_bar_V0)',eye(3))*...\n%         (kron(S(mu),eye(3))*vec(eye(3))"
-      "*0.5*q1(2:4)'*R0*(w-w0)-...\n%         q1(1)*Gamma(eye(3))*dot_mu-kron(S(q1(2:4)),eye(3))*Gamma(eye(3))*dot_mu-."
-      "..\n%         -kron(eye(3),S(mu))*Gamma(eye(3))*0.5*(q1(1)*eye(3)+S(q1(2:4)))*R0*(w-w0))+...\n%         (q1(1)*S"
-      "(mu)-S(mu)*S(q1(2:4)))*[zeros(3),eye(3)]*hess_bar_V0*[v0;dot_v-dot_vd])-...\n%         0.5*h*kq*(q1(1)*eye(3)+S("
-      "q1(2:4)))*R0*(w-w0);\n    hat_dot_w1 = -(h*kz*kV0*2/k)*(kron(([zeros(3),eye(3)]*grad_bar_V0)',eye(3))*...\n     "
-      "   (kron(S(mu),eye(3))*vec(eye(3))*0.5*q1(2:4)'*R0*(w-hat_w02)-...\n        q1(1)*Gamma(eye(3))*hat_dot_mu2-kron"
-      "(S(q1(2:4)),eye(3))*Gamma(eye(3))*hat_dot_mu2-...\n        -kron(eye(3),S(mu))*Gamma(eye(3))*0.5*(q1(1)*eye(3)+S"
-      "(q1(2:4)))*R0*(w-hat_w02))+...\n        (q1(1)*S(mu)-S(mu)*S(q1(2:4)))*[zeros(3),eye(3)]*hess_bar_V0*[v0;hat_dot"
-      "_v2-dot_vd])-...\n        0.5*h*kq*(q1(1)*eye(3)+S(q1(2:4)))*R0*(w-hat_w02);\n    tilde_dot_w1 = -(h*kz*kV0*2/k)"
-      "*(kron(([zeros(3),eye(3)]*grad_bar_V0)',eye(3))*...\n        (kron(S(mu),eye(3))*vec(eye(3))*0.5*q1(2:4)'*R0*(-0"
-      ".5*Lambda)-...\n        q1(1)*Gamma(eye(3))*(-diag(sat_atan_dot(u))*kv)-kron(S(q1(2:4)),eye(3))*Gamma(eye(3))*(-"
-      "diag(sat_atan_dot(u))*kv)-...\n        -kron(eye(3),S(mu))*Gamma(eye(3))*0.5*(q1(1)*eye(3)+S(q1(2:4)))*R0*(-0.5*"
-      "Lambda))+...\n        (q1(1)*S(mu)-S(mu)*S(q1(2:4)))*[zeros(3),eye(3)]*hess_bar_V0*[zeros(3);eye(3)])-...\n     "
-      "   0.5*h*kq*(q1(1)*eye(3)+S(q1(2:4)))*R0*(-0.5*Lambda);\n    \n    \n\n    %w - angular velocity\n    %dot_w_sta"
-      "r = dot_hat_w0+R0'*dot_w1+kron(w1',eye(3))*Gamma(R0')*w0;\n    hat_dot_w_star = hat_dot_hat_w0+R0'*hat_dot_w1+kr"
-      "on(w1',eye(3))*Gamma(R0')*hat_w02;\n    u2 = hat_dot_w_star-kw*(w-w_star)-k*h*R0'*q1(2:4);\n    dot_w = u2;\n   "
-      " \n    \n    %b estimator\n    dot_hat_b2 = -kb*(tilde_dot_hat_w0'*(w-w_star)+tilde_dot_w1'*R0*(w-w_star)+0.5*(k"
-      "ron(w1',eye(3))*Gamma(R0')*Lambda)'*(w-w_star));\n    \n    \n    %V2\n    %V2 = V1 + 0.5*norm(w-w_star)^2+0.5*n"
-      "orm(tilde_b2)^2/kb;\n    %dot_V2 = dot_V1 +(w-w_star)'*(u2-dot_w_star)+tilde_b2'*dot_hat_b2/kb;\n    V2 = 0;\n  "
-      "  dot_V2 = 0;\n%     dot_V2 = kV0*kz*grad_bar_V0'*[v0;u0] +(w-w_star)'*(hat_dot_w_star-kw*(w-w_star)-dot_w_star)"
-      "+tilde_b2'*dot_hat_b2/kb;\n%     dot_V2 = kV0*kz*grad_bar_V0'*[v0;u0] +(w-w_star)'*(-kw*(w-w_star))-k*kq*norm(q1"
-      "(2:4))^2;\n    \n    %%% Unit conversion - input range - omega control\n    thrust = (T/0.00981 - 25.584) / 113."
-      "3;\n    aileron = w(1) / 3.9062;\n    elevator = w(2) / 3.9062;\n    yaw = w(3) / 3.7;\n\n    cmd = [thrust; ail"
-      "eron; elevator; yaw];\n    \n    dot_h = 0;\nend\n\nfunction out = sat_atan(var)\n    global satMax\n    out = v"
-      "ar;\n    if isempty(satMax)\n        for I=1:numel(var)\n            out(I)=2*atan(var(I))/pi;\n        end\n   "
-      " else\n        for I=1:numel(var)\n            out(I)=satMax*2*atan(var(I)/satMax)/pi;\n        end\n    end\nen"
-      "d\n\nfunction out = sat_atan_dot(var)\n    global satMax\n    out = var;\n    if isempty(satMax)\n        for I="
-      "1:numel(var)\n            out(I)=(2/pi)*(1+var(I)^2)^(-1);\n        end\n    else\n        for I=1:numel(var)\n "
-      "           out(I)=(2/pi)*(1+(var(I)/satMax)^2)^(-1);\n        end\n    end\nend\n        \nfunction out = sat_at"
-      "an_ddot(var)\n    global satMax\n    out = var;\n    if isempty(satMax)\n        for I=1:numel(var)\n           "
-      " out(I)=-(2/pi)*(1+var(I)^2)^(-2)*2*var(I);\n        end\n    else\n        for I=1:numel(var)\n            out("
-      "I)=-(2/pi)*(1+(var(I)/satMax)^2)^(-2)*2*(var(I)/satMax^2);\n        end\n    end\nend\n\nfunction out = Gamma(A)"
-      "\n    out = -[S(A*[1;0;0]),S(A*[0;1;0]),S(A*[0;0;1])]';\nend\n\nfunction out = S(v)\n    out = [0,-v(3),v(2);\n "
-      "          v(3),0,-v(1);\n           -v(2),v(1),0];\nend\n\n\nfunction out = K(m,n)\n    out = zeros(m*n);\n    f"
-      "or I = 1:m*n\n        out(mod((I-1)*n+1,m*n)+floor(((I-1)*n+1)/(m*n)),I) = 1;\n    end\nend\n\n"
+      "    q1 = zeros(4,1);\n    q1 = quatmultiply(q',quatinv(q0'))';  % Definitely needed\n    %R1 = R*R0';\n%     dot"
+      "_V0 = kz*grad_bar_V0'*[v0;-R1*R0*e3*T/m+g*e3+b-dot_vd]+sat_atan(z)'*dot_z-b'*dot_z;\n%     dot_V0 = kz*grad_bar_"
+      "V0'*[v0;R1*mu+g*e3+b-dot_vd]+sat_atan(z)'*dot_z-b'*dot_z;\n%     dot_V0 = kz*grad_bar_V0'*[v0;u0]+kz*grad_bar_V0"
+      "(4:6)'*(R1-eye(3))*mu;\n    %compensation for underactuation\n    w1 = -(h*kz*kV0/k)*(2*q1(1)*S(mu)-2*S(mu)*S(q1"
+      "(2:4)))*[zeros(3),eye(3)]*grad_bar_V0-h*kq*q1(2:4);\n    %estimate of w0\n    hat_dot_v = -R*e3*T/m+g*e3+hat_b;\n"
+      "    hat_dot_mu = -sat_atan_dot(kp*p0+kv*v0).*(kp*v0+kv*(hat_dot_v-dot_vd))+ddot_vd-sat_atan_dot(z).*dot_z;\n    "
+      "hat_dot_r3 = S(r3)^2*hat_dot_mu/norm(mu);\n    hat_w0 = -0.5*R0'*Gamma(R0)'*Dr3_R0*hat_dot_r3;\n    \n    w_star"
+      " = hat_w0+R0'*w1;\n    \n%     dot_q1 = zeros(4,1);\n%     dot_q1 = 0.5*quatmultiply(q1',[0 (R0*(w-w0))'])';\n% "
+      "    dot_q = 0.5*quatmultiply(q',[0 w'])';\n    \n    %b estimator\n%     Dv0_r3 = -(S(r3)^2/norm(mu))*kv*diag(sa"
+      "t_atan_dot(u));\n%     Dv0_R0 = Dr3_R0*Dv0_r3;\n%     dot_hat_b = kb*k*h*Dv0_R0'*Gamma(R0)*q1(2:4)/2;\n    dot_h"
+      "at_b = [0;0;0];\n    \n\n    \n    \n        %estimate of w0-2\n    hat_dot_v2 = -R*e3*T/m+g*e3+hat_b2;\n    hat"
+      "_dot_mu2 = -sat_atan_dot(kp*p0+kv*v0).*(kp*v0+kv*(hat_dot_v2-dot_vd))+ddot_vd-sat_atan_dot(z).*dot_z;\n    hat_d"
+      "ot_r32 = S(r3)^2*hat_dot_mu2/norm(mu);\n    hat_w02 = -0.5*R0'*Gamma(R0)'*Dr3_R0*hat_dot_r32;\n    %tilde_b2 = h"
+      "at_b2-b;\n    %v\n    %dot_hat_dot_v = -R*S(w)*e3*T/m-R*e3*mu'*dot_mu/norm(mu)+dot_hat_b;\n    hat_dot_hat_dot_v"
+      "2 = -R*S(w)*e3*T/m-R*e3*mu'*hat_dot_mu2/norm(mu)+dot_hat_b;\n    %ddot_v = -R*S(w)*e3*T/m-R*e3*mu'*dot_mu/norm(m"
+      "u);\n    %u\n    %dot_u = kp*v0+kv*(dot_v-dot_vd);\n    hat_dot_u = kp*v0+kv*(hat_dot_v-dot_vd);\n    hat_dot_u2"
+      " = kp*v0+kv*(hat_dot_v2-dot_vd);\n    %ddot_u = kp*(dot_v-dot_vd)+kv*(ddot_v-ddot_vd);\n    %dot_hat_dot_u = kp*"
+      "(dot_v-dot_vd)+kv*(dot_hat_dot_v-ddot_vd);\n    hat_dot_hat_dot_u2 = kp*(hat_dot_v2-dot_vd)+kv*(hat_dot_hat_dot_"
+      "v2-ddot_vd);\n    %z\n    hess_bar_V0 = zeros(6);\n    for I=1:3\n        ei = zeros(3,1);\n        ei(I) = 1;\n"
+      "        hess_bar_V0 = hess_bar_V0 +...\n            kron([sat_atan(ei'*u) ei'*v0]*P,eye(6))*...\n            sat"
+      "_atan_ddot(ei'*u)*...\n            [kp*(ei*ei')*[kp*eye(3) kv*eye(3)];\n             kv*(ei*ei')*[kp*eye(3) kv*e"
+      "ye(3)];\n             zeros(6)]+sat_atan_dot(ei'*u)*...\n             [kp*eye(3);kv*eye(3)]*(ei*ei')*...\n      "
+      "       [kp*eye(3) kv*eye(3)]+...\n             [sat_atan_dot(ei'*u)*kp*ei,zeros(3,1);\n             sat_atan_dot"
+      "(ei'*u)*kv*ei,ei]*P*...\n             [sat_atan_dot(ei'*u)*ei'*[kp*eye(3) kv*eye(3)];\n             zeros(1,3),e"
+      "i'];\n    end\n    %ddot_z = kz*[zeros(3) eye(3)]*hess_bar_V0*[v0;dot_v-dot_vd];\n    hat_ddot_z2 = kz*[zeros(3)"
+      " eye(3)]*hess_bar_V0*[v0;hat_dot_v2-dot_vd];\n    %mu\n    hat_dot_mu = -sat_atan_dot(u).*(hat_dot_u)+ddot_vd-sa"
+      "t_atan_dot(z).*dot_z;\n    hat_dot_hat_dot_mu2 = -sat_atan_ddot(u).*(hat_dot_u).*(hat_dot_u2)+d3dot_vd-...\n    "
+      "    sat_atan_dot(u).*hat_dot_hat_dot_u2-sat_atan_ddot(z).*(dot_z.^2)-sat_atan_dot(z).*hat_ddot_z2;\n    %r3\n%  "
+      "   Dmu_r3 = S(r3)^2/norm(mu);\n%     D2mu_r3 = -norm(mu)^(-1)*(kron(S(r3)',eye(3))+kron(eye(3),S(r3)))*Gamma(eye"
+      "(3))*S(mu/norm(mu))^2/norm(mu)-...\n%         kron(eye(3),S(r3)^2)*vec(eye(3))*mu'/norm(mu)^3;\n    hat_dot_r3 ="
+      " S(r3)^2*hat_dot_mu/norm(mu);\n    hat_dot_hat_dot_r32 = -kron(hat_dot_mu'/norm(mu),eye(3))*(kron(S(r3)',eye(3))"
+      "+kron(eye(3),S(r3)))*Gamma(eye(3))*hat_dot_r32+...\n        S(r3)^2*(hat_dot_hat_dot_mu2/norm(mu)-hat_dot_mu*mu'"
+      "*hat_dot_mu2/norm(mu)^3);\n    %R0\n    Dr3_H1 = -(kron(K(3,3),eye(3))*kron(eye(3),vec(eye(3)))+...\n        kro"
+      "n(eye(3),kron(K(1,3),eye(3)))*kron(vec(eye(3)),eye(3)))*H2;\n    %Y  = S(gm/norm(gm))^2;\n    Dr3_Y = kron(Rd*e3"
+      ",eye(9))*(kron(eye(3),S(gm/norm(gm)))-kron(S(gm/norm(gm)),eye(3)))*Gamma(eye(3))*S(gm/norm(gm))^2*S(Rd*e3)/norm("
+      "gm);\n    H2 = S(gm/norm(gm))^2*S(Rd*e3)/norm(gm);\n    Dr3_H2 = kron(S(Rd*e3)'/norm(gm),eye(3))*(kron(eye(3),S("
+      "gm/norm(gm)))-kron(S(gm/norm(gm)),eye(3)))*Gamma(eye(3))*S(gm/norm(gm))^2*S(Rd*e3)/norm(gm)+...\n        kron(ey"
+      "e(3),S(gm/norm(gm))^2)*Gamma(eye(3))*Rd*e3*gm'*S(Rd*e3)/norm(gm)^3;\n    \n    H = H1*H2;\n    Dr3_H = kron(H2',"
+      "eye(9))*Dr3_H1+kron(eye(3),H1)*Dr3_H2;\n    \n    %X = (1-e3'*Rd'*r3)*H;\n    Dr3_X = -kron(H',eye(9))*vec(eye(9"
+      "))*e3'*Rd'+(1-e3'*Rd'*r3)*Dr3_H;\n\n    D2r3_R0 = kron(eye(3),kron(Rd',eye(3)))*(-Dr3_Y-Dr3_X);\n    \n    %w0\n"
+      "    hat_w0= -0.5*R0'*Gamma(R0)'*Dr3_R0*hat_dot_r3;\n    hat_dot_hat_w0 = S(hat_w0)*hat_w02-0.5*R0'*Gamma(reshape"
+      "(Dr3_R0*hat_dot_r3,[3 3]))'*Gamma(R0)*R0*hat_w02-0.5*R0'*Gamma(R0)'*(kron(hat_dot_r3',eye(9))*D2r3_R0*hat_dot_r3"
+      "2+Dr3_R0*hat_dot_hat_dot_r32);\n    \n    %hat_b\n%     Dv0_mu=-diag(sat_atan_dot(u)*kv);\n%     Dv0_R0 = Dr3_R0"
+      "*Dmu_r3*Dv0_mu;\n%     Lambda = -R0'*Gamma(R0)'*Dv0_R0;\n%     tilde_dot_hat_dot_mu = -(diag(sat_atan_ddot(u))*d"
+      "iag(hat_dot_u)*kv+diag(sat_atan_dot(u))*(kp*eye(3)-kv^2*R*e3*r3'*diag(sat_atan_dot(u)))+kz*diag(sat_atan_dot(z))"
+      "*[zeros(3),eye(3)]*hess_bar_V0*[zeros(3);eye(3)]);\n%     tilde_dot_hat_w0 = S(hat_w0)*(0.5*Lambda)-...\n%      "
+      "   0.5*R0'*Gamma(reshape(Dr3_R0*hat_dot_r3,[3 3]))'*Gamma(R0)*R0*(0.5*Lambda)-...\n%         0.5*R0'*Gamma(R0)'*"
+      "(kron(hat_dot_r3',eye(9))*D2r3_R0*Dmu_r3*kv*diag(-sat_atan_dot(u))+...\n%         Dr3_R0*(kron(hat_dot_mu',eye(3"
+      "))*D2mu_r3*(-diag(sat_atan_dot(u))*kv)+Dmu_r3*tilde_dot_hat_dot_mu));\n    hat_dot_w1 = -(h*kz*kV0*2/k)*(kron((["
+      "zeros(3),eye(3)]*grad_bar_V0)',eye(3))*...\n        (kron(S(mu),eye(3))*vec(eye(3))*0.5*q1(2:4)'*R0*(w-hat_w02)-"
+      "...\n        q1(1)*Gamma(eye(3))*hat_dot_mu2-kron(S(q1(2:4)),eye(3))*Gamma(eye(3))*hat_dot_mu2-...\n        -kro"
+      "n(eye(3),S(mu))*Gamma(eye(3))*0.5*(q1(1)*eye(3)+S(q1(2:4)))*R0*(w-hat_w02))+...\n        (q1(1)*S(mu)-S(mu)*S(q1"
+      "(2:4)))*[zeros(3),eye(3)]*hess_bar_V0*[v0;hat_dot_v2-dot_vd])-...\n        0.5*h*kq*(q1(1)*eye(3)+S(q1(2:4)))*R0"
+      "*(w-hat_w02);\n%     tilde_dot_w1 = -(h*kz*kV0*2/k)*(kron(([zeros(3),eye(3)]*grad_bar_V0)',eye(3))*...\n%       "
+      "  (kron(S(mu),eye(3))*vec(eye(3))*0.5*q1(2:4)'*R0*(-0.5*Lambda)-...\n%         q1(1)*Gamma(eye(3))*(-diag(sat_at"
+      "an_dot(u))*kv)-kron(S(q1(2:4)),eye(3))*Gamma(eye(3))*(-diag(sat_atan_dot(u))*kv)-...\n%         -kron(eye(3),S(m"
+      "u))*Gamma(eye(3))*0.5*(q1(1)*eye(3)+S(q1(2:4)))*R0*(-0.5*Lambda))+...\n%         (q1(1)*S(mu)-S(mu)*S(q1(2:4)))*"
+      "[zeros(3),eye(3)]*hess_bar_V0*[zeros(3);eye(3)])-...\n%         0.5*h*kq*(q1(1)*eye(3)+S(q1(2:4)))*R0*(-0.5*Lamb"
+      "da);\n    \n    \n\n    %w - angular velocity\n    hat_dot_w_star = hat_dot_hat_w0+R0'*hat_dot_w1+kron(w1',eye(3"
+      "))*Gamma(R0')*hat_w02;\n    u2 = hat_dot_w_star-kw*(w-w_star)-k*h*R0'*q1(2:4);\n    dot_w = u2;\n    \n    \n   "
+      " %b estimator\n    %dot_hat_b2 = -kb*(tilde_dot_hat_w0'*(w-w_star)+tilde_dot_w1'*R0*(w-w_star)+0.5*(kron(w1',eye"
+      "(3))*Gamma(R0')*Lambda)'*(w-w_star))\n    dot_hat_b2 = [0;0;0];\n    \n    %V2\n    V2 = 0;\n    dot_V2 = 0;\n  "
+      "  \n    %%% Unit conversion - input range - omega control\n    thrust = (T/0.00981 - 25.584) / 113.3;\n    ailer"
+      "on = w(1) / 3.9062;\n    elevator = w(2) / 3.9062;\n    yaw = w(3) / 3.7;\n\n    cmd = [thrust; aileron; elevato"
+      "r; yaw];\n    \n    dot_h = 0;\nend\n\nfunction out = sat_atan(var)\n    global satMax\n    out = var;\n    if i"
+      "sempty(satMax)\n        for I=1:numel(var)\n            out(I)=2*atan(var(I))/pi;\n        end\n    else\n      "
+      "  for I=1:numel(var)\n            out(I)=satMax*2*atan(var(I)/satMax)/pi;\n        end\n    end\nend\n\nfunction"
+      " out = sat_atan_dot(var)\n    global satMax\n    out = var;\n    if isempty(satMax)\n        for I=1:numel(var)\n"
+      "            out(I)=(2/pi)*(1+var(I)^2)^(-1);\n        end\n    else\n        for I=1:numel(var)\n            out"
+      "(I)=(2/pi)*(1+(var(I)/satMax)^2)^(-1);\n        end\n    end\nend\n        \nfunction out = sat_atan_ddot(var)\n"
+      "    global satMax\n    out = var;\n    if isempty(satMax)\n        for I=1:numel(var)\n            out(I)=-(2/pi"
+      ")*(1+var(I)^2)^(-2)*2*var(I);\n        end\n    else\n        for I=1:numel(var)\n            out(I)=-(2/pi)*(1+"
+      "(var(I)/satMax)^2)^(-2)*2*(var(I)/satMax^2);\n        end\n    end\nend\n\nfunction out = Gamma(A)\n    out = -["
+      "S(A*[1;0;0]),S(A*[0;1;0]),S(A*[0;0;1])]';\nend\n\nfunction out = S(v)\n    out = [0,-v(3),v(2);\n           v(3)"
+      ",0,-v(1);\n           -v(2),v(1),0];\nend\n\n\nfunction out = K(m,n)\n    out = zeros(m*n);\n    for I = 1:m*n\n"
+      "        out(mod((I-1)*n+1,m*n)+floor(((I-1)*n+1)/(m*n)),I) = 1;\n    end\nend\n\n"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
