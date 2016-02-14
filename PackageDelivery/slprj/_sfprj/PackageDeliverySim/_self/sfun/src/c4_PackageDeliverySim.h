@@ -22,7 +22,6 @@ typedef struct {
   uint8_T c4_is_active_c4_PackageDeliverySim;
   real_T *c4_num_delivered_address;
   int32_T c4_num_delivered_index;
-  real_T *c4_clock;
   real_T (*c4_trajectory)[21];
   real_T (*c4_origin)[3];
   real_T *c4_destinations;

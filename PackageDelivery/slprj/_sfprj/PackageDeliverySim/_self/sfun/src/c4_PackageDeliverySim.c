@@ -18,9 +18,9 @@
 
 /* Variable Definitions */
 static real_T _sfTime_;
-static const char * c4_debug_family_names[11] = { "dest", "num_dest_points",
+static const char * c4_debug_family_names[10] = { "dest", "num_dest_points",
   "waypoint1", "waypoint2", "origin", "destinations", "nargin", "nargout",
-  "clock", "altitude", "trajectory" };
+  "altitude", "trajectory" };
 
 /* Function Declarations */
 static void initialize_c4_PackageDeliverySim
@@ -200,20 +200,18 @@ static void sf_gateway_c4_PackageDeliverySim
 {
   real_T c4_hoistedGlobal;
   real_T c4_b_hoistedGlobal;
-  real_T c4_c_hoistedGlobal;
-  real_T c4_b_clock;
   int32_T c4_i2;
   real_T c4_b_origin[3];
   real_T c4_b_destinations;
   real_T c4_b_altitude;
-  uint32_T c4_debug_family_var_map[11];
+  uint32_T c4_debug_family_var_map[10];
   real_T c4_dest[3];
   real_T c4_num_dest_points;
   real_T c4_waypoint1[3];
   real_T c4_waypoint2[3];
   real_T c4_c_origin[3];
   real_T c4_c_destinations[9];
-  real_T c4_nargin = 4.0;
+  real_T c4_nargin = 3.0;
   real_T c4_nargout = 1.0;
   real_T c4_b_trajectory[21];
   int32_T c4_i3;
@@ -245,20 +243,17 @@ static void sf_gateway_c4_PackageDeliverySim
   _SFD_SYMBOL_SCOPE_PUSH(0U, 0U);
   _sfTime_ = sf_get_time(chartInstance->S);
   _SFD_CC_CALL(CHART_ENTER_SFUNCTION_TAG, 3U, chartInstance->c4_sfEvent);
-  _SFD_DATA_RANGE_CHECK(*chartInstance->c4_clock, 0U);
   chartInstance->c4_sfEvent = CALL_EVENT;
   _SFD_CC_CALL(CHART_ENTER_DURING_FUNCTION_TAG, 3U, chartInstance->c4_sfEvent);
-  c4_hoistedGlobal = *chartInstance->c4_clock;
-  c4_b_hoistedGlobal = *chartInstance->c4_destinations;
-  c4_c_hoistedGlobal = *chartInstance->c4_altitude;
-  c4_b_clock = c4_hoistedGlobal;
+  c4_hoistedGlobal = *chartInstance->c4_destinations;
+  c4_b_hoistedGlobal = *chartInstance->c4_altitude;
   for (c4_i2 = 0; c4_i2 < 3; c4_i2++) {
     c4_b_origin[c4_i2] = (*chartInstance->c4_origin)[c4_i2];
   }
 
-  c4_b_destinations = c4_b_hoistedGlobal;
-  c4_b_altitude = c4_c_hoistedGlobal;
-  _SFD_SYMBOL_SCOPE_PUSH_EML(0U, 11U, 13U, c4_debug_family_names,
+  c4_b_destinations = c4_hoistedGlobal;
+  c4_b_altitude = c4_b_hoistedGlobal;
+  _SFD_SYMBOL_SCOPE_PUSH_EML(0U, 10U, 12U, c4_debug_family_names,
     c4_debug_family_var_map);
   _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(c4_dest, 0U, c4_e_sf_marshallOut,
     c4_d_sf_marshallIn);
@@ -276,11 +271,10 @@ static void sf_gateway_c4_PackageDeliverySim
     c4_b_sf_marshallIn);
   _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c4_nargout, 7U, c4_b_sf_marshallOut,
     c4_b_sf_marshallIn);
-  _SFD_SYMBOL_SCOPE_ADD_EML(&c4_b_clock, 8U, c4_b_sf_marshallOut);
   _SFD_SYMBOL_SCOPE_ADD_EML(c4_b_origin, 4U, c4_c_sf_marshallOut);
   _SFD_SYMBOL_SCOPE_ADD_EML(&c4_b_destinations, 5U, c4_b_sf_marshallOut);
-  _SFD_SYMBOL_SCOPE_ADD_EML(&c4_b_altitude, 9U, c4_b_sf_marshallOut);
-  _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(c4_b_trajectory, 10U, c4_sf_marshallOut,
+  _SFD_SYMBOL_SCOPE_ADD_EML(&c4_b_altitude, 8U, c4_b_sf_marshallOut);
+  _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(c4_b_trajectory, 9U, c4_sf_marshallOut,
     c4_sf_marshallIn);
   CV_EML_FCN(0, 0);
   _SFD_EML_CALL(0U, chartInstance->c4_sfEvent, 4);
@@ -389,15 +383,15 @@ static void sf_gateway_c4_PackageDeliverySim
   _SFD_CHECK_FOR_STATE_INCONSISTENCY(_PackageDeliverySimMachineNumber_,
     chartInstance->chartNumber, chartInstance->instanceNumber);
   for (c4_i25 = 0; c4_i25 < 21; c4_i25++) {
-    _SFD_DATA_RANGE_CHECK((*chartInstance->c4_trajectory)[c4_i25], 1U);
+    _SFD_DATA_RANGE_CHECK((*chartInstance->c4_trajectory)[c4_i25], 0U);
   }
 
   for (c4_i26 = 0; c4_i26 < 3; c4_i26++) {
-    _SFD_DATA_RANGE_CHECK((*chartInstance->c4_origin)[c4_i26], 2U);
+    _SFD_DATA_RANGE_CHECK((*chartInstance->c4_origin)[c4_i26], 1U);
   }
 
-  _SFD_DATA_RANGE_CHECK(*chartInstance->c4_destinations, 3U);
-  _SFD_DATA_RANGE_CHECK(*chartInstance->c4_altitude, 4U);
+  _SFD_DATA_RANGE_CHECK(*chartInstance->c4_destinations, 2U);
+  _SFD_DATA_RANGE_CHECK(*chartInstance->c4_altitude, 3U);
 }
 
 static void mdl_start_c4_PackageDeliverySim
@@ -1085,16 +1079,14 @@ static void init_dsm_address_info(SFc4_PackageDeliverySimInstanceStruct
 static void init_simulink_io_address(SFc4_PackageDeliverySimInstanceStruct
   *chartInstance)
 {
-  chartInstance->c4_clock = (real_T *)ssGetInputPortSignal_wrapper
-    (chartInstance->S, 0);
   chartInstance->c4_trajectory = (real_T (*)[21])ssGetOutputPortSignal_wrapper
     (chartInstance->S, 1);
   chartInstance->c4_origin = (real_T (*)[3])ssGetInputPortSignal_wrapper
-    (chartInstance->S, 1);
+    (chartInstance->S, 0);
   chartInstance->c4_destinations = (real_T *)ssGetInputPortSignal_wrapper
-    (chartInstance->S, 2);
+    (chartInstance->S, 1);
   chartInstance->c4_altitude = (real_T *)ssGetInputPortSignal_wrapper
-    (chartInstance->S, 3);
+    (chartInstance->S, 2);
 }
 
 /* SFunction Glue Code */
@@ -1120,10 +1112,10 @@ extern void utFree(void*);
 
 void sf_c4_PackageDeliverySim_get_check_sum(mxArray *plhs[])
 {
-  ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(2273422593U);
-  ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(1464290364U);
-  ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(3531192762U);
-  ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(2120142523U);
+  ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(1817827172U);
+  ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(1970282714U);
+  ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(1799832751U);
+  ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(352235992U);
 }
 
 mxArray* sf_c4_PackageDeliverySim_get_post_codegen_info(void);
@@ -1137,19 +1129,19 @@ mxArray *sf_c4_PackageDeliverySim_get_autoinheritance_info(void)
     autoinheritanceFields);
 
   {
-    mxArray *mxChecksum = mxCreateString("O1exH3vWfhrl65QAWI4uFB");
+    mxArray *mxChecksum = mxCreateString("mbytYrrX0lBSQbhynMQHiG");
     mxSetField(mxAutoinheritanceInfo,0,"checksum",mxChecksum);
   }
 
   {
     const char *dataFields[] = { "size", "type", "complexity" };
 
-    mxArray *mxData = mxCreateStructMatrix(1,4,3,dataFields);
+    mxArray *mxData = mxCreateStructMatrix(1,3,3,dataFields);
 
     {
       mxArray *mxSize = mxCreateDoubleMatrix(1,2,mxREAL);
       double *pr = mxGetPr(mxSize);
-      pr[0] = (double)(1);
+      pr[0] = (double)(3);
       pr[1] = (double)(1);
       mxSetField(mxData,0,"size",mxSize);
     }
@@ -1168,7 +1160,7 @@ mxArray *sf_c4_PackageDeliverySim_get_autoinheritance_info(void)
     {
       mxArray *mxSize = mxCreateDoubleMatrix(1,2,mxREAL);
       double *pr = mxGetPr(mxSize);
-      pr[0] = (double)(3);
+      pr[0] = (double)(1);
       pr[1] = (double)(1);
       mxSetField(mxData,1,"size",mxSize);
     }
@@ -1202,25 +1194,6 @@ mxArray *sf_c4_PackageDeliverySim_get_autoinheritance_info(void)
     }
 
     mxSetField(mxData,2,"complexity",mxCreateDoubleScalar(0));
-
-    {
-      mxArray *mxSize = mxCreateDoubleMatrix(1,2,mxREAL);
-      double *pr = mxGetPr(mxSize);
-      pr[0] = (double)(1);
-      pr[1] = (double)(1);
-      mxSetField(mxData,3,"size",mxSize);
-    }
-
-    {
-      const char *typeFields[] = { "base", "fixpt" };
-
-      mxArray *mxType = mxCreateStructMatrix(1,1,2,typeFields);
-      mxSetField(mxType,0,"base",mxCreateDoubleScalar(10));
-      mxSetField(mxType,0,"fixpt",mxCreateDoubleMatrix(0,0,mxREAL));
-      mxSetField(mxData,3,"type",mxType);
-    }
-
-    mxSetField(mxData,3,"complexity",mxCreateDoubleScalar(0));
     mxSetField(mxAutoinheritanceInfo,0,"inputs",mxData);
   }
 
@@ -1355,7 +1328,7 @@ static void chart_debug_initialization(SimStruct *S, unsigned int
            1,
            1,
            0,
-           6,
+           5,
            0,
            0,
            0,
@@ -1379,12 +1352,11 @@ static void chart_debug_initialization(SimStruct *S, unsigned int
             0,
             0,
             0);
-          _SFD_SET_DATA_PROPS(0,1,1,0,"clock");
-          _SFD_SET_DATA_PROPS(1,2,0,1,"trajectory");
-          _SFD_SET_DATA_PROPS(2,1,1,0,"origin");
-          _SFD_SET_DATA_PROPS(3,1,1,0,"destinations");
-          _SFD_SET_DATA_PROPS(4,1,1,0,"altitude");
-          _SFD_SET_DATA_PROPS(5,11,0,0,"num_delivered");
+          _SFD_SET_DATA_PROPS(0,2,0,1,"trajectory");
+          _SFD_SET_DATA_PROPS(1,1,1,0,"origin");
+          _SFD_SET_DATA_PROPS(2,1,1,0,"destinations");
+          _SFD_SET_DATA_PROPS(3,1,1,0,"altitude");
+          _SFD_SET_DATA_PROPS(4,11,0,0,"num_delivered");
           _SFD_STATE_INFO(0,0,2);
           _SFD_CH_SUBSTATE_COUNT(0);
           _SFD_CH_SUBSTATE_DECOMP(0);
@@ -1400,17 +1372,15 @@ static void chart_debug_initialization(SimStruct *S, unsigned int
 
         /* Initialization of MATLAB Function Model Coverage */
         _SFD_CV_INIT_EML(0,1,1,1,0,0,0,0,0,0,0);
-        _SFD_CV_INIT_EML_FCN(0,0,"eML_blk_kernel",0,-1,584);
-        _SFD_CV_INIT_EML_IF(0,1,0,317,352,-1,405);
-        _SFD_CV_INIT_EML_RELATIONAL(0,1,0,320,351,-1,4);
-        _SFD_SET_DATA_COMPILED_PROPS(0,SF_DOUBLE,0,NULL,0,0,0,0.0,1.0,0,0,
-          (MexFcnForType)c4_b_sf_marshallOut,(MexInFcnForType)NULL);
+        _SFD_CV_INIT_EML_FCN(0,0,"eML_blk_kernel",0,-1,578);
+        _SFD_CV_INIT_EML_IF(0,1,0,311,346,-1,399);
+        _SFD_CV_INIT_EML_RELATIONAL(0,1,0,314,345,-1,4);
 
         {
           unsigned int dimVector[2];
           dimVector[0]= 7;
           dimVector[1]= 3;
-          _SFD_SET_DATA_COMPILED_PROPS(1,SF_DOUBLE,2,&(dimVector[0]),0,0,0,0.0,
+          _SFD_SET_DATA_COMPILED_PROPS(0,SF_DOUBLE,2,&(dimVector[0]),0,0,0,0.0,
             1.0,0,0,(MexFcnForType)c4_sf_marshallOut,(MexInFcnForType)
             c4_sf_marshallIn);
         }
@@ -1418,22 +1388,21 @@ static void chart_debug_initialization(SimStruct *S, unsigned int
         {
           unsigned int dimVector[1];
           dimVector[0]= 3;
-          _SFD_SET_DATA_COMPILED_PROPS(2,SF_DOUBLE,1,&(dimVector[0]),0,0,0,0.0,
+          _SFD_SET_DATA_COMPILED_PROPS(1,SF_DOUBLE,1,&(dimVector[0]),0,0,0,0.0,
             1.0,0,0,(MexFcnForType)c4_c_sf_marshallOut,(MexInFcnForType)NULL);
         }
 
+        _SFD_SET_DATA_COMPILED_PROPS(2,SF_DOUBLE,0,NULL,0,0,0,0.0,1.0,0,0,
+          (MexFcnForType)c4_b_sf_marshallOut,(MexInFcnForType)NULL);
         _SFD_SET_DATA_COMPILED_PROPS(3,SF_DOUBLE,0,NULL,0,0,0,0.0,1.0,0,0,
           (MexFcnForType)c4_b_sf_marshallOut,(MexInFcnForType)NULL);
         _SFD_SET_DATA_COMPILED_PROPS(4,SF_DOUBLE,0,NULL,0,0,0,0.0,1.0,0,0,
-          (MexFcnForType)c4_b_sf_marshallOut,(MexInFcnForType)NULL);
-        _SFD_SET_DATA_COMPILED_PROPS(5,SF_DOUBLE,0,NULL,0,0,0,0.0,1.0,0,0,
           (MexFcnForType)c4_b_sf_marshallOut,(MexInFcnForType)c4_b_sf_marshallIn);
-        _SFD_SET_DATA_VALUE_PTR(0U, chartInstance->c4_clock);
-        _SFD_SET_DATA_VALUE_PTR(1U, *chartInstance->c4_trajectory);
-        _SFD_SET_DATA_VALUE_PTR(2U, *chartInstance->c4_origin);
-        _SFD_SET_DATA_VALUE_PTR(3U, chartInstance->c4_destinations);
-        _SFD_SET_DATA_VALUE_PTR(4U, chartInstance->c4_altitude);
-        _SFD_SET_DATA_VALUE_PTR(5U, chartInstance->c4_num_delivered_address);
+        _SFD_SET_DATA_VALUE_PTR(0U, *chartInstance->c4_trajectory);
+        _SFD_SET_DATA_VALUE_PTR(1U, *chartInstance->c4_origin);
+        _SFD_SET_DATA_VALUE_PTR(2U, chartInstance->c4_destinations);
+        _SFD_SET_DATA_VALUE_PTR(3U, chartInstance->c4_altitude);
+        _SFD_SET_DATA_VALUE_PTR(4U, chartInstance->c4_num_delivered_address);
       }
     } else {
       sf_debug_reset_current_state_configuration(sfGlobalDebugInstanceStruct,
@@ -1445,7 +1414,7 @@ static void chart_debug_initialization(SimStruct *S, unsigned int
 
 static const char* sf_get_instance_specialization(void)
 {
-  return "xZpJAN7GQStUShYDiimT5F";
+  return "GEMjcO4joZO5zJDrbntEMH";
 }
 
 static void sf_opaque_initialize_c4_PackageDeliverySim(void *chartInstanceVar)
@@ -1558,9 +1527,8 @@ static void mdlSetWorkWidths_c4_PackageDeliverySim(SimStruct *S)
       ssSetInputPortOptimOpts(S, 0, SS_REUSABLE_AND_LOCAL);
       ssSetInputPortOptimOpts(S, 1, SS_REUSABLE_AND_LOCAL);
       ssSetInputPortOptimOpts(S, 2, SS_REUSABLE_AND_LOCAL);
-      ssSetInputPortOptimOpts(S, 3, SS_REUSABLE_AND_LOCAL);
       sf_mark_chart_expressionable_inputs(S,sf_get_instance_specialization(),
-        infoStruct,4,4);
+        infoStruct,4,3);
       sf_mark_chart_reusable_outputs(S,sf_get_instance_specialization(),
         infoStruct,4,1);
     }
@@ -1574,7 +1542,7 @@ static void mdlSetWorkWidths_c4_PackageDeliverySim(SimStruct *S)
 
     {
       unsigned int inPortIdx;
-      for (inPortIdx=0; inPortIdx < 4; ++inPortIdx) {
+      for (inPortIdx=0; inPortIdx < 3; ++inPortIdx) {
         ssSetInputPortOptimizeInIR(S, inPortIdx, 1U);
       }
     }
@@ -1585,10 +1553,10 @@ static void mdlSetWorkWidths_c4_PackageDeliverySim(SimStruct *S)
   }
 
   ssSetOptions(S,ssGetOptions(S)|SS_OPTION_WORKS_WITH_CODE_REUSE);
-  ssSetChecksum0(S,(760303915U));
-  ssSetChecksum1(S,(2389694199U));
-  ssSetChecksum2(S,(1616275048U));
-  ssSetChecksum3(S,(4263246124U));
+  ssSetChecksum0(S,(3907416089U));
+  ssSetChecksum1(S,(1028086625U));
+  ssSetChecksum2(S,(1299081445U));
+  ssSetChecksum3(S,(1437304420U));
   ssSetmdlDerivatives(S, NULL);
   ssSetExplicitFCSSCtrl(S,1);
   ssSupportsMultipleExecInstances(S,0);

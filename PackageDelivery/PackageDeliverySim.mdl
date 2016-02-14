@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.2388"
+    ComputedModelVersion    "1.2401"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -63,10 +63,10 @@ Model {
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
 	ViewObjType		"SimulinkSubsys"
-	LoadSaveID		"988"
+	LoadSaveID		"828"
 	Extents			[1886.0, 922.0]
-	ZoomFactor		[1.75]
-	Offset			[224.452380952381, 114.75476190476181]
+	ZoomFactor		[1.0]
+	Offset			[0.0, 0.0]
       }
     }
   }
@@ -76,9 +76,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "dlavell"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat Feb 13 15:35:56 2016"
-  RTWModifiedTimeStamp	  377278552
-  ModelVersionFormat	  "1.%<AutoIncrement:2388>"
+  LastModifiedDate	  "Sat Feb 13 18:12:54 2016"
+  RTWModifiedTimeStamp	  377287859
+  ModelVersionFormat	  "1.%<AutoIncrement:2401>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -3304,11 +3304,6 @@ Model {
   }
   BlockParameterDefaults {
     Block {
-      BlockType		      Clock
-      DisplayTime	      off
-      Decimation	      "10"
-    }
-    Block {
       BlockType		      Constant
       Value		      "1"
       VectorParams1D	      on
@@ -3609,8 +3604,8 @@ Model {
       RequestExecContextInheritance off
       System {
 	Name			"Controlador Casau"
-	Location		[-1928, 0, 8, 1096]
-	Open			off
+	Location		[-1928, -8, 8, 1088]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -3725,7 +3720,7 @@ Model {
 	  }
 	  System {
 	    Name		    "Integrator System"
-	    Location		    [-1928, 0, 8, 1096]
+	    Location		    [-1928, -8, 8, 1088]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -3784,7 +3779,7 @@ Model {
 	      RequestExecContextInheritance off
 	      System {
 		Name			"CT dynamics"
-		Location		[423, 185, 734, 668]
+		Location		[-1928, -8, 8, 1088]
 		Open			off
 		ModelBrowserVisibility	off
 		ModelBrowserWidth	200
@@ -3935,7 +3930,7 @@ Model {
 	      RequestExecContextInheritance off
 	      System {
 		Name			"Jump logic"
-		Location		[469, 117, 1181, 729]
+		Location		[-1928, -8, 8, 1088]
 		Open			off
 		ModelBrowserVisibility	off
 		ModelBrowserWidth	200
@@ -4223,7 +4218,7 @@ Model {
 	      RequestExecContextInheritance off
 	      System {
 		Name			"Stop logic"
-		Location		[-1928, 0, 8, 1096]
+		Location		[-1928, -8, 8, 1088]
 		Open			off
 		ModelBrowserVisibility	off
 		ModelBrowserWidth	200
@@ -4420,7 +4415,7 @@ Model {
 	      RequestExecContextInheritance off
 	      System {
 		Name			"Update logic"
-		Location		[697, 44, 1138, 583]
+		Location		[-1928, -8, 8, 1088]
 		Open			off
 		ModelBrowserVisibility	off
 		ModelBrowserWidth	200
@@ -6552,7 +6547,7 @@ Model {
       System {
 	Name			"Trajectory Genereator"
 	Location		[-1928, -8, 8, 1088]
-	Open			on
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -6564,13 +6559,6 @@ Model {
 	TiledPageScale		1
 	ShowPageBoundaries	off
 	ZoomFactor		"175"
-	Block {
-	  BlockType		  Clock
-	  Name			  "Clock"
-	  SID			  "946"
-	  Position		  [665, 245, 685, 265]
-	  ZOrder		  66
-	}
 	Block {
 	  BlockType		  Constant
 	  Name			  "Connection to Python for elevation"
@@ -6815,7 +6803,7 @@ Model {
 	  Name			  "Trajectory Generator"
 	  SID			  "961"
 	  Ports			  [3, 1]
-	  Position		  [795, 268, 1040, 442]
+	  Position		  [815, 305, 1040, 445]
 	  ZOrder		  67
 	  LibraryVersion	  "1.32"
 	  ErrorFcn		  "Stateflow.Translate.translate"
@@ -6972,7 +6960,7 @@ Model {
 	  BlockType		  Outport
 	  Name			  "trajectory"
 	  SID			  "1003"
-	  Position		  [1065, 348, 1095, 362]
+	  Position		  [1065, 368, 1095, 382]
 	  ZOrder		  76
 	  IconDisplay		  "Port number"
 	}
@@ -6980,20 +6968,15 @@ Model {
 	  ZOrder		  8
 	  SrcBlock		  "Warehouse Locations"
 	  SrcPort		  1
+	  Points		  [164, 0; 0, 30]
 	  DstBlock		  "Trajectory Generator"
 	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  9
-	  SrcBlock		  "Clock"
-	  SrcPort		  1
-	  Points		  [58, 0; 0, 30; 42, 0]
 	}
 	Line {
 	  ZOrder		  10
 	  SrcBlock		  "Connection to Python for elevation"
 	  SrcPort		  1
-	  Points		  [158, 0; 0, -100]
+	  Points		  [158, 0; 0, -90]
 	  DstBlock		  "Trajectory Generator"
 	  DstPort		  3
 	}
@@ -7001,7 +6984,6 @@ Model {
 	  ZOrder		  11
 	  SrcBlock		  "MATLAB Function"
 	  SrcPort		  1
-	  Points		  [85, 0]
 	  DstBlock		  "Trajectory Generator"
 	  DstPort		  2
 	}
@@ -7048,6 +7030,7 @@ Model {
 	  ZOrder		  18
 	  SrcBlock		  "Trajectory Generator"
 	  SrcPort		  1
+	  Points		  [5, 0]
 	  DstBlock		  "trajectory"
 	  DstPort		  1
 	}
@@ -8130,109 +8113,82 @@ Stateflow {
       "i(I) = 1;\n%         s = linspace(0,abs(ei'*z),1000)';\n%         V0 = V0+trapz(s,sat_atan(s));\n%         s = l"
       "inspace(0,abs(ei'*b),1000)';\n%         V0 = V0+trapz(s,inv_sat_atan(s));\n%     end\n%     V0 = V0+kz*bar_V0-b'"
       "*z;\n%     dot_V0 = kz*grad_bar_V0'*[v0;dot_v-dot_vd]+sat_atan(z)'*dot_z-b'*dot_z;\n    \n    %quaternion error\n"
-      "    q1 = zeros(4,1);\n    q1 = quatmultiply(q',quatinv(q0'))';\n    %R1 = R*R0';\n%     dot_V0 = kz*grad_bar_V0'"
-      "*[v0;-R1*R0*e3*T/m+g*e3+b-dot_vd]+sat_atan(z)'*dot_z-b'*dot_z;\n%     dot_V0 = kz*grad_bar_V0'*[v0;R1*mu+g*e3+b-"
-      "dot_vd]+sat_atan(z)'*dot_z-b'*dot_z;\n%     dot_V0 = kz*grad_bar_V0'*[v0;u0]+kz*grad_bar_V0(4:6)'*(R1-eye(3))*mu"
-      ";\n    %compensation for underactuation\n    w1 = -(h*kz*kV0/k)*(2*q1(1)*S(mu)-2*S(mu)*S(q1(2:4)))*[zeros(3),eye"
-      "(3)]*grad_bar_V0-h*kq*q1(2:4);\n    %estimate of w0\n    hat_dot_v = -R*e3*T/m+g*e3+hat_b;\n    hat_dot_mu = -sa"
-      "t_atan_dot(kp*p0+kv*v0).*(kp*v0+kv*(hat_dot_v-dot_vd))+ddot_vd-sat_atan_dot(z).*dot_z;\n    hat_dot_r3 = S(r3)^2"
-      "*hat_dot_mu/norm(mu);\n    hat_w0 = -0.5*R0'*Gamma(R0)'*Dr3_R0*hat_dot_r3;\n    \n    w_star = hat_w0+R0'*w1;\n "
-      "   \n%     dot_q1 = zeros(4,1);\n%     dot_q1 = 0.5*quatmultiply(q1',[0 (R0*(w-w0))'])';\n%     dot_q = 0.5*quat"
-      "multiply(q',[0 w'])';\n    \n    %b estimator\n    Dv0_r3 = -(S(r3)^2/norm(mu))*kv*diag(sat_atan_dot(u));\n    D"
-      "v0_R0 = Dr3_R0*Dv0_r3;\n    dot_hat_b = kb*k*h*Dv0_R0'*Gamma(R0)*q1(2:4)/2;\n    \n    %Lyapunov function V1\n% "
-      "    tilde_b = hat_b-b;\n%     V1 = kV0*V0*0+2*k*(1-h*q1(1))+0.5*norm(tilde_b)^2/kb*0;\n%     dot_V1 = kV0*kz*gra"
-      "d_bar_V0'*[v0;u0]*0+kV0*kz*grad_bar_V0(4:6)'*(R1-eye(3))*mu*0+...\n%         +k*h*q1(2:4)'*R0*(w-w0)+tilde_b'*do"
-      "t_hat_b/kb*0;\n%     dot_V1 = kV0*kz*grad_bar_V0'*[v0;u0]+kV0*kz*grad_bar_V0(4:6)'*(R1-eye(3))*mu+...\n%        "
-      " k*h*q1(2:4)'*R0*(w-w0)+tilde_b'*dot_hat_b/kb;\n%     dot_V1 = kV0*kz*grad_bar_V0'*[v0;u0]+kV0*kz*grad_bar_V0(4:"
-      "6)'*(2*q1(1)*S(q1(2:4))+2*S(q1(2:4))^2)*mu+...\n%         k*h*q1(2:4)'*R0*(w-w0)+tilde_b'*dot_hat_b/kb;\n%     d"
-      "ot_V1 = kV0*kz*grad_bar_V0'*[v0;u0]+(kz*kV0)*q1(2:4)'*(2*q1(1)*S(mu)-2*S(mu)*S(q1(2:4)))*[zeros(3),eye(3)]*grad_"
-      "bar_V0+...\n%         k*h*q1(2:4)'*R0*(w-w0)+tilde_b'*dot_hat_b/kb;\n%     dot_V1 = kV0*kz*grad_bar_V0'*[v0;u0]+"
-      "...\n%         k*h*q1(2:4)'*R0*(hat_w0-w0)+tilde_b'*dot_hat_b/kb-k*kq*q1(2:4)'*q1(2:4)+k*h*q1(2:4)'*R0*(w-w_star"
-      ");\n%     dot_V1 = kV0*kz*grad_bar_V0'*[v0;u0]-k*kq*q1(2:4)'*q1(2:4)+k*h*q1(2:4)'*R0*(w-w_star);\n    %%%%%%%%%%"
-      "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n%     V1 = 0;\n%     dot_V1 = 0;\n    %%%%%%%%%%%"
-      "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n    \n    \n        %estimate of w0-2\n    hat_dot"
-      "_v2 = -R*e3*T/m+g*e3+hat_b2;\n    hat_dot_mu2 = -sat_atan_dot(kp*p0+kv*v0).*(kp*v0+kv*(hat_dot_v2-dot_vd))+ddot_"
-      "vd-sat_atan_dot(z).*dot_z;\n    hat_dot_r32 = S(r3)^2*hat_dot_mu2/norm(mu);\n    hat_w02 = -0.5*R0'*Gamma(R0)'*D"
-      "r3_R0*hat_dot_r32;\n    %tilde_b2 = hat_b2-b;\n    %v\n    %dot_hat_dot_v = -R*S(w)*e3*T/m-R*e3*mu'*dot_mu/norm("
-      "mu)+dot_hat_b;\n    hat_dot_hat_dot_v2 = -R*S(w)*e3*T/m-R*e3*mu'*hat_dot_mu2/norm(mu)+dot_hat_b;\n    %ddot_v = "
-      "-R*S(w)*e3*T/m-R*e3*mu'*dot_mu/norm(mu);\n    %u\n    %dot_u = kp*v0+kv*(dot_v-dot_vd);\n    hat_dot_u = kp*v0+k"
-      "v*(hat_dot_v-dot_vd);\n    hat_dot_u2 = kp*v0+kv*(hat_dot_v2-dot_vd);\n    %ddot_u = kp*(dot_v-dot_vd)+kv*(ddot_"
-      "v-ddot_vd);\n    %dot_hat_dot_u = kp*(dot_v-dot_vd)+kv*(dot_hat_dot_v-ddot_vd);\n    hat_dot_hat_dot_u2 = kp*(ha"
-      "t_dot_v2-dot_vd)+kv*(hat_dot_hat_dot_v2-ddot_vd);\n    %z\n    hess_bar_V0 = zeros(6);\n    for I=1:3\n        e"
-      "i = zeros(3,1);\n        ei(I) = 1;\n        hess_bar_V0 = hess_bar_V0 +...\n            kron([sat_atan(ei'*u) e"
-      "i'*v0]*P,eye(6))*...\n            sat_atan_ddot(ei'*u)*...\n            [kp*(ei*ei')*[kp*eye(3) kv*eye(3)];\n   "
-      "          kv*(ei*ei')*[kp*eye(3) kv*eye(3)];\n             zeros(6)]+sat_atan_dot(ei'*u)*...\n             [kp*e"
-      "ye(3);kv*eye(3)]*(ei*ei')*...\n             [kp*eye(3) kv*eye(3)]+...\n             [sat_atan_dot(ei'*u)*kp*ei,z"
-      "eros(3,1);\n             sat_atan_dot(ei'*u)*kv*ei,ei]*P*...\n             [sat_atan_dot(ei'*u)*ei'*[kp*eye(3) k"
-      "v*eye(3)];\n             zeros(1,3),ei'];\n    end\n    %ddot_z = kz*[zeros(3) eye(3)]*hess_bar_V0*[v0;dot_v-dot"
-      "_vd];\n    hat_ddot_z2 = kz*[zeros(3) eye(3)]*hess_bar_V0*[v0;hat_dot_v2-dot_vd];\n    %mu\n    hat_dot_mu = -sa"
-      "t_atan_dot(u).*(hat_dot_u)+ddot_vd-sat_atan_dot(z).*dot_z;\n    %dot_hat_dot_mu = -sat_atan_ddot(u).*dot_u.*hat_"
-      "dot_u+d3dot_vd-...\n    %    sat_atan_dot(u).*dot_hat_dot_u-sat_atan_ddot(z).*(dot_z.^2)-sat_atan_dot(z).*ddot_z"
-      ";\n    hat_dot_hat_dot_mu2 = -sat_atan_ddot(u).*(hat_dot_u).*(hat_dot_u2)+d3dot_vd-...\n        sat_atan_dot(u)."
-      "*hat_dot_hat_dot_u2-sat_atan_ddot(z).*(dot_z.^2)-sat_atan_dot(z).*hat_ddot_z2;\n%     dot_mu = -sat_atan_dot(u)."
-      "*dot_u+ddot_vd-sat_atan_dot(z).*dot_z;\n%     ddot_mu = -sat_atan_ddot(u).*(dot_u.^2)-sat_atan_dot(u).*ddot_u+d3"
-      "dot_vd-...\n%         sat_atan_ddot(z).*dot_z.^2-sat_atan_dot(z).*ddot_z;\n    %r3\n    Dmu_r3 = S(r3)^2/norm(mu"
-      ");\n    D2mu_r3 = -norm(mu)^(-1)*(kron(S(r3)',eye(3))+kron(eye(3),S(r3)))*Gamma(eye(3))*S(mu/norm(mu))^2/norm(mu"
-      ")-...\n        kron(eye(3),S(r3)^2)*vec(eye(3))*mu'/norm(mu)^3;\n    %ddot_r3  = kron(dot_mu',eye(3))*D2mu_r3*do"
-      "t_mu+Dmu_r3*ddot_mu;\n    hat_dot_r3 = S(r3)^2*hat_dot_mu/norm(mu);\n    %dot_hat_dot_r3 = -kron(hat_dot_mu'/nor"
-      "m(mu),eye(3))*(kron(S(r3)',eye(3))+kron(eye(3),S(r3)))*Gamma(eye(3))*dot_r3+...\n    %    S(r3)^2*(dot_hat_dot_m"
-      "u/norm(mu)-hat_dot_mu*mu'*dot_mu/norm(mu)^3);\n    %dot_hat_dot_r3 = kron(hat_dot_mu',eye(3))*D2mu_r3*dot_mu+Dmu"
-      "_r3*dot_hat_dot_mu;\n    hat_dot_hat_dot_r32 = -kron(hat_dot_mu'/norm(mu),eye(3))*(kron(S(r3)',eye(3))+kron(eye("
-      "3),S(r3)))*Gamma(eye(3))*hat_dot_r32+...\n        S(r3)^2*(hat_dot_hat_dot_mu2/norm(mu)-hat_dot_mu*mu'*hat_dot_m"
-      "u2/norm(mu)^3);\n    %R0\n    Dr3_H1 = -(kron(K(3,3),eye(3))*kron(eye(3),vec(eye(3)))+...\n        kron(eye(3),k"
-      "ron(K(1,3),eye(3)))*kron(vec(eye(3)),eye(3)))*H2;\n    %Y  = S(gm/norm(gm))^2;\n    Dr3_Y = kron(Rd*e3,eye(9))*("
-      "kron(eye(3),S(gm/norm(gm)))-kron(S(gm/norm(gm)),eye(3)))*Gamma(eye(3))*S(gm/norm(gm))^2*S(Rd*e3)/norm(gm);\n    "
-      "H2 = S(gm/norm(gm))^2*S(Rd*e3)/norm(gm);\n    Dr3_H2 = kron(S(Rd*e3)'/norm(gm),eye(3))*(kron(eye(3),S(gm/norm(gm"
-      ")))-kron(S(gm/norm(gm)),eye(3)))*Gamma(eye(3))*S(gm/norm(gm))^2*S(Rd*e3)/norm(gm)+...\n        kron(eye(3),S(gm/"
-      "norm(gm))^2)*Gamma(eye(3))*Rd*e3*gm'*S(Rd*e3)/norm(gm)^3;\n    \n    H = H1*H2;\n    Dr3_H = kron(H2',eye(9))*Dr"
-      "3_H1+kron(eye(3),H1)*Dr3_H2;\n    \n    %X = (1-e3'*Rd'*r3)*H;\n    Dr3_X = -kron(H',eye(9))*vec(eye(9))*e3'*Rd'"
-      "+(1-e3'*Rd'*r3)*Dr3_H;\n\n    D2r3_R0 = kron(eye(3),kron(Rd',eye(3)))*(-Dr3_Y-Dr3_X);\n    \n    %w0\n    %dot_w"
-      "0=-0.5*R0'*Gamma(R0)'*(kron(dot_r3',eye(9))*D2r3_R0*dot_r3+Dr3_R0*ddot_r3);\n    hat_w0= -0.5*R0'*Gamma(R0)'*Dr3"
-      "_R0*hat_dot_r3;\n    %dot_hat_w0=S(hat_w0)*w0-0.5*R0'*Gamma(reshape(Dr3_R0*hat_dot_r3,[3 3]))'*Gamma(R0)*R0*w0-0"
-      ".5*R0'*Gamma(R0)'*(kron(hat_dot_r3',eye(9))*D2r3_R0*dot_r3+Dr3_R0*dot_hat_dot_r3);\n    hat_dot_hat_w0 = S(hat_w"
-      "0)*hat_w02-0.5*R0'*Gamma(reshape(Dr3_R0*hat_dot_r3,[3 3]))'*Gamma(R0)*R0*hat_w02-0.5*R0'*Gamma(R0)'*(kron(hat_do"
-      "t_r3',eye(9))*D2r3_R0*hat_dot_r32+Dr3_R0*hat_dot_hat_dot_r32);\n    \n    %hat_b\n    Dv0_mu=-diag(sat_atan_dot("
-      "u)*kv);\n    Dv0_R0 = Dr3_R0*Dmu_r3*Dv0_mu;\n    Lambda = -R0'*Gamma(R0)'*Dv0_R0;\n    tilde_dot_hat_dot_mu = -("
-      "diag(sat_atan_ddot(u))*diag(hat_dot_u)*kv+diag(sat_atan_dot(u))*(kp*eye(3)-kv^2*R*e3*r3'*diag(sat_atan_dot(u)))+"
-      "kz*diag(sat_atan_dot(z))*[zeros(3),eye(3)]*hess_bar_V0*[zeros(3);eye(3)]);\n    tilde_dot_hat_w0 = S(hat_w0)*(0."
-      "5*Lambda)-...\n        0.5*R0'*Gamma(reshape(Dr3_R0*hat_dot_r3,[3 3]))'*Gamma(R0)*R0*(0.5*Lambda)-...\n        0"
-      ".5*R0'*Gamma(R0)'*(kron(hat_dot_r3',eye(9))*D2r3_R0*Dmu_r3*kv*diag(-sat_atan_dot(u))+...\n        Dr3_R0*(kron(h"
-      "at_dot_mu',eye(3))*D2mu_r3*(-diag(sat_atan_dot(u))*kv)+Dmu_r3*tilde_dot_hat_dot_mu));\n    %dot_w1\n%     dot_w1"
-      " = -(h*kz*kV0*2/k)*(kron(([zeros(3),eye(3)]*grad_bar_V0)',eye(3))*...\n%         (kron(S(mu),eye(3))*vec(eye(3))"
-      "*0.5*q1(2:4)'*R0*(w-w0)-...\n%         q1(1)*Gamma(eye(3))*dot_mu-kron(S(q1(2:4)),eye(3))*Gamma(eye(3))*dot_mu-."
-      "..\n%         -kron(eye(3),S(mu))*Gamma(eye(3))*0.5*(q1(1)*eye(3)+S(q1(2:4)))*R0*(w-w0))+...\n%         (q1(1)*S"
-      "(mu)-S(mu)*S(q1(2:4)))*[zeros(3),eye(3)]*hess_bar_V0*[v0;dot_v-dot_vd])-...\n%         0.5*h*kq*(q1(1)*eye(3)+S("
-      "q1(2:4)))*R0*(w-w0);\n    hat_dot_w1 = -(h*kz*kV0*2/k)*(kron(([zeros(3),eye(3)]*grad_bar_V0)',eye(3))*...\n     "
-      "   (kron(S(mu),eye(3))*vec(eye(3))*0.5*q1(2:4)'*R0*(w-hat_w02)-...\n        q1(1)*Gamma(eye(3))*hat_dot_mu2-kron"
-      "(S(q1(2:4)),eye(3))*Gamma(eye(3))*hat_dot_mu2-...\n        -kron(eye(3),S(mu))*Gamma(eye(3))*0.5*(q1(1)*eye(3)+S"
-      "(q1(2:4)))*R0*(w-hat_w02))+...\n        (q1(1)*S(mu)-S(mu)*S(q1(2:4)))*[zeros(3),eye(3)]*hess_bar_V0*[v0;hat_dot"
-      "_v2-dot_vd])-...\n        0.5*h*kq*(q1(1)*eye(3)+S(q1(2:4)))*R0*(w-hat_w02);\n    tilde_dot_w1 = -(h*kz*kV0*2/k)"
-      "*(kron(([zeros(3),eye(3)]*grad_bar_V0)',eye(3))*...\n        (kron(S(mu),eye(3))*vec(eye(3))*0.5*q1(2:4)'*R0*(-0"
-      ".5*Lambda)-...\n        q1(1)*Gamma(eye(3))*(-diag(sat_atan_dot(u))*kv)-kron(S(q1(2:4)),eye(3))*Gamma(eye(3))*(-"
-      "diag(sat_atan_dot(u))*kv)-...\n        -kron(eye(3),S(mu))*Gamma(eye(3))*0.5*(q1(1)*eye(3)+S(q1(2:4)))*R0*(-0.5*"
-      "Lambda))+...\n        (q1(1)*S(mu)-S(mu)*S(q1(2:4)))*[zeros(3),eye(3)]*hess_bar_V0*[zeros(3);eye(3)])-...\n     "
-      "   0.5*h*kq*(q1(1)*eye(3)+S(q1(2:4)))*R0*(-0.5*Lambda);\n    \n    \n\n    %w - angular velocity\n    %dot_w_sta"
-      "r = dot_hat_w0+R0'*dot_w1+kron(w1',eye(3))*Gamma(R0')*w0;\n    hat_dot_w_star = hat_dot_hat_w0+R0'*hat_dot_w1+kr"
-      "on(w1',eye(3))*Gamma(R0')*hat_w02;\n    u2 = hat_dot_w_star-kw*(w-w_star)-k*h*R0'*q1(2:4);\n    dot_w = u2;\n   "
-      " \n    \n    %b estimator\n    dot_hat_b2 = -kb*(tilde_dot_hat_w0'*(w-w_star)+tilde_dot_w1'*R0*(w-w_star)+0.5*(k"
-      "ron(w1',eye(3))*Gamma(R0')*Lambda)'*(w-w_star));\n    \n    \n    %V2\n    %V2 = V1 + 0.5*norm(w-w_star)^2+0.5*n"
-      "orm(tilde_b2)^2/kb;\n    %dot_V2 = dot_V1 +(w-w_star)'*(u2-dot_w_star)+tilde_b2'*dot_hat_b2/kb;\n    V2 = 0;\n  "
-      "  dot_V2 = 0;\n%     dot_V2 = kV0*kz*grad_bar_V0'*[v0;u0] +(w-w_star)'*(hat_dot_w_star-kw*(w-w_star)-dot_w_star)"
-      "+tilde_b2'*dot_hat_b2/kb;\n%     dot_V2 = kV0*kz*grad_bar_V0'*[v0;u0] +(w-w_star)'*(-kw*(w-w_star))-k*kq*norm(q1"
-      "(2:4))^2;\n    \n    %%% Unit conversion - input range - omega control\n    thrust = (T/0.00981 - 25.584) / 113."
-      "3;\n    aileron = w(1) / 3.9062;\n    elevator = w(2) / 3.9062;\n    yaw = w(3) / 3.7;\n\n    cmd = [thrust; ail"
-      "eron; elevator; yaw];\n    \n    dot_h = 0;\nend\n\nfunction out = sat_atan(var)\n    global satMax\n    out = v"
-      "ar;\n    if isempty(satMax)\n        for I=1:numel(var)\n            out(I)=2*atan(var(I))/pi;\n        end\n   "
-      " else\n        for I=1:numel(var)\n            out(I)=satMax*2*atan(var(I)/satMax)/pi;\n        end\n    end\nen"
-      "d\n\nfunction out = sat_atan_dot(var)\n    global satMax\n    out = var;\n    if isempty(satMax)\n        for I="
-      "1:numel(var)\n            out(I)=(2/pi)*(1+var(I)^2)^(-1);\n        end\n    else\n        for I=1:numel(var)\n "
-      "           out(I)=(2/pi)*(1+(var(I)/satMax)^2)^(-1);\n        end\n    end\nend\n        \nfunction out = sat_at"
-      "an_ddot(var)\n    global satMax\n    out = var;\n    if isempty(satMax)\n        for I=1:numel(var)\n           "
-      " out(I)=-(2/pi)*(1+var(I)^2)^(-2)*2*var(I);\n        end\n    else\n        for I=1:numel(var)\n            out("
-      "I)=-(2/pi)*(1+(var(I)/satMax)^2)^(-2)*2*(var(I)/satMax^2);\n        end\n    end\nend\n\nfunction out = Gamma(A)"
-      "\n    out = -[S(A*[1;0;0]),S(A*[0;1;0]),S(A*[0;0;1])]';\nend\n\nfunction out = S(v)\n    out = [0,-v(3),v(2);\n "
-      "          v(3),0,-v(1);\n           -v(2),v(1),0];\nend\n\n\nfunction out = K(m,n)\n    out = zeros(m*n);\n    f"
-      "or I = 1:m*n\n        out(mod((I-1)*n+1,m*n)+floor(((I-1)*n+1)/(m*n)),I) = 1;\n    end\nend\n\n"
+      "    q1 = zeros(4,1);\n    q1 = quatmultiply(q',quatinv(q0'))';  % Definitely needed\n    %R1 = R*R0';\n%     dot"
+      "_V0 = kz*grad_bar_V0'*[v0;-R1*R0*e3*T/m+g*e3+b-dot_vd]+sat_atan(z)'*dot_z-b'*dot_z;\n%     dot_V0 = kz*grad_bar_"
+      "V0'*[v0;R1*mu+g*e3+b-dot_vd]+sat_atan(z)'*dot_z-b'*dot_z;\n%     dot_V0 = kz*grad_bar_V0'*[v0;u0]+kz*grad_bar_V0"
+      "(4:6)'*(R1-eye(3))*mu;\n    %compensation for underactuation\n    w1 = -(h*kz*kV0/k)*(2*q1(1)*S(mu)-2*S(mu)*S(q1"
+      "(2:4)))*[zeros(3),eye(3)]*grad_bar_V0-h*kq*q1(2:4);\n    %estimate of w0\n    hat_dot_v = -R*e3*T/m+g*e3+hat_b;\n"
+      "    hat_dot_mu = -sat_atan_dot(kp*p0+kv*v0).*(kp*v0+kv*(hat_dot_v-dot_vd))+ddot_vd-sat_atan_dot(z).*dot_z;\n    "
+      "hat_dot_r3 = S(r3)^2*hat_dot_mu/norm(mu);\n    hat_w0 = -0.5*R0'*Gamma(R0)'*Dr3_R0*hat_dot_r3;\n    \n    w_star"
+      " = hat_w0+R0'*w1;\n    \n%     dot_q1 = zeros(4,1);\n%     dot_q1 = 0.5*quatmultiply(q1',[0 (R0*(w-w0))'])';\n% "
+      "    dot_q = 0.5*quatmultiply(q',[0 w'])';\n    \n    %b estimator\n%     Dv0_r3 = -(S(r3)^2/norm(mu))*kv*diag(sa"
+      "t_atan_dot(u));\n%     Dv0_R0 = Dr3_R0*Dv0_r3;\n%     dot_hat_b = kb*k*h*Dv0_R0'*Gamma(R0)*q1(2:4)/2;\n    dot_h"
+      "at_b = [0;0;0];\n    \n\n    \n    \n        %estimate of w0-2\n    hat_dot_v2 = -R*e3*T/m+g*e3+hat_b2;\n    hat"
+      "_dot_mu2 = -sat_atan_dot(kp*p0+kv*v0).*(kp*v0+kv*(hat_dot_v2-dot_vd))+ddot_vd-sat_atan_dot(z).*dot_z;\n    hat_d"
+      "ot_r32 = S(r3)^2*hat_dot_mu2/norm(mu);\n    hat_w02 = -0.5*R0'*Gamma(R0)'*Dr3_R0*hat_dot_r32;\n    %tilde_b2 = h"
+      "at_b2-b;\n    %v\n    %dot_hat_dot_v = -R*S(w)*e3*T/m-R*e3*mu'*dot_mu/norm(mu)+dot_hat_b;\n    hat_dot_hat_dot_v"
+      "2 = -R*S(w)*e3*T/m-R*e3*mu'*hat_dot_mu2/norm(mu)+dot_hat_b;\n    %ddot_v = -R*S(w)*e3*T/m-R*e3*mu'*dot_mu/norm(m"
+      "u);\n    %u\n    %dot_u = kp*v0+kv*(dot_v-dot_vd);\n    hat_dot_u = kp*v0+kv*(hat_dot_v-dot_vd);\n    hat_dot_u2"
+      " = kp*v0+kv*(hat_dot_v2-dot_vd);\n    %ddot_u = kp*(dot_v-dot_vd)+kv*(ddot_v-ddot_vd);\n    %dot_hat_dot_u = kp*"
+      "(dot_v-dot_vd)+kv*(dot_hat_dot_v-ddot_vd);\n    hat_dot_hat_dot_u2 = kp*(hat_dot_v2-dot_vd)+kv*(hat_dot_hat_dot_"
+      "v2-ddot_vd);\n    %z\n    hess_bar_V0 = zeros(6);\n    for I=1:3\n        ei = zeros(3,1);\n        ei(I) = 1;\n"
+      "        hess_bar_V0 = hess_bar_V0 +...\n            kron([sat_atan(ei'*u) ei'*v0]*P,eye(6))*...\n            sat"
+      "_atan_ddot(ei'*u)*...\n            [kp*(ei*ei')*[kp*eye(3) kv*eye(3)];\n             kv*(ei*ei')*[kp*eye(3) kv*e"
+      "ye(3)];\n             zeros(6)]+sat_atan_dot(ei'*u)*...\n             [kp*eye(3);kv*eye(3)]*(ei*ei')*...\n      "
+      "       [kp*eye(3) kv*eye(3)]+...\n             [sat_atan_dot(ei'*u)*kp*ei,zeros(3,1);\n             sat_atan_dot"
+      "(ei'*u)*kv*ei,ei]*P*...\n             [sat_atan_dot(ei'*u)*ei'*[kp*eye(3) kv*eye(3)];\n             zeros(1,3),e"
+      "i'];\n    end\n    %ddot_z = kz*[zeros(3) eye(3)]*hess_bar_V0*[v0;dot_v-dot_vd];\n    hat_ddot_z2 = kz*[zeros(3)"
+      " eye(3)]*hess_bar_V0*[v0;hat_dot_v2-dot_vd];\n    %mu\n    hat_dot_mu = -sat_atan_dot(u).*(hat_dot_u)+ddot_vd-sa"
+      "t_atan_dot(z).*dot_z;\n    hat_dot_hat_dot_mu2 = -sat_atan_ddot(u).*(hat_dot_u).*(hat_dot_u2)+d3dot_vd-...\n    "
+      "    sat_atan_dot(u).*hat_dot_hat_dot_u2-sat_atan_ddot(z).*(dot_z.^2)-sat_atan_dot(z).*hat_ddot_z2;\n    %r3\n%  "
+      "   Dmu_r3 = S(r3)^2/norm(mu);\n%     D2mu_r3 = -norm(mu)^(-1)*(kron(S(r3)',eye(3))+kron(eye(3),S(r3)))*Gamma(eye"
+      "(3))*S(mu/norm(mu))^2/norm(mu)-...\n%         kron(eye(3),S(r3)^2)*vec(eye(3))*mu'/norm(mu)^3;\n    hat_dot_r3 ="
+      " S(r3)^2*hat_dot_mu/norm(mu);\n    hat_dot_hat_dot_r32 = -kron(hat_dot_mu'/norm(mu),eye(3))*(kron(S(r3)',eye(3))"
+      "+kron(eye(3),S(r3)))*Gamma(eye(3))*hat_dot_r32+...\n        S(r3)^2*(hat_dot_hat_dot_mu2/norm(mu)-hat_dot_mu*mu'"
+      "*hat_dot_mu2/norm(mu)^3);\n    %R0\n    Dr3_H1 = -(kron(K(3,3),eye(3))*kron(eye(3),vec(eye(3)))+...\n        kro"
+      "n(eye(3),kron(K(1,3),eye(3)))*kron(vec(eye(3)),eye(3)))*H2;\n    %Y  = S(gm/norm(gm))^2;\n    Dr3_Y = kron(Rd*e3"
+      ",eye(9))*(kron(eye(3),S(gm/norm(gm)))-kron(S(gm/norm(gm)),eye(3)))*Gamma(eye(3))*S(gm/norm(gm))^2*S(Rd*e3)/norm("
+      "gm);\n    H2 = S(gm/norm(gm))^2*S(Rd*e3)/norm(gm);\n    Dr3_H2 = kron(S(Rd*e3)'/norm(gm),eye(3))*(kron(eye(3),S("
+      "gm/norm(gm)))-kron(S(gm/norm(gm)),eye(3)))*Gamma(eye(3))*S(gm/norm(gm))^2*S(Rd*e3)/norm(gm)+...\n        kron(ey"
+      "e(3),S(gm/norm(gm))^2)*Gamma(eye(3))*Rd*e3*gm'*S(Rd*e3)/norm(gm)^3;\n    \n    H = H1*H2;\n    Dr3_H = kron(H2',"
+      "eye(9))*Dr3_H1+kron(eye(3),H1)*Dr3_H2;\n    \n    %X = (1-e3'*Rd'*r3)*H;\n    Dr3_X = -kron(H',eye(9))*vec(eye(9"
+      "))*e3'*Rd'+(1-e3'*Rd'*r3)*Dr3_H;\n\n    D2r3_R0 = kron(eye(3),kron(Rd',eye(3)))*(-Dr3_Y-Dr3_X);\n    \n    %w0\n"
+      "    hat_w0= -0.5*R0'*Gamma(R0)'*Dr3_R0*hat_dot_r3;\n    hat_dot_hat_w0 = S(hat_w0)*hat_w02-0.5*R0'*Gamma(reshape"
+      "(Dr3_R0*hat_dot_r3,[3 3]))'*Gamma(R0)*R0*hat_w02-0.5*R0'*Gamma(R0)'*(kron(hat_dot_r3',eye(9))*D2r3_R0*hat_dot_r3"
+      "2+Dr3_R0*hat_dot_hat_dot_r32);\n    \n    %hat_b\n%     Dv0_mu=-diag(sat_atan_dot(u)*kv);\n%     Dv0_R0 = Dr3_R0"
+      "*Dmu_r3*Dv0_mu;\n%     Lambda = -R0'*Gamma(R0)'*Dv0_R0;\n%     tilde_dot_hat_dot_mu = -(diag(sat_atan_ddot(u))*d"
+      "iag(hat_dot_u)*kv+diag(sat_atan_dot(u))*(kp*eye(3)-kv^2*R*e3*r3'*diag(sat_atan_dot(u)))+kz*diag(sat_atan_dot(z))"
+      "*[zeros(3),eye(3)]*hess_bar_V0*[zeros(3);eye(3)]);\n%     tilde_dot_hat_w0 = S(hat_w0)*(0.5*Lambda)-...\n%      "
+      "   0.5*R0'*Gamma(reshape(Dr3_R0*hat_dot_r3,[3 3]))'*Gamma(R0)*R0*(0.5*Lambda)-...\n%         0.5*R0'*Gamma(R0)'*"
+      "(kron(hat_dot_r3',eye(9))*D2r3_R0*Dmu_r3*kv*diag(-sat_atan_dot(u))+...\n%         Dr3_R0*(kron(hat_dot_mu',eye(3"
+      "))*D2mu_r3*(-diag(sat_atan_dot(u))*kv)+Dmu_r3*tilde_dot_hat_dot_mu));\n    hat_dot_w1 = -(h*kz*kV0*2/k)*(kron((["
+      "zeros(3),eye(3)]*grad_bar_V0)',eye(3))*...\n        (kron(S(mu),eye(3))*vec(eye(3))*0.5*q1(2:4)'*R0*(w-hat_w02)-"
+      "...\n        q1(1)*Gamma(eye(3))*hat_dot_mu2-kron(S(q1(2:4)),eye(3))*Gamma(eye(3))*hat_dot_mu2-...\n        -kro"
+      "n(eye(3),S(mu))*Gamma(eye(3))*0.5*(q1(1)*eye(3)+S(q1(2:4)))*R0*(w-hat_w02))+...\n        (q1(1)*S(mu)-S(mu)*S(q1"
+      "(2:4)))*[zeros(3),eye(3)]*hess_bar_V0*[v0;hat_dot_v2-dot_vd])-...\n        0.5*h*kq*(q1(1)*eye(3)+S(q1(2:4)))*R0"
+      "*(w-hat_w02);\n%     tilde_dot_w1 = -(h*kz*kV0*2/k)*(kron(([zeros(3),eye(3)]*grad_bar_V0)',eye(3))*...\n%       "
+      "  (kron(S(mu),eye(3))*vec(eye(3))*0.5*q1(2:4)'*R0*(-0.5*Lambda)-...\n%         q1(1)*Gamma(eye(3))*(-diag(sat_at"
+      "an_dot(u))*kv)-kron(S(q1(2:4)),eye(3))*Gamma(eye(3))*(-diag(sat_atan_dot(u))*kv)-...\n%         -kron(eye(3),S(m"
+      "u))*Gamma(eye(3))*0.5*(q1(1)*eye(3)+S(q1(2:4)))*R0*(-0.5*Lambda))+...\n%         (q1(1)*S(mu)-S(mu)*S(q1(2:4)))*"
+      "[zeros(3),eye(3)]*hess_bar_V0*[zeros(3);eye(3)])-...\n%         0.5*h*kq*(q1(1)*eye(3)+S(q1(2:4)))*R0*(-0.5*Lamb"
+      "da);\n    \n    \n\n    %w - angular velocity\n    hat_dot_w_star = hat_dot_hat_w0+R0'*hat_dot_w1+kron(w1',eye(3"
+      "))*Gamma(R0')*hat_w02;\n    u2 = hat_dot_w_star-kw*(w-w_star)-k*h*R0'*q1(2:4);\n    dot_w = u2;\n    \n    \n   "
+      " %b estimator\n    %dot_hat_b2 = -kb*(tilde_dot_hat_w0'*(w-w_star)+tilde_dot_w1'*R0*(w-w_star)+0.5*(kron(w1',eye"
+      "(3))*Gamma(R0')*Lambda)'*(w-w_star))\n    dot_hat_b2 = [0;0;0];\n    \n    %V2\n    V2 = 0;\n    dot_V2 = 0;\n  "
+      "  \n    %%% Unit conversion - input range - omega control\n    thrust = (T/0.00981 - 25.584) / 113.3;\n    ailer"
+      "on = w(1) / 3.9062;\n    elevator = w(2) / 3.9062;\n    yaw = w(3) / 3.7;\n\n    cmd = [thrust; aileron; elevato"
+      "r; yaw];\n    \n    dot_h = 0;\nend\n\nfunction out = sat_atan(var)\n    global satMax\n    out = var;\n    if i"
+      "sempty(satMax)\n        for I=1:numel(var)\n            out(I)=2*atan(var(I))/pi;\n        end\n    else\n      "
+      "  for I=1:numel(var)\n            out(I)=satMax*2*atan(var(I)/satMax)/pi;\n        end\n    end\nend\n\nfunction"
+      " out = sat_atan_dot(var)\n    global satMax\n    out = var;\n    if isempty(satMax)\n        for I=1:numel(var)\n"
+      "            out(I)=(2/pi)*(1+var(I)^2)^(-1);\n        end\n    else\n        for I=1:numel(var)\n            out"
+      "(I)=(2/pi)*(1+(var(I)/satMax)^2)^(-1);\n        end\n    end\nend\n        \nfunction out = sat_atan_ddot(var)\n"
+      "    global satMax\n    out = var;\n    if isempty(satMax)\n        for I=1:numel(var)\n            out(I)=-(2/pi"
+      ")*(1+var(I)^2)^(-2)*2*var(I);\n        end\n    else\n        for I=1:numel(var)\n            out(I)=-(2/pi)*(1+"
+      "(var(I)/satMax)^2)^(-2)*2*(var(I)/satMax^2);\n        end\n    end\nend\n\nfunction out = Gamma(A)\n    out = -["
+      "S(A*[1;0;0]),S(A*[0;1;0]),S(A*[0;0;1])]';\nend\n\nfunction out = S(v)\n    out = [0,-v(3),v(2);\n           v(3)"
+      ",0,-v(1);\n           -v(2),v(1),0];\nend\n\n\nfunction out = K(m,n)\n    out = zeros(m*n);\n    for I = 1:m*n\n"
+      "        out(mod((I-1)*n+1,m*n)+floor(((I-1)*n+1)/(m*n)),I) = 1;\n    end\nend\n\n"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
