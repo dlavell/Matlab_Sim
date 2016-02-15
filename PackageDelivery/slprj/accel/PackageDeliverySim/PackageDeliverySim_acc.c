@@ -20,11 +20,9 @@ SS_CALL_MDL_OUTPUTS ) ; _rtB -> ifirm34nt0 = _rtP -> P_6 ;
 ssCallAccelRunBlock ( S , 3 , 0 , SS_CALL_MDL_OUTPUTS ) ; _rtB -> a4yme0r2it
 [ 0 ] = _rtDW -> ogppga454i [ 0 ] ; _rtB -> a4yme0r2it [ 1 ] = _rtDW ->
 ogppga454i [ 1 ] ; _rtB -> a4yme0r2it [ 2 ] = _rtDW -> ogppga454i [ 2 ] ;
-ssCallAccelRunBlock ( S , 4 , 0 , SS_CALL_MDL_OUTPUTS ) ; if ( ( _rtB ->
-j0kjnlbh43 != 0.0 ) && ( _rtP -> P_8 != 0.0 ) ) { ssSetStopRequested ( S , 1
-) ; } ssCallAccelRunBlock ( S , 0 , 0 , SS_CALL_MDL_OUTPUTS ) ;
-ssCallAccelRunBlock ( S , 1 , 0 , SS_CALL_MDL_OUTPUTS ) ; } UNUSED_PARAMETER
-( tid ) ; }
+ssCallAccelRunBlock ( S , 4 , 0 , SS_CALL_MDL_OUTPUTS ) ; ssCallAccelRunBlock
+( S , 0 , 0 , SS_CALL_MDL_OUTPUTS ) ; ssCallAccelRunBlock ( S , 1 , 0 ,
+SS_CALL_MDL_OUTPUTS ) ; } UNUSED_PARAMETER ( tid ) ; }
 #define MDL_UPDATE
 static void mdlUpdate ( SimStruct * S , int_T tid ) { idlexrjgpo * _rtB ;
 peas4oso0k * _rtDW ; _rtDW = ( ( peas4oso0k * ) ssGetRootDWork ( S ) ) ; _rtB
@@ -32,9 +30,9 @@ peas4oso0k * _rtDW ; _rtDW = ( ( peas4oso0k * ) ssGetRootDWork ( S ) ) ; _rtB
 ) { _rtDW -> ogppga454i [ 0 ] = _rtB -> f1pupur3hn [ 0 ] ; _rtDW ->
 ogppga454i [ 1 ] = _rtB -> f1pupur3hn [ 1 ] ; _rtDW -> ogppga454i [ 2 ] =
 _rtB -> f1pupur3hn [ 2 ] ; } UNUSED_PARAMETER ( tid ) ; } static void
-mdlInitializeSizes ( SimStruct * S ) { ssSetChecksumVal ( S , 0 , 2049211340U
-) ; ssSetChecksumVal ( S , 1 , 688378095U ) ; ssSetChecksumVal ( S , 2 ,
-1027229126U ) ; ssSetChecksumVal ( S , 3 , 1132604742U ) ; { mxArray *
+mdlInitializeSizes ( SimStruct * S ) { ssSetChecksumVal ( S , 0 , 3935691878U
+) ; ssSetChecksumVal ( S , 1 , 288125610U ) ; ssSetChecksumVal ( S , 2 ,
+3711088102U ) ; ssSetChecksumVal ( S , 3 , 1357790867U ) ; { mxArray *
 slVerStructMat = NULL ; mxArray * slStrMat = mxCreateString ( "simulink" ) ;
 char slVerChar [ 10 ] ; int status = mexCallMATLAB ( 1 , & slVerStructMat , 1
 , & slStrMat , "ver" ) ; if ( status == 0 ) { mxArray * slVerMat = mxGetField
