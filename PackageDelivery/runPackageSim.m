@@ -14,4 +14,3 @@ save('SimResults.mat');         % Save workspace
 
 display('Creating Sim video...')
 graphicx                        % Run graphics and create video
-
