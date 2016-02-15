@@ -2,7 +2,8 @@
 
 load('SimResults.mat')
 %R = angle2dcm(euler.signals.values(:,1)'*pi/180,euler.signals.values(:,2)'*pi/180,euler.signals.values(:,3)'*pi/180,'ZYX');
-Rcam = angle2dcm(pi,0,0,'YZX');
+%Rcam = angle2dcm(pi,0,0,'YZX');
+Rcam = [-1 0 -0; 0 1 0; 0 0 -1];
 p_i = Rcam*state.signals.values';
 pdt = Rcam*ref.signals.values(:,1:3)';
 t = ref.time;
