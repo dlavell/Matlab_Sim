@@ -242,9 +242,9 @@ static void sf_gateway_c4_PackageDeliverySim
   int32_T c4_i26;
   _SFD_SYMBOL_SCOPE_PUSH(0U, 0U);
   _sfTime_ = sf_get_time(chartInstance->S);
-  _SFD_CC_CALL(CHART_ENTER_SFUNCTION_TAG, 3U, chartInstance->c4_sfEvent);
+  _SFD_CC_CALL(CHART_ENTER_SFUNCTION_TAG, 1U, chartInstance->c4_sfEvent);
   chartInstance->c4_sfEvent = CALL_EVENT;
-  _SFD_CC_CALL(CHART_ENTER_DURING_FUNCTION_TAG, 3U, chartInstance->c4_sfEvent);
+  _SFD_CC_CALL(CHART_ENTER_DURING_FUNCTION_TAG, 1U, chartInstance->c4_sfEvent);
   c4_hoistedGlobal = *chartInstance->c4_destinations;
   c4_b_hoistedGlobal = *chartInstance->c4_altitude;
   for (c4_i2 = 0; c4_i2 < 3; c4_i2++) {
@@ -378,7 +378,7 @@ static void sf_gateway_c4_PackageDeliverySim
     (*chartInstance->c4_trajectory)[c4_i24] = c4_b_trajectory[c4_i24];
   }
 
-  _SFD_CC_CALL(EXIT_OUT_OF_FUNCTION_TAG, 3U, chartInstance->c4_sfEvent);
+  _SFD_CC_CALL(EXIT_OUT_OF_FUNCTION_TAG, 1U, chartInstance->c4_sfEvent);
   _SFD_SYMBOL_SCOPE_POP();
   _SFD_CHECK_FOR_STATE_INCONSISTENCY(_PackageDeliverySimMachineNumber_,
     chartInstance->chartNumber, chartInstance->instanceNumber);

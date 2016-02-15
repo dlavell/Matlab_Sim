@@ -72,7 +72,7 @@ MAKEFILE_FILESEP = /
 #                    command
 
 MODEL              = PackageDeliverySim
-MODULES            = PackageDeliverySim_acc_data.c rtGetInf.c rtGetNaN.c rt_nonfinite.c rt_zcfcn.c 
+MODULES            = PackageDeliverySim_acc_data.c rtGetInf.c rtGetNaN.c rt_nonfinite.c 
 MAKEFILE           = PackageDeliverySim.mk
 MATLAB_ROOT        = C:/Program Files/MATLAB/R2014b
 ALT_MATLAB_ROOT    = C:/PROGRA~1/MATLAB/R2014b
@@ -80,12 +80,12 @@ MASTER_ANCHOR_DIR  =
 START_DIR          = C:/Users/dlavell/Desktop/SeniorDesign/Matlab_Sim/PackageDelivery
 MATLAB_BIN         = C:/Program Files/MATLAB/R2014b/bin
 ALT_MATLAB_BIN     = C:/PROGRA~1/MATLAB/R2014b/bin
-S_FUNCTIONS        = sf_sfun.c PointMass.c
+S_FUNCTIONS        = sf_sfun.c
 S_FUNCTIONS_LIB    = 
 SOLVER             = 
 NUMST              = 2
 TID01EQ            = 0
-NCSTATES           = 38
+NCSTATES           = 0
 MEM_ALLOC          = RT_STATIC
 BUILDARGS          = 
 MEXEXT             = mexw64

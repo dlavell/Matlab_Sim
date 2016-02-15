@@ -3,7 +3,7 @@
 warning ('off','all');
 display('Initializing Sim...')
 load('initialize_PackageDeliverySim.mat');
-T = 10;                        % Change time scale
+T = 100;                        % Change time scale
 ref.time = 0:.2:20;             % correct for non-linear time variable
 
 display('Running Sim...')

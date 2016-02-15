@@ -339,10 +339,10 @@ static void sf_gateway_c5_PackageDeliverySim
   real_T c5_b_lat;
   _SFD_SYMBOL_SCOPE_PUSH(0U, 0U);
   _sfTime_ = sf_get_time(chartInstance->S);
-  _SFD_CC_CALL(CHART_ENTER_SFUNCTION_TAG, 4U, chartInstance->c5_sfEvent);
+  _SFD_CC_CALL(CHART_ENTER_SFUNCTION_TAG, 2U, chartInstance->c5_sfEvent);
   _SFD_DATA_RANGE_CHECK(*chartInstance->c5_lat_s, 0U);
   chartInstance->c5_sfEvent = CALL_EVENT;
-  _SFD_CC_CALL(CHART_ENTER_DURING_FUNCTION_TAG, 4U, chartInstance->c5_sfEvent);
+  _SFD_CC_CALL(CHART_ENTER_DURING_FUNCTION_TAG, 2U, chartInstance->c5_sfEvent);
   c5_hoistedGlobal = *chartInstance->c5_lat_s;
   c5_b_hoistedGlobal = *chartInstance->c5_lng_s;
   c5_c_hoistedGlobal = *chartInstance->c5_radius_min;
@@ -417,7 +417,7 @@ static void sf_gateway_c5_PackageDeliverySim
   _SFD_SYMBOL_SCOPE_POP();
   *chartInstance->c5_dest_lat_hist = c5_b_dest_lat_hist;
   *chartInstance->c5_dest_lng_hist = c5_b_dest_lng_hist;
-  _SFD_CC_CALL(EXIT_OUT_OF_FUNCTION_TAG, 4U, chartInstance->c5_sfEvent);
+  _SFD_CC_CALL(EXIT_OUT_OF_FUNCTION_TAG, 2U, chartInstance->c5_sfEvent);
   _SFD_SYMBOL_SCOPE_POP();
   _SFD_CHECK_FOR_STATE_INCONSISTENCY(_PackageDeliverySimMachineNumber_,
     chartInstance->chartNumber, chartInstance->instanceNumber);

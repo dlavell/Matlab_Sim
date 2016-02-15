@@ -7,11 +7,11 @@ LIBFLAGS =
 
 OBJECTS = \
 	"PackageDeliverySim_sfun.obj"\
-	"c1_PackageDeliverySim.obj"\
-	"c2_PackageDeliverySim.obj"\
 	"c3_PackageDeliverySim.obj"\
 	"c4_PackageDeliverySim.obj"\
 	"c5_PackageDeliverySim.obj"\
+	"c6_PackageDeliverySim.obj"\
+	"c7_PackageDeliverySim.obj"\
 	"PackageDeliverySim_sfun_registry.obj"\
 	"lccstub.obj"\
 	"PackageDeliverySim_sfun.def"\
@@ -35,16 +35,16 @@ PackageDeliverySim_sfun.mexw64 : $(MAKEFILE) $(OBJECTS)
 	$(LD) $(LDFLAGS) -o PackageDeliverySim_sfun.mexw64 @PackageDeliverySim_sfun.lmko
 PackageDeliverySim_sfun.obj :	"PackageDeliverySim_sfun.c"
 	$(CC) $(CFLAGS) $(INCLUDE_PATH) "PackageDeliverySim_sfun.c"
-c1_PackageDeliverySim.obj :	"c1_PackageDeliverySim.c"
-	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c1_PackageDeliverySim.c"
-c2_PackageDeliverySim.obj :	"c2_PackageDeliverySim.c"
-	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c2_PackageDeliverySim.c"
 c3_PackageDeliverySim.obj :	"c3_PackageDeliverySim.c"
 	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c3_PackageDeliverySim.c"
 c4_PackageDeliverySim.obj :	"c4_PackageDeliverySim.c"
 	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c4_PackageDeliverySim.c"
 c5_PackageDeliverySim.obj :	"c5_PackageDeliverySim.c"
 	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c5_PackageDeliverySim.c"
+c6_PackageDeliverySim.obj :	"c6_PackageDeliverySim.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c6_PackageDeliverySim.c"
+c7_PackageDeliverySim.obj :	"c7_PackageDeliverySim.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c7_PackageDeliverySim.c"
 PackageDeliverySim_sfun_registry.obj :	"PackageDeliverySim_sfun_registry.c"
 	$(CC) $(CFLAGS) $(INCLUDE_PATH) "PackageDeliverySim_sfun_registry.c"
 lccstub.obj :	"C:\Program Files\MATLAB\R2014b\sys\lcc64\lcc64\mex\lccstub.c"

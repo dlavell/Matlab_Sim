@@ -27,8 +27,9 @@ typedef struct {
   real_T *c3_num_delivered_address;
   int32_T c3_num_delivered_index;
   real_T (*c3_trajectory)[21];
-  real_T (*c3_waypoint)[15];
-  real_T (*c3_state)[18];
+  real_T (*c3_waypoint)[3];
+  real_T (*c3_state)[3];
+  real_T *c3_stop;
 } SFc3_PackageDeliverySimInstanceStruct;
 
 #endif                                 /*typedef_SFc3_PackageDeliverySimInstanceStruct*/
