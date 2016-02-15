@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.2406"
+    ComputedModelVersion    "1.2411"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -62,11 +62,11 @@ Model {
 	$ObjectID		6
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
-	ViewObjType		"SimulinkSubsys"
-	LoadSaveID		"988"
+	ViewObjType		"SimulinkTopLevel"
+	LoadSaveID		"0"
 	Extents			[1886.0, 922.0]
-	ZoomFactor		[1.75]
-	Offset			[224.452380952381, 114.75476190476181]
+	ZoomFactor		[1.0]
+	Offset			[-383.33999572594882, -191.13919676922575]
       }
     }
   }
@@ -76,9 +76,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "dlavell"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sun Feb 14 16:04:03 2016"
-  RTWModifiedTimeStamp	  377366642
-  ModelVersionFormat	  "1.%<AutoIncrement:2406>"
+  LastModifiedDate	  "Sun Feb 14 16:32:10 2016"
+  RTWModifiedTimeStamp	  377368294
+  ModelVersionFormat	  "1.%<AutoIncrement:2411>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -3540,7 +3540,7 @@ Model {
   System {
     Name		    "PackageDeliverySim"
     Location		    [-1928, -8, 8, 1088]
-    Open		    off
+    Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    212
     ScreenColor		    "white"
@@ -3553,7 +3553,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "1010"
+    SIDHighWatermark	    "1011"
     Block {
       BlockType		      DataStoreMemory
       Name		      " "
@@ -3577,6 +3577,20 @@ Model {
       ReadBeforeWriteMsg      "warning"
       WriteAfterWriteMsg      "warning"
       WriteAfterReadMsg	      "warning"
+      OutDataTypeStr	      "double"
+      SignalType	      "real"
+    }
+    Block {
+      BlockType		      DataStoreMemory
+      Name		      "         "
+      SID		      "1011"
+      Position		      [475, 425, 587, 460]
+      ZOrder		      70
+      DataStoreName	      "pos"
+      ReadBeforeWriteMsg      "warning"
+      WriteAfterWriteMsg      "warning"
+      WriteAfterReadMsg	      "warning"
+      InitialValue	      "[ 0 ; 0 ; 0 ]"
       OutDataTypeStr	      "double"
       SignalType	      "real"
     }
@@ -6457,7 +6471,7 @@ Model {
       Name		      "Controller"
       SID		      "1009"
       Ports		      [2, 1]
-      Position		      [715, 368, 845, 452]
+      Position		      [725, 368, 855, 452]
       ZOrder		      68
       LibraryVersion	      "1.32"
       ErrorFcn		      "Stateflow.Translate.translate"
@@ -6584,7 +6598,7 @@ Model {
       Name		      "Model"
       SID		      "1010"
       Ports		      [1, 1]
-      Position		      [715, 488, 845, 572]
+      Position		      [725, 488, 855, 572]
       ZOrder		      69
       BlockMirror	      on
       LibraryVersion	      "1.32"
@@ -6608,7 +6622,7 @@ Model {
 	TiledPageScale		1
 	ShowPageBoundaries	off
 	ZoomFactor		"100"
-	SIDHighWatermark	"24"
+	SIDHighWatermark	"25"
 	Block {
 	  BlockType		  Inport
 	  Name			  "cmd"
@@ -6660,7 +6674,7 @@ Model {
 	  IconDisplay		  "Port number"
 	}
 	Line {
-	  ZOrder		  10
+	  ZOrder		  19
 	  SrcBlock		  "cmd"
 	  SrcPort		  1
 	  DstBlock		  " SFunction "
@@ -6668,7 +6682,7 @@ Model {
 	}
 	Line {
 	  Name			  "state"
-	  ZOrder		  11
+	  ZOrder		  20
 	  Labels		  [0, 0]
 	  SrcBlock		  " SFunction "
 	  SrcPort		  2
@@ -6676,14 +6690,14 @@ Model {
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  12
+	  ZOrder		  21
 	  SrcBlock		  " Demux "
 	  SrcPort		  1
 	  DstBlock		  " Terminator "
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  13
+	  ZOrder		  22
 	  SrcBlock		  " SFunction "
 	  SrcPort		  1
 	  DstBlock		  " Demux "
@@ -7188,7 +7202,7 @@ Model {
       System {
 	Name			"Trajectory Genereator"
 	Location		[-1928, -8, 8, 1088]
-	Open			on
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -8002,7 +8016,7 @@ Stateflow {
     name		    "PackageDeliverySim"
     created		    "28-May-2012 17:04:21"
     isLibrary		    0
-    firstTarget		    112
+    firstTarget		    113
     debug {
     }
     sfVersion		    80000001
@@ -9992,8 +10006,13 @@ Stateflow {
     decomposition	    CLUSTER_STATE
     eml {
       isEML		      1
-      script		      "function cmd = Controller( ref , state )\n%UNTITLED3 Summary of this function goes here\n%   Deta"
-      "iled explanation goes here\n\n\nend"
+      script		      "function cmd = Controller( ref , state )\n% Controller for point-mass model of quadcopter\n\np = "
+      "state(1:3);\n\nEx = ref(1) - p(1); % Error in x-direction\nEy = ref(2) - p(2); % Error in y-direction\nEz = ref("
+      "3) - p(3); % Error in z-direction\n\nXg = atan2(Ey/Ex);  % tracking angle\n\nthresh = .25; % temporary threshold"
+      " to see which way we are heading\n \nif( abs(Ex) >= thresh || abs(Ey) >= thresh )    % moving along x/y\n    Vg "
+      "= 1;                                     % use ground speed\nelseif ( abs(Ez) >= thresh )                    % m"
+      "oving along z\n    Vh = 1;                                     % use climb rate\nelse                           "
+      "                 % otherwise don't move\n    Vg = 0;\n    Vh = 0;\nend\n\ncmd = [ Xg ; Vh ; Vg ];"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
@@ -10170,14 +10189,14 @@ Stateflow {
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 3600 1200 1.180555555555556]
     treeNode		    [0 103 0 0]
-    firstTransition	    110
-    firstJunction	    109
+    firstTransition	    111
+    firstJunction	    110
     viewObj		    102
     visible		    1
     machine		    1
     subviewS {
     }
-    ssIdHighWaterMark	    10
+    ssIdHighWaterMark	    11
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
     firstData		    104
@@ -10201,8 +10220,11 @@ Stateflow {
     decomposition	    CLUSTER_STATE
     eml {
       isEML		      1
-      script		      "function state = Model( cmd )\n%UNTITLED4 Summary of this function goes here\n%   Detailed explan"
-      "ation goes here\n\n\n\nstate = [x_plus ; y_plus ; z_plus];\n"
+      script		      "function state = Model( cmd)\n% Point-mass model of quadcopter\n\n% Current position\nglobal pos;"
+      "\n\nXg = cmd(1); % tracking angle\nVh = cmd(2); % climb rate\nVg = cmd(3); % ground speed\n\nx_dot = Vg*cos(Xg);"
+      " % rate of change in x-direction\ny_dot = Vg*sin(Xg); % rate of change in y-direction\nz_dot = Vh;         % rat"
+      "e of change in z-direction\n\npos(1) = pos(1) + x_dot; % new x-pos\npos(2) = pos(2) + y_dot; % new y-pos\npos(3)"
+      " = pos(3) + z_dot; % new z-pos\n\nstate = [x_plus ; y_plus ; z_plus];"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
@@ -10295,7 +10317,29 @@ Stateflow {
     id			    108
     ssIdNumber		    10
     name		    "num_delivered"
-    linkNode		    [102 107 0]
+    linkNode		    [102 107 109]
+    scope		    DATA_STORE_MEMORY_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    109
+    ssIdNumber		    11
+    name		    "pos"
+    linkNode		    [102 108 0]
     scope		    DATA_STORE_MEMORY_DATA
     machine		    1
     props {
@@ -10314,7 +10358,7 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   junction {
-    id			    109
+    id			    110
     position		    [23.5747 49.5747 7]
     chart		    102
     linkNode		    [102 0 0]
@@ -10323,7 +10367,7 @@ Stateflow {
     type		    CONNECTIVE_JUNCTION
   }
   transition {
-    id			    110
+    id			    111
     labelString		    "{eML_blk_kernel();}"
     labelPosition	    [28.125 13.875 102.544 14.964]
     fontSize		    12
@@ -10331,7 +10375,7 @@ Stateflow {
       intersection	      [0 0 1 0 23.5747 14.625 0 0]
     }
     dst {
-      id		      109
+      id		      110
       intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
     }
     midPoint		    [23.5747 24.9468]
@@ -10347,22 +10391,22 @@ Stateflow {
     ssIdNumber		    2
   }
   instance {
-    id			    111
+    id			    112
     name		    "Model"
     machine		    1
     chart		    102
   }
   target {
-    id			    112
+    id			    113
     name		    "sfun"
     description		    "Default Simulink S-Function Target."
     machine		    1
-    linkNode		    [1 0 113]
+    linkNode		    [1 0 114]
   }
   target {
-    id			    113
+    id			    114
     name		    "rtw"
     machine		    1
-    linkNode		    [1 112 0]
+    linkNode		    [1 113 0]
   }
 }
