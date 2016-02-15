@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.2411"
+    ComputedModelVersion    "1.2414"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -76,9 +76,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "dlavell"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sun Feb 14 16:32:10 2016"
-  RTWModifiedTimeStamp	  377368294
-  ModelVersionFormat	  "1.%<AutoIncrement:2411>"
+  LastModifiedDate	  "Sun Feb 14 16:47:21 2016"
+  RTWModifiedTimeStamp	  377369236
+  ModelVersionFormat	  "1.%<AutoIncrement:2414>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -3347,15 +3347,6 @@ Model {
       BusSelectionMode	      off
     }
     Block {
-      BlockType		      Derivative
-      CoefficientInTFapproximation "inf"
-    }
-    Block {
-      BlockType		      InitialCondition
-      Value		      "1"
-      SampleTime	      "-1"
-    }
-    Block {
       BlockType		      Inport
       Port		      "1"
       OutputFunctionCall      off
@@ -3372,56 +3363,6 @@ Model {
       LatchByDelayingOutsideSignal off
       LatchInputForFeedbackSignals off
       Interpolate	      on
-    }
-    Block {
-      BlockType		      Integrator
-      ExternalReset	      "none"
-      InitialConditionSource  "internal"
-      InitialCondition	      "0"
-      LimitOutput	      off
-      UpperSaturationLimit    "inf"
-      LowerSaturationLimit    "-inf"
-      ShowSaturationPort      off
-      ShowStatePort	      off
-      AbsoluteTolerance	      "auto"
-      IgnoreLimit	      off
-      ZeroCross		      on
-      ContinuousStateAttributes	"''"
-    }
-    Block {
-      BlockType		      Logic
-      Operator		      "AND"
-      Inputs		      "2"
-      IconShape		      "rectangular"
-      AllPortsSameDT	      on
-      OutDataTypeStr	      "Inherit: Logical (see Configuration Parameters: Optimization)"
-      SampleTime	      "-1"
-    }
-    Block {
-      BlockType		      MultiPortSwitch
-      DataPortOrder	      "One-based contiguous"
-      Inputs		      "3"
-      DataPortIndices	      "{1,2,3}"
-      DataPortForDefault      "Last data port"
-      DiagnosticForDefault    "Error"
-      zeroidx		      off
-      InputSameDT	      on
-      OutMin		      "[]"
-      OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-      LockScale		      off
-      RndMeth		      "Floor"
-      SaturateOnIntegerOverflow	on
-      SampleTime	      "-1"
-      AllowDiffInputSizes     off
-    }
-    Block {
-      BlockType		      Mux
-      Inputs		      "4"
-      DisplayOption	      "none"
-      UseBusObject	      off
-      BusObject		      "BusObject"
-      NonVirtualBus	      off
     }
     Block {
       BlockType		      Outport
@@ -3446,34 +3387,6 @@ Model {
       SFunctionModules	      "''"
       PortCounts	      "[]"
       SFunctionDeploymentMode off
-    }
-    Block {
-      BlockType		      Scope
-      ModelBased	      off
-      TickLabels	      "OneTimeTick"
-      ZoomMode		      "on"
-      Grid		      "on"
-      TimeRange		      "auto"
-      YMin		      "-5"
-      YMax		      "5"
-      SaveToWorkspace	      off
-      SaveName		      "ScopeData"
-      DataFormat	      "Array"
-      LimitDataPoints	      on
-      MaxDataPoints	      "5000"
-      Decimation	      "1"
-      SampleInput	      off
-      SampleTime	      "-1"
-    }
-    Block {
-      BlockType		      Selector
-      NumberOfDimensions      "1"
-      IndexMode		      "One-based"
-      InputPortWidth	      "-1"
-      SampleTime	      "-1"
-      IndexOptions	      "Index vector (dialog)"
-      Indices		      "1"
-      OutputSizes	      "1"
     }
     Block {
       BlockType		      Stop
@@ -3510,31 +3423,7 @@ Model {
       ContentPreviewEnabled   off
     }
     Block {
-      BlockType		      Sum
-      IconShape		      "rectangular"
-      Inputs		      "++"
-      CollapseMode	      "All dimensions"
-      CollapseDim	      "1"
-      InputSameDT	      on
-      AccumDataTypeStr	      "Inherit: Inherit via internal rule"
-      OutMin		      "[]"
-      OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: Same as first input"
-      LockScale		      off
-      RndMeth		      "Floor"
-      SaturateOnIntegerOverflow	on
-      SampleTime	      "-1"
-    }
-    Block {
       BlockType		      Terminator
-    }
-    Block {
-      BlockType		      UniformRandomNumber
-      Minimum		      "-1"
-      Maximum		      "1"
-      Seed		      "0"
-      SampleTime	      "-1"
-      VectorParams1D	      on
     }
   }
   System {
@@ -3553,12 +3442,12 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "1011"
+    SIDHighWatermark	    "1013"
     Block {
       BlockType		      DataStoreMemory
       Name		      " "
       SID		      "977"
-      Position		      [475, 370, 587, 405]
+      Position		      [205, 335, 317, 370]
       ZOrder		      51
       DataStoreName	      "num_delivered"
       ReadBeforeWriteMsg      "warning"
@@ -3571,7 +3460,7 @@ Model {
       BlockType		      DataStoreMemory
       Name		      "       "
       SID		      "981"
-      Position		      [475, 265, 587, 300]
+      Position		      [205, 230, 317, 265]
       ZOrder		      55
       DataStoreName	      "curr_wp"
       ReadBeforeWriteMsg      "warning"
@@ -3584,7 +3473,7 @@ Model {
       BlockType		      DataStoreMemory
       Name		      "         "
       SID		      "1011"
-      Position		      [475, 425, 587, 460]
+      Position		      [205, 390, 317, 425]
       ZOrder		      70
       DataStoreName	      "pos"
       ReadBeforeWriteMsg      "warning"
@@ -3598,7 +3487,7 @@ Model {
       BlockType		      DataStoreMemory
       Name		      "          "
       SID		      "982"
-      Position		      [475, 320, 587, 355]
+      Position		      [205, 285, 317, 320]
       ZOrder		      56
       DataStoreName	      "curr_tp"
       ReadBeforeWriteMsg      "warning"
@@ -3610,2868 +3499,10 @@ Model {
     }
     Block {
       BlockType		      SubSystem
-      Name		      "Controlador Casau"
-      SID		      "828"
-      Ports		      [2, 1]
-      Position		      [735, 92, 845, 183]
-      ZOrder		      -7
-      RequestExecContextInheritance off
-      System {
-	Name			"Controlador Casau"
-	Location		[-1928, -8, 8, 1088]
-	Open			off
-	ModelBrowserVisibility	off
-	ModelBrowserWidth	200
-	ScreenColor		"white"
-	PaperOrientation	"landscape"
-	PaperPositionMode	"auto"
-	PaperType		"A4"
-	PaperUnits		"centimeters"
-	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
-	TiledPageScale		1
-	ShowPageBoundaries	off
-	ZoomFactor		"100"
-	Block {
-	  BlockType		  Inport
-	  Name			  "state"
-	  SID			  "829"
-	  Position		  [170, 38, 200, 52]
-	  ZOrder		  -1
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Inport
-	  Name			  "ref"
-	  SID			  "830"
-	  Position		  [135, 58, 165, 72]
-	  ZOrder		  -2
-	  Port			  "2"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Constant
-	  Name			  "Constant"
-	  SID			  "951"
-	  Position		  [25, 90, 55, 120]
-	  ZOrder		  2
-	}
-	Block {
-	  BlockType		  Demux
-	  Name			  "Demux2"
-	  SID			  "935"
-	  Ports			  [1, 6]
-	  Position		  [385, 261, 390, 319]
-	  ZOrder		  -22
-	  BlockMirror		  on
-	  BackgroundColor	  "black"
-	  NamePlacement		  "alternate"
-	  ShowName		  off
-	  Outputs		  "[3;3;3;3;1;4]"
-	}
-	Block {
-	  BlockType		  Derivative
-	  Name			  "Derivative"
-	  SID			  "855"
-	  Position		  [745, 105, 775, 135]
-	  ZOrder		  -1
-	}
-	Block {
-	  BlockType		  SubSystem
-	  Name			  "Integrator System"
-	  SID			  "880"
-	  Ports			  [4, 4]
-	  Position		  [430, 270, 600, 430]
-	  ZOrder		  -26
-	  BlockMirror		  on
-	  NamePlacement		  "alternate"
-	  RequestExecContextInheritance	off
-	  Object {
-	    $PropName		    "MaskObject"
-	    $ObjectID		    81
-	    $ClassName		    "Simulink.Mask"
-	    Type		    "Hybrid Integrator"
-	    Description		    "This block integrates the state of the hybrid system defined by the flow map f (first input), t"
-	    "he flow set C (second input), the jump map g (third input) and the jump set D (fourth input).\nStarting from the "
-	    "initial condition x0 (last mask parameter), the system's state x evolves continuously within the set C, according"
-	    " to f(x,u), but is also subject to jumps within D, according to g(x,u).\nThe block also stops the simulation when"
-	    " the time t is greater than the flow horizon T (first mask parameter), or when the number of jumps j is greater t"
-	    "han the jump horizon J (second mask parameter).\nThe outputs of the blocks are respectively x(t), t, j, x(t-)."
-	    Help		    "This block integrates the state of the hybrid system defined by the flow map f (first input), the flow"
-	    " set C (second input), the jump map g (third input) and the jump set D (fourth input).\n<br>\nStarting from the i"
-	    "nitial condition x0 (last mask parameter), the system's state x evolves continuously within the set C, according "
-	    "to f(x,u), but is also subject to jumps within D, according to g(x,u).\n<br>\nThe block also stops the simulation"
-	    " when the time t is greater than the flow horizon T (first mask parameter), or when the number of jumps j is grea"
-	    "ter than the jump horizon J (second mask parameter).\n<br>\nThe outputs of the blocks are respectively x(t), t, j"
-	    ", x(t-).\n<br>\nYou can right click on the block and \"Look under mask\" to see what's inside the block. \nFinall"
-	    "y, refer to the manual (HybridSimulator_vXX.pdf) for more detailed information on how this hybrid simulator works"
-	    ".\n"
-	    Array {
-	      Type		      "Simulink.MaskParameter"
-	      Dimension		      3
-	      Object {
-		$ObjectID		82
-		Type			"edit"
-		Name			"T"
-		Prompt			"Flow Horizon"
-		Value			"T"
-	      }
-	      Object {
-		$ObjectID		83
-		Type			"edit"
-		Name			"J"
-		Prompt			"Jump Horizon"
-		Value			"J"
-	      }
-	      Object {
-		$ObjectID		84
-		Type			"edit"
-		Name			"x0"
-		Prompt			"Initial Condition"
-		Value			"[z0;b_hat10;b_hat20;omega0;h0;qh0]"
-	      }
-	      PropName		      "Parameters"
-	    }
-	  }
-	  System {
-	    Name		    "Integrator System"
-	    Location		    [-1928, -8, 8, 1088]
-	    Open		    off
-	    ModelBrowserVisibility  off
-	    ModelBrowserWidth	    200
-	    ScreenColor		    "white"
-	    PaperOrientation	    "landscape"
-	    PaperPositionMode	    "auto"
-	    PaperType		    "A4"
-	    PaperUnits		    "centimeters"
-	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
-	    TiledPageScale	    1
-	    ShowPageBoundaries	    off
-	    ZoomFactor		    "100"
-	    Block {
-	      BlockType		      Inport
-	      Name		      "f"
-	      SID		      "881"
-	      Position		      [20, 48, 50, 62]
-	      ZOrder		      -1
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "C"
-	      SID		      "882"
-	      Position		      [20, 98, 50, 112]
-	      ZOrder		      -2
-	      NamePlacement	      "alternate"
-	      Port		      "2"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "g"
-	      SID		      "883"
-	      Position		      [135, 173, 165, 187]
-	      ZOrder		      -3
-	      Port		      "3"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "D"
-	      SID		      "884"
-	      Position		      [20, 118, 50, 132]
-	      ZOrder		      -4
-	      Port		      "4"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      SubSystem
-	      Name		      "CT dynamics"
-	      SID		      "885"
-	      Ports		      [1, 1]
-	      Position		      [220, 35, 265, 75]
-	      ZOrder		      -5
-	      RequestExecContextInheritance off
-	      System {
-		Name			"CT dynamics"
-		Location		[-1928, -8, 8, 1088]
-		Open			off
-		ModelBrowserVisibility	off
-		ModelBrowserWidth	200
-		ScreenColor		"white"
-		PaperOrientation	"landscape"
-		PaperPositionMode	"auto"
-		PaperType		"A4"
-		PaperUnits		"centimeters"
-		TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
-		TiledPageScale		1
-		ShowPageBoundaries	off
-		ZoomFactor		"100"
-		Block {
-		  BlockType		  Inport
-		  Name			  "f(x,u)"
-		  SID			  "886"
-		  Position		  [75, 78, 105, 92]
-		  ZOrder		  -1
-		  IconDisplay		  "Port number"
-		}
-		Block {
-		  BlockType		  Constant
-		  Name			  "Flows"
-		  SID			  "887"
-		  Position		  [15, 25, 30, 45]
-		  ZOrder		  -2
-		}
-		Block {
-		  BlockType		  Constant
-		  Name			  "Jumps"
-		  SID			  "888"
-		  Position		  [45, 50, 60, 70]
-		  ZOrder		  -3
-		  Value			  "0"
-		}
-		Block {
-		  BlockType		  Mux
-		  Name			  "Mux"
-		  SID			  "889"
-		  Ports			  [3, 1]
-		  Position		  [130, 25, 135, 95]
-		  ZOrder		  -4
-		  ShowName		  off
-		  Inputs		  "[1 1 -1]"
-		  DisplayOption		  "bar"
-		}
-		Block {
-		  BlockType		  Outport
-		  Name			  "dot"
-		  SID			  "890"
-		  Position		  [160, 53, 190, 67]
-		  ZOrder		  -5
-		  IconDisplay		  "Port number"
-		}
-		Line {
-		  ZOrder		  1
-		  SrcBlock		  "f(x,u)"
-		  SrcPort		  1
-		  DstBlock		  "Mux"
-		  DstPort		  3
-		}
-		Line {
-		  ZOrder		  2
-		  SrcBlock		  "Mux"
-		  SrcPort		  1
-		  DstBlock		  "dot"
-		  DstPort		  1
-		}
-		Line {
-		  ZOrder		  3
-		  SrcBlock		  "Flows"
-		  SrcPort		  1
-		  DstBlock		  "Mux"
-		  DstPort		  1
-		}
-		Line {
-		  ZOrder		  4
-		  SrcBlock		  "Jumps"
-		  SrcPort		  1
-		  DstBlock		  "Mux"
-		  DstPort		  2
-		}
-	      }
-	    }
-	    Block {
-	      BlockType		      Demux
-	      Name		      "Demux"
-	      SID		      "891"
-	      Ports		      [1, 3]
-	      Position		      [520, 84, 525, 166]
-	      ZOrder		      -6
-	      BackgroundColor	      "black"
-	      ShowName		      off
-	      Outputs		      "[1 1 -1]"
-	      DisplayOption	      "bar"
-	    }
-	    Block {
-	      BlockType		      Demux
-	      Name		      "Demux1"
-	      SID		      "892"
-	      Ports		      [1, 3]
-	      Position		      [220, 246, 225, 294]
-	      ZOrder		      -7
-	      BlockMirror	      on
-	      BackgroundColor	      "black"
-	      NamePlacement	      "alternate"
-	      ShowName		      off
-	      Outputs		      "[1 1 -1]"
-	      DisplayOption	      "bar"
-	    }
-	    Block {
-	      BlockType		      InitialCondition
-	      Name		      "ICx"
-	      SID		      "893"
-	      Position		      [550, 135, 570, 165]
-	      ZOrder		      -8
-	      Value		      "x0"
-	    }
-	    Block {
-	      BlockType		      InitialCondition
-	      Name		      "ICx0"
-	      SID		      "894"
-	      Position		      [320, 179, 375, 211]
-	      ZOrder		      -9
-	      Value		      "[0; 0; x0(:)]"
-	    }
-	    Block {
-	      BlockType		      Integrator
-	      Name		      "Integrator"
-	      SID		      "895"
-	      Ports		      [3, 1, 0, 0, 1]
-	      Position		      [405, 22, 485, 228]
-	      ZOrder		      -10
-	      NamePlacement	      "alternate"
-	      ShowName		      off
-	      ExternalReset	      "level hold"
-	      InitialConditionSource  "external"
-	      ShowStatePort	      on
-	      ZeroCross		      off
-	    }
-	    Block {
-	      BlockType		      SubSystem
-	      Name		      "Jump logic"
-	      SID		      "896"
-	      Ports		      [3, 1]
-	      Position		      [220, 97, 260, 153]
-	      ZOrder		      -11
-	      RequestExecContextInheritance off
-	      System {
-		Name			"Jump logic"
-		Location		[-1928, -8, 8, 1088]
-		Open			off
-		ModelBrowserVisibility	off
-		ModelBrowserWidth	200
-		ScreenColor		"white"
-		PaperOrientation	"landscape"
-		PaperPositionMode	"auto"
-		PaperType		"A4"
-		PaperUnits		"centimeters"
-		TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
-		TiledPageScale		1
-		ShowPageBoundaries	off
-		ZoomFactor		"100"
-		Block {
-		  BlockType		  Inport
-		  Name			  "C"
-		  SID			  "897"
-		  Position		  [15, 98, 45, 112]
-		  ZOrder		  -1
-		  IconDisplay		  "Port number"
-		}
-		Block {
-		  BlockType		  Inport
-		  Name			  "D"
-		  SID			  "898"
-		  Position		  [15, 58, 45, 72]
-		  ZOrder		  -2
-		  Port			  "2"
-		  IconDisplay		  "Port number"
-		}
-		Block {
-		  BlockType		  Inport
-		  Name			  "r"
-		  SID			  "899"
-		  Position		  [15, 163, 45, 177]
-		  ZOrder		  -3
-		  Port			  "3"
-		  IconDisplay		  "Port number"
-		}
-		Block {
-		  BlockType		  Reference
-		  Name			  "Compare\nTo Constant"
-		  SID			  "900"
-		  Ports			  [1, 1]
-		  Position		  [75, 157, 120, 183]
-		  ZOrder		  -4
-		  LibraryVersion	  "1.354"
-		  SourceBlock		  "simulink/Logic and Bit\nOperations/Compare\nTo Constant"
-		  SourceType		  "Compare To Constant"
-		  ContentPreviewEnabled	  off
-		  relop			  ">="
-		  const			  "0.5"
-		  OutDataTypeStr	  "boolean"
-		  ZeroCross		  on
-		}
-		Block {
-		  BlockType		  Constant
-		  Name			  "Constant"
-		  SID			  "901"
-		  Position		  [215, 22, 245, 38]
-		  ZOrder		  -5
-		  ShowName		  off
-		  Value			  "rule"
-		}
-		Block {
-		  BlockType		  Constant
-		  Name			  "Constant1"
-		  SID			  "902"
-		  Position		  [215, 162, 245, 178]
-		  ZOrder		  -6
-		  ShowName		  off
-		  Value			  "0"
-		}
-		Block {
-		  BlockType		  Logic
-		  Name			  "Logical\nOperator"
-		  SID			  "903"
-		  Ports			  [2, 1]
-		  Position		  [145, 82, 175, 113]
-		  ZOrder		  -7
-		  ShowName		  off
-		  AllPortsSameDT	  off
-		  OutDataTypeStr	  "boolean"
-		}
-		Block {
-		  BlockType		  Logic
-		  Name			  "Logical\nOperator1"
-		  SID			  "904"
-		  Ports			  [1, 1]
-		  Position		  [75, 93, 105, 117]
-		  ZOrder		  -8
-		  ShowName		  off
-		  Operator		  "NOT"
-		  Inputs		  "1"
-		  AllPortsSameDT	  off
-		  OutDataTypeStr	  "boolean"
-		}
-		Block {
-		  BlockType		  Logic
-		  Name			  "Logical\nOperator2"
-		  SID			  "905"
-		  Ports			  [2, 1]
-		  Position		  [215, 117, 245, 148]
-		  ZOrder		  -9
-		  ShowName		  off
-		  Operator		  "OR"
-		  AllPortsSameDT	  off
-		  OutDataTypeStr	  "boolean"
-		}
-		Block {
-		  BlockType		  Logic
-		  Name			  "Logical\nOperator3"
-		  SID			  "906"
-		  Ports			  [3, 1]
-		  Position		  [145, 124, 175, 156]
-		  ZOrder		  -10
-		  ShowName		  off
-		  Inputs		  "3"
-		  AllPortsSameDT	  off
-		  OutDataTypeStr	  "boolean"
-		}
-		Block {
-		  BlockType		  MultiPortSwitch
-		  Name			  "Multiport\nSwitch"
-		  SID			  "907"
-		  Ports			  [5, 1]
-		  Position		  [300, 17, 340, 183]
-		  ZOrder		  -11
-		  DataPortForDefault	  "Additional data port"
-		  InputSameDT		  off
-		  SaturateOnIntegerOverflow off
-		}
-		Block {
-		  BlockType		  Outport
-		  Name			  "jump"
-		  SID			  "908"
-		  Position		  [400, 93, 430, 107]
-		  ZOrder		  -12
-		  IconDisplay		  "Port number"
-		}
-		Line {
-		  ZOrder		  1
-		  SrcBlock		  "Constant1"
-		  SrcPort		  1
-		  DstBlock		  "Multiport\nSwitch"
-		  DstPort		  5
-		}
-		Line {
-		  ZOrder		  2
-		  SrcBlock		  "Logical\nOperator3"
-		  SrcPort		  1
-		  DstBlock		  "Logical\nOperator2"
-		  DstPort		  2
-		}
-		Line {
-		  ZOrder		  3
-		  SrcBlock		  "Compare\nTo Constant"
-		  SrcPort		  1
-		  Points		  [0, -20]
-		  DstBlock		  "Logical\nOperator3"
-		  DstPort		  3
-		}
-		Line {
-		  ZOrder		  4
-		  SrcBlock		  "Multiport\nSwitch"
-		  SrcPort		  1
-		  DstBlock		  "jump"
-		  DstPort		  1
-		}
-		Line {
-		  ZOrder		  5
-		  SrcBlock		  "Logical\nOperator2"
-		  SrcPort		  1
-		  DstBlock		  "Multiport\nSwitch"
-		  DstPort		  4
-		}
-		Line {
-		  ZOrder		  6
-		  SrcBlock		  "Logical\nOperator"
-		  SrcPort		  1
-		  Points		  [15, 0]
-		  Branch {
-		    ZOrder		    7
-		    Points		    [0, 25]
-		    DstBlock		    "Logical\nOperator2"
-		    DstPort		    1
-		  }
-		  Branch {
-		    ZOrder		    8
-		    DstBlock		    "Multiport\nSwitch"
-		    DstPort		    3
-		  }
-		}
-		Line {
-		  ZOrder		  9
-		  SrcBlock		  "Logical\nOperator1"
-		  SrcPort		  1
-		  DstBlock		  "Logical\nOperator"
-		  DstPort		  2
-		}
-		Line {
-		  ZOrder		  10
-		  SrcBlock		  "C"
-		  SrcPort		  1
-		  Points		  [5, 0]
-		  Branch {
-		    ZOrder		    11
-		    DstBlock		    "Logical\nOperator1"
-		    DstPort		    1
-		  }
-		  Branch {
-		    ZOrder		    12
-		    Points		    [0, 35]
-		    DstBlock		    "Logical\nOperator3"
-		    DstPort		    2
-		  }
-		}
-		Line {
-		  ZOrder		  13
-		  SrcBlock		  "r"
-		  SrcPort		  1
-		  DstBlock		  "Compare\nTo Constant"
-		  DstPort		  1
-		}
-		Line {
-		  ZOrder		  14
-		  SrcBlock		  "D"
-		  SrcPort		  1
-		  Points		  [75, 0]
-		  Branch {
-		    ZOrder		    15
-		    DstBlock		    "Multiport\nSwitch"
-		    DstPort		    2
-		  }
-		  Branch {
-		    ZOrder		    16
-		    Points		    [0, 25]
-		    Branch {
-		    ZOrder		    17
-		    DstBlock		    "Logical\nOperator"
-		    DstPort		    1
-		    }
-		    Branch {
-		    ZOrder		    18
-		    Points		    [0, 40]
-		    DstBlock		    "Logical\nOperator3"
-		    DstPort		    1
-		    }
-		  }
-		}
-		Line {
-		  ZOrder		  19
-		  SrcBlock		  "Constant"
-		  SrcPort		  1
-		  DstBlock		  "Multiport\nSwitch"
-		  DstPort		  1
-		}
-		Annotation {
-		  SID			  "909"
-		  Name			  "rule=1:  out = D\nrlule=2: out = D and ~C\nrule=3:  out = (D and ~C)  or (D and C and r>0.5)\nother :  o"
-		  "ut = 0"
-		  Position		  [367, 42, 595, 96]
-		  InternalMargins	  [0, 0, 0, 0]
-		  FixedHeight		  off
-		  FixedWidth		  off
-		  HorizontalAlignment	  "left"
-		  ZOrder		  -1
-		}
-	      }
-	    }
-	    Block {
-	      BlockType		      Stop
-	      Name		      "Stop \nSimulation"
-	      SID		      "910"
-	      Position		      [935, 187, 970, 223]
-	      ZOrder		      -12
-	      BackgroundColor	      "[0.900000, 0.214468, 0.234003]"
-	    }
-	    Block {
-	      BlockType		      SubSystem
-	      Name		      "Stop logic"
-	      SID		      "911"
-	      Ports		      [4, 1]
-	      Position		      [700, 155, 740, 250]
-	      ZOrder		      -13
-	      RequestExecContextInheritance off
-	      System {
-		Name			"Stop logic"
-		Location		[-1928, -8, 8, 1088]
-		Open			off
-		ModelBrowserVisibility	off
-		ModelBrowserWidth	200
-		ScreenColor		"white"
-		PaperOrientation	"landscape"
-		PaperPositionMode	"auto"
-		PaperType		"A4"
-		PaperUnits		"centimeters"
-		TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
-		TiledPageScale		1
-		ShowPageBoundaries	off
-		ZoomFactor		"100"
-		Block {
-		  BlockType		  Inport
-		  Name			  "t"
-		  SID			  "912"
-		  Position		  [50, 38, 80, 52]
-		  ZOrder		  -1
-		  IconDisplay		  "Port number"
-		}
-		Block {
-		  BlockType		  Inport
-		  Name			  "j"
-		  SID			  "913"
-		  Position		  [50, 88, 80, 102]
-		  ZOrder		  -2
-		  Port			  "2"
-		  IconDisplay		  "Port number"
-		}
-		Block {
-		  BlockType		  Inport
-		  Name			  "C"
-		  SID			  "914"
-		  Position		  [50, 147, 80, 163]
-		  ZOrder		  -3
-		  NamePlacement		  "alternate"
-		  Port			  "3"
-		  IconDisplay		  "Port number"
-		}
-		Block {
-		  BlockType		  Inport
-		  Name			  "D"
-		  SID			  "915"
-		  Position		  [50, 167, 80, 183]
-		  ZOrder		  -4
-		  Port			  "4"
-		  IconDisplay		  "Port number"
-		}
-		Block {
-		  BlockType		  Reference
-		  Name			  "Flow Horizon, T"
-		  SID			  "916"
-		  Ports			  [1, 1]
-		  Position		  [135, 30, 175, 60]
-		  ZOrder		  -5
-		  NamePlacement		  "alternate"
-		  LibraryVersion	  "1.354"
-		  SourceBlock		  "simulink/Logic and Bit\nOperations/Compare\nTo Constant"
-		  SourceType		  "Compare To Constant"
-		  ContentPreviewEnabled	  off
-		  relop			  ">="
-		  const			  "T"
-		  OutDataTypeStr	  "uint8"
-		  ZeroCross		  off
-		}
-		Block {
-		  BlockType		  Reference
-		  Name			  "Jump Horizon, J"
-		  SID			  "917"
-		  Ports			  [1, 1]
-		  Position		  [135, 80, 175, 110]
-		  ZOrder		  -6
-		  NamePlacement		  "alternate"
-		  LibraryVersion	  "1.354"
-		  SourceBlock		  "simulink/Logic and Bit\nOperations/Compare\nTo Constant"
-		  SourceType		  "Compare To Constant"
-		  ContentPreviewEnabled	  off
-		  relop			  ">="
-		  const			  "J"
-		  OutDataTypeStr	  "uint8"
-		  ZeroCross		  off
-		}
-		Block {
-		  BlockType		  Logic
-		  Name			  "Logical\nOperator"
-		  SID			  "918"
-		  Ports			  [2, 1]
-		  Position		  [135, 147, 175, 183]
-		  ZOrder		  -7
-		  NamePlacement		  "alternate"
-		  Operator		  "NOR"
-		  AllPortsSameDT	  off
-		  OutDataTypeStr	  "boolean"
-		}
-		Block {
-		  BlockType		  Logic
-		  Name			  "Logical\nOperator1"
-		  SID			  "919"
-		  Ports			  [3, 1]
-		  Position		  [250, 74, 280, 116]
-		  ZOrder		  -8
-		  NamePlacement		  "alternate"
-		  Operator		  "OR"
-		  Inputs		  "3"
-		  AllPortsSameDT	  off
-		  OutDataTypeStr	  "boolean"
-		}
-		Block {
-		  BlockType		  Outport
-		  Name			  "stop"
-		  SID			  "920"
-		  Position		  [320, 88, 350, 102]
-		  ZOrder		  -9
-		  IconDisplay		  "Port number"
-		}
-		Line {
-		  ZOrder		  1
-		  SrcBlock		  "Logical\nOperator1"
-		  SrcPort		  1
-		  DstBlock		  "stop"
-		  DstPort		  1
-		}
-		Line {
-		  ZOrder		  2
-		  SrcBlock		  "C"
-		  SrcPort		  1
-		  DstBlock		  "Logical\nOperator"
-		  DstPort		  1
-		}
-		Line {
-		  ZOrder		  3
-		  SrcBlock		  "j"
-		  SrcPort		  1
-		  DstBlock		  "Jump Horizon, J"
-		  DstPort		  1
-		}
-		Line {
-		  ZOrder		  4
-		  SrcBlock		  "t"
-		  SrcPort		  1
-		  DstBlock		  "Flow Horizon, T"
-		  DstPort		  1
-		}
-		Line {
-		  ZOrder		  5
-		  SrcBlock		  "D"
-		  SrcPort		  1
-		  DstBlock		  "Logical\nOperator"
-		  DstPort		  2
-		}
-		Line {
-		  ZOrder		  6
-		  SrcBlock		  "Logical\nOperator"
-		  SrcPort		  1
-		  Points		  [45, 0; 0, -55]
-		  DstBlock		  "Logical\nOperator1"
-		  DstPort		  3
-		}
-		Line {
-		  ZOrder		  7
-		  SrcBlock		  "Jump Horizon, J"
-		  SrcPort		  1
-		  DstBlock		  "Logical\nOperator1"
-		  DstPort		  2
-		}
-		Line {
-		  ZOrder		  8
-		  SrcBlock		  "Flow Horizon, T"
-		  SrcPort		  1
-		  Points		  [45, 0; 0, 35]
-		  DstBlock		  "Logical\nOperator1"
-		  DstPort		  1
-		}
-	      }
-	    }
-	    Block {
-	      BlockType		      UniformRandomNumber
-	      Name		      "Uniform Random\nNumber"
-	      SID		      "921"
-	      Position		      [135, 137, 165, 153]
-	      ZOrder		      -14
-	      ShowName		      off
-	      Minimum		      "0"
-	      Seed		      "abs(floor(100*rand))"
-	      SampleTime	      "0"
-	    }
-	    Block {
-	      BlockType		      SubSystem
-	      Name		      "Update logic"
-	      SID		      "922"
-	      Ports		      [3, 1]
-	      Position		      [220, 173, 295, 217]
-	      ZOrder		      -15
-	      RequestExecContextInheritance off
-	      System {
-		Name			"Update logic"
-		Location		[-1928, -8, 8, 1088]
-		Open			off
-		ModelBrowserVisibility	off
-		ModelBrowserWidth	200
-		ScreenColor		"white"
-		PaperOrientation	"landscape"
-		PaperPositionMode	"auto"
-		PaperType		"A4"
-		PaperUnits		"centimeters"
-		TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
-		TiledPageScale		1
-		ShowPageBoundaries	off
-		ZoomFactor		"100"
-		Block {
-		  BlockType		  Inport
-		  Name			  "g(x-,u)"
-		  SID			  "923"
-		  Position		  [45, 118, 75, 132]
-		  ZOrder		  -1
-		  IconDisplay		  "Port number"
-		}
-		Block {
-		  BlockType		  Inport
-		  Name			  "j-"
-		  SID			  "924"
-		  Position		  [45, 78, 75, 92]
-		  ZOrder		  -2
-		  Port			  "2"
-		  IconDisplay		  "Port number"
-		}
-		Block {
-		  BlockType		  Inport
-		  Name			  "t-"
-		  SID			  "925"
-		  Position		  [45, 38, 75, 52]
-		  ZOrder		  -3
-		  Port			  "3"
-		  IconDisplay		  "Port number"
-		}
-		Block {
-		  BlockType		  Constant
-		  Name			  "Constant"
-		  SID			  "926"
-		  Position		  [125, 103, 155, 117]
-		  ZOrder		  -4
-		  ShowName		  off
-		}
-		Block {
-		  BlockType		  Mux
-		  Name			  "Mux1"
-		  SID			  "927"
-		  Ports			  [3, 1]
-		  Position		  [210, 25, 215, 145]
-		  ZOrder		  -5
-		  ShowName		  off
-		  Inputs		  "[1 1 -1]"
-		  DisplayOption		  "bar"
-		}
-		Block {
-		  BlockType		  Sum
-		  Name			  "Sum"
-		  SID			  "928"
-		  Ports			  [2, 1]
-		  Position		  [165, 75, 185, 95]
-		  ZOrder		  -6
-		  ShowName		  off
-		  IconShape		  "round"
-		  Inputs		  "|++"
-		  InputSameDT		  off
-		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-		  SaturateOnIntegerOverflow off
-		}
-		Block {
-		  BlockType		  Outport
-		  Name			  "update law"
-		  SID			  "929"
-		  Position		  [265, 78, 295, 92]
-		  ZOrder		  -7
-		  IconDisplay		  "Port number"
-		}
-		Line {
-		  ZOrder		  1
-		  SrcBlock		  "Constant"
-		  SrcPort		  1
-		  DstBlock		  "Sum"
-		  DstPort		  2
-		}
-		Line {
-		  ZOrder		  2
-		  SrcBlock		  "t-"
-		  SrcPort		  1
-		  DstBlock		  "Mux1"
-		  DstPort		  1
-		}
-		Line {
-		  ZOrder		  3
-		  SrcBlock		  "g(x-,u)"
-		  SrcPort		  1
-		  DstBlock		  "Mux1"
-		  DstPort		  3
-		}
-		Line {
-		  ZOrder		  4
-		  SrcBlock		  "j-"
-		  SrcPort		  1
-		  DstBlock		  "Sum"
-		  DstPort		  1
-		}
-		Line {
-		  ZOrder		  5
-		  SrcBlock		  "Mux1"
-		  SrcPort		  1
-		  DstBlock		  "update law"
-		  DstPort		  1
-		}
-		Line {
-		  ZOrder		  6
-		  SrcBlock		  "Sum"
-		  SrcPort		  1
-		  DstBlock		  "Mux1"
-		  DstPort		  2
-		}
-	      }
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "x"
-	      SID		      "930"
-	      Position		      [595, 143, 625, 157]
-	      ZOrder		      -16
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "t"
-	      SID		      "931"
-	      Position		      [780, 94, 810, 106]
-	      ZOrder		      -17
-	      Port		      "2"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "j"
-	      SID		      "932"
-	      Position		      [780, 119, 810, 131]
-	      ZOrder		      -18
-	      Port		      "3"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "x-"
-	      SID		      "933"
-	      Position		      [135, 278, 165, 292]
-	      ZOrder		      -19
-	      BlockMirror	      on
-	      Port		      "4"
-	      IconDisplay	      "Port number"
-	    }
-	    Line {
-	      ZOrder		      1
-	      SrcBlock		      "Demux1"
-	      SrcPort		      2
-	      Points		      [-25, 0; 0, -75]
-	      DstBlock		      "Update logic"
-	      DstPort		      2
-	    }
-	    Line {
-	      ZOrder		      2
-	      SrcBlock		      "Demux1"
-	      SrcPort		      1
-	      Points		      [-10, 0]
-	      DstBlock		      "Update logic"
-	      DstPort		      3
-	    }
-	    Line {
-	      ZOrder		      3
-	      SrcBlock		      "g"
-	      SrcPort		      1
-	      DstBlock		      "Update logic"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      4
-	      SrcBlock		      "Uniform Random\nNumber"
-	      SrcPort		      1
-	      DstBlock		      "Jump logic"
-	      DstPort		      3
-	    }
-	    Line {
-	      ZOrder		      5
-	      SrcBlock		      "Jump logic"
-	      SrcPort		      1
-	      DstBlock		      "Integrator"
-	      DstPort		      2
-	    }
-	    Line {
-	      ZOrder		      6
-	      SrcBlock		      "Demux1"
-	      SrcPort		      3
-	      DstBlock		      "x-"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      7
-	      SrcBlock		      "f"
-	      SrcPort		      1
-	      DstBlock		      "CT dynamics"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      8
-	      SrcBlock		      "D"
-	      SrcPort		      1
-	      Points		      [30, 0]
-	      Branch {
-		ZOrder			9
-		DstBlock		"Jump logic"
-		DstPort			2
-	      }
-	      Branch {
-		ZOrder			10
-		Points			[0, 220; 580, 0; 0, -105]
-		DstBlock		"Stop logic"
-		DstPort			4
-	      }
-	    }
-	    Line {
-	      ZOrder		      11
-	      SrcBlock		      "C"
-	      SrcPort		      1
-	      Points		      [50, 0]
-	      Branch {
-		ZOrder			12
-		DstBlock		"Jump logic"
-		DstPort			1
-	      }
-	      Branch {
-		ZOrder			13
-		Points			[0, 220; 535, 0; 0, -110]
-		DstBlock		"Stop logic"
-		DstPort			3
-	      }
-	    }
-	    Line {
-	      ZOrder		      14
-	      SrcBlock		      "Integrator"
-	      SrcPort		      1
-	      DstBlock		      "Demux"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      16
-	      SrcBlock		      "CT dynamics"
-	      SrcPort		      1
-	      DstBlock		      "Integrator"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      17
-	      SrcBlock		      "Update logic"
-	      SrcPort		      1
-	      DstBlock		      "ICx0"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      18
-	      SrcBlock		      "Demux"
-	      SrcPort		      1
-	      Points		      [135, 0]
-	      Branch {
-		ZOrder			19
-		Labels			[0, 0]
-		Points			[0, 65]
-		DstBlock		"Stop logic"
-		DstPort			1
-	      }
-	      Branch {
-		ZOrder			20
-		DstBlock		"t"
-		DstPort			1
-	      }
-	    }
-	    Line {
-	      ZOrder		      21
-	      SrcBlock		      "Demux"
-	      SrcPort		      2
-	      Points		      [110, 0]
-	      Branch {
-		ZOrder			22
-		Labels			[0, 0]
-		Points			[0, 65]
-		DstBlock		"Stop logic"
-		DstPort			2
-	      }
-	      Branch {
-		ZOrder			23
-		DstBlock		"j"
-		DstPort			1
-	      }
-	    }
-	    Line {
-	      ZOrder		      24
-	      Labels		      [0, 0]
-	      SrcBlock		      "Integrator"
-	      SrcPort		      state
-	      Points		      [0, 37]
-	      DstBlock		      "Demux1"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      25
-	      SrcBlock		      "Demux"
-	      SrcPort		      3
-	      DstBlock		      "ICx"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      26
-	      SrcBlock		      "ICx"
-	      SrcPort		      1
-	      DstBlock		      "x"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      27
-	      SrcBlock		      "ICx0"
-	      SrcPort		      1
-	      DstBlock		      "Integrator"
-	      DstPort		      3
-	    }
-	    Line {
-	      ZOrder		      28
-	      SrcBlock		      "Stop logic"
-	      SrcPort		      1
-	      DstBlock		      "Stop \nSimulation"
-	      DstPort		      1
-	    }
-	  }
-	}
-	Block {
-	  BlockType		  Mux
-	  Name			  "Mux"
-	  SID			  "852"
-	  Ports			  [2, 1]
-	  Position		  [810, 101, 815, 174]
-	  ZOrder		  -16
-	  ShowName		  off
-	  Inputs		  "2"
-	  DisplayOption		  "bar"
-	}
-	Block {
-	  BlockType		  Mux
-	  Name			  "Mux1"
-	  SID			  "934"
-	  Ports			  [6, 1]
-	  Position		  [625, 253, 630, 327]
-	  ZOrder		  -16
-	  BlockMirror		  on
-	  NamePlacement		  "alternate"
-	  ShowName		  off
-	  Inputs		  "6"
-	  DisplayOption		  "bar"
-	}
-	Block {
-	  BlockType		  Scope
-	  Name			  "Scope"
-	  SID			  "853"
-	  Ports			  [1]
-	  Position		  [880, 159, 910, 191]
-	  ZOrder		  -3
-	  Floating		  off
-	  Location		  [100, 126, 1435, 894]
-	  Open			  off
-	  NumInputPorts		  "1"
-	  ZoomMode		  "xonly"
-	  List {
-	    ListType		    AxesTitles
-	    axes1		    "%<SignalLabel>"
-	  }
-	  List {
-	    ListType		    ScopeGraphics
-	    FigureColor		    "[0.5 0.5 0.5]"
-	    AxesColor		    "[0 0 0]"
-	    AxesTickColor	    "[1 1 1]"
-	    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
-	    LineStyles		    "-|-|-|-|-|-"
-	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
-	    MarkerStyles	    "none|none|none|none|none|none"
-	  }
-	  ShowLegends		  off
-	  YMin			  "-0.98"
-	  YMax			  "-0.77"
-	  DataFormat		  "StructureWithTime"
-	  LimitDataPoints	  off
-	  SampleTime		  "0"
-	  ScrollMode		  off
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Slider\nGain"
-	  SID			  "950"
-	  Ports			  [1, 1]
-	  Position		  [95, 120, 125, 150]
-	  ZOrder		  1
-	  LibraryVersion	  "1.354"
-	  SourceBlock		  "simulink/Math\nOperations/Slider\nGain"
-	  SourceType		  "Slider Gain"
-	  ContentPreviewEnabled	  off
-	  low			  "0"
-	  gain			  "5"
-	  high			  "6"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Slider\nGain1"
-	  SID			  "952"
-	  Ports			  [1, 1]
-	  Position		  [95, 150, 125, 180]
-	  ZOrder		  3
-	  LibraryVersion	  "1.354"
-	  SourceBlock		  "simulink/Math\nOperations/Slider\nGain"
-	  SourceType		  "Slider Gain"
-	  ContentPreviewEnabled	  off
-	  low			  "0"
-	  gain			  "0.3"
-	  high			  "1"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Slider\nGain2"
-	  SID			  "953"
-	  Ports			  [1, 1]
-	  Position		  [95, 180, 125, 210]
-	  ZOrder		  4
-	  LibraryVersion	  "1.354"
-	  SourceBlock		  "simulink/Math\nOperations/Slider\nGain"
-	  SourceType		  "Slider Gain"
-	  ContentPreviewEnabled	  off
-	  low			  "0"
-	  gain			  "0.01"
-	  high			  "1"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Slider\nGain3"
-	  SID			  "954"
-	  Ports			  [1, 1]
-	  Position		  [95, 60, 125, 90]
-	  ZOrder		  5
-	  LibraryVersion	  "1.354"
-	  SourceBlock		  "simulink/Math\nOperations/Slider\nGain"
-	  SourceType		  "Slider Gain"
-	  ContentPreviewEnabled	  off
-	  low			  "0"
-	  gain			  "3"
-	  high			  "10"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Slider\nGain4"
-	  SID			  "955"
-	  Ports			  [1, 1]
-	  Position		  [95, 210, 125, 240]
-	  ZOrder		  6
-	  LibraryVersion	  "1.354"
-	  SourceBlock		  "simulink/Math\nOperations/Slider\nGain"
-	  SourceType		  "Slider Gain"
-	  ContentPreviewEnabled	  off
-	  low			  "0"
-	  gain			  "3"
-	  high			  "10"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Slider\nGain5"
-	  SID			  "956"
-	  Ports			  [1, 1]
-	  Position		  [95, 240, 125, 270]
-	  ZOrder		  7
-	  LibraryVersion	  "1.354"
-	  SourceBlock		  "simulink/Math\nOperations/Slider\nGain"
-	  SourceType		  "Slider Gain"
-	  ContentPreviewEnabled	  off
-	  low			  "0"
-	  gain			  "20"
-	  high			  "100"
-	}
-	Block {
-	  BlockType		  Scope
-	  Name			  "b1"
-	  SID			  "938"
-	  Ports			  [1]
-	  Position		  [180, 264, 210, 296]
-	  ZOrder		  -30
-	  BlockMirror		  on
-	  Floating		  off
-	  Location		  [6, 196, 1290, 585]
-	  Open			  off
-	  NumInputPorts		  "1"
-	  ZoomMode		  "yonly"
-	  List {
-	    ListType		    AxesTitles
-	    axes1		    "%<SignalLabel>"
-	  }
-	  List {
-	    ListType		    ScopeGraphics
-	    FigureColor		    "[0.5 0.5 0.5]"
-	    AxesColor		    "[0 0 0]"
-	    AxesTickColor	    "[1 1 1]"
-	    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
-	    LineStyles		    "-|-|-|-|-|-"
-	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
-	    MarkerStyles	    "none|none|none|none|none|none"
-	  }
-	  ShowLegends		  off
-	  TimeRange		  "30"
-	  YMin			  "-1.5"
-	  YMax			  "2.75"
-	  SaveToWorkspace	  on
-	  SaveName		  "b1"
-	  DataFormat		  "StructureWithTime"
-	  LimitDataPoints	  off
-	  SampleTime		  "0"
-	  ScrollMode		  off
-	}
-	Block {
-	  BlockType		  Scope
-	  Name			  "b2"
-	  SID			  "939"
-	  Ports			  [1]
-	  Position		  [225, 274, 255, 306]
-	  ZOrder		  -31
-	  BlockMirror		  on
-	  Floating		  off
-	  Location		  [6, 196, 1290, 585]
-	  Open			  off
-	  NumInputPorts		  "1"
-	  ZoomMode		  "yonly"
-	  List {
-	    ListType		    AxesTitles
-	    axes1		    "%<SignalLabel>"
-	  }
-	  List {
-	    ListType		    ScopeGraphics
-	    FigureColor		    "[0.5 0.5 0.5]"
-	    AxesColor		    "[0 0 0]"
-	    AxesTickColor	    "[1 1 1]"
-	    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
-	    LineStyles		    "-|-|-|-|-|-"
-	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
-	    MarkerStyles	    "none|none|none|none|none|none"
-	  }
-	  ShowLegends		  off
-	  TimeRange		  "30"
-	  YMin			  "-1.5"
-	  YMax			  "2.75"
-	  SaveToWorkspace	  on
-	  SaveName		  "b2"
-	  DataFormat		  "StructureWithTime"
-	  LimitDataPoints	  off
-	  SampleTime		  "0"
-	  ScrollMode		  off
-	}
-	Block {
-	  BlockType		  Scope
-	  Name			  "h"
-	  SID			  "941"
-	  Ports			  [1]
-	  Position		  [135, 294, 165, 326]
-	  ZOrder		  -32
-	  BlockMirror		  on
-	  Floating		  off
-	  Location		  [6, 196, 1290, 585]
-	  Open			  off
-	  NumInputPorts		  "1"
-	  ZoomMode		  "yonly"
-	  List {
-	    ListType		    AxesTitles
-	    axes1		    "%<SignalLabel>"
-	  }
-	  List {
-	    ListType		    ScopeGraphics
-	    FigureColor		    "[0.5 0.5 0.5]"
-	    AxesColor		    "[0 0 0]"
-	    AxesTickColor	    "[1 1 1]"
-	    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
-	    LineStyles		    "-|-|-|-|-|-"
-	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
-	    MarkerStyles	    "none|none|none|none|none|none"
-	  }
-	  ShowLegends		  off
-	  TimeRange		  "30"
-	  YMin			  "-1.5"
-	  YMax			  "2.75"
-	  SaveToWorkspace	  on
-	  SaveName		  "h"
-	  DataFormat		  "StructureWithTime"
-	  LimitDataPoints	  off
-	  SampleTime		  "0"
-	  ScrollMode		  off
-	}
-	Block {
-	  BlockType		  Scope
-	  Name			  "j"
-	  SID			  "943"
-	  Ports			  [1]
-	  Position		  [225, 354, 255, 386]
-	  ZOrder		  -33
-	  BlockMirror		  on
-	  Floating		  off
-	  Location		  [72, 482, 1356, 871]
-	  Open			  off
-	  NumInputPorts		  "1"
-	  ZoomMode		  "yonly"
-	  List {
-	    ListType		    AxesTitles
-	    axes1		    "%<SignalLabel>"
-	  }
-	  List {
-	    ListType		    ScopeGraphics
-	    FigureColor		    "[0.5 0.5 0.5]"
-	    AxesColor		    "[0 0 0]"
-	    AxesTickColor	    "[1 1 1]"
-	    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
-	    LineStyles		    "-|-|-|-|-|-"
-	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
-	    MarkerStyles	    "none|none|none|none|none|none"
-	  }
-	  ShowLegends		  off
-	  TimeRange		  "23.9"
-	  YMin			  "1.9"
-	  YMax			  "2.1"
-	  SaveToWorkspace	  on
-	  SaveName		  "jint"
-	  DataFormat		  "StructureWithTime"
-	  LimitDataPoints	  off
-	  SampleTime		  "0"
-	  ScrollMode		  off
-	}
-	Block {
-	  BlockType		  SubSystem
-	  Name			  "logic"
-	  SID			  "936"
-	  Ports			  [3, 3]
-	  Position		  [430, 459, 600, 661]
-	  ZOrder		  -4
-	  LibraryVersion	  "1.32"
-	  ErrorFcn		  "Stateflow.Translate.translate"
-	  PermitHierarchicalResolution "ExplicitOnly"
-	  TreatAsAtomicUnit	  on
-	  RequestExecContextInheritance	off
-	  SFBlockType		  "MATLAB Function"
-	  System {
-	    Name		    "logic"
-	    Location		    [189, 225, 840, 847]
-	    Open		    off
-	    ModelBrowserVisibility  off
-	    ModelBrowserWidth	    200
-	    ScreenColor		    "white"
-	    PaperOrientation	    "landscape"
-	    PaperPositionMode	    "auto"
-	    PaperType		    "A4"
-	    PaperUnits		    "centimeters"
-	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
-	    TiledPageScale	    1
-	    ShowPageBoundaries	    off
-	    ZoomFactor		    "100"
-	    SIDHighWatermark	    "77"
-	    Block {
-	      BlockType		      Inport
-	      Name		      "state"
-	      SID		      "936::1"
-	      Position		      [20, 101, 40, 119]
-	      ZOrder		      -1
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "ref"
-	      SID		      "936::23"
-	      Position		      [20, 136, 40, 154]
-	      ZOrder		      9
-	      Port		      "2"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "x"
-	      SID		      "936::59"
-	      Position		      [20, 171, 40, 189]
-	      ZOrder		      14
-	      Port		      "3"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Demux
-	      Name		      " Demux "
-	      SID		      "936::76"
-	      Ports		      [1, 1]
-	      Position		      [270, 245, 320, 285]
-	      ZOrder		      31
-	      Outputs		      "1"
-	    }
-	    Block {
-	      BlockType		      S-Function
-	      Name		      " SFunction "
-	      SID		      "936::75"
-	      Tag		      "Stateflow S-Function PackageDeliverySim 1"
-	      Ports		      [3, 4]
-	      Position		      [180, 102, 230, 203]
-	      ZOrder		      30
-	      FunctionName	      "sf_sfun"
-	      PortCounts	      "[3 4]"
-	      EnableBusSupport	      on
-	      Port {
-		PortNumber		2
-		Name			"C"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		3
-		Name			"G"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		4
-		Name			"D"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	    }
-	    Block {
-	      BlockType		      Terminator
-	      Name		      " Terminator "
-	      SID		      "936::77"
-	      Position		      [460, 256, 480, 274]
-	      ZOrder		      32
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "C"
-	      SID		      "936::66"
-	      Position		      [460, 101, 480, 119]
-	      ZOrder		      21
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "G"
-	      SID		      "936::67"
-	      Position		      [460, 136, 480, 154]
-	      ZOrder		      22
-	      Port		      "2"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "D"
-	      SID		      "936::68"
-	      Position		      [460, 171, 480, 189]
-	      ZOrder		      23
-	      Port		      "3"
-	      IconDisplay	      "Port number"
-	    }
-	    Line {
-	      ZOrder		      9
-	      SrcBlock		      "state"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      10
-	      SrcBlock		      "ref"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      2
-	    }
-	    Line {
-	      ZOrder		      11
-	      SrcBlock		      "x"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      3
-	    }
-	    Line {
-	      Name		      "C"
-	      ZOrder		      12
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      2
-	      DstBlock		      "C"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "G"
-	      ZOrder		      13
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      3
-	      DstBlock		      "G"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "D"
-	      ZOrder		      14
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      4
-	      DstBlock		      "D"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      15
-	      SrcBlock		      " Demux "
-	      SrcPort		      1
-	      DstBlock		      " Terminator "
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      16
-	      SrcBlock		      " SFunction "
-	      SrcPort		      1
-	      DstBlock		      " Demux "
-	      DstPort		      1
-	    }
-	  }
-	}
-	Block {
-	  BlockType		  SubSystem
-	  Name			  "mQX Controller sim"
-	  SID			  "838"
-	  Ports			  [14, 11]
-	  Position		  [425, 49, 600, 221]
-	  ZOrder		  -4
-	  LibraryVersion	  "1.32"
-	  ErrorFcn		  "Stateflow.Translate.translate"
-	  PermitHierarchicalResolution "ExplicitOnly"
-	  TreatAsAtomicUnit	  on
-	  RequestExecContextInheritance	off
-	  SFBlockType		  "MATLAB Function"
-	  System {
-	    Name		    "mQX Controller sim"
-	    Location		    [219, 337, 814, 775]
-	    Open		    off
-	    ModelBrowserVisibility  off
-	    ModelBrowserWidth	    200
-	    ScreenColor		    "white"
-	    PaperOrientation	    "landscape"
-	    PaperPositionMode	    "auto"
-	    PaperType		    "A4"
-	    PaperUnits		    "centimeters"
-	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
-	    TiledPageScale	    1
-	    ShowPageBoundaries	    off
-	    ZoomFactor		    "100"
-	    SIDHighWatermark	    "82"
-	    Block {
-	      BlockType		      Inport
-	      Name		      "state"
-	      SID		      "838::1"
-	      Position		      [20, 101, 40, 119]
-	      ZOrder		      -1
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "ref"
-	      SID		      "838::23"
-	      Position		      [20, 136, 40, 154]
-	      ZOrder		      9
-	      Port		      "2"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "z"
-	      SID		      "838::58"
-	      Position		      [20, 171, 40, 189]
-	      ZOrder		      32
-	      Port		      "3"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "hat_b"
-	      SID		      "838::50"
-	      Position		      [20, 206, 40, 224]
-	      ZOrder		      24
-	      Port		      "4"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "hat_b2"
-	      SID		      "838::62"
-	      Position		      [20, 246, 40, 264]
-	      ZOrder		      36
-	      Port		      "5"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "w"
-	      SID		      "838::61"
-	      Position		      [20, 281, 40, 299]
-	      ZOrder		      35
-	      Port		      "6"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "h"
-	      SID		      "838::65"
-	      Position		      [20, 316, 40, 334]
-	      ZOrder		      39
-	      Port		      "7"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "qh"
-	      SID		      "838::67"
-	      Position		      [20, 351, 40, 369]
-	      ZOrder		      41
-	      Port		      "8"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "kp"
-	      SID		      "838::72"
-	      Position		      [20, 386, 40, 404]
-	      ZOrder		      46
-	      Port		      "9"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "kv"
-	      SID		      "838::73"
-	      Position		      [20, 426, 40, 444]
-	      ZOrder		      47
-	      Port		      "10"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "kz"
-	      SID		      "838::77"
-	      Position		      [20, 461, 40, 479]
-	      ZOrder		      51
-	      Port		      "11"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "kV0"
-	      SID		      "838::74"
-	      Position		      [20, 496, 40, 514]
-	      ZOrder		      48
-	      Port		      "12"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "kq"
-	      SID		      "838::75"
-	      Position		      [20, 531, 40, 549]
-	      ZOrder		      49
-	      Port		      "13"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "kw"
-	      SID		      "838::76"
-	      Position		      [20, 566, 40, 584]
-	      ZOrder		      50
-	      Port		      "14"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Demux
-	      Name		      " Demux "
-	      SID		      "838::81"
-	      Ports		      [1, 1]
-	      Position		      [270, 530, 320, 570]
-	      ZOrder		      55
-	      Outputs		      "1"
-	    }
-	    Block {
-	      BlockType		      S-Function
-	      Name		      " SFunction "
-	      SID		      "838::80"
-	      Tag		      "Stateflow S-Function PackageDeliverySim 2"
-	      Ports		      [14, 12]
-	      Position		      [180, 90, 230, 390]
-	      ZOrder		      54
-	      FunctionName	      "sf_sfun"
-	      PortCounts	      "[14 12]"
-	      EnableBusSupport	      on
-	      Port {
-		PortNumber		2
-		Name			"cmd"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		3
-		Name			"dot_z"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		4
-		Name			"dot_hat_b"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		5
-		Name			"dot_hat_b2"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		6
-		Name			"dot_w"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		7
-		Name			"dot_h"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		8
-		Name			"dot_qh"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		9
-		Name			"V2"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		10
-		Name			"dot_V2"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		11
-		Name			"q0"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		12
-		Name			"q"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	    }
-	    Block {
-	      BlockType		      Terminator
-	      Name		      " Terminator "
-	      SID		      "838::82"
-	      Position		      [460, 541, 480, 559]
-	      ZOrder		      56
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "cmd"
-	      SID		      "838::24"
-	      Position		      [460, 101, 480, 119]
-	      ZOrder		      10
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "dot_z"
-	      SID		      "838::40"
-	      Position		      [460, 136, 480, 154]
-	      ZOrder		      16
-	      Port		      "2"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "dot_hat_b"
-	      SID		      "838::39"
-	      Position		      [460, 171, 480, 189]
-	      ZOrder		      15
-	      Port		      "3"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "dot_hat_b2"
-	      SID		      "838::63"
-	      Position		      [460, 206, 480, 224]
-	      ZOrder		      37
-	      Port		      "4"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "dot_w"
-	      SID		      "838::64"
-	      Position		      [460, 246, 480, 264]
-	      ZOrder		      38
-	      Port		      "5"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "dot_h"
-	      SID		      "838::66"
-	      Position		      [460, 281, 480, 299]
-	      ZOrder		      40
-	      Port		      "6"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "dot_qh"
-	      SID		      "838::68"
-	      Position		      [460, 316, 480, 334]
-	      ZOrder		      42
-	      Port		      "7"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "V2"
-	      SID		      "838::59"
-	      Position		      [460, 351, 480, 369]
-	      ZOrder		      33
-	      Port		      "8"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "dot_V2"
-	      SID		      "838::60"
-	      Position		      [460, 386, 480, 404]
-	      ZOrder		      34
-	      Port		      "9"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "q0"
-	      SID		      "838::78"
-	      Position		      [460, 426, 480, 444]
-	      ZOrder		      52
-	      Port		      "10"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "q"
-	      SID		      "838::79"
-	      Position		      [460, 461, 480, 479]
-	      ZOrder		      53
-	      Port		      "11"
-	      IconDisplay	      "Port number"
-	    }
-	    Line {
-	      ZOrder		      28
-	      SrcBlock		      "state"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      29
-	      SrcBlock		      "ref"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      2
-	    }
-	    Line {
-	      ZOrder		      30
-	      SrcBlock		      "z"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      3
-	    }
-	    Line {
-	      ZOrder		      31
-	      SrcBlock		      "hat_b"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      4
-	    }
-	    Line {
-	      ZOrder		      32
-	      SrcBlock		      "hat_b2"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      5
-	    }
-	    Line {
-	      ZOrder		      33
-	      SrcBlock		      "w"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      6
-	    }
-	    Line {
-	      ZOrder		      34
-	      SrcBlock		      "h"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      7
-	    }
-	    Line {
-	      ZOrder		      35
-	      SrcBlock		      "qh"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      8
-	    }
-	    Line {
-	      ZOrder		      36
-	      SrcBlock		      "kp"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      9
-	    }
-	    Line {
-	      ZOrder		      37
-	      SrcBlock		      "kv"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      10
-	    }
-	    Line {
-	      ZOrder		      38
-	      SrcBlock		      "kz"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      11
-	    }
-	    Line {
-	      ZOrder		      39
-	      SrcBlock		      "kV0"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      12
-	    }
-	    Line {
-	      ZOrder		      40
-	      SrcBlock		      "kq"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      13
-	    }
-	    Line {
-	      ZOrder		      41
-	      SrcBlock		      "kw"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      14
-	    }
-	    Line {
-	      Name		      "cmd"
-	      ZOrder		      42
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      2
-	      DstBlock		      "cmd"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "dot_z"
-	      ZOrder		      43
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      3
-	      DstBlock		      "dot_z"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "dot_hat_b"
-	      ZOrder		      44
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      4
-	      DstBlock		      "dot_hat_b"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "dot_hat_b2"
-	      ZOrder		      45
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      5
-	      DstBlock		      "dot_hat_b2"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "dot_w"
-	      ZOrder		      46
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      6
-	      DstBlock		      "dot_w"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "dot_h"
-	      ZOrder		      47
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      7
-	      DstBlock		      "dot_h"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "dot_qh"
-	      ZOrder		      48
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      8
-	      DstBlock		      "dot_qh"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "V2"
-	      ZOrder		      49
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      9
-	      DstBlock		      "V2"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "dot_V2"
-	      ZOrder		      50
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      10
-	      DstBlock		      "dot_V2"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "q0"
-	      ZOrder		      51
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      11
-	      DstBlock		      "q0"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "q"
-	      ZOrder		      52
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      12
-	      DstBlock		      "q"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      53
-	      SrcBlock		      " Demux "
-	      SrcPort		      1
-	      DstBlock		      " Terminator "
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      54
-	      SrcBlock		      " SFunction "
-	      SrcPort		      1
-	      DstBlock		      " Demux "
-	      DstPort		      1
-	    }
-	  }
-	}
-	Block {
-	  BlockType		  Scope
-	  Name			  "q"
-	  SID			  "958"
-	  Ports			  [1]
-	  Position		  [765, 194, 795, 226]
-	  ZOrder		  9
-	  Floating		  off
-	  Location		  [129, 182, 989, 554]
-	  Open			  off
-	  NumInputPorts		  "1"
-	  ZoomMode		  "xonly"
-	  List {
-	    ListType		    AxesTitles
-	    axes1		    "%<SignalLabel>"
-	  }
-	  List {
-	    ListType		    ScopeGraphics
-	    FigureColor		    "[0.501960784313725 0.501960784313725 0.501960784313725]"
-	    AxesColor		    "[0 0 0]"
-	    AxesTickColor	    "[1 1 1]"
-	    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
-	    LineStyles		    "-|-|-|-|-|-"
-	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
-	    MarkerStyles	    "none|none|none|none|none|none"
-	  }
-	  ShowLegends		  off
-	  TimeRange		  "20"
-	  YMin			  "-200"
-	  YMax			  "200"
-	  SaveToWorkspace	  on
-	  SaveName		  "q"
-	  DataFormat		  "StructureWithTime"
-	  LimitDataPoints	  off
-	  SampleTime		  "0"
-	  ScrollMode		  off
-	}
-	Block {
-	  BlockType		  Scope
-	  Name			  "q0"
-	  SID			  "957"
-	  Ports			  [1]
-	  Position		  [720, 179, 750, 211]
-	  ZOrder		  8
-	  Floating		  off
-	  Location		  [129, 182, 989, 554]
-	  Open			  off
-	  NumInputPorts		  "1"
-	  ZoomMode		  "xonly"
-	  List {
-	    ListType		    AxesTitles
-	    axes1		    "%<SignalLabel>"
-	  }
-	  List {
-	    ListType		    ScopeGraphics
-	    FigureColor		    "[0.501960784313725 0.501960784313725 0.501960784313725]"
-	    AxesColor		    "[0 0 0]"
-	    AxesTickColor	    "[1 1 1]"
-	    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
-	    LineStyles		    "-|-|-|-|-|-"
-	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
-	    MarkerStyles	    "none|none|none|none|none|none"
-	  }
-	  ShowLegends		  off
-	  TimeRange		  "20"
-	  YMin			  "-200"
-	  YMax			  "200"
-	  SaveToWorkspace	  on
-	  SaveName		  "q0"
-	  DataFormat		  "StructureWithTime"
-	  LimitDataPoints	  off
-	  SampleTime		  "0"
-	  ScrollMode		  off
-	}
-	Block {
-	  BlockType		  Scope
-	  Name			  "qh"
-	  SID			  "944"
-	  Ports			  [1]
-	  Position		  [135, 444, 165, 476]
-	  ZOrder		  -36
-	  BlockMirror		  on
-	  Floating		  off
-	  Location		  [49, 344, 1333, 733]
-	  Open			  off
-	  NumInputPorts		  "1"
-	  List {
-	    ListType		    AxesTitles
-	    axes1		    "%<SignalLabel>"
-	  }
-	  List {
-	    ListType		    ScopeGraphics
-	    FigureColor		    "[0.5 0.5 0.5]"
-	    AxesColor		    "[0 0 0]"
-	    AxesTickColor	    "[1 1 1]"
-	    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
-	    LineStyles		    "-|-|-|-|-|-"
-	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
-	    MarkerStyles	    "none|none|none|none|none|none"
-	  }
-	  ShowLegends		  off
-	  TimeRange		  "30"
-	  YMin			  "-1.5"
-	  YMax			  "2.75"
-	  SaveToWorkspace	  on
-	  SaveName		  "qh"
-	  DataFormat		  "StructureWithTime"
-	  LimitDataPoints	  off
-	  SampleTime		  "0"
-	  ScrollMode		  off
-	}
-	Block {
-	  BlockType		  Scope
-	  Name			  "t"
-	  SID			  "942"
-	  Ports			  [1]
-	  Position		  [195, 314, 225, 346]
-	  ZOrder		  -37
-	  BlockMirror		  on
-	  Floating		  off
-	  Location		  [6, 196, 1290, 585]
-	  Open			  off
-	  NumInputPorts		  "1"
-	  ZoomMode		  "yonly"
-	  List {
-	    ListType		    AxesTitles
-	    axes1		    "%<SignalLabel>"
-	  }
-	  List {
-	    ListType		    ScopeGraphics
-	    FigureColor		    "[0.5 0.5 0.5]"
-	    AxesColor		    "[0 0 0]"
-	    AxesTickColor	    "[1 1 1]"
-	    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
-	    LineStyles		    "-|-|-|-|-|-"
-	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
-	    MarkerStyles	    "none|none|none|none|none|none"
-	  }
-	  ShowLegends		  off
-	  TimeRange		  "30"
-	  YMin			  "-1.5"
-	  YMax			  "2.75"
-	  SaveToWorkspace	  on
-	  SaveName		  "tint"
-	  DataFormat		  "StructureWithTime"
-	  LimitDataPoints	  off
-	  SampleTime		  "0"
-	  ScrollMode		  off
-	}
-	Block {
-	  BlockType		  Scope
-	  Name			  "w"
-	  SID			  "940"
-	  Ports			  [1]
-	  Position		  [310, 284, 340, 316]
-	  ZOrder		  -38
-	  BlockMirror		  on
-	  Floating		  off
-	  Location		  [6, 196, 1290, 585]
-	  Open			  off
-	  NumInputPorts		  "1"
-	  ZoomMode		  "yonly"
-	  List {
-	    ListType		    AxesTitles
-	    axes1		    "%<SignalLabel>"
-	  }
-	  List {
-	    ListType		    ScopeGraphics
-	    FigureColor		    "[0.5 0.5 0.5]"
-	    AxesColor		    "[0 0 0]"
-	    AxesTickColor	    "[1 1 1]"
-	    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
-	    LineStyles		    "-|-|-|-|-|-"
-	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
-	    MarkerStyles	    "none|none|none|none|none|none"
-	  }
-	  ShowLegends		  off
-	  TimeRange		  "30"
-	  YMin			  "-1.5"
-	  YMax			  "2.75"
-	  SaveToWorkspace	  on
-	  SaveName		  "w"
-	  DataFormat		  "StructureWithTime"
-	  LimitDataPoints	  off
-	  SampleTime		  "0"
-	  ScrollMode		  off
-	}
-	Block {
-	  BlockType		  Scope
-	  Name			  "z"
-	  SID			  "937"
-	  Ports			  [1]
-	  Position		  [50, 364, 80, 396]
-	  ZOrder		  -39
-	  BlockMirror		  on
-	  Floating		  off
-	  Location		  [6, 196, 1290, 585]
-	  Open			  off
-	  NumInputPorts		  "1"
-	  ZoomMode		  "yonly"
-	  List {
-	    ListType		    AxesTitles
-	    axes1		    "%<SignalLabel>"
-	  }
-	  List {
-	    ListType		    ScopeGraphics
-	    FigureColor		    "[0.5 0.5 0.5]"
-	    AxesColor		    "[0 0 0]"
-	    AxesTickColor	    "[1 1 1]"
-	    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
-	    LineStyles		    "-|-|-|-|-|-"
-	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
-	    MarkerStyles	    "none|none|none|none|none|none"
-	  }
-	  ShowLegends		  off
-	  TimeRange		  "30"
-	  YMin			  "-1.5"
-	  YMax			  "2.75"
-	  SaveToWorkspace	  on
-	  SaveName		  "z"
-	  DataFormat		  "StructureWithTime"
-	  LimitDataPoints	  off
-	  SampleTime		  "0"
-	  ScrollMode		  off
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "cmd"
-	  SID			  "839"
-	  Position		  [860, 48, 890, 62]
-	  ZOrder		  -40
-	  IconDisplay		  "Port number"
-	}
-	Line {
-	  ZOrder		  1
-	  SrcBlock		  "mQX Controller sim"
-	  SrcPort		  1
-	  Points		  [0, -5]
-	  DstBlock		  "cmd"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  2
-	  SrcBlock		  "ref"
-	  SrcPort		  1
-	  Points		  [110, 0]
-	  Branch {
-	    ZOrder		    3
-	    Points		    [130, 0]
-	    DstBlock		    "mQX Controller sim"
-	    DstPort		    2
-	  }
-	  Branch {
-	    ZOrder		    4
-	    Points		    [0, 495]
-	    DstBlock		    "logic"
-	    DstPort		    2
-	  }
-	}
-	Line {
-	  ZOrder		  5
-	  SrcBlock		  "state"
-	  SrcPort		  1
-	  Points		  [100, 0]
-	  Branch {
-	    ZOrder		    6
-	    Points		    [105, 0]
-	    DstBlock		    "mQX Controller sim"
-	    DstPort		    1
-	  }
-	  Branch {
-	    ZOrder		    7
-	    Points		    [0, 450]
-	    DstBlock		    "logic"
-	    DstPort		    1
-	  }
-	}
-	Line {
-	  ZOrder		  8
-	  SrcBlock		  "mQX Controller sim"
-	  SrcPort		  8
-	  Points		  [44, 0; 0, -45]
-	  DstBlock		  "Derivative"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  9
-	  SrcBlock		  "mQX Controller sim"
-	  SrcPort		  9
-	  Points		  [5, 0; 0, -7; 57, 0; 0, -28; 117, 0; 0, 10]
-	  DstBlock		  "Mux"
-	  DstPort		  2
-	}
-	Line {
-	  ZOrder		  10
-	  SrcBlock		  "Mux"
-	  SrcPort		  1
-	  Points		  [27, 0; 0, 35]
-	  DstBlock		  "Scope"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  11
-	  SrcBlock		  "Derivative"
-	  SrcPort		  1
-	  DstBlock		  "Mux"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  12
-	  SrcBlock		  "Mux1"
-	  SrcPort		  1
-	  DstBlock		  "Integrator System"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  13
-	  SrcBlock		  "mQX Controller sim"
-	  SrcPort		  2
-	  Points		  [55, 0; 0, 190]
-	  DstBlock		  "Mux1"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  14
-	  SrcBlock		  "mQX Controller sim"
-	  SrcPort		  3
-	  Points		  [50, 0; 0, 185]
-	  DstBlock		  "Mux1"
-	  DstPort		  2
-	}
-	Line {
-	  ZOrder		  15
-	  SrcBlock		  "mQX Controller sim"
-	  SrcPort		  4
-	  Points		  [45, 0; 0, 180]
-	  DstBlock		  "Mux1"
-	  DstPort		  3
-	}
-	Line {
-	  ZOrder		  16
-	  SrcBlock		  "mQX Controller sim"
-	  SrcPort		  5
-	  Points		  [40, 0]
-	  DstBlock		  "Mux1"
-	  DstPort		  4
-	}
-	Line {
-	  ZOrder		  17
-	  SrcBlock		  "Integrator System"
-	  SrcPort		  1
-	  DstBlock		  "Demux2"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  18
-	  SrcBlock		  "Demux2"
-	  SrcPort		  1
-	  Points		  [0, 5; -10, 0]
-	  Branch {
-	    ZOrder		    19
-	    Points		    [0, -180]
-	    DstBlock		    "mQX Controller sim"
-	    DstPort		    3
-	  }
-	  Branch {
-	    ZOrder		    20
-	    Points		    [0, 140; -275, 0]
-	    DstBlock		    "z"
-	    DstPort		    1
-	  }
-	}
-	Line {
-	  ZOrder		  21
-	  SrcBlock		  "Demux2"
-	  SrcPort		  2
-	  Points		  [0, 5; -15, 0]
-	  Branch {
-	    ZOrder		    22
-	    Points		    [0, -180]
-	    DstBlock		    "mQX Controller sim"
-	    DstPort		    4
-	  }
-	  Branch {
-	    ZOrder		    23
-	    DstBlock		    "b1"
-	    DstPort		    1
-	  }
-	}
-	Line {
-	  ZOrder		  24
-	  SrcBlock		  "Demux2"
-	  SrcPort		  3
-	  Points		  [0, 5; -20, 0]
-	  Branch {
-	    ZOrder		    25
-	    Points		    [0, -180]
-	    DstBlock		    "mQX Controller sim"
-	    DstPort		    5
-	  }
-	  Branch {
-	    ZOrder		    26
-	    DstBlock		    "b2"
-	    DstPort		    1
-	  }
-	}
-	Line {
-	  ZOrder		  27
-	  SrcBlock		  "Demux2"
-	  SrcPort		  4
-	  Points		  [0, 5; -25, 0]
-	  Branch {
-	    ZOrder		    28
-	    Points		    [0, -180]
-	    DstBlock		    "mQX Controller sim"
-	    DstPort		    6
-	  }
-	  Branch {
-	    ZOrder		    29
-	    DstBlock		    "w"
-	    DstPort		    1
-	  }
-	}
-	Line {
-	  ZOrder		  30
-	  SrcBlock		  "mQX Controller sim"
-	  SrcPort		  6
-	  Points		  [45, 0; 0, 170]
-	  DstBlock		  "Mux1"
-	  DstPort		  5
-	}
-	Line {
-	  ZOrder		  31
-	  SrcBlock		  "Demux2"
-	  SrcPort		  5
-	  Points		  [0, 5; -5, 0]
-	  Branch {
-	    ZOrder		    32
-	    Points		    [0, -180]
-	    DstBlock		    "mQX Controller sim"
-	    DstPort		    7
-	  }
-	  Branch {
-	    ZOrder		    33
-	    DstBlock		    "h"
-	    DstPort		    1
-	  }
-	}
-	Line {
-	  ZOrder		  34
-	  SrcBlock		  "logic"
-	  SrcPort		  1
-	  Points		  [15, 0; 0, -165]
-	  DstBlock		  "Integrator System"
-	  DstPort		  2
-	}
-	Line {
-	  ZOrder		  35
-	  SrcBlock		  "logic"
-	  SrcPort		  2
-	  Points		  [35, 0; 0, -190]
-	  DstBlock		  "Integrator System"
-	  DstPort		  3
-	}
-	Line {
-	  ZOrder		  36
-	  SrcBlock		  "logic"
-	  SrcPort		  3
-	  Points		  [60, 0; 0, -215]
-	  DstBlock		  "Integrator System"
-	  DstPort		  4
-	}
-	Line {
-	  ZOrder		  37
-	  SrcBlock		  "Integrator System"
-	  SrcPort		  4
-	  Points		  [-30, 0; 0, 215]
-	  DstBlock		  "logic"
-	  DstPort		  3
-	}
-	Line {
-	  ZOrder		  38
-	  SrcBlock		  "Integrator System"
-	  SrcPort		  2
-	  DstBlock		  "t"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  39
-	  SrcBlock		  "Integrator System"
-	  SrcPort		  3
-	  DstBlock		  "j"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  40
-	  SrcBlock		  "mQX Controller sim"
-	  SrcPort		  7
-	  Points		  [14, 0; 0, 37; 66, 0; 0, 128]
-	  DstBlock		  "Mux1"
-	  DstPort		  6
-	}
-	Line {
-	  ZOrder		  41
-	  SrcBlock		  "Demux2"
-	  SrcPort		  6
-	  Points		  [-90, 0]
-	  Branch {
-	    ZOrder		    42
-	    Points		    [0, -175]
-	    DstBlock		    "mQX Controller sim"
-	    DstPort		    8
-	  }
-	  Branch {
-	    ZOrder		    43
-	    Points		    [0, 145]
-	    DstBlock		    "qh"
-	    DstPort		    1
-	  }
-	}
-	Line {
-	  ZOrder		  44
-	  SrcBlock		  "Constant"
-	  SrcPort		  1
-	  Points		  [14, 0]
-	  Branch {
-	    ZOrder		    45
-	    Points		    [0, 30]
-	    Branch {
-	      ZOrder		      46
-	      DstBlock		      "Slider\nGain"
-	      DstPort		      1
-	    }
-	    Branch {
-	      ZOrder		      47
-	      Points		      [0, 30]
-	      Branch {
-		ZOrder			48
-		DstBlock		"Slider\nGain1"
-		DstPort			1
-	      }
-	      Branch {
-		ZOrder			49
-		Points			[0, 30]
-		Branch {
-		  ZOrder		  50
-		  DstBlock		  "Slider\nGain2"
-		  DstPort		  1
-		}
-		Branch {
-		  ZOrder		  51
-		  Points		  [0, 30]
-		  Branch {
-		    ZOrder		    52
-		    Points		    [0, 30]
-		    DstBlock		    "Slider\nGain5"
-		    DstPort		    1
-		  }
-		  Branch {
-		    ZOrder		    53
-		    DstBlock		    "Slider\nGain4"
-		    DstPort		    1
-		  }
-		}
-	      }
-	    }
-	  }
-	  Branch {
-	    ZOrder		    54
-	    Points		    [0, -30]
-	    DstBlock		    "Slider\nGain3"
-	    DstPort		    1
-	  }
-	}
-	Line {
-	  ZOrder		  55
-	  SrcBlock		  "Slider\nGain3"
-	  SrcPort		  1
-	  Points		  [73, 0; 0, 75]
-	  DstBlock		  "mQX Controller sim"
-	  DstPort		  9
-	}
-	Line {
-	  ZOrder		  56
-	  SrcBlock		  "Slider\nGain"
-	  SrcPort		  1
-	  Points		  [34, 0; 0, 25]
-	  DstBlock		  "mQX Controller sim"
-	  DstPort		  10
-	}
-	Line {
-	  ZOrder		  57
-	  SrcBlock		  "Slider\nGain1"
-	  SrcPort		  1
-	  Points		  [92, 0; 0, 5]
-	  DstBlock		  "mQX Controller sim"
-	  DstPort		  11
-	}
-	Line {
-	  ZOrder		  58
-	  SrcBlock		  "Slider\nGain2"
-	  SrcPort		  1
-	  Points		  [73, 0; 0, -15]
-	  DstBlock		  "mQX Controller sim"
-	  DstPort		  12
-	}
-	Line {
-	  ZOrder		  59
-	  SrcBlock		  "Slider\nGain4"
-	  SrcPort		  1
-	  Points		  [112, 0; 0, -35]
-	  DstBlock		  "mQX Controller sim"
-	  DstPort		  13
-	}
-	Line {
-	  ZOrder		  60
-	  SrcBlock		  "Slider\nGain5"
-	  SrcPort		  1
-	  Points		  [270, 0; 0, -55]
-	  DstBlock		  "mQX Controller sim"
-	  DstPort		  14
-	}
-	Line {
-	  ZOrder		  61
-	  SrcBlock		  "mQX Controller sim"
-	  SrcPort		  10
-	  DstBlock		  "q0"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  62
-	  SrcBlock		  "mQX Controller sim"
-	  SrcPort		  11
-	  DstBlock		  "q"
-	  DstPort		  1
-	}
-	Annotation {
-	  SID			  "841"
-	  Position		  [254, 63, 256, 78]
-	  InternalMargins	  [0, 0, 0, 0]
-	  FixedHeight		  off
-	  FixedWidth		  off
-	  ZOrder		  -1
-	}
-      }
-    }
-    Block {
-      BlockType		      SubSystem
       Name		      "Controller"
       SID		      "1009"
       Ports		      [2, 1]
-      Position		      [725, 368, 855, 452]
+      Position		      [765, 98, 895, 182]
       ZOrder		      68
       LibraryVersion	      "1.32"
       ErrorFcn		      "Stateflow.Translate.translate"
@@ -6598,7 +3629,7 @@ Model {
       Name		      "Model"
       SID		      "1010"
       Ports		      [1, 1]
-      Position		      [725, 488, 855, 572]
+      Position		      [765, 218, 895, 302]
       ZOrder		      69
       BlockMirror	      on
       LibraryVersion	      "1.32"
@@ -6706,490 +3737,11 @@ Model {
       }
     }
     Block {
-      BlockType		      S-Function
-      Name		      "S-Function1"
-      SID		      "979"
-      Ports		      [1, 1]
-      Position		      [735, 217, 845, 263]
-      ZOrder		      53
-      BlockMirror	      on
-      FunctionName	      "PointMass"
-      EnableBusSupport	      off
-    }
-    Block {
-      BlockType		      SubSystem
-      Name		      "Subsystem"
-      SID		      "1004"
-      Ports		      [2]
-      Position		      [1045, 160, 1085, 220]
-      ZOrder		      66
-      RequestExecContextInheritance off
-      System {
-	Name			"Subsystem"
-	Location		[-1928, -8, 8, 1088]
-	Open			off
-	ModelBrowserVisibility	off
-	ModelBrowserWidth	200
-	ScreenColor		"white"
-	PaperOrientation	"landscape"
-	PaperPositionMode	"auto"
-	PaperType		"usletter"
-	PaperUnits		"inches"
-	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
-	TiledPageScale		1
-	ShowPageBoundaries	off
-	ZoomFactor		"150"
-	Block {
-	  BlockType		  Inport
-	  Name			  "In1"
-	  SID			  "1005"
-	  Position		  [21, 33, 51, 47]
-	  ZOrder		  1
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Inport
-	  Name			  "In2"
-	  SID			  "1006"
-	  Position		  [102, 120, 132, 135]
-	  ZOrder		  2
-	  BlockRotation		  270
-	  Port			  "2"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Demux
-	  Name			  "Demux"
-	  SID			  "697"
-	  Ports			  [1, 4]
-	  Position		  [615, 219, 620, 421]
-	  ZOrder		  -7
-	  ShowName		  off
-	  Outputs		  "[3 3 9 3]"
-	  DisplayOption		  "bar"
-	}
-	Block {
-	  BlockType		  Mux
-	  Name			  "Mux1"
-	  SID			  "688"
-	  Ports			  [2, 1]
-	  Position		  [615, 19, 620, 101]
-	  ZOrder		  -14
-	  ShowName		  off
-	  Inputs		  "2"
-	  DisplayOption		  "bar"
-	}
-	Block {
-	  BlockType		  Mux
-	  Name			  "Mux4"
-	  SID			  "689"
-	  Ports			  [2, 1]
-	  Position		  [615, 119, 620, 201]
-	  ZOrder		  -15
-	  ShowName		  off
-	  Inputs		  "2"
-	  DisplayOption		  "bar"
-	}
-	Block {
-	  BlockType		  Selector
-	  Name			  "Selector"
-	  SID			  "690"
-	  Ports			  [1, 1]
-	  Position		  [530, 27, 560, 53]
-	  ZOrder		  -17
-	  InputPortWidth	  "15"
-	  Indices		  "[1 2 3]"
-	}
-	Block {
-	  BlockType		  Selector
-	  Name			  "Selector1"
-	  SID			  "694"
-	  Ports			  [1, 1]
-	  Position		  [530, 67, 560, 93]
-	  ZOrder		  -17
-	  InputPortWidth	  "18"
-	  Indices		  "[1 2 3]"
-	}
-	Block {
-	  BlockType		  Selector
-	  Name			  "Selector2"
-	  SID			  "695"
-	  Ports			  [1, 1]
-	  Position		  [530, 167, 560, 193]
-	  ZOrder		  -17
-	  InputPortWidth	  "18"
-	  Indices		  "[4 5 6]"
-	}
-	Block {
-	  BlockType		  Selector
-	  Name			  "Selector4"
-	  SID			  "691"
-	  Ports			  [1, 1]
-	  Position		  [530, 127, 560, 153]
-	  ZOrder		  -17
-	  InputPortWidth	  "15"
-	  Indices		  "[4 5 6]"
-	}
-	Block {
-	  BlockType		  Scope
-	  Name			  "o"
-	  SID			  "702"
-	  Ports			  [1]
-	  Position		  [645, 379, 675, 411]
-	  ZOrder		  -3
-	  Floating		  off
-	  Location		  [-1989, 396, -98, 783]
-	  Open			  off
-	  NumInputPorts		  "1"
-	  ZoomMode		  "yonly"
-	  List {
-	    ListType		    AxesTitles
-	    axes1		    "%<SignalLabel>"
-	  }
-	  List {
-	    ListType		    ScopeGraphics
-	    FigureColor		    "[0.501960784313725 0.501960784313725 0.501960784313725]"
-	    AxesColor		    "[0 0 0]"
-	    AxesTickColor	    "[1 1 1]"
-	    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
-	    LineStyles		    "-|-|-|-|-|-"
-	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
-	    MarkerStyles	    "none|none|none|none|none|none"
-	  }
-	  ShowLegends		  off
-	  TimeRange		  "20"
-	  YMin			  "-10"
-	  YMax			  "25"
-	  SaveToWorkspace	  on
-	  SaveName		  "o"
-	  DataFormat		  "StructureWithTime"
-	  LimitDataPoints	  off
-	  SampleTime		  "0"
-	  ScrollMode		  off
-	}
-	Block {
-	  BlockType		  Scope
-	  Name			  "p"
-	  SID			  "703"
-	  Ports			  [1]
-	  Position		  [645, 229, 675, 261]
-	  ZOrder		  -3
-	  Floating		  off
-	  Location		  [-1552, 178, -272, 540]
-	  Open			  off
-	  NumInputPorts		  "1"
-	  ZoomMode		  "yonly"
-	  List {
-	    ListType		    AxesTitles
-	    axes1		    "%<SignalLabel>"
-	  }
-	  List {
-	    ListType		    ScopeGraphics
-	    FigureColor		    "[0.501960784313725 0.501960784313725 0.501960784313725]"
-	    AxesColor		    "[0 0 0]"
-	    AxesTickColor	    "[1 1 1]"
-	    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
-	    LineStyles		    "-|-|-|-|-|-"
-	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
-	    MarkerStyles	    "none|none|none|none|none|none"
-	  }
-	  ShowLegends		  off
-	  TimeRange		  "30              "
-	  YMin			  "-3.25"
-	  YMax			  "1.5"
-	  SaveToWorkspace	  on
-	  SaveName		  "p"
-	  DataFormat		  "StructureWithTime"
-	  LimitDataPoints	  off
-	  SampleTime		  "0"
-	  ScrollMode		  off
-	}
-	Block {
-	  BlockType		  Scope
-	  Name			  "p comparison"
-	  SID			  "692"
-	  Ports			  [1]
-	  Position		  [665, 44, 695, 76]
-	  ZOrder		  -3
-	  Floating		  off
-	  Location		  [10, 177, 1294, 548]
-	  Open			  off
-	  NumInputPorts		  "1"
-	  ZoomMode		  "xonly"
-	  List {
-	    ListType		    AxesTitles
-	    axes1		    "%<SignalLabel>"
-	  }
-	  List {
-	    ListType		    ScopeGraphics
-	    FigureColor		    "[0.501960784313725 0.501960784313725 0.501960784313725]"
-	    AxesColor		    "[0 0 0]"
-	    AxesTickColor	    "[1 1 1]"
-	    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
-	    LineStyles		    "-|-|-|-|-|-"
-	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
-	    MarkerStyles	    "none|none|none|none|none|none"
-	  }
-	  ShowLegends		  off
-	  TimeRange		  "0.25"
-	  YMin			  "-3e+305"
-	  YMax			  "5e+304"
-	  SaveToWorkspace	  on
-	  SaveName		  "comp_p"
-	  DataFormat		  "StructureWithTime"
-	  LimitDataPoints	  off
-	  SampleTime		  "0"
-	  ScrollMode		  off
-	}
-	Block {
-	  BlockType		  Scope
-	  Name			  "v"
-	  SID			  "704"
-	  Ports			  [1]
-	  Position		  [645, 279, 675, 311]
-	  ZOrder		  -3
-	  Floating		  off
-	  Location		  [10, 585, 1859, 990]
-	  Open			  off
-	  NumInputPorts		  "1"
-	  ZoomMode		  "xonly"
-	  List {
-	    ListType		    AxesTitles
-	    axes1		    "%<SignalLabel>"
-	  }
-	  List {
-	    ListType		    ScopeGraphics
-	    FigureColor		    "[0.501960784313725 0.501960784313725 0.501960784313725]"
-	    AxesColor		    "[0 0 0]"
-	    AxesTickColor	    "[1 1 1]"
-	    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
-	    LineStyles		    "-|-|-|-|-|-"
-	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
-	    MarkerStyles	    "none|none|none|none|none|none"
-	  }
-	  ShowLegends		  off
-	  TimeRange		  "20              "
-	  YMin			  "-0.5"
-	  YMax			  "7.5"
-	  SaveToWorkspace	  on
-	  SaveName		  "v"
-	  DataFormat		  "StructureWithTime"
-	  LimitDataPoints	  off
-	  SampleTime		  "0"
-	  ScrollMode		  off
-	}
-	Block {
-	  BlockType		  Scope
-	  Name			  "v comparison"
-	  SID			  "693"
-	  Ports			  [1]
-	  Position		  [665, 144, 695, 176]
-	  ZOrder		  -3
-	  Floating		  off
-	  Location		  [10, 221, 1294, 663]
-	  Open			  off
-	  NumInputPorts		  "1"
-	  ZoomMode		  "xonly"
-	  List {
-	    ListType		    AxesTitles
-	    axes1		    "%<SignalLabel>"
-	  }
-	  List {
-	    ListType		    ScopeGraphics
-	    FigureColor		    "[0.501960784313725 0.501960784313725 0.501960784313725]"
-	    AxesColor		    "[0 0 0]"
-	    AxesTickColor	    "[1 1 1]"
-	    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
-	    LineStyles		    "-|-|-|-|-|-"
-	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
-	    MarkerStyles	    "none|none|none|none|none|none"
-	  }
-	  ShowLegends		  off
-	  TimeRange		  "20"
-	  YMin			  "-6"
-	  YMax			  "6"
-	  SaveToWorkspace	  on
-	  SaveName		  "comp_v"
-	  DataFormat		  "StructureWithTime"
-	  LimitDataPoints	  off
-	  SampleTime		  "0"
-	  ScrollMode		  off
-	}
-	Line {
-	  FontName		  "Helvetica"
-	  FontSize		  9
-	  FontWeight		  "normal"
-	  FontAngle		  "normal"
-	  ZOrder		  1
-	  SrcBlock		  "Mux1"
-	  SrcPort		  1
-	  DstBlock		  "p comparison"
-	  DstPort		  1
-	}
-	Line {
-	  FontName		  "Helvetica"
-	  FontSize		  9
-	  FontWeight		  "normal"
-	  FontAngle		  "normal"
-	  ZOrder		  8
-	  SrcBlock		  "Demux"
-	  SrcPort		  1
-	  DstBlock		  "p"
-	  DstPort		  1
-	}
-	Line {
-	  FontName		  "Helvetica"
-	  FontSize		  9
-	  FontWeight		  "normal"
-	  FontAngle		  "normal"
-	  ZOrder		  3
-	  SrcBlock		  "Mux4"
-	  SrcPort		  1
-	  DstBlock		  "v comparison"
-	  DstPort		  1
-	}
-	Line {
-	  FontName		  "Helvetica"
-	  FontSize		  9
-	  FontWeight		  "normal"
-	  FontAngle		  "normal"
-	  ZOrder		  11
-	  SrcBlock		  "Demux"
-	  SrcPort		  4
-	  DstBlock		  "o"
-	  DstPort		  1
-	}
-	Line {
-	  FontName		  "Helvetica"
-	  FontSize		  9
-	  FontWeight		  "normal"
-	  FontAngle		  "normal"
-	  ZOrder		  5
-	  SrcBlock		  "Selector1"
-	  SrcPort		  1
-	  DstBlock		  "Mux1"
-	  DstPort		  2
-	}
-	Line {
-	  FontName		  "Helvetica"
-	  FontSize		  9
-	  FontWeight		  "normal"
-	  FontAngle		  "normal"
-	  ZOrder		  10
-	  SrcBlock		  "Demux"
-	  SrcPort		  2
-	  DstBlock		  "v"
-	  DstPort		  1
-	}
-	Line {
-	  FontName		  "Helvetica"
-	  FontSize		  9
-	  FontWeight		  "normal"
-	  FontAngle		  "normal"
-	  ZOrder		  4
-	  SrcBlock		  "Selector"
-	  SrcPort		  1
-	  DstBlock		  "Mux1"
-	  DstPort		  1
-	}
-	Line {
-	  FontName		  "Helvetica"
-	  FontSize		  9
-	  FontWeight		  "normal"
-	  FontAngle		  "normal"
-	  ZOrder		  2
-	  SrcBlock		  "Selector4"
-	  SrcPort		  1
-	  DstBlock		  "Mux4"
-	  DstPort		  1
-	}
-	Line {
-	  FontName		  "Helvetica"
-	  FontSize		  9
-	  FontWeight		  "normal"
-	  FontAngle		  "normal"
-	  ZOrder		  6
-	  SrcBlock		  "Selector2"
-	  SrcPort		  1
-	  DstBlock		  "Mux4"
-	  DstPort		  2
-	}
-	Line {
-	  FontName		  "Helvetica"
-	  FontSize		  9
-	  FontWeight		  "normal"
-	  FontAngle		  "normal"
-	  ZOrder		  207
-	  SrcBlock		  "In2"
-	  SrcPort		  1
-	  Points		  [0, -35; 328, 0]
-	  Branch {
-	    ZOrder		    151
-	    Points		    [0, 100]
-	    Branch {
-	      ZOrder		      149
-	      DstBlock		      "Selector2"
-	      DstPort		      1
-	    }
-	    Branch {
-	      ZOrder		      106
-	      Points		      [0, 140]
-	      DstBlock		      "Demux"
-	      DstPort		      1
-	    }
-	  }
-	  Branch {
-	    ZOrder		    108
-	    DstBlock		    "Selector1"
-	    DstPort		    1
-	  }
-	}
-	Line {
-	  FontName		  "Helvetica"
-	  FontSize		  9
-	  FontWeight		  "normal"
-	  FontAngle		  "normal"
-	  ZOrder		  206
-	  SrcBlock		  "In1"
-	  SrcPort		  1
-	  Points		  [411, 0]
-	  Branch {
-	    ZOrder		    154
-	    Points		    [0, 100]
-	    DstBlock		    "Selector4"
-	    DstPort		    1
-	  }
-	  Branch {
-	    ZOrder		    153
-	    DstBlock		    "Selector"
-	    DstPort		    1
-	  }
-	}
-	Annotation {
-	  SID			  "705"
-	  Position		  [616, 266, 618, 281]
-	  InternalMargins	  [0, 0, 0, 0]
-	  FixedHeight		  off
-	  FixedWidth		  off
-	  ZOrder		  -1
-	  FontName		  "Helvetica"
-	  FontSize		  10
-	  FontWeight		  "normal"
-	  FontAngle		  "normal"
-	}
-	Annotation {
-	  SID			  "706"
-	  Position		  [620, 266, 622, 281]
-	  InternalMargins	  [0, 0, 0, 0]
-	  FixedHeight		  off
-	  FixedWidth		  off
-	  ZOrder		  -2
-	  FontName		  "Helvetica"
-	  FontSize		  10
-	  FontWeight		  "normal"
-	  FontAngle		  "normal"
-	}
-      }
+      BlockType		      Stop
+      Name		      "Stop Simulation"
+      SID		      "1012"
+      Position		      [640, 142, 675, 178]
+      ZOrder		      71
     }
     Block {
       BlockType		      SubSystem
@@ -7711,7 +4263,7 @@ Model {
       BlockType		      SubSystem
       Name		      "Waypoint Generator"
       SID		      "980"
-      Ports		      [2, 1]
+      Ports		      [2, 2]
       Position		      [470, 98, 600, 182]
       ZOrder		      54
       LibraryVersion	      "1.32"
@@ -7735,7 +4287,7 @@ Model {
 	TiledPageScale		1
 	ShowPageBoundaries	off
 	ZoomFactor		"100"
-	SIDHighWatermark	"23"
+	SIDHighWatermark	"24"
 	Block {
 	  BlockType		  Inport
 	  Name			  "trajectory"
@@ -7767,15 +4319,21 @@ Model {
 	  Name			  " SFunction "
 	  SID			  "980::16"
 	  Tag			  "Stateflow S-Function PackageDeliverySim 3"
-	  Ports			  [2, 2]
-	  Position		  [180, 115, 230, 175]
+	  Ports			  [2, 3]
+	  Position		  [180, 115, 230, 195]
 	  ZOrder		  7
 	  FunctionName		  "sf_sfun"
-	  PortCounts		  "[2 2]"
+	  PortCounts		  "[2 3]"
 	  EnableBusSupport	  on
 	  Port {
 	    PortNumber		    2
 	    Name		    "waypoint"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    3
+	    Name		    "stop"
 	    RTWStorageClass	    "Auto"
 	    DataLoggingNameMode	    "SignalName"
 	  }
@@ -7795,15 +4353,24 @@ Model {
 	  ZOrder		  -5
 	  IconDisplay		  "Port number"
 	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "stop"
+	  SID			  "980::24"
+	  Position		  [460, 136, 480, 154]
+	  ZOrder		  15
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
 	Line {
-	  ZOrder		  65
+	  ZOrder		  70
 	  SrcBlock		  "trajectory"
 	  SrcPort		  1
 	  DstBlock		  " SFunction "
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  66
+	  ZOrder		  71
 	  SrcBlock		  "state"
 	  SrcPort		  1
 	  DstBlock		  " SFunction "
@@ -7811,7 +4378,7 @@ Model {
 	}
 	Line {
 	  Name			  "waypoint"
-	  ZOrder		  67
+	  ZOrder		  72
 	  Labels		  [0, 0]
 	  SrcBlock		  " SFunction "
 	  SrcPort		  2
@@ -7819,163 +4386,26 @@ Model {
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  68
+	  Name			  "stop"
+	  ZOrder		  73
+	  Labels		  [0, 0]
+	  SrcBlock		  " SFunction "
+	  SrcPort		  3
+	  DstBlock		  "stop"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  74
 	  SrcBlock		  " Demux "
 	  SrcPort		  1
 	  DstBlock		  " Terminator "
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  69
+	  ZOrder		  75
 	  SrcBlock		  " SFunction "
 	  SrcPort		  1
 	  DstBlock		  " Demux "
-	  DstPort		  1
-	}
-      }
-    }
-    Block {
-      BlockType		      Scope
-      Name		      "cmd"
-      SID		      "760"
-      Ports		      [1]
-      Position		      [905, 224, 935, 256]
-      ZOrder		      -3
-      Floating		      off
-      Location		      [10, 355, 1294, 717]
-      Open		      off
-      NumInputPorts	      "1"
-      ZoomMode		      "yonly"
-      List {
-	ListType		AxesTitles
-	axes1			"%<SignalLabel>"
-      }
-      List {
-	ListType		ScopeGraphics
-	FigureColor		"[0.501960784313725 0.501960784313725 0.501960784313725]"
-	AxesColor		"[0 0 0]"
-	AxesTickColor		"[1 1 1]"
-	LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
-	LineStyles		"-|-|-|-|-|-"
-	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
-	MarkerStyles		"none|none|none|none|none|none"
-      }
-      ShowLegends	      off
-      TimeRange		      "8"
-      YMin		      "-9"
-      YMax		      "7"
-      SaveToWorkspace	      on
-      SaveName		      "cmd"
-      DataFormat	      "StructureWithTime"
-      LimitDataPoints	      off
-      SampleTime	      "0"
-      ScrollMode	      off
-    }
-    Block {
-      BlockType		      Scope
-      Name		      "ref"
-      SID		      "617"
-      Ports		      [1]
-      Position		      [555, 24, 585, 56]
-      ZOrder		      -3
-      BlockMirror	      on
-      Floating		      off
-      Location		      [10, 71, 1294, 433]
-      Open		      off
-      NumInputPorts	      "1"
-      ZoomMode		      "xonly"
-      List {
-	ListType		AxesTitles
-	axes1			"%<SignalLabel>"
-      }
-      List {
-	ListType		ScopeGraphics
-	FigureColor		"[0.501960784313725 0.501960784313725 0.501960784313725]"
-	AxesColor		"[0 0 0]"
-	AxesTickColor		"[1 1 1]"
-	LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
-	LineStyles		"-|-|-|-|-|-"
-	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
-	MarkerStyles		"none|none|none|none|none|none"
-      }
-      ShowLegends	      off
-      TimeRange		      "60"
-      YMin		      "-1.5"
-      YMax		      "1.5"
-      SaveToWorkspace	      on
-      SaveName		      "ref"
-      DataFormat	      "StructureWithTime"
-      LimitDataPoints	      off
-      SampleTime	      "0"
-      ScrollMode	      off
-    }
-    Line {
-      ZOrder		      101
-      SrcBlock		      "S-Function1"
-      SrcPort		      1
-      Points		      [-43, 0]
-      Branch {
-	ZOrder			167
-	Points			[0, -125]
-	DstBlock		"Controlador Casau"
-	DstPort			1
-      }
-      Branch {
-	ZOrder			207
-	Points			[0, 104; 343, 0]
-	DstBlock		"Subsystem"
-	DstPort			2
-      }
-      Branch {
-	ZOrder			166
-	Points			[-263, 0; 0, -80]
-	DstBlock		"Waypoint Generator"
-	DstPort			2
-      }
-    }
-    Line {
-      FontName		      "Helvetica"
-      FontSize		      9
-      FontWeight	      "normal"
-      FontAngle		      "normal"
-      ZOrder		      22
-      SrcBlock		      "Controlador Casau"
-      SrcPort		      1
-      Points		      [36, 0; 0, 100]
-      Branch {
-	ZOrder			99
-	DstBlock		"S-Function1"
-	DstPort			1
-      }
-      Branch {
-	ZOrder			98
-	DstBlock		"cmd"
-	DstPort			1
-      }
-    }
-    Line {
-      ZOrder		      136
-      SrcBlock		      "Waypoint Generator"
-      SrcPort		      1
-      Points		      [21, 0]
-      Branch {
-	ZOrder			193
-	Points			[0, 20]
-	DstBlock		"Controlador Casau"
-	DstPort			2
-      }
-      Branch {
-	ZOrder			192
-	Points			[0, -100]
-	Branch {
-	  ZOrder		  206
-	  Points		  [400, 0; 0, 135]
-	  DstBlock		  "Subsystem"
-	  DstPort		  1
-	}
-	Branch {
-	  ZOrder		  160
-	  DstBlock		  "ref"
 	  DstPort		  1
 	}
       }
@@ -7999,9 +4429,33 @@ Model {
       ZOrder		      244
       SrcBlock		      "Model"
       SrcPort		      1
-      Points		      [-44, 0; 0, -100]
+      Points		      [-44, 0]
+      Branch {
+	ZOrder			248
+	Points			[0, -100]
+	DstBlock		"Controller"
+	DstPort			2
+      }
+      Branch {
+	ZOrder			247
+	Points			[-261, 0]
+	DstBlock		"Waypoint Generator"
+	DstPort			2
+      }
+    }
+    Line {
+      ZOrder		      245
+      SrcBlock		      "Waypoint Generator"
+      SrcPort		      1
       DstBlock		      "Controller"
-      DstPort		      2
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      249
+      SrcBlock		      "Waypoint Generator"
+      SrcPort		      2
+      DstBlock		      "Stop Simulation"
+      DstPort		      1
     }
   }
 }
@@ -8016,30 +4470,30 @@ Stateflow {
     name		    "PackageDeliverySim"
     created		    "28-May-2012 17:04:21"
     isLibrary		    0
-    firstTarget		    113
+    firstTarget		    58
     debug {
     }
     sfVersion		    80000001
   }
   chart {
     id			    2
-    name		    "Controlador Casau/logic"
-    windowPosition	    [343 240 174 524]
+    name		    "Waypoint Generator"
+    windowPosition	    [422 539.941 189 413]
     viewLimits		    [0 156.75 0 153.75]
-    screen		    [1 1 1440 900 1.001577287066246]
+    screen		    [1 1 3600 1200 1.180555555555556]
     treeNode		    [0 3 0 0]
-    firstTransition	    19
-    firstJunction	    18
+    firstTransition	    12
+    firstJunction	    11
     viewObj		    2
     visible		    1
     machine		    1
     subviewS {
     }
-    ssIdHighWaterMark	    76
+    ssIdHighWaterMark	    11
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
     firstData		    4
-    chartFileNumber	    1
+    chartFileNumber	    3
     disableImplicitCasting  1
     eml {
       name		      "fcn"
@@ -8059,38 +4513,29 @@ Stateflow {
     decomposition	    CLUSTER_STATE
     eml {
       isEML		      1
-      script		      "function [C, G, D]  = fcn(state, ref, x)\n    %#codegen\n    global g kp kv k delta Rd alpha\n   "
-      " coder.extrinsic('dcm2quat','quat2dcm','quatinv','quatmultiply','keyboard');\n    p = state(1:3);\n    v = state"
-      "(4:6);\n    R = reshape(state(7:15),3,3);\n    z = x(1:3);\n    h = x(13);\n    qh= x(14:17);\n    %robust quate"
-      "rnion lifting\n    r = zeros(4,1);\n    r = dcm2quat(R')';\n    r = [r,-r];\n    [~,I] = max(r'*qh);\n    q = r("
-      ":,I);\n    \n\n    %references\n    pd   = ref(1:3);\n    vd   = ref(4:6);\n    dvd  = ref(7:9);\n    d2vd = ref"
-      "(10:12);\n\n    %%%%% CONTROLLER %%%%%\n\n    %position error variables\n    p0 = p-pd;\n    v0 = v-vd;\n    %po"
-      "sition control law\n    e3 = [0;0;1];\n    u  = kp*p0+kv*v0;\n    u0 = -sat_atan(u)-sat_atan(z);\n    f = u0+dvd"
-      "-g*e3;\n    \n    \n    %desired rotation\n    r3 = -f/norm(f);\n    z = cross(Rd*e3,r3);\n    a = e3'*Rd'*r3;\n"
-      "    zhat = z/norm(z+eps);\n    R0 = (eye(3)+S(z)+(1-a)*(zhat*zhat'-eye(3)))*Rd;\n    q0 = dcm2quat(R0')';\n    %"
-      "R1 calculus\n    q1 = zeros(4,1);\n    q1 = quatmultiply(q',quatinv(q0'))';\n\n    \n    %Flow Set\n    V  = 2*k"
-      "*(1-h*q1(1));\n    V1 = 2*k*(1-q1(1));\n    V2 = 2*k*(1+q1(1));\n    rho= min([V1,V2]);\n    C = 0;\n    if V-rh"
-      "o <= delta %flow condition\n        C = 1;\n    end\n    \n    D = 0;\n    %Jump set\n    if V-rho >= delta %flo"
-      "w condition\n        D = 1;\n        %Jump map\n        G = [x(1:12);-x(13);x(14:17)];\n    else\n        G = x;"
-      "\n    end\n    \n    %robust quaternion lifting\n    if 1-qh'*r(:,I) >= alpha\n        D = 1;\n        G = [G(1:"
-      "13);r(:,I)];\n    end\n    if 1-qh'*r(:,I) > alpha\n        C = 0;\n    end\nend\n\n\nfunction out = sat_atan(va"
-      "r)\n    global satMax\n    out = var;\n    if isempty(satMax)\n        for I=1:numel(var)\n            out(I)=2*"
-      "atan(var(I))/pi;\n        end\n    else\n        for I=1:numel(var)\n            out(I)=satMax*2*atan(var(I)/sat"
-      "Max)/pi;\n        end\n    end\nend\n\nfunction out = sat_atan_dot(var)\n    global satMax\n    out = var;\n    "
-      "if isempty(satMax)\n        for I=1:numel(var)\n            out(I)=(2/pi)*(1+var(I)^2)^(-1);\n        end\n    e"
-      "lse\n        for I=1:numel(var)\n            out(I)=(2/pi)*(1+(var(I)/satMax)^2)^(-1);\n        end\n    end\nen"
-      "d\n        \nfunction out = sat_atan_ddot(var)\n    global satMax\n    out = var;\n    if isempty(satMax)\n     "
-      "   for I=1:numel(var)\n            out(I)=-(2/pi)*(1+var(I)^2)^(-2)*2*var(I);\n        end\n    else\n        fo"
-      "r I=1:numel(var)\n            out(I)=-(2/pi)*(1+(var(I)/satMax)^2)^(-2)*2*(var(I)/satMax^2);\n        end\n    e"
-      "nd\nend\n\nfunction out = Gamma(A)\n    out = -[S(A*[1;0;0]),S(A*[0;1;0]),S(A*[0;0;1])]';\nend\n\nfunction out ="
-      " S(v)\n    out = [0,-v(3),v(2);\n           v(3),0,-v(1);\n           -v(2),v(1),0];\nend\n\n"
+      script		      "function [waypoint, stop]= fcn(trajectory, state)\n%#codegen\ncoder.extrinsic('display')\n%displa"
+      "y('current state:')\n%state\n\nglobal curr_wp curr_tp num_delivered;\n\n% acceptable distance to waypoint\nthres"
+      "hold = 1;\n\n%% Trajectory Points\n% origin      = trajectory(1,:);\n% point1      = trajectory(2,:);\n% point2 "
+      "     = trajectory(3,:);\n% destination = trajectory(4,:);\n\n%% Quadcopters current position\nquad_X = state(1);"
+      "\nquad_Y = state(2);\nquad_Z = state(3);\n\n%% Specify last and next trajectory points\nlast_tp = trajectory(cur"
+      "r_tp - 1,:);\nnext_tp = trajectory(curr_tp,:);\n\n%% Divide distance between last_wp and next_wp into evenly div"
+      "ided segments\n% waypoint distances\nwp_separation_dist = 1; \n\n% trajectory point distances\ntp_separation_dis"
+      "t = sqrt((last_tp(1)-next_tp(1))^2 + (last_tp(2)-next_tp(2))^2 + (last_tp(3)-next_tp(3))^2);\n\n%% Determine whi"
+      "ch segment to give next\nnumber_of_waypoints = floor(tp_separation_dist/wp_separation_dist);\nvec_norm = [(last_"
+      "tp(1)-next_tp(1)) (last_tp(2)-next_tp(2)) (last_tp(3)-next_tp(3))]/tp_separation_dist;\nif(isnan(vec_norm(1))) v"
+      "ec_norm(1) = 0; end\nif(isnan(vec_norm(2))) vec_norm(2) = 0; end\nif(isnan(vec_norm(3))) vec_norm(3) = 0; end\nw"
+      "p = last_tp + curr_wp*wp_separation_dist*-vec_norm;\n\n% distance to current waypoint\ndist1 = sqrt((quad_X-wp(1"
+      "))^2 + (quad_Y-wp(2))^2 + (quad_Z-wp(3))^2);\n\nif(dist1 <= threshold)\n    curr_wp = curr_wp + 1;\n    if(curr_"
+      "wp == number_of_waypoints)\n        curr_tp = curr_tp + 1;\n        curr_wp = 0;\n    end\nend\nif(curr_tp == le"
+      "ngth(trajectory(:,1)) + 1)\n    curr_tp = 2;\n    num_delivered = num_delivered + 1;\n    stop = 1;\nend\n\n%p ="
+      " zeros(15,1);\n%p(1:3) = wp;\n\n%% output\nwaypoint = wp;"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
   data {
     id			    4
     ssIdNumber		    4
-    name		    "state"
+    name		    "trajectory"
     linkNode		    [2 0 5]
     scope		    INPUT_DATA
     machine		    1
@@ -8108,10 +4553,10 @@ Stateflow {
   }
   data {
     id			    5
-    ssIdNumber		    6
-    name		    "ref"
+    ssIdNumber		    5
+    name		    "waypoint"
     linkNode		    [2 4 6]
-    scope		    INPUT_DATA
+    scope		    OUTPUT_DATA
     machine		    1
     props {
       array {
@@ -8120,20 +4565,18 @@ Stateflow {
       type {
 	method			SF_INHERITED_TYPE
 	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
       }
       complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
+      frame		      SF_FRAME_NO
     }
     dataType		    "Inherit: Same as Simulink"
   }
   data {
     id			    6
-    ssIdNumber		    16
-    name		    "Rd"
+    ssIdNumber		    6
+    name		    "state"
     linkNode		    [2 5 7]
-    scope		    DATA_STORE_MEMORY_DATA
+    scope		    INPUT_DATA
     machine		    1
     props {
       array {
@@ -8152,8 +4595,8 @@ Stateflow {
   }
   data {
     id			    7
-    ssIdNumber		    51
-    name		    "k"
+    ssIdNumber		    8
+    name		    "curr_wp"
     linkNode		    [2 6 8]
     scope		    DATA_STORE_MEMORY_DATA
     machine		    1
@@ -8168,14 +4611,14 @@ Stateflow {
 	wordLength		"16"
       }
       complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
+      frame		      SF_FRAME_INHERITED
     }
     dataType		    "Inherit: Same as Simulink"
   }
   data {
     id			    8
-    ssIdNumber		    52
-    name		    "kp"
+    ssIdNumber		    9
+    name		    "curr_tp"
     linkNode		    [2 7 9]
     scope		    DATA_STORE_MEMORY_DATA
     machine		    1
@@ -8190,14 +4633,14 @@ Stateflow {
 	wordLength		"16"
       }
       complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
+      frame		      SF_FRAME_INHERITED
     }
     dataType		    "Inherit: Same as Simulink"
   }
   data {
     id			    9
-    ssIdNumber		    53
-    name		    "kv"
+    ssIdNumber		    10
+    name		    "num_delivered"
     linkNode		    [2 8 10]
     scope		    DATA_STORE_MEMORY_DATA
     machine		    1
@@ -8212,16 +4655,16 @@ Stateflow {
 	wordLength		"16"
       }
       complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
+      frame		      SF_FRAME_INHERITED
     }
     dataType		    "Inherit: Same as Simulink"
   }
   data {
     id			    10
-    ssIdNumber		    62
-    name		    "x"
-    linkNode		    [2 9 11]
-    scope		    INPUT_DATA
+    ssIdNumber		    11
+    name		    "stop"
+    linkNode		    [2 9 0]
+    scope		    OUTPUT_DATA
     machine		    1
     props {
       array {
@@ -8234,1316 +4677,59 @@ Stateflow {
 	wordLength		"16"
       }
       complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
+      frame		      SF_FRAME_NO
     }
     dataType		    "Inherit: Same as Simulink"
   }
-  data {
+  junction {
     id			    11
-    ssIdNumber		    71
-    name		    "C"
-    linkNode		    [2 10 12]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
+    position		    [23.5747 49.5747 7]
+    chart		    2
+    linkNode		    [2 0 0]
+    subviewer		    2
+    ssIdNumber		    3
+    type		    CONNECTIVE_JUNCTION
   }
-  data {
+  transition {
     id			    12
-    ssIdNumber		    17
-    name		    "G"
-    linkNode		    [2 11 13]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
+    labelString		    "{eML_blk_kernel();}"
+    labelPosition	    [28.125 13.875 102.544 14.964]
+    fontSize		    12
+    src {
+      intersection	      [0 0 1 0 23.5747 14.625 0 0]
     }
-    dataType		    "Inherit: Same as Simulink"
+    dst {
+      id		      11
+      intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
+    }
+    midPoint		    [23.5747 24.9468]
+    chart		    2
+    linkNode		    [2 0 0]
+    dataLimits		    [21.175 25.975 14.625 42.575]
+    subviewer		    2
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    2
   }
-  data {
+  instance {
     id			    13
-    ssIdNumber		    72
-    name		    "D"
-    linkNode		    [2 12 14]
-    scope		    OUTPUT_DATA
+    name		    "Waypoint Generator"
     machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
+    chart		    2
   }
-  data {
+  chart {
     id			    14
-    ssIdNumber		    73
-    name		    "delta"
-    linkNode		    [2 13 15]
-    scope		    DATA_STORE_MEMORY_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    15
-    ssIdNumber		    74
-    name		    "g"
-    linkNode		    [2 14 16]
-    scope		    DATA_STORE_MEMORY_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    16
-    ssIdNumber		    75
-    name		    "satMax"
-    linkNode		    [2 15 17]
-    scope		    DATA_STORE_MEMORY_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    17
-    ssIdNumber		    76
-    name		    "alpha"
-    linkNode		    [2 16 0]
-    scope		    DATA_STORE_MEMORY_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  junction {
-    id			    18
-    position		    [23.5747 49.5747 7]
-    chart		    2
-    linkNode		    [2 0 0]
-    subviewer		    2
-    ssIdNumber		    3
-    type		    CONNECTIVE_JUNCTION
-  }
-  transition {
-    id			    19
-    labelString		    "{eML_blk_kernel();}"
-    labelPosition	    [28.125 13.875 102.544 14.964]
-    fontSize		    12
-    src {
-      intersection	      [0 0 1 0 23.5747 14.625 0 0]
-    }
-    dst {
-      id		      18
-      intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
-    }
-    midPoint		    [23.5747 24.9468]
-    chart		    2
-    linkNode		    [2 0 0]
-    dataLimits		    [21.175 25.975 14.625 42.575]
-    subviewer		    2
-    drawStyle		    SMART
-    slide {
-      sticky		      BOTH_STICK
-    }
-    executionOrder	    1
-    ssIdNumber		    2
-  }
-  instance {
-    id			    20
-    name		    "Controlador Casau/logic"
-    machine		    1
-    chart		    2
-  }
-  chart {
-    id			    21
-    name		    "Controlador Casau/mQX Controller sim"
-    windowPosition	    [353 408 161 328]
-    viewLimits		    [0 156.75 0 153.75]
-    screen		    [1 1 1440 900 1.001577287066246]
-    treeNode		    [0 22 0 0]
-    firstTransition	    56
-    firstJunction	    55
-    viewObj		    21
-    visible		    1
-    machine		    1
-    subviewS {
-    }
-    ssIdHighWaterMark	    80
-    decomposition	    CLUSTER_CHART
-    type		    EML_CHART
-    firstData		    23
-    chartFileNumber	    2
-    disableImplicitCasting  1
-    eml {
-      name		      "fcn"
-    }
-  }
-  state {
-    id			    22
-    labelString		    "eML_blk_kernel()"
-    position		    [18 64.5 118 66]
-    fontSize		    12
-    chart		    21
-    treeNode		    [21 0 0 0]
-    superState		    SUBCHART
-    subviewer		    21
-    ssIdNumber		    1
-    type		    FUNC_STATE
-    decomposition	    CLUSTER_STATE
-    eml {
-      isEML		      1
-      script		      "function [cmd, dot_z, dot_hat_b, dot_hat_b2, dot_w, dot_h, dot_qh, V2, dot_V2, q0,q]  = fcn(state"
-      ", ref, z, hat_b, hat_b2,w,h,qh,kp,kv,kz,kV0,kq,kw)\n%#codegen\n\nglobal g kb k m Rd\ncoder.extrinsic('dcm2quat',"
-      "'quat2dcm','quatinv','quatmultiply','keyboard');\n\nP = [1,-kp/kv;-kp/kv,kp];\n\np = state(1:3);\nR = reshape(st"
-      "ate(7:15),3,3);\nv = state(4:6);\n\n%robust quaternion lifting\nr = zeros(4,1);\nr = dcm2quat(R')';\nr = [r,-r];"
-      "\n[~,I] = max(r'*qh);\nq = r(:,I);\ndot_qh = zeros(4,1);\n\n% Trajectory\npd_ = ref(1:3);\nDpd_ = ref(4:6);\nD2p"
-      "d_ = ref(7:9);\nD3pd_ = ref(10:12);\nD4pd_ = ref(13:15);\n\npd = pd_;\nvd = Dpd_;\ndot_vd = D2pd_;\nddot_vd= D3p"
-      "d_;\nd3dot_vd= D4pd_;\n\n%b = zeros(3,1);\n%%%%% CONTROLLER %%%%%\n    %position subsystem\n    %%error\n    p0 "
-      "= p-pd;\n    v0 = v-vd;\n    \n    u  = kp*p0+kv*v0;\n    u0 = -sat_atan(u);\n    \n    e3 = [0;0;1];\n    mu = "
-      "u0-g*e3+dot_vd-sat_atan(z);\n    r3 = -mu/norm(mu);\n    T  = m*norm(mu);\n    gm = S(Rd*e3)*r3;\n    R0 = (eye("
-      "3)+S(gm)+(1-e3'*Rd'*r3)*S(gm/norm(gm))^2)*Rd;\n    q0 = zeros(4,1);\n    q0 = dcm2quat(R0')';\n    %R0 = quat2dc"
-      "m(quatinv(q0'));\n    %dot_p = v;\n    %dot_v = -R*e3*T/m+g*e3+b;\n    \n    %Lyapunov function bar_V0\n    bar_"
-      "V0 = 0;\n    grad_bar_V0 = zeros(6,1);    \n    for I = 1:3\n        ei = zeros(3,1);\n        ei(I) = 1;\n     "
-      "   s = linspace(0,ei'*u,1000)';\n        bar_V0 = bar_V0 + 0.5*[sat_atan(ei'*u) ei'*v0]*P*[sat_atan(ei'*u);ei'*v"
-      "0]+...\n            trapz(s,sat_atan(s));\n        grad_bar_V0 = grad_bar_V0+[sat_atan_dot(ei'*u)*kp*ei,zeros(3,"
-      "1);sat_atan_dot(ei'*u)*kv*ei,ei]*P*[sat_atan(ei'*u);ei'*v0]+...\n            [kp*sat_atan(ei'*u)*ei;kv*sat_atan("
-      "ei'*u)*ei];\n    end\n    %dot_bar_V0 = grad_bar_V0'*[v0;dot_v-dot_vd];\n    %integrator\n    dot_z = kz*[zeros("
-      "3),eye(3)]*grad_bar_V0;\n    \n     %w0 = S(e3)*R0'*d(r3)/dt\n    %dot_mu = -sat_atan_dot(kp*p0+kv*v0).*(kp*v0+k"
-      "v*(dot_v-dot_vd))+ddot_vd-sat_atan_dot(z).*dot_z;\n    %dot_r3 = S(r3)^2*dot_mu/norm(mu); \n    H1 = kron(gm/nor"
-      "m(gm),eye(3))+kron(eye(3),gm/norm(gm));\n    H2 = S(gm/norm(gm))^2*S(Rd*e3)/norm(gm);\n    Dr3_R0 = kron(Rd',eye"
-      "(3))*(-Gamma(eye(3))*S(Rd*e3)-...\n        kron(S(gm/norm(gm))^2,eye(3))*vec(eye(3))*e3'*Rd'-...\n        (1-e3'"
-      "*Rd'*r3)*H1*H2);\n    %w0 = -0.5*R0'*Gamma(R0)'*Dr3_R0*dot_r3;\n    %dot_q0 = 0.5*quatmultiply(q0',[0 w0'])';\n "
-      "   \n    \n    %Lyapunov function V0 \n%     V0 = 0;\n%     for I = 1:3\n%         ei = zeros(3,1);\n%         e"
-      "i(I) = 1;\n%         s = linspace(0,abs(ei'*z),1000)';\n%         V0 = V0+trapz(s,sat_atan(s));\n%         s = l"
-      "inspace(0,abs(ei'*b),1000)';\n%         V0 = V0+trapz(s,inv_sat_atan(s));\n%     end\n%     V0 = V0+kz*bar_V0-b'"
-      "*z;\n%     dot_V0 = kz*grad_bar_V0'*[v0;dot_v-dot_vd]+sat_atan(z)'*dot_z-b'*dot_z;\n    \n    %quaternion error\n"
-      "    q1 = zeros(4,1);\n    q1 = quatmultiply(q',quatinv(q0'))';  % Definitely needed\n    %R1 = R*R0';\n%     dot"
-      "_V0 = kz*grad_bar_V0'*[v0;-R1*R0*e3*T/m+g*e3+b-dot_vd]+sat_atan(z)'*dot_z-b'*dot_z;\n%     dot_V0 = kz*grad_bar_"
-      "V0'*[v0;R1*mu+g*e3+b-dot_vd]+sat_atan(z)'*dot_z-b'*dot_z;\n%     dot_V0 = kz*grad_bar_V0'*[v0;u0]+kz*grad_bar_V0"
-      "(4:6)'*(R1-eye(3))*mu;\n    %compensation for underactuation\n    w1 = -(h*kz*kV0/k)*(2*q1(1)*S(mu)-2*S(mu)*S(q1"
-      "(2:4)))*[zeros(3),eye(3)]*grad_bar_V0-h*kq*q1(2:4);\n    %estimate of w0\n    hat_dot_v = -R*e3*T/m+g*e3+hat_b;\n"
-      "    hat_dot_mu = -sat_atan_dot(kp*p0+kv*v0).*(kp*v0+kv*(hat_dot_v-dot_vd))+ddot_vd-sat_atan_dot(z).*dot_z;\n    "
-      "hat_dot_r3 = S(r3)^2*hat_dot_mu/norm(mu);\n    hat_w0 = -0.5*R0'*Gamma(R0)'*Dr3_R0*hat_dot_r3;\n    \n    w_star"
-      " = hat_w0+R0'*w1;\n    \n%     dot_q1 = zeros(4,1);\n%     dot_q1 = 0.5*quatmultiply(q1',[0 (R0*(w-w0))'])';\n% "
-      "    dot_q = 0.5*quatmultiply(q',[0 w'])';\n    \n    %b estimator\n%     Dv0_r3 = -(S(r3)^2/norm(mu))*kv*diag(sa"
-      "t_atan_dot(u));\n%     Dv0_R0 = Dr3_R0*Dv0_r3;\n%     dot_hat_b = kb*k*h*Dv0_R0'*Gamma(R0)*q1(2:4)/2;\n    dot_h"
-      "at_b = [0;0;0];\n    \n\n    \n    \n        %estimate of w0-2\n    hat_dot_v2 = -R*e3*T/m+g*e3+hat_b2;\n    hat"
-      "_dot_mu2 = -sat_atan_dot(kp*p0+kv*v0).*(kp*v0+kv*(hat_dot_v2-dot_vd))+ddot_vd-sat_atan_dot(z).*dot_z;\n    hat_d"
-      "ot_r32 = S(r3)^2*hat_dot_mu2/norm(mu);\n    hat_w02 = -0.5*R0'*Gamma(R0)'*Dr3_R0*hat_dot_r32;\n    %tilde_b2 = h"
-      "at_b2-b;\n    %v\n    %dot_hat_dot_v = -R*S(w)*e3*T/m-R*e3*mu'*dot_mu/norm(mu)+dot_hat_b;\n    hat_dot_hat_dot_v"
-      "2 = -R*S(w)*e3*T/m-R*e3*mu'*hat_dot_mu2/norm(mu)+dot_hat_b;\n    %ddot_v = -R*S(w)*e3*T/m-R*e3*mu'*dot_mu/norm(m"
-      "u);\n    %u\n    %dot_u = kp*v0+kv*(dot_v-dot_vd);\n    hat_dot_u = kp*v0+kv*(hat_dot_v-dot_vd);\n    hat_dot_u2"
-      " = kp*v0+kv*(hat_dot_v2-dot_vd);\n    %ddot_u = kp*(dot_v-dot_vd)+kv*(ddot_v-ddot_vd);\n    %dot_hat_dot_u = kp*"
-      "(dot_v-dot_vd)+kv*(dot_hat_dot_v-ddot_vd);\n    hat_dot_hat_dot_u2 = kp*(hat_dot_v2-dot_vd)+kv*(hat_dot_hat_dot_"
-      "v2-ddot_vd);\n    %z\n    hess_bar_V0 = zeros(6);\n    for I=1:3\n        ei = zeros(3,1);\n        ei(I) = 1;\n"
-      "        hess_bar_V0 = hess_bar_V0 +...\n            kron([sat_atan(ei'*u) ei'*v0]*P,eye(6))*...\n            sat"
-      "_atan_ddot(ei'*u)*...\n            [kp*(ei*ei')*[kp*eye(3) kv*eye(3)];\n             kv*(ei*ei')*[kp*eye(3) kv*e"
-      "ye(3)];\n             zeros(6)]+sat_atan_dot(ei'*u)*...\n             [kp*eye(3);kv*eye(3)]*(ei*ei')*...\n      "
-      "       [kp*eye(3) kv*eye(3)]+...\n             [sat_atan_dot(ei'*u)*kp*ei,zeros(3,1);\n             sat_atan_dot"
-      "(ei'*u)*kv*ei,ei]*P*...\n             [sat_atan_dot(ei'*u)*ei'*[kp*eye(3) kv*eye(3)];\n             zeros(1,3),e"
-      "i'];\n    end\n    %ddot_z = kz*[zeros(3) eye(3)]*hess_bar_V0*[v0;dot_v-dot_vd];\n    hat_ddot_z2 = kz*[zeros(3)"
-      " eye(3)]*hess_bar_V0*[v0;hat_dot_v2-dot_vd];\n    %mu\n    hat_dot_mu = -sat_atan_dot(u).*(hat_dot_u)+ddot_vd-sa"
-      "t_atan_dot(z).*dot_z;\n    hat_dot_hat_dot_mu2 = -sat_atan_ddot(u).*(hat_dot_u).*(hat_dot_u2)+d3dot_vd-...\n    "
-      "    sat_atan_dot(u).*hat_dot_hat_dot_u2-sat_atan_ddot(z).*(dot_z.^2)-sat_atan_dot(z).*hat_ddot_z2;\n    %r3\n%  "
-      "   Dmu_r3 = S(r3)^2/norm(mu);\n%     D2mu_r3 = -norm(mu)^(-1)*(kron(S(r3)',eye(3))+kron(eye(3),S(r3)))*Gamma(eye"
-      "(3))*S(mu/norm(mu))^2/norm(mu)-...\n%         kron(eye(3),S(r3)^2)*vec(eye(3))*mu'/norm(mu)^3;\n    hat_dot_r3 ="
-      " S(r3)^2*hat_dot_mu/norm(mu);\n    hat_dot_hat_dot_r32 = -kron(hat_dot_mu'/norm(mu),eye(3))*(kron(S(r3)',eye(3))"
-      "+kron(eye(3),S(r3)))*Gamma(eye(3))*hat_dot_r32+...\n        S(r3)^2*(hat_dot_hat_dot_mu2/norm(mu)-hat_dot_mu*mu'"
-      "*hat_dot_mu2/norm(mu)^3);\n    %R0\n    Dr3_H1 = -(kron(K(3,3),eye(3))*kron(eye(3),vec(eye(3)))+...\n        kro"
-      "n(eye(3),kron(K(1,3),eye(3)))*kron(vec(eye(3)),eye(3)))*H2;\n    %Y  = S(gm/norm(gm))^2;\n    Dr3_Y = kron(Rd*e3"
-      ",eye(9))*(kron(eye(3),S(gm/norm(gm)))-kron(S(gm/norm(gm)),eye(3)))*Gamma(eye(3))*S(gm/norm(gm))^2*S(Rd*e3)/norm("
-      "gm);\n    H2 = S(gm/norm(gm))^2*S(Rd*e3)/norm(gm);\n    Dr3_H2 = kron(S(Rd*e3)'/norm(gm),eye(3))*(kron(eye(3),S("
-      "gm/norm(gm)))-kron(S(gm/norm(gm)),eye(3)))*Gamma(eye(3))*S(gm/norm(gm))^2*S(Rd*e3)/norm(gm)+...\n        kron(ey"
-      "e(3),S(gm/norm(gm))^2)*Gamma(eye(3))*Rd*e3*gm'*S(Rd*e3)/norm(gm)^3;\n    \n    H = H1*H2;\n    Dr3_H = kron(H2',"
-      "eye(9))*Dr3_H1+kron(eye(3),H1)*Dr3_H2;\n    \n    %X = (1-e3'*Rd'*r3)*H;\n    Dr3_X = -kron(H',eye(9))*vec(eye(9"
-      "))*e3'*Rd'+(1-e3'*Rd'*r3)*Dr3_H;\n\n    D2r3_R0 = kron(eye(3),kron(Rd',eye(3)))*(-Dr3_Y-Dr3_X);\n    \n    %w0\n"
-      "    hat_w0= -0.5*R0'*Gamma(R0)'*Dr3_R0*hat_dot_r3;\n    hat_dot_hat_w0 = S(hat_w0)*hat_w02-0.5*R0'*Gamma(reshape"
-      "(Dr3_R0*hat_dot_r3,[3 3]))'*Gamma(R0)*R0*hat_w02-0.5*R0'*Gamma(R0)'*(kron(hat_dot_r3',eye(9))*D2r3_R0*hat_dot_r3"
-      "2+Dr3_R0*hat_dot_hat_dot_r32);\n    \n    %hat_b\n%     Dv0_mu=-diag(sat_atan_dot(u)*kv);\n%     Dv0_R0 = Dr3_R0"
-      "*Dmu_r3*Dv0_mu;\n%     Lambda = -R0'*Gamma(R0)'*Dv0_R0;\n%     tilde_dot_hat_dot_mu = -(diag(sat_atan_ddot(u))*d"
-      "iag(hat_dot_u)*kv+diag(sat_atan_dot(u))*(kp*eye(3)-kv^2*R*e3*r3'*diag(sat_atan_dot(u)))+kz*diag(sat_atan_dot(z))"
-      "*[zeros(3),eye(3)]*hess_bar_V0*[zeros(3);eye(3)]);\n%     tilde_dot_hat_w0 = S(hat_w0)*(0.5*Lambda)-...\n%      "
-      "   0.5*R0'*Gamma(reshape(Dr3_R0*hat_dot_r3,[3 3]))'*Gamma(R0)*R0*(0.5*Lambda)-...\n%         0.5*R0'*Gamma(R0)'*"
-      "(kron(hat_dot_r3',eye(9))*D2r3_R0*Dmu_r3*kv*diag(-sat_atan_dot(u))+...\n%         Dr3_R0*(kron(hat_dot_mu',eye(3"
-      "))*D2mu_r3*(-diag(sat_atan_dot(u))*kv)+Dmu_r3*tilde_dot_hat_dot_mu));\n    hat_dot_w1 = -(h*kz*kV0*2/k)*(kron((["
-      "zeros(3),eye(3)]*grad_bar_V0)',eye(3))*...\n        (kron(S(mu),eye(3))*vec(eye(3))*0.5*q1(2:4)'*R0*(w-hat_w02)-"
-      "...\n        q1(1)*Gamma(eye(3))*hat_dot_mu2-kron(S(q1(2:4)),eye(3))*Gamma(eye(3))*hat_dot_mu2-...\n        -kro"
-      "n(eye(3),S(mu))*Gamma(eye(3))*0.5*(q1(1)*eye(3)+S(q1(2:4)))*R0*(w-hat_w02))+...\n        (q1(1)*S(mu)-S(mu)*S(q1"
-      "(2:4)))*[zeros(3),eye(3)]*hess_bar_V0*[v0;hat_dot_v2-dot_vd])-...\n        0.5*h*kq*(q1(1)*eye(3)+S(q1(2:4)))*R0"
-      "*(w-hat_w02);\n%     tilde_dot_w1 = -(h*kz*kV0*2/k)*(kron(([zeros(3),eye(3)]*grad_bar_V0)',eye(3))*...\n%       "
-      "  (kron(S(mu),eye(3))*vec(eye(3))*0.5*q1(2:4)'*R0*(-0.5*Lambda)-...\n%         q1(1)*Gamma(eye(3))*(-diag(sat_at"
-      "an_dot(u))*kv)-kron(S(q1(2:4)),eye(3))*Gamma(eye(3))*(-diag(sat_atan_dot(u))*kv)-...\n%         -kron(eye(3),S(m"
-      "u))*Gamma(eye(3))*0.5*(q1(1)*eye(3)+S(q1(2:4)))*R0*(-0.5*Lambda))+...\n%         (q1(1)*S(mu)-S(mu)*S(q1(2:4)))*"
-      "[zeros(3),eye(3)]*hess_bar_V0*[zeros(3);eye(3)])-...\n%         0.5*h*kq*(q1(1)*eye(3)+S(q1(2:4)))*R0*(-0.5*Lamb"
-      "da);\n    \n    \n\n    %w - angular velocity\n    hat_dot_w_star = hat_dot_hat_w0+R0'*hat_dot_w1+kron(w1',eye(3"
-      "))*Gamma(R0')*hat_w02;\n    u2 = hat_dot_w_star-kw*(w-w_star)-k*h*R0'*q1(2:4);\n    dot_w = u2;\n    \n    \n   "
-      " %b estimator\n    %dot_hat_b2 = -kb*(tilde_dot_hat_w0'*(w-w_star)+tilde_dot_w1'*R0*(w-w_star)+0.5*(kron(w1',eye"
-      "(3))*Gamma(R0')*Lambda)'*(w-w_star))\n    dot_hat_b2 = [0;0;0];\n    \n    %V2\n    V2 = 0;\n    dot_V2 = 0;\n  "
-      "  \n    %%% Unit conversion - input range - omega control\n    thrust = (T/0.00981 - 25.584) / 113.3;\n    ailer"
-      "on = w(1) / 3.9062;\n    elevator = w(2) / 3.9062;\n    yaw = w(3) / 3.7;\n\n    cmd = [thrust; aileron; elevato"
-      "r; yaw];\n    \n    dot_h = 0;\nend\n\nfunction out = sat_atan(var)\n    global satMax\n    out = var;\n    if i"
-      "sempty(satMax)\n        for I=1:numel(var)\n            out(I)=2*atan(var(I))/pi;\n        end\n    else\n      "
-      "  for I=1:numel(var)\n            out(I)=satMax*2*atan(var(I)/satMax)/pi;\n        end\n    end\nend\n\nfunction"
-      " out = sat_atan_dot(var)\n    global satMax\n    out = var;\n    if isempty(satMax)\n        for I=1:numel(var)\n"
-      "            out(I)=(2/pi)*(1+var(I)^2)^(-1);\n        end\n    else\n        for I=1:numel(var)\n            out"
-      "(I)=(2/pi)*(1+(var(I)/satMax)^2)^(-1);\n        end\n    end\nend\n        \nfunction out = sat_atan_ddot(var)\n"
-      "    global satMax\n    out = var;\n    if isempty(satMax)\n        for I=1:numel(var)\n            out(I)=-(2/pi"
-      ")*(1+var(I)^2)^(-2)*2*var(I);\n        end\n    else\n        for I=1:numel(var)\n            out(I)=-(2/pi)*(1+"
-      "(var(I)/satMax)^2)^(-2)*2*(var(I)/satMax^2);\n        end\n    end\nend\n\nfunction out = Gamma(A)\n    out = -["
-      "S(A*[1;0;0]),S(A*[0;1;0]),S(A*[0;0;1])]';\nend\n\nfunction out = S(v)\n    out = [0,-v(3),v(2);\n           v(3)"
-      ",0,-v(1);\n           -v(2),v(1),0];\nend\n\n\nfunction out = K(m,n)\n    out = zeros(m*n);\n    for I = 1:m*n\n"
-      "        out(mod((I-1)*n+1,m*n)+floor(((I-1)*n+1)/(m*n)),I) = 1;\n    end\nend\n\n"
-      editorLayout	      "100 M4x1[10 5 700 500]"
-    }
-  }
-  data {
-    id			    23
-    ssIdNumber		    4
-    name		    "state"
-    linkNode		    [21 0 24]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-      }
-      complexity	      SF_COMPLEX_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    24
-    ssIdNumber		    6
-    name		    "ref"
-    linkNode		    [21 23 25]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    25
-    ssIdNumber		    61
-    name		    "z"
-    linkNode		    [21 24 26]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    26
-    ssIdNumber		    53
-    name		    "hat_b"
-    linkNode		    [21 25 27]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    27
-    ssIdNumber		    71
-    name		    "hat_b2"
-    linkNode		    [21 26 28]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    28
-    ssIdNumber		    70
-    name		    "w"
-    linkNode		    [21 27 29]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    29
-    ssIdNumber		    75
-    name		    "h"
-    linkNode		    [21 28 30]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    30
-    ssIdNumber		    77
-    name		    "qh"
-    linkNode		    [21 29 31]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    31
-    ssIdNumber		    7
-    name		    "cmd"
-    linkNode		    [21 30 32]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    32
-    ssIdNumber		    16
-    name		    "m"
-    linkNode		    [21 31 33]
-    scope		    DATA_STORE_MEMORY_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    33
-    ssIdNumber		    17
-    name		    "g"
-    linkNode		    [21 32 34]
-    scope		    DATA_STORE_MEMORY_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    34
-    ssIdNumber		    18
-    name		    "kp"
-    linkNode		    [21 33 35]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    35
-    ssIdNumber		    19
-    name		    "kv"
-    linkNode		    [21 34 36]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    36
-    ssIdNumber		    20
-    name		    "k"
-    linkNode		    [21 35 37]
-    scope		    DATA_STORE_MEMORY_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    37
-    ssIdNumber		    38
-    name		    "dot_z"
-    linkNode		    [21 36 38]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    38
-    ssIdNumber		    37
-    name		    "dot_hat_b"
-    linkNode		    [21 37 39]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    39
-    ssIdNumber		    72
-    name		    "dot_hat_b2"
-    linkNode		    [21 38 40]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    40
-    ssIdNumber		    73
-    name		    "dot_w"
-    linkNode		    [21 39 41]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    41
-    ssIdNumber		    76
-    name		    "dot_h"
-    linkNode		    [21 40 42]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    42
-    ssIdNumber		    78
-    name		    "dot_qh"
-    linkNode		    [21 41 43]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    43
-    ssIdNumber		    40
-    name		    "kb"
-    linkNode		    [21 42 44]
-    scope		    DATA_STORE_MEMORY_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    44
-    ssIdNumber		    62
-    name		    "P"
-    linkNode		    [21 43 45]
-    scope		    DATA_STORE_MEMORY_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    45
-    ssIdNumber		    63
-    name		    "kz"
-    linkNode		    [21 44 46]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    46
-    ssIdNumber		    64
-    name		    "satMax"
-    linkNode		    [21 45 47]
-    scope		    DATA_STORE_MEMORY_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    47
-    ssIdNumber		    65
-    name		    "Rd"
-    linkNode		    [21 46 48]
-    scope		    DATA_STORE_MEMORY_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    48
-    ssIdNumber		    66
-    name		    "kV0"
-    linkNode		    [21 47 49]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    49
-    ssIdNumber		    67
-    name		    "V2"
-    linkNode		    [21 48 50]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    50
-    ssIdNumber		    68
-    name		    "dot_V2"
-    linkNode		    [21 49 51]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    51
-    ssIdNumber		    69
-    name		    "kq"
-    linkNode		    [21 50 52]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    52
-    ssIdNumber		    74
-    name		    "kw"
-    linkNode		    [21 51 53]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    53
-    ssIdNumber		    79
-    name		    "q0"
-    linkNode		    [21 52 54]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    54
-    ssIdNumber		    80
-    name		    "q"
-    linkNode		    [21 53 0]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  junction {
-    id			    55
-    position		    [23.5747 49.5747 7]
-    chart		    21
-    linkNode		    [21 0 0]
-    subviewer		    21
-    ssIdNumber		    3
-    type		    CONNECTIVE_JUNCTION
-  }
-  transition {
-    id			    56
-    labelString		    "{eML_blk_kernel();}"
-    labelPosition	    [28.125 13.875 102.544 14.964]
-    fontSize		    12
-    src {
-      intersection	      [0 0 1 0 23.5747 14.625 0 0]
-    }
-    dst {
-      id		      55
-      intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
-    }
-    midPoint		    [23.5747 24.9468]
-    chart		    21
-    linkNode		    [21 0 0]
-    dataLimits		    [21.175 25.975 14.625 42.575]
-    subviewer		    21
-    drawStyle		    SMART
-    slide {
-      sticky		      BOTH_STICK
-    }
-    executionOrder	    1
-    ssIdNumber		    2
-  }
-  instance {
-    id			    57
-    name		    "Controlador Casau/mQX Controller sim"
-    machine		    1
-    chart		    21
-  }
-  chart {
-    id			    58
-    name		    "Waypoint Generator"
-    windowPosition	    [422 539.941 189 413]
-    viewLimits		    [0 156.75 0 153.75]
-    screen		    [1 1 3600 1200 1.180555555555556]
-    treeNode		    [0 59 0 0]
-    firstTransition	    67
-    firstJunction	    66
-    viewObj		    58
-    visible		    1
-    machine		    1
-    subviewS {
-    }
-    ssIdHighWaterMark	    10
-    decomposition	    CLUSTER_CHART
-    type		    EML_CHART
-    firstData		    60
-    chartFileNumber	    3
-    disableImplicitCasting  1
-    eml {
-      name		      "fcn"
-    }
-  }
-  state {
-    id			    59
-    labelString		    "eML_blk_kernel()"
-    position		    [18 64.5 118 66]
-    fontSize		    12
-    chart		    58
-    treeNode		    [58 0 0 0]
-    superState		    SUBCHART
-    subviewer		    58
-    ssIdNumber		    1
-    type		    FUNC_STATE
-    decomposition	    CLUSTER_STATE
-    eml {
-      isEML		      1
-      script		      "function waypoint = fcn(trajectory, state)\n%#codegen\ncoder.extrinsic('display')\n%display('curr"
-      "ent state:')\n%state\n\nglobal curr_wp curr_tp num_delivered;\n\n% acceptable distance to waypoint\nthreshold = "
-      "1;\n\n%% Trajectory Points\n% origin      = trajectory(1,:);\n% point1      = trajectory(2,:);\n% point2      = "
-      "trajectory(3,:);\n% destination = trajectory(4,:);\n\n%% Quadcopters current position\nquad_X = state(1);\nquad_"
-      "Y = state(2);\nquad_Z = state(3);\n\n%% Specify last and next trajectory points\nlast_tp = trajectory(curr_tp - "
-      "1,:);\nnext_tp = trajectory(curr_tp,:);\n\n%% Divide distance between last_wp and next_wp into evenly divided se"
-      "gments\n% waypoint distances\nwp_separation_dist = 1; \n\n% trajectory point distances\ntp_separation_dist = sqr"
-      "t((last_tp(1)-next_tp(1))^2 + (last_tp(2)-next_tp(2))^2 + (last_tp(3)-next_tp(3))^2);\n\n%% Determine which segm"
-      "ent to give next\nnumber_of_waypoints = floor(tp_separation_dist/wp_separation_dist);\nvec_norm = [(last_tp(1)-n"
-      "ext_tp(1)) (last_tp(2)-next_tp(2)) (last_tp(3)-next_tp(3))]/tp_separation_dist;\nif(isnan(vec_norm(1))) vec_norm"
-      "(1) = 0; end\nif(isnan(vec_norm(2))) vec_norm(2) = 0; end\nif(isnan(vec_norm(3))) vec_norm(3) = 0; end\nwp = las"
-      "t_tp + curr_wp*wp_separation_dist*-vec_norm;\n\n% distance to current waypoint\ndist1 = sqrt((quad_X-wp(1))^2 + "
-      "(quad_Y-wp(2))^2 + (quad_Z-wp(3))^2);\n\nif(dist1 <= threshold)\n    curr_wp = curr_wp + 1;\n    if(curr_wp == n"
-      "umber_of_waypoints)\n        curr_tp = curr_tp + 1;\n        curr_wp = 0;\n    end\nend\nif(curr_tp == length(tr"
-      "ajectory(:,1)) + 1)\n    curr_tp = 2;\n    num_delivered = num_delivered + 1;\nend\n\np = zeros(15,1);\np(1:3) ="
-      " wp;\n\n%% output\nwaypoint = p;"
-      editorLayout	      "100 M4x1[10 5 700 500]"
-    }
-  }
-  data {
-    id			    60
-    ssIdNumber		    4
-    name		    "trajectory"
-    linkNode		    [58 0 61]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-      }
-      complexity	      SF_COMPLEX_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    61
-    ssIdNumber		    5
-    name		    "waypoint"
-    linkNode		    [58 60 62]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    62
-    ssIdNumber		    6
-    name		    "state"
-    linkNode		    [58 61 63]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    63
-    ssIdNumber		    8
-    name		    "curr_wp"
-    linkNode		    [58 62 64]
-    scope		    DATA_STORE_MEMORY_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    64
-    ssIdNumber		    9
-    name		    "curr_tp"
-    linkNode		    [58 63 65]
-    scope		    DATA_STORE_MEMORY_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    65
-    ssIdNumber		    10
-    name		    "num_delivered"
-    linkNode		    [58 64 0]
-    scope		    DATA_STORE_MEMORY_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  junction {
-    id			    66
-    position		    [23.5747 49.5747 7]
-    chart		    58
-    linkNode		    [58 0 0]
-    subviewer		    58
-    ssIdNumber		    3
-    type		    CONNECTIVE_JUNCTION
-  }
-  transition {
-    id			    67
-    labelString		    "{eML_blk_kernel();}"
-    labelPosition	    [28.125 13.875 102.544 14.964]
-    fontSize		    12
-    src {
-      intersection	      [0 0 1 0 23.5747 14.625 0 0]
-    }
-    dst {
-      id		      66
-      intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
-    }
-    midPoint		    [23.5747 24.9468]
-    chart		    58
-    linkNode		    [58 0 0]
-    dataLimits		    [21.175 25.975 14.625 42.575]
-    subviewer		    58
-    drawStyle		    SMART
-    slide {
-      sticky		      BOTH_STICK
-    }
-    executionOrder	    1
-    ssIdNumber		    2
-  }
-  instance {
-    id			    68
-    name		    "Waypoint Generator"
-    machine		    1
-    chart		    58
-  }
-  chart {
-    id			    69
     name		    "Trajectory Genereator/Trajectory Generator"
     windowPosition	    [422 539.941 189 413]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 3600 1200 1.180555555555556]
-    treeNode		    [0 70 0 0]
-    firstTransition	    77
-    firstJunction	    76
-    viewObj		    69
+    treeNode		    [0 15 0 0]
+    firstTransition	    22
+    firstJunction	    21
+    viewObj		    14
     visible		    1
     machine		    1
     subviewS {
@@ -9551,7 +4737,7 @@ Stateflow {
     ssIdHighWaterMark	    13
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
-    firstData		    71
+    firstData		    16
     chartFileNumber	    4
     disableImplicitCasting  1
     eml {
@@ -9559,14 +4745,14 @@ Stateflow {
     }
   }
   state {
-    id			    70
+    id			    15
     labelString		    "eML_blk_kernel()"
     position		    [18 64.5 118 66]
     fontSize		    12
-    chart		    69
-    treeNode		    [69 0 0 0]
+    chart		    14
+    treeNode		    [14 0 0 0]
     superState		    SUBCHART
-    subviewer		    69
+    subviewer		    14
     ssIdNumber		    1
     type		    FUNC_STATE
     decomposition	    CLUSTER_STATE
@@ -9582,10 +4768,10 @@ Stateflow {
     }
   }
   data {
-    id			    71
+    id			    16
     ssIdNumber		    5
     name		    "trajectory"
-    linkNode		    [69 0 72]
+    linkNode		    [14 0 17]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -9602,10 +4788,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    72
+    id			    17
     ssIdNumber		    6
     name		    "origin"
-    linkNode		    [69 71 73]
+    linkNode		    [14 16 18]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -9624,10 +4810,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    73
+    id			    18
     ssIdNumber		    7
     name		    "destinations"
-    linkNode		    [69 72 74]
+    linkNode		    [14 17 19]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -9646,10 +4832,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    74
+    id			    19
     ssIdNumber		    8
     name		    "altitude"
-    linkNode		    [69 73 75]
+    linkNode		    [14 18 20]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -9668,10 +4854,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    75
+    id			    20
     ssIdNumber		    11
     name		    "num_delivered"
-    linkNode		    [69 74 0]
+    linkNode		    [14 19 0]
     scope		    DATA_STORE_MEMORY_DATA
     machine		    1
     props {
@@ -9690,16 +4876,16 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   junction {
-    id			    76
+    id			    21
     position		    [23.5747 49.5747 7]
-    chart		    69
-    linkNode		    [69 0 0]
-    subviewer		    69
+    chart		    14
+    linkNode		    [14 0 0]
+    subviewer		    14
     ssIdNumber		    3
     type		    CONNECTIVE_JUNCTION
   }
   transition {
-    id			    77
+    id			    22
     labelString		    "{eML_blk_kernel();}"
     labelPosition	    [28.125 13.875 102.544 14.964]
     fontSize		    12
@@ -9707,14 +4893,14 @@ Stateflow {
       intersection	      [0 0 1 0 23.5747 14.625 0 0]
     }
     dst {
-      id		      76
+      id		      21
       intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
     }
     midPoint		    [23.5747 24.9468]
-    chart		    69
-    linkNode		    [69 0 0]
+    chart		    14
+    linkNode		    [14 0 0]
     dataLimits		    [21.175 25.975 14.625 42.575]
-    subviewer		    69
+    subviewer		    14
     drawStyle		    SMART
     slide {
       sticky		      BOTH_STICK
@@ -9723,21 +4909,21 @@ Stateflow {
     ssIdNumber		    2
   }
   instance {
-    id			    78
+    id			    23
     name		    "Trajectory Genereator/Trajectory Generator"
     machine		    1
-    chart		    69
+    chart		    14
   }
   chart {
-    id			    79
+    id			    24
     name		    "Trajectory Genereator/MATLAB Function"
     windowPosition	    [422 539.941 189 413]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 3600 1200 1.180555555555556]
-    treeNode		    [0 80 0 0]
-    firstTransition	    89
-    firstJunction	    88
-    viewObj		    79
+    treeNode		    [0 25 0 0]
+    firstTransition	    34
+    firstJunction	    33
+    viewObj		    24
     visible		    1
     machine		    1
     subviewS {
@@ -9745,7 +4931,7 @@ Stateflow {
     ssIdHighWaterMark	    11
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
-    firstData		    81
+    firstData		    26
     chartFileNumber	    5
     disableImplicitCasting  1
     eml {
@@ -9753,14 +4939,14 @@ Stateflow {
     }
   }
   state {
-    id			    80
+    id			    25
     labelString		    "eML_blk_kernel()"
     position		    [18 64.5 118 66]
     fontSize		    12
-    chart		    79
-    treeNode		    [79 0 0 0]
+    chart		    24
+    treeNode		    [24 0 0 0]
     superState		    SUBCHART
-    subviewer		    79
+    subviewer		    24
     ssIdNumber		    1
     type		    FUNC_STATE
     decomposition	    CLUSTER_STATE
@@ -9781,10 +4967,10 @@ Stateflow {
     }
   }
   data {
-    id			    81
+    id			    26
     ssIdNumber		    4
     name		    "lat_s"
-    linkNode		    [79 0 82]
+    linkNode		    [24 0 27]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -9800,10 +4986,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    82
+    id			    27
     ssIdNumber		    5
     name		    "dest_lat_hist"
-    linkNode		    [79 81 83]
+    linkNode		    [24 26 28]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -9820,10 +5006,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    83
+    id			    28
     ssIdNumber		    6
     name		    "lng_s"
-    linkNode		    [79 82 84]
+    linkNode		    [24 27 29]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -9842,10 +5028,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    84
+    id			    29
     ssIdNumber		    7
     name		    "radius_min"
-    linkNode		    [79 83 85]
+    linkNode		    [24 28 30]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -9864,10 +5050,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    85
+    id			    30
     ssIdNumber		    8
     name		    "radius_max"
-    linkNode		    [79 84 86]
+    linkNode		    [24 29 31]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -9886,10 +5072,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    86
+    id			    31
     ssIdNumber		    9
     name		    "n_dest"
-    linkNode		    [79 85 87]
+    linkNode		    [24 30 32]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -9908,10 +5094,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    87
+    id			    32
     ssIdNumber		    11
     name		    "dest_lng_hist"
-    linkNode		    [79 86 0]
+    linkNode		    [24 31 0]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -9930,16 +5116,16 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   junction {
-    id			    88
+    id			    33
     position		    [23.5747 49.5747 7]
-    chart		    79
-    linkNode		    [79 0 0]
-    subviewer		    79
+    chart		    24
+    linkNode		    [24 0 0]
+    subviewer		    24
     ssIdNumber		    3
     type		    CONNECTIVE_JUNCTION
   }
   transition {
-    id			    89
+    id			    34
     labelString		    "{eML_blk_kernel();}"
     labelPosition	    [28.125 13.875 102.544 14.964]
     fontSize		    12
@@ -9947,14 +5133,14 @@ Stateflow {
       intersection	      [0 0 1 0 23.5747 14.625 0 0]
     }
     dst {
-      id		      88
+      id		      33
       intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
     }
     midPoint		    [23.5747 24.9468]
-    chart		    79
-    linkNode		    [79 0 0]
+    chart		    24
+    linkNode		    [24 0 0]
     dataLimits		    [21.175 25.975 14.625 42.575]
-    subviewer		    79
+    subviewer		    24
     drawStyle		    SMART
     slide {
       sticky		      BOTH_STICK
@@ -9963,21 +5149,21 @@ Stateflow {
     ssIdNumber		    2
   }
   instance {
-    id			    90
+    id			    35
     name		    "Trajectory Genereator/MATLAB Function"
     machine		    1
-    chart		    79
+    chart		    24
   }
   chart {
-    id			    91
+    id			    36
     name		    "Controller"
     windowPosition	    [422 539.941 189 413]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 3600 1200 1.180555555555556]
-    treeNode		    [0 92 0 0]
-    firstTransition	    100
-    firstJunction	    99
-    viewObj		    91
+    treeNode		    [0 37 0 0]
+    firstTransition	    45
+    firstJunction	    44
+    viewObj		    36
     visible		    1
     machine		    1
     subviewS {
@@ -9985,7 +5171,7 @@ Stateflow {
     ssIdHighWaterMark	    11
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
-    firstData		    93
+    firstData		    38
     chartFileNumber	    6
     disableImplicitCasting  1
     eml {
@@ -9993,14 +5179,14 @@ Stateflow {
     }
   }
   state {
-    id			    92
+    id			    37
     labelString		    "eML_blk_kernel()"
     position		    [18 64.5 118 66]
     fontSize		    12
-    chart		    91
-    treeNode		    [91 0 0 0]
+    chart		    36
+    treeNode		    [36 0 0 0]
     superState		    SUBCHART
-    subviewer		    91
+    subviewer		    36
     ssIdNumber		    1
     type		    FUNC_STATE
     decomposition	    CLUSTER_STATE
@@ -10017,10 +5203,10 @@ Stateflow {
     }
   }
   data {
-    id			    93
+    id			    38
     ssIdNumber		    4
     name		    "ref"
-    linkNode		    [91 0 94]
+    linkNode		    [36 0 39]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -10036,10 +5222,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    94
+    id			    39
     ssIdNumber		    5
     name		    "cmd"
-    linkNode		    [91 93 95]
+    linkNode		    [36 38 40]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -10056,10 +5242,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    95
+    id			    40
     ssIdNumber		    8
     name		    "curr_wp"
-    linkNode		    [91 94 96]
+    linkNode		    [36 39 41]
     scope		    DATA_STORE_MEMORY_DATA
     machine		    1
     props {
@@ -10078,10 +5264,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    96
+    id			    41
     ssIdNumber		    9
     name		    "curr_tp"
-    linkNode		    [91 95 97]
+    linkNode		    [36 40 42]
     scope		    DATA_STORE_MEMORY_DATA
     machine		    1
     props {
@@ -10100,10 +5286,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    97
+    id			    42
     ssIdNumber		    10
     name		    "num_delivered"
-    linkNode		    [91 96 98]
+    linkNode		    [36 41 43]
     scope		    DATA_STORE_MEMORY_DATA
     machine		    1
     props {
@@ -10122,10 +5308,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    98
+    id			    43
     ssIdNumber		    11
     name		    "state"
-    linkNode		    [91 97 0]
+    linkNode		    [36 42 0]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -10144,16 +5330,16 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   junction {
-    id			    99
+    id			    44
     position		    [23.5747 49.5747 7]
-    chart		    91
-    linkNode		    [91 0 0]
-    subviewer		    91
+    chart		    36
+    linkNode		    [36 0 0]
+    subviewer		    36
     ssIdNumber		    3
     type		    CONNECTIVE_JUNCTION
   }
   transition {
-    id			    100
+    id			    45
     labelString		    "{eML_blk_kernel();}"
     labelPosition	    [28.125 13.875 102.544 14.964]
     fontSize		    12
@@ -10161,14 +5347,14 @@ Stateflow {
       intersection	      [0 0 1 0 23.5747 14.625 0 0]
     }
     dst {
-      id		      99
+      id		      44
       intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
     }
     midPoint		    [23.5747 24.9468]
-    chart		    91
-    linkNode		    [91 0 0]
+    chart		    36
+    linkNode		    [36 0 0]
     dataLimits		    [21.175 25.975 14.625 42.575]
-    subviewer		    91
+    subviewer		    36
     drawStyle		    SMART
     slide {
       sticky		      BOTH_STICK
@@ -10177,21 +5363,21 @@ Stateflow {
     ssIdNumber		    2
   }
   instance {
-    id			    101
+    id			    46
     name		    "Controller"
     machine		    1
-    chart		    91
+    chart		    36
   }
   chart {
-    id			    102
+    id			    47
     name		    "Model"
     windowPosition	    [422 539.941 189 413]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 3600 1200 1.180555555555556]
-    treeNode		    [0 103 0 0]
-    firstTransition	    111
-    firstJunction	    110
-    viewObj		    102
+    treeNode		    [0 48 0 0]
+    firstTransition	    56
+    firstJunction	    55
+    viewObj		    47
     visible		    1
     machine		    1
     subviewS {
@@ -10199,7 +5385,7 @@ Stateflow {
     ssIdHighWaterMark	    11
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
-    firstData		    104
+    firstData		    49
     chartFileNumber	    7
     disableImplicitCasting  1
     eml {
@@ -10207,14 +5393,14 @@ Stateflow {
     }
   }
   state {
-    id			    103
+    id			    48
     labelString		    "eML_blk_kernel()"
     position		    [18 64.5 118 66]
     fontSize		    12
-    chart		    102
-    treeNode		    [102 0 0 0]
+    chart		    47
+    treeNode		    [47 0 0 0]
     superState		    SUBCHART
-    subviewer		    102
+    subviewer		    47
     ssIdNumber		    1
     type		    FUNC_STATE
     decomposition	    CLUSTER_STATE
@@ -10229,10 +5415,10 @@ Stateflow {
     }
   }
   data {
-    id			    104
+    id			    49
     ssIdNumber		    4
     name		    "cmd"
-    linkNode		    [102 0 105]
+    linkNode		    [47 0 50]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -10248,10 +5434,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    105
+    id			    50
     ssIdNumber		    6
     name		    "state"
-    linkNode		    [102 104 106]
+    linkNode		    [47 49 51]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -10270,10 +5456,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    106
+    id			    51
     ssIdNumber		    8
     name		    "curr_wp"
-    linkNode		    [102 105 107]
+    linkNode		    [47 50 52]
     scope		    DATA_STORE_MEMORY_DATA
     machine		    1
     props {
@@ -10292,10 +5478,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    107
+    id			    52
     ssIdNumber		    9
     name		    "curr_tp"
-    linkNode		    [102 106 108]
+    linkNode		    [47 51 53]
     scope		    DATA_STORE_MEMORY_DATA
     machine		    1
     props {
@@ -10314,10 +5500,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    108
+    id			    53
     ssIdNumber		    10
     name		    "num_delivered"
-    linkNode		    [102 107 109]
+    linkNode		    [47 52 54]
     scope		    DATA_STORE_MEMORY_DATA
     machine		    1
     props {
@@ -10336,10 +5522,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    109
+    id			    54
     ssIdNumber		    11
     name		    "pos"
-    linkNode		    [102 108 0]
+    linkNode		    [47 53 0]
     scope		    DATA_STORE_MEMORY_DATA
     machine		    1
     props {
@@ -10358,16 +5544,16 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   junction {
-    id			    110
+    id			    55
     position		    [23.5747 49.5747 7]
-    chart		    102
-    linkNode		    [102 0 0]
-    subviewer		    102
+    chart		    47
+    linkNode		    [47 0 0]
+    subviewer		    47
     ssIdNumber		    3
     type		    CONNECTIVE_JUNCTION
   }
   transition {
-    id			    111
+    id			    56
     labelString		    "{eML_blk_kernel();}"
     labelPosition	    [28.125 13.875 102.544 14.964]
     fontSize		    12
@@ -10375,14 +5561,14 @@ Stateflow {
       intersection	      [0 0 1 0 23.5747 14.625 0 0]
     }
     dst {
-      id		      110
+      id		      55
       intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
     }
     midPoint		    [23.5747 24.9468]
-    chart		    102
-    linkNode		    [102 0 0]
+    chart		    47
+    linkNode		    [47 0 0]
     dataLimits		    [21.175 25.975 14.625 42.575]
-    subviewer		    102
+    subviewer		    47
     drawStyle		    SMART
     slide {
       sticky		      BOTH_STICK
@@ -10391,22 +5577,22 @@ Stateflow {
     ssIdNumber		    2
   }
   instance {
-    id			    112
+    id			    57
     name		    "Model"
     machine		    1
-    chart		    102
+    chart		    47
   }
   target {
-    id			    113
+    id			    58
     name		    "sfun"
     description		    "Default Simulink S-Function Target."
     machine		    1
-    linkNode		    [1 0 114]
+    linkNode		    [1 0 59]
   }
   target {
-    id			    114
+    id			    59
     name		    "rtw"
     machine		    1
-    linkNode		    [1 113 0]
+    linkNode		    [1 58 0]
   }
 }
