@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.2401"
+    ComputedModelVersion    "1.2406"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -63,10 +63,10 @@ Model {
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
 	ViewObjType		"SimulinkSubsys"
-	LoadSaveID		"828"
+	LoadSaveID		"988"
 	Extents			[1886.0, 922.0]
-	ZoomFactor		[1.0]
-	Offset			[0.0, 0.0]
+	ZoomFactor		[1.75]
+	Offset			[224.452380952381, 114.75476190476181]
       }
     }
   }
@@ -76,9 +76,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "dlavell"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat Feb 13 18:12:54 2016"
-  RTWModifiedTimeStamp	  377287859
-  ModelVersionFormat	  "1.%<AutoIncrement:2401>"
+  LastModifiedDate	  "Sun Feb 14 16:04:03 2016"
+  RTWModifiedTimeStamp	  377366642
+  ModelVersionFormat	  "1.%<AutoIncrement:2406>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -3551,14 +3551,14 @@ Model {
     TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "150"
+    ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "1003"
+    SIDHighWatermark	    "1010"
     Block {
       BlockType		      DataStoreMemory
       Name		      " "
       SID		      "977"
-      Position		      [475, 385, 587, 420]
+      Position		      [475, 370, 587, 405]
       ZOrder		      51
       DataStoreName	      "num_delivered"
       ReadBeforeWriteMsg      "warning"
@@ -3571,7 +3571,7 @@ Model {
       BlockType		      DataStoreMemory
       Name		      "       "
       SID		      "981"
-      Position		      [475, 275, 587, 310]
+      Position		      [475, 265, 587, 300]
       ZOrder		      55
       DataStoreName	      "curr_wp"
       ReadBeforeWriteMsg      "warning"
@@ -3584,7 +3584,7 @@ Model {
       BlockType		      DataStoreMemory
       Name		      "          "
       SID		      "982"
-      Position		      [475, 335, 587, 370]
+      Position		      [475, 320, 587, 355]
       ZOrder		      56
       DataStoreName	      "curr_tp"
       ReadBeforeWriteMsg      "warning"
@@ -3605,7 +3605,7 @@ Model {
       System {
 	Name			"Controlador Casau"
 	Location		[-1928, -8, 8, 1088]
-	Open			on
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -4204,7 +4204,7 @@ Model {
 	      BlockType		      Stop
 	      Name		      "Stop \nSimulation"
 	      SID		      "910"
-	      Position		      [775, 187, 810, 223]
+	      Position		      [935, 187, 970, 223]
 	      ZOrder		      -12
 	      BackgroundColor	      "[0.900000, 0.214468, 0.234003]"
 	    }
@@ -4668,13 +4668,6 @@ Model {
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      15
-	      SrcBlock		      "Stop logic"
-	      SrcPort		      1
-	      DstBlock		      "Stop \nSimulation"
-	      DstPort		      1
-	    }
-	    Line {
 	      ZOrder		      16
 	      SrcBlock		      "CT dynamics"
 	      SrcPort		      1
@@ -4753,6 +4746,13 @@ Model {
 	      SrcPort		      1
 	      DstBlock		      "Integrator"
 	      DstPort		      3
+	    }
+	    Line {
+	      ZOrder		      28
+	      SrcBlock		      "Stop logic"
+	      SrcPort		      1
+	      DstBlock		      "Stop \nSimulation"
+	      DstPort		      1
 	    }
 	  }
 	}
@@ -6453,37 +6453,243 @@ Model {
       }
     }
     Block {
-      BlockType		      Demux
-      Name		      "Demux"
-      SID		      "697"
-      Ports		      [1, 4]
-      Position		      [1185, 219, 1190, 421]
-      ZOrder		      -7
-      ShowName		      off
-      Outputs		      "[3 3 9 3]"
-      DisplayOption	      "bar"
+      BlockType		      SubSystem
+      Name		      "Controller"
+      SID		      "1009"
+      Ports		      [2, 1]
+      Position		      [715, 368, 845, 452]
+      ZOrder		      68
+      LibraryVersion	      "1.32"
+      ErrorFcn		      "Stateflow.Translate.translate"
+      PermitHierarchicalResolution "ExplicitOnly"
+      TreatAsAtomicUnit	      on
+      RequestExecContextInheritance off
+      SFBlockType	      "MATLAB Function"
+      System {
+	Name			"Controller"
+	Location		[223, 338, 826, 833]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	SIDHighWatermark	"24"
+	Block {
+	  BlockType		  Inport
+	  Name			  "ref"
+	  SID			  "1009::1"
+	  Position		  [20, 101, 40, 119]
+	  ZOrder		  -1
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "state"
+	  SID			  "1009::24"
+	  Position		  [20, 136, 40, 154]
+	  ZOrder		  11
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  " Demux "
+	  SID			  "1009::17"
+	  Ports			  [1, 1]
+	  Position		  [270, 230, 320, 270]
+	  ZOrder		  8
+	  Outputs		  "1"
+	}
+	Block {
+	  BlockType		  S-Function
+	  Name			  " SFunction "
+	  SID			  "1009::16"
+	  Tag			  "Stateflow S-Function PackageDeliverySim 6"
+	  Ports			  [2, 2]
+	  Position		  [180, 115, 230, 175]
+	  ZOrder		  7
+	  FunctionName		  "sf_sfun"
+	  PortCounts		  "[2 2]"
+	  EnableBusSupport	  on
+	  Port {
+	    PortNumber		    2
+	    Name		    "cmd"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  " Terminator "
+	  SID			  "1009::18"
+	  Position		  [460, 241, 480, 259]
+	  ZOrder		  9
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "cmd"
+	  SID			  "1009::5"
+	  Position		  [460, 101, 480, 119]
+	  ZOrder		  -5
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  ZOrder		  10
+	  SrcBlock		  "ref"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  11
+	  SrcBlock		  "state"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  2
+	}
+	Line {
+	  Name			  "cmd"
+	  ZOrder		  12
+	  Labels		  [0, 0]
+	  SrcBlock		  " SFunction "
+	  SrcPort		  2
+	  DstBlock		  "cmd"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  13
+	  SrcBlock		  " Demux "
+	  SrcPort		  1
+	  DstBlock		  " Terminator "
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  14
+	  SrcBlock		  " SFunction "
+	  SrcPort		  1
+	  DstBlock		  " Demux "
+	  DstPort		  1
+	}
+      }
     }
     Block {
-      BlockType		      Mux
-      Name		      "Mux1"
-      SID		      "688"
-      Ports		      [2, 1]
-      Position		      [1185, 19, 1190, 101]
-      ZOrder		      -14
-      ShowName		      off
-      Inputs		      "2"
-      DisplayOption	      "bar"
-    }
-    Block {
-      BlockType		      Mux
-      Name		      "Mux4"
-      SID		      "689"
-      Ports		      [2, 1]
-      Position		      [1185, 119, 1190, 201]
-      ZOrder		      -15
-      ShowName		      off
-      Inputs		      "2"
-      DisplayOption	      "bar"
+      BlockType		      SubSystem
+      Name		      "Model"
+      SID		      "1010"
+      Ports		      [1, 1]
+      Position		      [715, 488, 845, 572]
+      ZOrder		      69
+      BlockMirror	      on
+      LibraryVersion	      "1.32"
+      ErrorFcn		      "Stateflow.Translate.translate"
+      PermitHierarchicalResolution "ExplicitOnly"
+      TreatAsAtomicUnit	      on
+      RequestExecContextInheritance off
+      SFBlockType	      "MATLAB Function"
+      System {
+	Name			"Model"
+	Location		[223, 338, 826, 833]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	SIDHighWatermark	"24"
+	Block {
+	  BlockType		  Inport
+	  Name			  "cmd"
+	  SID			  "1010::1"
+	  Position		  [20, 101, 40, 119]
+	  ZOrder		  -1
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  " Demux "
+	  SID			  "1010::17"
+	  Ports			  [1, 1]
+	  Position		  [270, 230, 320, 270]
+	  ZOrder		  8
+	  Outputs		  "1"
+	}
+	Block {
+	  BlockType		  S-Function
+	  Name			  " SFunction "
+	  SID			  "1010::16"
+	  Tag			  "Stateflow S-Function PackageDeliverySim 7"
+	  Ports			  [1, 2]
+	  Position		  [180, 115, 230, 175]
+	  ZOrder		  7
+	  FunctionName		  "sf_sfun"
+	  PortCounts		  "[1 2]"
+	  EnableBusSupport	  on
+	  Port {
+	    PortNumber		    2
+	    Name		    "state"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  " Terminator "
+	  SID			  "1010::18"
+	  Position		  [460, 241, 480, 259]
+	  ZOrder		  9
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "state"
+	  SID			  "1010::24"
+	  Position		  [460, 101, 480, 119]
+	  ZOrder		  11
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  ZOrder		  10
+	  SrcBlock		  "cmd"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "state"
+	  ZOrder		  11
+	  Labels		  [0, 0]
+	  SrcBlock		  " SFunction "
+	  SrcPort		  2
+	  DstBlock		  "state"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  12
+	  SrcBlock		  " Demux "
+	  SrcPort		  1
+	  DstBlock		  " Terminator "
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  13
+	  SrcBlock		  " SFunction "
+	  SrcPort		  1
+	  DstBlock		  " Demux "
+	  DstPort		  1
+	}
+      }
     }
     Block {
       BlockType		      S-Function
@@ -6497,44 +6703,479 @@ Model {
       EnableBusSupport	      off
     }
     Block {
-      BlockType		      Selector
-      Name		      "Selector"
-      SID		      "690"
-      Ports		      [1, 1]
-      Position		      [1100, 27, 1130, 53]
-      ZOrder		      -17
-      InputPortWidth	      "15"
-      Indices		      "[1 2 3]"
-    }
-    Block {
-      BlockType		      Selector
-      Name		      "Selector1"
-      SID		      "694"
-      Ports		      [1, 1]
-      Position		      [1100, 67, 1130, 93]
-      ZOrder		      -17
-      InputPortWidth	      "18"
-      Indices		      "[1 2 3]"
-    }
-    Block {
-      BlockType		      Selector
-      Name		      "Selector2"
-      SID		      "695"
-      Ports		      [1, 1]
-      Position		      [1100, 167, 1130, 193]
-      ZOrder		      -17
-      InputPortWidth	      "18"
-      Indices		      "[4 5 6]"
-    }
-    Block {
-      BlockType		      Selector
-      Name		      "Selector4"
-      SID		      "691"
-      Ports		      [1, 1]
-      Position		      [1100, 127, 1130, 153]
-      ZOrder		      -17
-      InputPortWidth	      "15"
-      Indices		      "[4 5 6]"
+      BlockType		      SubSystem
+      Name		      "Subsystem"
+      SID		      "1004"
+      Ports		      [2]
+      Position		      [1045, 160, 1085, 220]
+      ZOrder		      66
+      RequestExecContextInheritance off
+      System {
+	Name			"Subsystem"
+	Location		[-1928, -8, 8, 1088]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"150"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  SID			  "1005"
+	  Position		  [21, 33, 51, 47]
+	  ZOrder		  1
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "In2"
+	  SID			  "1006"
+	  Position		  [102, 120, 132, 135]
+	  ZOrder		  2
+	  BlockRotation		  270
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  "Demux"
+	  SID			  "697"
+	  Ports			  [1, 4]
+	  Position		  [615, 219, 620, 421]
+	  ZOrder		  -7
+	  ShowName		  off
+	  Outputs		  "[3 3 9 3]"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux1"
+	  SID			  "688"
+	  Ports			  [2, 1]
+	  Position		  [615, 19, 620, 101]
+	  ZOrder		  -14
+	  ShowName		  off
+	  Inputs		  "2"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux4"
+	  SID			  "689"
+	  Ports			  [2, 1]
+	  Position		  [615, 119, 620, 201]
+	  ZOrder		  -15
+	  ShowName		  off
+	  Inputs		  "2"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Selector
+	  Name			  "Selector"
+	  SID			  "690"
+	  Ports			  [1, 1]
+	  Position		  [530, 27, 560, 53]
+	  ZOrder		  -17
+	  InputPortWidth	  "15"
+	  Indices		  "[1 2 3]"
+	}
+	Block {
+	  BlockType		  Selector
+	  Name			  "Selector1"
+	  SID			  "694"
+	  Ports			  [1, 1]
+	  Position		  [530, 67, 560, 93]
+	  ZOrder		  -17
+	  InputPortWidth	  "18"
+	  Indices		  "[1 2 3]"
+	}
+	Block {
+	  BlockType		  Selector
+	  Name			  "Selector2"
+	  SID			  "695"
+	  Ports			  [1, 1]
+	  Position		  [530, 167, 560, 193]
+	  ZOrder		  -17
+	  InputPortWidth	  "18"
+	  Indices		  "[4 5 6]"
+	}
+	Block {
+	  BlockType		  Selector
+	  Name			  "Selector4"
+	  SID			  "691"
+	  Ports			  [1, 1]
+	  Position		  [530, 127, 560, 153]
+	  ZOrder		  -17
+	  InputPortWidth	  "15"
+	  Indices		  "[4 5 6]"
+	}
+	Block {
+	  BlockType		  Scope
+	  Name			  "o"
+	  SID			  "702"
+	  Ports			  [1]
+	  Position		  [645, 379, 675, 411]
+	  ZOrder		  -3
+	  Floating		  off
+	  Location		  [-1989, 396, -98, 783]
+	  Open			  off
+	  NumInputPorts		  "1"
+	  ZoomMode		  "yonly"
+	  List {
+	    ListType		    AxesTitles
+	    axes1		    "%<SignalLabel>"
+	  }
+	  List {
+	    ListType		    ScopeGraphics
+	    FigureColor		    "[0.501960784313725 0.501960784313725 0.501960784313725]"
+	    AxesColor		    "[0 0 0]"
+	    AxesTickColor	    "[1 1 1]"
+	    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	    LineStyles		    "-|-|-|-|-|-"
+	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
+	    MarkerStyles	    "none|none|none|none|none|none"
+	  }
+	  ShowLegends		  off
+	  TimeRange		  "20"
+	  YMin			  "-10"
+	  YMax			  "25"
+	  SaveToWorkspace	  on
+	  SaveName		  "o"
+	  DataFormat		  "StructureWithTime"
+	  LimitDataPoints	  off
+	  SampleTime		  "0"
+	  ScrollMode		  off
+	}
+	Block {
+	  BlockType		  Scope
+	  Name			  "p"
+	  SID			  "703"
+	  Ports			  [1]
+	  Position		  [645, 229, 675, 261]
+	  ZOrder		  -3
+	  Floating		  off
+	  Location		  [-1552, 178, -272, 540]
+	  Open			  off
+	  NumInputPorts		  "1"
+	  ZoomMode		  "yonly"
+	  List {
+	    ListType		    AxesTitles
+	    axes1		    "%<SignalLabel>"
+	  }
+	  List {
+	    ListType		    ScopeGraphics
+	    FigureColor		    "[0.501960784313725 0.501960784313725 0.501960784313725]"
+	    AxesColor		    "[0 0 0]"
+	    AxesTickColor	    "[1 1 1]"
+	    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	    LineStyles		    "-|-|-|-|-|-"
+	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
+	    MarkerStyles	    "none|none|none|none|none|none"
+	  }
+	  ShowLegends		  off
+	  TimeRange		  "30              "
+	  YMin			  "-3.25"
+	  YMax			  "1.5"
+	  SaveToWorkspace	  on
+	  SaveName		  "p"
+	  DataFormat		  "StructureWithTime"
+	  LimitDataPoints	  off
+	  SampleTime		  "0"
+	  ScrollMode		  off
+	}
+	Block {
+	  BlockType		  Scope
+	  Name			  "p comparison"
+	  SID			  "692"
+	  Ports			  [1]
+	  Position		  [665, 44, 695, 76]
+	  ZOrder		  -3
+	  Floating		  off
+	  Location		  [10, 177, 1294, 548]
+	  Open			  off
+	  NumInputPorts		  "1"
+	  ZoomMode		  "xonly"
+	  List {
+	    ListType		    AxesTitles
+	    axes1		    "%<SignalLabel>"
+	  }
+	  List {
+	    ListType		    ScopeGraphics
+	    FigureColor		    "[0.501960784313725 0.501960784313725 0.501960784313725]"
+	    AxesColor		    "[0 0 0]"
+	    AxesTickColor	    "[1 1 1]"
+	    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	    LineStyles		    "-|-|-|-|-|-"
+	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
+	    MarkerStyles	    "none|none|none|none|none|none"
+	  }
+	  ShowLegends		  off
+	  TimeRange		  "0.25"
+	  YMin			  "-3e+305"
+	  YMax			  "5e+304"
+	  SaveToWorkspace	  on
+	  SaveName		  "comp_p"
+	  DataFormat		  "StructureWithTime"
+	  LimitDataPoints	  off
+	  SampleTime		  "0"
+	  ScrollMode		  off
+	}
+	Block {
+	  BlockType		  Scope
+	  Name			  "v"
+	  SID			  "704"
+	  Ports			  [1]
+	  Position		  [645, 279, 675, 311]
+	  ZOrder		  -3
+	  Floating		  off
+	  Location		  [10, 585, 1859, 990]
+	  Open			  off
+	  NumInputPorts		  "1"
+	  ZoomMode		  "xonly"
+	  List {
+	    ListType		    AxesTitles
+	    axes1		    "%<SignalLabel>"
+	  }
+	  List {
+	    ListType		    ScopeGraphics
+	    FigureColor		    "[0.501960784313725 0.501960784313725 0.501960784313725]"
+	    AxesColor		    "[0 0 0]"
+	    AxesTickColor	    "[1 1 1]"
+	    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	    LineStyles		    "-|-|-|-|-|-"
+	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
+	    MarkerStyles	    "none|none|none|none|none|none"
+	  }
+	  ShowLegends		  off
+	  TimeRange		  "20              "
+	  YMin			  "-0.5"
+	  YMax			  "7.5"
+	  SaveToWorkspace	  on
+	  SaveName		  "v"
+	  DataFormat		  "StructureWithTime"
+	  LimitDataPoints	  off
+	  SampleTime		  "0"
+	  ScrollMode		  off
+	}
+	Block {
+	  BlockType		  Scope
+	  Name			  "v comparison"
+	  SID			  "693"
+	  Ports			  [1]
+	  Position		  [665, 144, 695, 176]
+	  ZOrder		  -3
+	  Floating		  off
+	  Location		  [10, 221, 1294, 663]
+	  Open			  off
+	  NumInputPorts		  "1"
+	  ZoomMode		  "xonly"
+	  List {
+	    ListType		    AxesTitles
+	    axes1		    "%<SignalLabel>"
+	  }
+	  List {
+	    ListType		    ScopeGraphics
+	    FigureColor		    "[0.501960784313725 0.501960784313725 0.501960784313725]"
+	    AxesColor		    "[0 0 0]"
+	    AxesTickColor	    "[1 1 1]"
+	    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	    LineStyles		    "-|-|-|-|-|-"
+	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
+	    MarkerStyles	    "none|none|none|none|none|none"
+	  }
+	  ShowLegends		  off
+	  TimeRange		  "20"
+	  YMin			  "-6"
+	  YMax			  "6"
+	  SaveToWorkspace	  on
+	  SaveName		  "comp_v"
+	  DataFormat		  "StructureWithTime"
+	  LimitDataPoints	  off
+	  SampleTime		  "0"
+	  ScrollMode		  off
+	}
+	Line {
+	  FontName		  "Helvetica"
+	  FontSize		  9
+	  FontWeight		  "normal"
+	  FontAngle		  "normal"
+	  ZOrder		  1
+	  SrcBlock		  "Mux1"
+	  SrcPort		  1
+	  DstBlock		  "p comparison"
+	  DstPort		  1
+	}
+	Line {
+	  FontName		  "Helvetica"
+	  FontSize		  9
+	  FontWeight		  "normal"
+	  FontAngle		  "normal"
+	  ZOrder		  8
+	  SrcBlock		  "Demux"
+	  SrcPort		  1
+	  DstBlock		  "p"
+	  DstPort		  1
+	}
+	Line {
+	  FontName		  "Helvetica"
+	  FontSize		  9
+	  FontWeight		  "normal"
+	  FontAngle		  "normal"
+	  ZOrder		  3
+	  SrcBlock		  "Mux4"
+	  SrcPort		  1
+	  DstBlock		  "v comparison"
+	  DstPort		  1
+	}
+	Line {
+	  FontName		  "Helvetica"
+	  FontSize		  9
+	  FontWeight		  "normal"
+	  FontAngle		  "normal"
+	  ZOrder		  11
+	  SrcBlock		  "Demux"
+	  SrcPort		  4
+	  DstBlock		  "o"
+	  DstPort		  1
+	}
+	Line {
+	  FontName		  "Helvetica"
+	  FontSize		  9
+	  FontWeight		  "normal"
+	  FontAngle		  "normal"
+	  ZOrder		  5
+	  SrcBlock		  "Selector1"
+	  SrcPort		  1
+	  DstBlock		  "Mux1"
+	  DstPort		  2
+	}
+	Line {
+	  FontName		  "Helvetica"
+	  FontSize		  9
+	  FontWeight		  "normal"
+	  FontAngle		  "normal"
+	  ZOrder		  10
+	  SrcBlock		  "Demux"
+	  SrcPort		  2
+	  DstBlock		  "v"
+	  DstPort		  1
+	}
+	Line {
+	  FontName		  "Helvetica"
+	  FontSize		  9
+	  FontWeight		  "normal"
+	  FontAngle		  "normal"
+	  ZOrder		  4
+	  SrcBlock		  "Selector"
+	  SrcPort		  1
+	  DstBlock		  "Mux1"
+	  DstPort		  1
+	}
+	Line {
+	  FontName		  "Helvetica"
+	  FontSize		  9
+	  FontWeight		  "normal"
+	  FontAngle		  "normal"
+	  ZOrder		  2
+	  SrcBlock		  "Selector4"
+	  SrcPort		  1
+	  DstBlock		  "Mux4"
+	  DstPort		  1
+	}
+	Line {
+	  FontName		  "Helvetica"
+	  FontSize		  9
+	  FontWeight		  "normal"
+	  FontAngle		  "normal"
+	  ZOrder		  6
+	  SrcBlock		  "Selector2"
+	  SrcPort		  1
+	  DstBlock		  "Mux4"
+	  DstPort		  2
+	}
+	Line {
+	  FontName		  "Helvetica"
+	  FontSize		  9
+	  FontWeight		  "normal"
+	  FontAngle		  "normal"
+	  ZOrder		  207
+	  SrcBlock		  "In2"
+	  SrcPort		  1
+	  Points		  [0, -35; 328, 0]
+	  Branch {
+	    ZOrder		    151
+	    Points		    [0, 100]
+	    Branch {
+	      ZOrder		      149
+	      DstBlock		      "Selector2"
+	      DstPort		      1
+	    }
+	    Branch {
+	      ZOrder		      106
+	      Points		      [0, 140]
+	      DstBlock		      "Demux"
+	      DstPort		      1
+	    }
+	  }
+	  Branch {
+	    ZOrder		    108
+	    DstBlock		    "Selector1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  FontName		  "Helvetica"
+	  FontSize		  9
+	  FontWeight		  "normal"
+	  FontAngle		  "normal"
+	  ZOrder		  206
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  Points		  [411, 0]
+	  Branch {
+	    ZOrder		    154
+	    Points		    [0, 100]
+	    DstBlock		    "Selector4"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    153
+	    DstBlock		    "Selector"
+	    DstPort		    1
+	  }
+	}
+	Annotation {
+	  SID			  "705"
+	  Position		  [616, 266, 618, 281]
+	  InternalMargins	  [0, 0, 0, 0]
+	  FixedHeight		  off
+	  FixedWidth		  off
+	  ZOrder		  -1
+	  FontName		  "Helvetica"
+	  FontSize		  10
+	  FontWeight		  "normal"
+	  FontAngle		  "normal"
+	}
+	Annotation {
+	  SID			  "706"
+	  Position		  [620, 266, 622, 281]
+	  InternalMargins	  [0, 0, 0, 0]
+	  FixedHeight		  off
+	  FixedWidth		  off
+	  ZOrder		  -2
+	  FontName		  "Helvetica"
+	  FontSize		  10
+	  FontWeight		  "normal"
+	  FontAngle		  "normal"
+	}
+      }
     }
     Block {
       BlockType		      SubSystem
@@ -6547,7 +7188,7 @@ Model {
       System {
 	Name			"Trajectory Genereator"
 	Location		[-1928, -8, 8, 1088]
-	Open			off
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -7218,117 +7859,6 @@ Model {
     }
     Block {
       BlockType		      Scope
-      Name		      "o"
-      SID		      "702"
-      Ports		      [1]
-      Position		      [1215, 379, 1245, 411]
-      ZOrder		      -3
-      Floating		      off
-      Location		      [-1989, 396, -98, 783]
-      Open		      off
-      NumInputPorts	      "1"
-      ZoomMode		      "yonly"
-      List {
-	ListType		AxesTitles
-	axes1			"%<SignalLabel>"
-      }
-      List {
-	ListType		ScopeGraphics
-	FigureColor		"[0.501960784313725 0.501960784313725 0.501960784313725]"
-	AxesColor		"[0 0 0]"
-	AxesTickColor		"[1 1 1]"
-	LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
-	LineStyles		"-|-|-|-|-|-"
-	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
-	MarkerStyles		"none|none|none|none|none|none"
-      }
-      ShowLegends	      off
-      TimeRange		      "20"
-      YMin		      "-10"
-      YMax		      "25"
-      SaveToWorkspace	      on
-      SaveName		      "o"
-      DataFormat	      "StructureWithTime"
-      LimitDataPoints	      off
-      SampleTime	      "0"
-      ScrollMode	      off
-    }
-    Block {
-      BlockType		      Scope
-      Name		      "p"
-      SID		      "703"
-      Ports		      [1]
-      Position		      [1215, 229, 1245, 261]
-      ZOrder		      -3
-      Floating		      off
-      Location		      [-1552, 178, -272, 540]
-      Open		      off
-      NumInputPorts	      "1"
-      ZoomMode		      "yonly"
-      List {
-	ListType		AxesTitles
-	axes1			"%<SignalLabel>"
-      }
-      List {
-	ListType		ScopeGraphics
-	FigureColor		"[0.501960784313725 0.501960784313725 0.501960784313725]"
-	AxesColor		"[0 0 0]"
-	AxesTickColor		"[1 1 1]"
-	LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
-	LineStyles		"-|-|-|-|-|-"
-	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
-	MarkerStyles		"none|none|none|none|none|none"
-      }
-      ShowLegends	      off
-      TimeRange		      "30              "
-      YMin		      "-3.25"
-      YMax		      "1.5"
-      SaveToWorkspace	      on
-      SaveName		      "p"
-      DataFormat	      "StructureWithTime"
-      LimitDataPoints	      off
-      SampleTime	      "0"
-      ScrollMode	      off
-    }
-    Block {
-      BlockType		      Scope
-      Name		      "p comparison"
-      SID		      "692"
-      Ports		      [1]
-      Position		      [1235, 44, 1265, 76]
-      ZOrder		      -3
-      Floating		      off
-      Location		      [10, 177, 1294, 548]
-      Open		      off
-      NumInputPorts	      "1"
-      ZoomMode		      "xonly"
-      List {
-	ListType		AxesTitles
-	axes1			"%<SignalLabel>"
-      }
-      List {
-	ListType		ScopeGraphics
-	FigureColor		"[0.501960784313725 0.501960784313725 0.501960784313725]"
-	AxesColor		"[0 0 0]"
-	AxesTickColor		"[1 1 1]"
-	LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
-	LineStyles		"-|-|-|-|-|-"
-	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
-	MarkerStyles		"none|none|none|none|none|none"
-      }
-      ShowLegends	      off
-      TimeRange		      "0.25"
-      YMin		      "-3e+305"
-      YMax		      "5e+304"
-      SaveToWorkspace	      on
-      SaveName		      "comp_p"
-      DataFormat	      "StructureWithTime"
-      LimitDataPoints	      off
-      SampleTime	      "0"
-      ScrollMode	      off
-    }
-    Block {
-      BlockType		      Scope
       Name		      "ref"
       SID		      "617"
       Ports		      [1]
@@ -7365,143 +7895,6 @@ Model {
       SampleTime	      "0"
       ScrollMode	      off
     }
-    Block {
-      BlockType		      Scope
-      Name		      "v"
-      SID		      "704"
-      Ports		      [1]
-      Position		      [1215, 279, 1245, 311]
-      ZOrder		      -3
-      Floating		      off
-      Location		      [10, 585, 1859, 990]
-      Open		      off
-      NumInputPorts	      "1"
-      ZoomMode		      "xonly"
-      List {
-	ListType		AxesTitles
-	axes1			"%<SignalLabel>"
-      }
-      List {
-	ListType		ScopeGraphics
-	FigureColor		"[0.501960784313725 0.501960784313725 0.501960784313725]"
-	AxesColor		"[0 0 0]"
-	AxesTickColor		"[1 1 1]"
-	LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
-	LineStyles		"-|-|-|-|-|-"
-	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
-	MarkerStyles		"none|none|none|none|none|none"
-      }
-      ShowLegends	      off
-      TimeRange		      "20              "
-      YMin		      "-0.5"
-      YMax		      "7.5"
-      SaveToWorkspace	      on
-      SaveName		      "v"
-      DataFormat	      "StructureWithTime"
-      LimitDataPoints	      off
-      SampleTime	      "0"
-      ScrollMode	      off
-    }
-    Block {
-      BlockType		      Scope
-      Name		      "v comparison"
-      SID		      "693"
-      Ports		      [1]
-      Position		      [1235, 144, 1265, 176]
-      ZOrder		      -3
-      Floating		      off
-      Location		      [10, 221, 1294, 663]
-      Open		      off
-      NumInputPorts	      "1"
-      ZoomMode		      "xonly"
-      List {
-	ListType		AxesTitles
-	axes1			"%<SignalLabel>"
-      }
-      List {
-	ListType		ScopeGraphics
-	FigureColor		"[0.501960784313725 0.501960784313725 0.501960784313725]"
-	AxesColor		"[0 0 0]"
-	AxesTickColor		"[1 1 1]"
-	LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
-	LineStyles		"-|-|-|-|-|-"
-	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
-	MarkerStyles		"none|none|none|none|none|none"
-      }
-      ShowLegends	      off
-      TimeRange		      "20"
-      YMin		      "-6"
-      YMax		      "6"
-      SaveToWorkspace	      on
-      SaveName		      "comp_v"
-      DataFormat	      "StructureWithTime"
-      LimitDataPoints	      off
-      SampleTime	      "0"
-      ScrollMode	      off
-    }
-    Line {
-      ZOrder		      1
-      SrcBlock		      "Mux1"
-      SrcPort		      1
-      DstBlock		      "p comparison"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      2
-      SrcBlock		      "Selector4"
-      SrcPort		      1
-      DstBlock		      "Mux4"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      3
-      SrcBlock		      "Mux4"
-      SrcPort		      1
-      DstBlock		      "v comparison"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      4
-      SrcBlock		      "Selector"
-      SrcPort		      1
-      DstBlock		      "Mux1"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      5
-      SrcBlock		      "Selector1"
-      SrcPort		      1
-      DstBlock		      "Mux1"
-      DstPort		      2
-    }
-    Line {
-      ZOrder		      6
-      SrcBlock		      "Selector2"
-      SrcPort		      1
-      DstBlock		      "Mux4"
-      DstPort		      2
-    }
-    Line {
-      ZOrder		      8
-      SrcBlock		      "Demux"
-      SrcPort		      1
-      DstBlock		      "p"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      10
-      SrcBlock		      "Demux"
-      SrcPort		      2
-      DstBlock		      "v"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      11
-      SrcBlock		      "Demux"
-      SrcPort		      4
-      DstBlock		      "o"
-      DstPort		      1
-    }
     Line {
       ZOrder		      101
       SrcBlock		      "S-Function1"
@@ -7510,35 +7903,14 @@ Model {
       Branch {
 	ZOrder			167
 	Points			[0, -125]
-	Branch {
-	  ZOrder		  165
-	  Points		  [0, -35; 328, 0]
-	  Branch {
-	    ZOrder		    151
-	    Points		    [0, 100]
-	    Branch {
-	      ZOrder		      149
-	      DstBlock		      "Selector2"
-	      DstPort		      1
-	    }
-	    Branch {
-	      ZOrder		      106
-	      Points		      [0, 140]
-	      DstBlock		      "Demux"
-	      DstPort		      1
-	    }
-	  }
-	  Branch {
-	    ZOrder		    108
-	    DstBlock		    "Selector1"
-	    DstPort		    1
-	  }
-	}
-	Branch {
-	  ZOrder		  102
-	  DstBlock		  "Controlador Casau"
-	  DstPort		  1
-	}
+	DstBlock		"Controlador Casau"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			207
+	Points			[0, 104; 343, 0]
+	DstBlock		"Subsystem"
+	DstPort			2
       }
       Branch {
 	ZOrder			166
@@ -7548,6 +7920,10 @@ Model {
       }
     }
     Line {
+      FontName		      "Helvetica"
+      FontSize		      9
+      FontWeight	      "normal"
+      FontAngle		      "normal"
       ZOrder		      22
       SrcBlock		      "Controlador Casau"
       SrcPort		      1
@@ -7578,19 +7954,10 @@ Model {
 	ZOrder			192
 	Points			[0, -100]
 	Branch {
-	  ZOrder		  170
-	  Points		  [411, 0]
-	  Branch {
-	    ZOrder		    154
-	    Points		    [0, 100]
-	    DstBlock		    "Selector4"
-	    DstPort		    1
-	  }
-	  Branch {
-	    ZOrder		    153
-	    DstBlock		    "Selector"
-	    DstPort		    1
-	  }
+	  ZOrder		  206
+	  Points		  [400, 0; 0, 135]
+	  DstBlock		  "Subsystem"
+	  DstPort		  1
 	}
 	Branch {
 	  ZOrder		  160
@@ -7606,21 +7973,21 @@ Model {
       DstBlock		      "Waypoint Generator"
       DstPort		      1
     }
-    Annotation {
-      SID		      "705"
-      Position		      [1186, 266, 1188, 281]
-      InternalMargins	      [0, 0, 0, 0]
-      FixedHeight	      off
-      FixedWidth	      off
-      ZOrder		      -1
+    Line {
+      ZOrder		      243
+      SrcBlock		      "Controller"
+      SrcPort		      1
+      Points		      [38, 0; 0, 120]
+      DstBlock		      "Model"
+      DstPort		      1
     }
-    Annotation {
-      SID		      "706"
-      Position		      [1190, 266, 1192, 281]
-      InternalMargins	      [0, 0, 0, 0]
-      FixedHeight	      off
-      FixedWidth	      off
-      ZOrder		      -2
+    Line {
+      ZOrder		      244
+      SrcBlock		      "Model"
+      SrcPort		      1
+      Points		      [-44, 0; 0, -100]
+      DstBlock		      "Controller"
+      DstPort		      2
     }
   }
 }
@@ -7635,7 +8002,7 @@ Stateflow {
     name		    "PackageDeliverySim"
     created		    "28-May-2012 17:04:21"
     isLibrary		    0
-    firstTarget		    91
+    firstTarget		    112
     debug {
     }
     sfVersion		    80000001
@@ -9587,17 +9954,415 @@ Stateflow {
     machine		    1
     chart		    79
   }
-  target {
+  chart {
     id			    91
+    name		    "Controller"
+    windowPosition	    [422 539.941 189 413]
+    viewLimits		    [0 156.75 0 153.75]
+    screen		    [1 1 3600 1200 1.180555555555556]
+    treeNode		    [0 92 0 0]
+    firstTransition	    100
+    firstJunction	    99
+    viewObj		    91
+    visible		    1
+    machine		    1
+    subviewS {
+    }
+    ssIdHighWaterMark	    11
+    decomposition	    CLUSTER_CHART
+    type		    EML_CHART
+    firstData		    93
+    chartFileNumber	    6
+    disableImplicitCasting  1
+    eml {
+      name		      "Controller"
+    }
+  }
+  state {
+    id			    92
+    labelString		    "eML_blk_kernel()"
+    position		    [18 64.5 118 66]
+    fontSize		    12
+    chart		    91
+    treeNode		    [91 0 0 0]
+    superState		    SUBCHART
+    subviewer		    91
+    ssIdNumber		    1
+    type		    FUNC_STATE
+    decomposition	    CLUSTER_STATE
+    eml {
+      isEML		      1
+      script		      "function cmd = Controller( ref , state )\n%UNTITLED3 Summary of this function goes here\n%   Deta"
+      "iled explanation goes here\n\n\nend"
+      editorLayout	      "100 M4x1[10 5 700 500]"
+    }
+  }
+  data {
+    id			    93
+    ssIdNumber		    4
+    name		    "ref"
+    linkNode		    [91 0 94]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    94
+    ssIdNumber		    5
+    name		    "cmd"
+    linkNode		    [91 93 95]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    95
+    ssIdNumber		    8
+    name		    "curr_wp"
+    linkNode		    [91 94 96]
+    scope		    DATA_STORE_MEMORY_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    96
+    ssIdNumber		    9
+    name		    "curr_tp"
+    linkNode		    [91 95 97]
+    scope		    DATA_STORE_MEMORY_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    97
+    ssIdNumber		    10
+    name		    "num_delivered"
+    linkNode		    [91 96 98]
+    scope		    DATA_STORE_MEMORY_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    98
+    ssIdNumber		    11
+    name		    "state"
+    linkNode		    [91 97 0]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  junction {
+    id			    99
+    position		    [23.5747 49.5747 7]
+    chart		    91
+    linkNode		    [91 0 0]
+    subviewer		    91
+    ssIdNumber		    3
+    type		    CONNECTIVE_JUNCTION
+  }
+  transition {
+    id			    100
+    labelString		    "{eML_blk_kernel();}"
+    labelPosition	    [28.125 13.875 102.544 14.964]
+    fontSize		    12
+    src {
+      intersection	      [0 0 1 0 23.5747 14.625 0 0]
+    }
+    dst {
+      id		      99
+      intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
+    }
+    midPoint		    [23.5747 24.9468]
+    chart		    91
+    linkNode		    [91 0 0]
+    dataLimits		    [21.175 25.975 14.625 42.575]
+    subviewer		    91
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    2
+  }
+  instance {
+    id			    101
+    name		    "Controller"
+    machine		    1
+    chart		    91
+  }
+  chart {
+    id			    102
+    name		    "Model"
+    windowPosition	    [422 539.941 189 413]
+    viewLimits		    [0 156.75 0 153.75]
+    screen		    [1 1 3600 1200 1.180555555555556]
+    treeNode		    [0 103 0 0]
+    firstTransition	    110
+    firstJunction	    109
+    viewObj		    102
+    visible		    1
+    machine		    1
+    subviewS {
+    }
+    ssIdHighWaterMark	    10
+    decomposition	    CLUSTER_CHART
+    type		    EML_CHART
+    firstData		    104
+    chartFileNumber	    7
+    disableImplicitCasting  1
+    eml {
+      name		      "Model"
+    }
+  }
+  state {
+    id			    103
+    labelString		    "eML_blk_kernel()"
+    position		    [18 64.5 118 66]
+    fontSize		    12
+    chart		    102
+    treeNode		    [102 0 0 0]
+    superState		    SUBCHART
+    subviewer		    102
+    ssIdNumber		    1
+    type		    FUNC_STATE
+    decomposition	    CLUSTER_STATE
+    eml {
+      isEML		      1
+      script		      "function state = Model( cmd )\n%UNTITLED4 Summary of this function goes here\n%   Detailed explan"
+      "ation goes here\n\n\n\nstate = [x_plus ; y_plus ; z_plus];\n"
+      editorLayout	      "100 M4x1[10 5 700 500]"
+    }
+  }
+  data {
+    id			    104
+    ssIdNumber		    4
+    name		    "cmd"
+    linkNode		    [102 0 105]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    105
+    ssIdNumber		    6
+    name		    "state"
+    linkNode		    [102 104 106]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    106
+    ssIdNumber		    8
+    name		    "curr_wp"
+    linkNode		    [102 105 107]
+    scope		    DATA_STORE_MEMORY_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    107
+    ssIdNumber		    9
+    name		    "curr_tp"
+    linkNode		    [102 106 108]
+    scope		    DATA_STORE_MEMORY_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    108
+    ssIdNumber		    10
+    name		    "num_delivered"
+    linkNode		    [102 107 0]
+    scope		    DATA_STORE_MEMORY_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  junction {
+    id			    109
+    position		    [23.5747 49.5747 7]
+    chart		    102
+    linkNode		    [102 0 0]
+    subviewer		    102
+    ssIdNumber		    3
+    type		    CONNECTIVE_JUNCTION
+  }
+  transition {
+    id			    110
+    labelString		    "{eML_blk_kernel();}"
+    labelPosition	    [28.125 13.875 102.544 14.964]
+    fontSize		    12
+    src {
+      intersection	      [0 0 1 0 23.5747 14.625 0 0]
+    }
+    dst {
+      id		      109
+      intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
+    }
+    midPoint		    [23.5747 24.9468]
+    chart		    102
+    linkNode		    [102 0 0]
+    dataLimits		    [21.175 25.975 14.625 42.575]
+    subviewer		    102
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    2
+  }
+  instance {
+    id			    111
+    name		    "Model"
+    machine		    1
+    chart		    102
+  }
+  target {
+    id			    112
     name		    "sfun"
     description		    "Default Simulink S-Function Target."
     machine		    1
-    linkNode		    [1 0 92]
+    linkNode		    [1 0 113]
   }
   target {
-    id			    92
+    id			    113
     name		    "rtw"
     machine		    1
-    linkNode		    [1 91 0]
+    linkNode		    [1 112 0]
   }
 }
