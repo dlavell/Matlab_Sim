@@ -22,14 +22,22 @@ h = [1, 0.1 ,0.1 , 0.1];%create_axis([1, 0.1 ,0.1 , 0.1],[1 0.1 0.1 0.1]);
 axes
 for t2 = 0:step:T
     I = find(t>=t2,1);
-    if I >=length(R)
+    if I >=length(p_i) || I >=length(pdt)
         close(vidObj);
-        %display('I >=length(R) caused the break.')
+        display('length of internal variable caused the video to end.')
+        if I >=length(pdt)
+            display('pdt was the cause');
+            length(pdt)
+        end
+        if I >=length(p_i)
+            display('p_i was the cause');
+            length(p_i)
+        end
         break
     end
     if isempty(I) 
         close(vidObj);
-        %display('isempty(I)  caused the break.')
+        display('Finished making video.')
         break
     end
     R(:,:,I) = eye(3);
