@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.2455"
+    ComputedModelVersion    "1.2463"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -40,7 +40,7 @@ Model {
       $ObjectID		      3
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [962.0, 0.0, 951.0, 1050.0]
+      Location		      [-8.0, -8.0, 1936.0, 1066.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		4
@@ -64,7 +64,7 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[901.0, 876.0]
+	Extents			[1886.0, 892.0]
 	ZoomFactor		[1.0]
 	Offset			[88.660004274051175, -191.13919676922575]
       }
@@ -76,9 +76,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "dlavell"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Feb 16 17:23:31 2016"
-  RTWModifiedTimeStamp	  377544210
-  ModelVersionFormat	  "1.%<AutoIncrement:2455>"
+  LastModifiedDate	  "Tue Feb 16 17:49:37 2016"
+  RTWModifiedTimeStamp	  377545773
+  ModelVersionFormat	  "1.%<AutoIncrement:2463>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -4443,7 +4443,7 @@ Model {
   }
   System {
     Name		    "PackageDeliverySim"
-    Location		    [962, 0, 1913, 1050]
+    Location		    [-8, -8, 1928, 1058]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    212
@@ -4644,7 +4644,7 @@ Model {
       Name		      "Integrator"
       SID		      "1018"
       Ports		      [1, 1]
-      Position		      [665, 265, 695, 295]
+      Position		      [670, 265, 700, 295]
       ZOrder		      77
       BlockMirror	      on
     }
@@ -4765,8 +4765,9 @@ Model {
       Name		      "To Workspace"
       SID		      "1017"
       Ports		      [1]
-      Position		      [650, 350, 710, 380]
+      Position		      [540, 265, 600, 295]
       ZOrder		      76
+      BlockMirror	      on
       VariableName	      "state"
       MaxDataPoints	      "inf"
       SaveFormat	      "Structure With Time"
@@ -4779,7 +4780,7 @@ Model {
       Name		      "Trajectory Genereator"
       SID		      "988"
       Ports		      [0, 1]
-      Position		      [175, 69, 340, 171]
+      Position		      [175, 89, 340, 191]
       ZOrder		      60
       RequestExecContextInheritance off
       System {
@@ -5288,7 +5289,7 @@ Model {
       BlockType		      SubSystem
       Name		      "Waypoint Generator"
       SID		      "980"
-      Ports		      [2, 1]
+      Ports		      [1, 1]
       Position		      [470, 98, 600, 182]
       ZOrder		      54
       LibraryVersion	      "1.32"
@@ -5312,22 +5313,13 @@ Model {
 	TiledPageScale		1
 	ShowPageBoundaries	off
 	ZoomFactor		"100"
-	SIDHighWatermark	"24"
+	SIDHighWatermark	"25"
 	Block {
 	  BlockType		  Inport
 	  Name			  "trajectory"
 	  SID			  "980::1"
 	  Position		  [20, 101, 40, 119]
 	  ZOrder		  -1
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Inport
-	  Name			  "state"
-	  SID			  "980::19"
-	  Position		  [20, 136, 40, 154]
-	  ZOrder		  10
-	  Port			  "2"
 	  IconDisplay		  "Port number"
 	}
 	Block {
@@ -5344,11 +5336,11 @@ Model {
 	  Name			  " SFunction "
 	  SID			  "980::16"
 	  Tag			  "Stateflow S-Function PackageDeliverySim 3"
-	  Ports			  [2, 2]
+	  Ports			  [1, 2]
 	  Position		  [180, 115, 230, 175]
 	  ZOrder		  7
 	  FunctionName		  "sf_sfun"
-	  PortCounts		  "[2 2]"
+	  PortCounts		  "[1 2]"
 	  EnableBusSupport	  on
 	  Port {
 	    PortNumber		    2
@@ -5373,22 +5365,15 @@ Model {
 	  IconDisplay		  "Port number"
 	}
 	Line {
-	  ZOrder		  76
+	  ZOrder		  92
 	  SrcBlock		  "trajectory"
 	  SrcPort		  1
 	  DstBlock		  " SFunction "
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  77
-	  SrcBlock		  "state"
-	  SrcPort		  1
-	  DstBlock		  " SFunction "
-	  DstPort		  2
-	}
-	Line {
 	  Name			  "waypoint"
-	  ZOrder		  78
+	  ZOrder		  93
 	  Labels		  [0, 0]
 	  SrcBlock		  " SFunction "
 	  SrcPort		  2
@@ -5396,14 +5381,14 @@ Model {
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  79
+	  ZOrder		  94
 	  SrcBlock		  " Demux "
 	  SrcPort		  1
 	  DstBlock		  " Terminator "
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  80
+	  ZOrder		  95
 	  SrcBlock		  " SFunction "
 	  SrcPort		  1
 	  DstBlock		  " Demux "
@@ -5444,18 +5429,11 @@ Model {
       ZOrder		      265
       SrcBlock		      "Integrator"
       SrcPort		      1
-      Points		      [-32, 0]
+      Points		      [-24, 0]
       Branch {
-	ZOrder			261
-	Points			[0, 85]
+	ZOrder			266
 	DstBlock		"To Workspace"
 	DstPort			1
-      }
-      Branch {
-	ZOrder			256
-	Points			[-215, 0; 0, -120]
-	DstBlock		"Waypoint Generator"
-	DstPort			2
       }
       Branch {
 	ZOrder			248
@@ -5494,7 +5472,7 @@ Stateflow {
     machine		    1
     subviewS {
     }
-    ssIdHighWaterMark	    11
+    ssIdHighWaterMark	    12
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
     firstData		    4
@@ -5518,23 +5496,23 @@ Stateflow {
     decomposition	    CLUSTER_STATE
     eml {
       isEML		      1
-      script		      "function waypoint = fcn(trajectory, state)\n%#codegen\ncoder.extrinsic('display')\n%display('curr"
-      "ent state:')\n%state\n\nglobal curr_wp curr_tp num_delivered;\n\n% acceptable distance to waypoint\nthreshold = "
-      "1;\n\n%% Trajectory Points\n% origin      = trajectory(1,:);\n% point1      = trajectory(2,:);\n% point2      = "
-      "trajectory(3,:);\n% destination = trajectory(4,:);\n\n%% Quadcopters current position\nif(length(state)== 1)\n  "
-      "  quad_X = 0;\n    quad_Y = 0;\n    quad_Z = 0;\nelse\n    quad_X = state(1);\n    quad_Y = state(2);\n    quad_"
-      "Z = state(3);\nend\n%% Specify last and next trajectory points\nlast_tp = trajectory(curr_tp - 1,:);\nnext_tp = "
-      "trajectory(curr_tp,:);\n\n%% Divide distance between last_wp and next_wp into evenly divided segments\n% waypoin"
-      "t distances\nwp_separation_dist = 1; \n\n% trajectory point distances\ntp_separation_dist = sqrt((last_tp(1)-nex"
-      "t_tp(1))^2 + (last_tp(2)-next_tp(2))^2 + (last_tp(3)-next_tp(3))^2);\n\n%% Determine which segment to give next\n"
-      "number_of_waypoints = floor(tp_separation_dist/wp_separation_dist);\nvec_norm = [(last_tp(1)-next_tp(1)) (last_t"
-      "p(2)-next_tp(2)) (last_tp(3)-next_tp(3))]/tp_separation_dist;\nif(isnan(vec_norm(1))) vec_norm(1) = 0; end\nif(i"
-      "snan(vec_norm(2))) vec_norm(2) = 0; end\nif(isnan(vec_norm(3))) vec_norm(3) = 0; end\nwp = last_tp + curr_wp*wp_"
-      "separation_dist*-vec_norm;\n\n% distance to current waypoint\ndist1 = sqrt((quad_X-wp(1))^2 + (quad_Y-wp(2))^2 +"
-      " (quad_Z-wp(3))^2);\n\nif(dist1 <= threshold)\n    curr_wp = curr_wp + 1;\n    if(curr_wp == number_of_waypoints"
-      ")\n        curr_tp = curr_tp + 1;\n        curr_wp = 0;\n    end\nend\nif(curr_tp == length(trajectory(:,1)) + 1"
-      ")\n    curr_tp = 2;\n    num_delivered = num_delivered + 1;\nend\n\n%p = zeros(15,1);\n%p(1:3) = wp;\n\n%% outpu"
-      "t\nwaypoint = wp;\nend"
+      script		      "function waypoint = fcn(trajectory)\n%#codegen\ncoder.extrinsic('display')\n%display('current sta"
+      "te:')\n%state\n\nglobal curr_wp curr_tp num_delivered pos;\n\n% acceptable distance to waypoint\nthreshold = 1.5"
+      ";\n\n%% Trajectory Points\n% origin      = trajectory(1,:);\n% point1      = trajectory(2,:);\n% point2      = t"
+      "rajectory(3,:);\n% destination = trajectory(4,:);\n\n%% Quadcopters current position\n% if(length(state)== 1)\n%"
+      "     quad_X = 0;\n%     quad_Y = 0;\n%     quad_Z = 0;\n% else\n%     quad_X = state(1);\n%     quad_Y = state(2"
+      ");\n%     quad_Z = state(3);\n% end\nquad_X = pos(1);\nquad_Y = pos(2);\nquad_Z = pos(3);\n%% Specify last and n"
+      "ext trajectory points\nlast_tp = trajectory(curr_tp - 1,:);\nnext_tp = trajectory(curr_tp,:);\n\n%% Divide dista"
+      "nce between last_wp and next_wp into evenly divided segments\n% waypoint distances\nwp_separation_dist = 1; \n\n"
+      "% trajectory point distances\ntp_separation_dist = sqrt((last_tp(1)-next_tp(1))^2 + (last_tp(2)-next_tp(2))^2 + "
+      "(last_tp(3)-next_tp(3))^2);\n\n%% Determine which segment to give next\nnumber_of_waypoints = floor(tp_separatio"
+      "n_dist/wp_separation_dist);\nvec_norm = [(last_tp(1)-next_tp(1)) (last_tp(2)-next_tp(2)) (last_tp(3)-next_tp(3))"
+      "]/tp_separation_dist;\nif(isnan(vec_norm(1))) vec_norm(1) = 0; end\nif(isnan(vec_norm(2))) vec_norm(2) = 0; end\n"
+      "if(isnan(vec_norm(3))) vec_norm(3) = 0; end\nwp = last_tp + curr_wp*wp_separation_dist*-vec_norm;\n\n% distance "
+      "to current waypoint\ndist1 = sqrt((quad_X-wp(1))^2 + (quad_Y-wp(2))^2 + (quad_Z-wp(3))^2);\n\nif(dist1 <= thresh"
+      "old)\n    curr_wp = curr_wp + 1;\n    if(curr_wp == number_of_waypoints)\n        curr_tp = curr_tp + 1;\n      "
+      "  curr_wp = 0;\n    end\nend\nif(curr_tp == length(trajectory(:,1)) + 1)\n    curr_tp = 2;\n    num_delivered = "
+      "num_delivered + 1;\nend\n\n%p = zeros(15,1);\n%p(1:3) = wp;\n\n%% output\nwaypoint = wp;\nend"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
@@ -5579,10 +5557,10 @@ Stateflow {
   }
   data {
     id			    6
-    ssIdNumber		    6
-    name		    "state"
+    ssIdNumber		    8
+    name		    "curr_wp"
     linkNode		    [2 5 7]
-    scope		    INPUT_DATA
+    scope		    DATA_STORE_MEMORY_DATA
     machine		    1
     props {
       array {
@@ -5601,8 +5579,8 @@ Stateflow {
   }
   data {
     id			    7
-    ssIdNumber		    8
-    name		    "curr_wp"
+    ssIdNumber		    9
+    name		    "curr_tp"
     linkNode		    [2 6 8]
     scope		    DATA_STORE_MEMORY_DATA
     machine		    1
@@ -5623,8 +5601,8 @@ Stateflow {
   }
   data {
     id			    8
-    ssIdNumber		    9
-    name		    "curr_tp"
+    ssIdNumber		    10
+    name		    "num_delivered"
     linkNode		    [2 7 9]
     scope		    DATA_STORE_MEMORY_DATA
     machine		    1
@@ -5645,8 +5623,8 @@ Stateflow {
   }
   data {
     id			    9
-    ssIdNumber		    10
-    name		    "num_delivered"
+    ssIdNumber		    12
+    name		    "pos"
     linkNode		    [2 8 0]
     scope		    DATA_STORE_MEMORY_DATA
     machine		    1
@@ -6179,11 +6157,12 @@ Stateflow {
       script		      "function cmd = Controller( ref , state)\n% Controller for point-mass model of quadcopter\ncmd = z"
       "eros(3,1);\nglobal pos;\n\npos = state(1:3);\n%ref = [1;1;0];\nEx = ref(1) - pos(1); % Error in x-direction\nEy "
       "= ref(2) - pos(2); % Error in y-direction\nEz = ref(3) - pos(3); % Error in z-direction\n\nXg = atan2(Ey,Ex);  %"
-      " tracking angle\n\nthresh = .25; % temporary threshold to see which way we are heading\nthresh_z = 1;\n\n\nVg = "
-      "0;\nVh = 0;\n \nif( abs(Ex) >= thresh || abs(Ey) >= thresh )    % moving along x/y\n    Vg = 1;                 "
-      "                    % use ground speed\nend\nif ( Ez >= thresh_z && Ez ~= 0 )                   \n    Vh = Ez;  "
-      "                               \nelseif ( Ez <= thresh_z && Ez ~= 0 )                   \n    Vh = Ez;          "
-      "    \nend\n\ncmd = [ Xg ; Vh ; Vg ];\nend"
+      " tracking angle\n\n% \n% thresh = .25; % temporary threshold to see which way we are heading\n% thresh_z = .25;\n"
+      "% \n% \n% Vg = 0;\n% Vh = 0;\n%  \n% if( abs(Ex) >= thresh || abs(Ey) >= thresh )    % moving along x/y\n%     V"
+      "g = 1;                                     % use ground speed\n% end\n% if ( Ez >= thresh_z && Ez ~= 0 )        "
+      "           \n%     Vh = Ez;                                 \n% elseif ( Ez <= thresh_z && Ez ~= 0 )            "
+      "       \n%     Vh = Ez;              \n% end\n\nVg = abs(Ex) + abs(Ey);\nVh = Ez;\n\ncmd = [ Xg ; Vh ; Vg ];\nen"
+      "d"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }

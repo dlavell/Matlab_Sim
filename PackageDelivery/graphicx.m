@@ -22,6 +22,11 @@ h = [1, 0.1 ,0.1 , 0.1];%create_axis([1, 0.1 ,0.1 , 0.1],[1 0.1 0.1 0.1]);
 axes
 for t2 = 0:step:T
     I = find(t>=t2,1);
+    if isempty(I) 
+        close(vidObj);
+        display('Finished making video.')
+        break
+    end
     if I >=length(p_i) || I >=length(pdt)
         close(vidObj);
         display('length of internal variable caused the video to end.')
@@ -35,11 +40,7 @@ for t2 = 0:step:T
         end
         break
     end
-    if isempty(I) 
-        close(vidObj);
-        display('Finished making video.')
-        break
-    end
+    
     R(:,:,I) = eye(3);
     hold on
     cla
