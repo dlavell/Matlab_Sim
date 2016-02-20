@@ -86,7 +86,8 @@ for t2 = 0:step:T
     P0B2 = repmat(p_star2,1,4);
     P0B3 = repmat(p_star3,1,4);
     
-    set(gca,'Xlim',[-5 30], 'YLim', [-5 30], 'ZLim', [0 40]);
+    % set(gca,'Xlim',[-5 30], 'YLim', [-5 30], 'ZLim', [0 40]);
+    % set(gca,'Xlim',[ 30], 'YLim', [-5 30], 'ZLim', [0 40]);
     view(37.5,30);axis square;
     legend(leg,{'Quad 1','Quad 2','Quad 3'},'location','NorthEast')
     
