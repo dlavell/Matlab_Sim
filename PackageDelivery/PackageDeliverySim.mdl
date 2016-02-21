@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.2499"
+    ComputedModelVersion    "1.2557"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -65,8 +65,8 @@ Model {
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
 	Extents			[1886.0, 892.0]
-	ZoomFactor		[1.0]
-	Offset			[0.0, 0.0]
+	ZoomFactor		[1.0614250614250615]
+	Offset			[65.071759259259323, 51.810185185185183]
       }
     }
   }
@@ -76,9 +76,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "dlavell"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat Feb 20 13:46:33 2016"
-  RTWModifiedTimeStamp	  377876590
-  ModelVersionFormat	  "1.%<AutoIncrement:2499>"
+  LastModifiedDate	  "Sun Feb 21 12:58:39 2016"
+  RTWModifiedTimeStamp	  377960306
+  ModelVersionFormat	  "1.%<AutoIncrement:2557>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -4455,7 +4455,7 @@ Model {
     TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "100"
+    ZoomFactor		    "106"
     ReportName		    "simulink-default.rpt"
     SIDHighWatermark	    "1084"
     Block {
@@ -4983,6 +4983,7 @@ Model {
       Position		      [1005, 265, 1035, 295]
       ZOrder		      77
       BlockMirror	      on
+      InitialCondition	      "[ 37 ; -122.06 ; 0 ]"
     }
     Block {
       BlockType		      Integrator
@@ -5412,7 +5413,7 @@ Model {
 	  SID			  "965"
 	  Position		  [780, 380, 810, 410]
 	  ZOrder		  69
-	  Value			  "8"
+	  Value			  ".1"
 	}
 	Block {
 	  BlockType		  SubSystem
@@ -6839,7 +6840,10 @@ Stateflow {
     firstTransition	    34
     firstJunction	    33
     viewObj		    25
+    visible		    1
     machine		    1
+    subviewS {
+    }
     ssIdHighWaterMark	    12
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -6865,19 +6869,19 @@ Stateflow {
     eml {
       isEML		      1
       script		      "function waypoint = fcn(traj)\n%#codegen\ncoder.extrinsic('display')\n%display('current state:')\n"
-      "%state\n\nglobal curr_wp curr_tp num_delivered pos;\n\n% acceptable distance to waypoint\nthreshold = 1;\n\nquad"
-      "_X = pos(1);\nquad_Y = pos(2);\nquad_Z = pos(3);\ntrajectory = traj(:,:,1);\n%% Specify last and next trajectory"
-      " points\nlast_tp = trajectory(curr_tp - 1,:);\nnext_tp = trajectory(curr_tp,:);\n\n%% Divide distance between la"
-      "st_wp and next_wp into evenly divided segments\n% waypoint distances\nwp_separation_dist = 1; \n\n% trajectory p"
-      "oint distances\ntp_separation_dist = sqrt((last_tp(1)-next_tp(1))^2 + (last_tp(2)-next_tp(2))^2 + (last_tp(3)-ne"
-      "xt_tp(3))^2);\n\n%% Determine which segment to give next\nnumber_of_waypoints = floor(tp_separation_dist/wp_sepa"
-      "ration_dist);\nvec_norm = [(last_tp(1)-next_tp(1)) (last_tp(2)-next_tp(2)) (last_tp(3)-next_tp(3))]/tp_separatio"
-      "n_dist;\nif(isnan(vec_norm(1))) vec_norm(1) = 0; end\nif(isnan(vec_norm(2))) vec_norm(2) = 0; end\nif(isnan(vec_"
-      "norm(3))) vec_norm(3) = 0; end\nwp = last_tp + curr_wp*wp_separation_dist*-vec_norm;\n\n% distance to current wa"
-      "ypoint\ndist1 = sqrt((quad_X-wp(1))^2 + (quad_Y-wp(2))^2 + (quad_Z-wp(3))^2);\n\nif(dist1 <= threshold)\n    cur"
-      "r_wp = curr_wp + 1;\n    if(curr_wp == number_of_waypoints)\n        curr_tp = curr_tp + 1;\n        curr_wp = 0"
-      ";\n    end\nend\nif(curr_tp == length(trajectory(:,1)) + 1)\n    curr_tp = 2;\n    num_delivered = num_delivered"
-      " + 1;\nend\n\n%% output\nwaypoint = wp;\nend"
+      "%state\n\nglobal curr_wp curr_tp num_delivered pos;\n\n\n\nquad_X = pos(1);\nquad_Y = pos(2);\nquad_Z = pos(3);\n"
+      "trajectory = traj(:,:,1);\n%% Specify last and next trajectory points\nlast_tp = trajectory(curr_tp - 1,:);\nnex"
+      "t_tp = trajectory(curr_tp,:);\n\n%% Divide distance between last_wp and next_wp into evenly divided segments\n% "
+      "waypoint distances\nwp_separation_dist = .01;\n\n% acceptable distance to waypoint\nthreshold = wp_separation_di"
+      "st/3;\n\n% trajectory point distances\ntp_separation_dist = sqrt((last_tp(1)-next_tp(1))^2 + (last_tp(2)-next_tp"
+      "(2))^2 + (last_tp(3)-next_tp(3))^2);\n\n%% Determine which segment to give next\nnumber_of_waypoints = floor(tp_"
+      "separation_dist/wp_separation_dist);\nvec_norm = [(last_tp(1)-next_tp(1)) (last_tp(2)-next_tp(2)) (last_tp(3)-ne"
+      "xt_tp(3))]/tp_separation_dist;\nif(isnan(vec_norm(1))) vec_norm(1) = 0; end\nif(isnan(vec_norm(2))) vec_norm(2) "
+      "= 0; end\nif(isnan(vec_norm(3))) vec_norm(3) = 0; end\nwp = last_tp + curr_wp*wp_separation_dist*-vec_norm;\n\n%"
+      " distance to current waypoint\ndist1 = sqrt((quad_X-wp(1))^2 + (quad_Y-wp(2))^2 + (quad_Z-wp(3))^2);\n\nif(dist1"
+      " <= threshold)\n    curr_wp = curr_wp + 1;\n    if(curr_wp == number_of_waypoints)\n        curr_tp = curr_tp + "
+      "1;\n        curr_wp = 0;\n    end\nend\nif(curr_tp == length(trajectory(:,1)) + 1)\n    curr_tp = 2;\n    num_de"
+      "livered = num_delivered + 1;\nend\n\n%% output\nwaypoint = wp;\nend"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
@@ -7086,24 +7090,14 @@ Stateflow {
     eml {
       isEML		      1
       script		      "function trajectories = fcn(origin_lat, origin_lng,destinations, altitude)\n\n%% Initialize varia"
-      "bles\nglobal num_delivered;\n\nlen = length(destinations(:,1));\ntrajectory1 = zeros(7,3);\ntrajectory2 = zeros("
-      "7,3);\ntrajectory3 = zeros(7,3);\ntrajectories = zeros(7,3,len);\norigin = [origin_lat origin_lng 0];\n destinat"
-      "ions = [37.0629 -121.9746 0; 36.9120 -121.9642 0; 37.0077 -122.1559 0];\n\n%% Set destination\n% destinations(:,"
-      "1) = -destinations(:,1);\n% num_dest_points = length(destinations(:))/3;\n% if(num_dest_points > num_delivered)\n"
-      "%     dest(1,:) = destinations(num_delivered+1,:);\n% end\n% waypoint1 = [origin(1) origin(2) -altitude];\n% way"
-      "point2 = [dest(1,1) dest(1,2) -altitude];\n% trajectory = [origin ; waypoint1 ; waypoint2 ; dest ; waypoint2 ; w"
-      "aypoint1 ; origin];\n\n%% temporary -- just testing to see if all three quads work.\nfor i = 1:len\n    dest = ["
-      "destinations(i,1) destinations(i,2) 0];\n    trajectory = [origin ; [origin(1) origin(2) -altitude] ; [dest(1,1)"
-      " dest(1,2) -altitude] ; ...\n            dest ; [dest(1,1) dest(1,2) -altitude] ; [origin(1) origin(2) -altitude"
-      "] ; origin];\n    trajectories(:,:,i) = trajectory;\nend\n\ntrajectories;\n% dest(1,:) = [-destinations(1,1) des"
-      "tinations(1,2) 0];\n% trajectory1 = [origin ; [origin(1) origin(2) -altitude] ; [dest(1,1) dest(1,2) -altitude] "
-      "; ...\n%      dest ; [dest(1,1) dest(1,2) -altitude] ; [origin(1) origin(2) -altitude] ; origin];\n%  \n% dest(1"
-      ",:) = destinations(2,:);\n% dest(1,1) = -dest(1,1);\n% trajectory2 = [origin ; [origin(1) origin(2) -altitude] ;"
-      " [dest(1,1) dest(1,2) -altitude] ; ...\n%      dest ; [-dest(1,1) dest(1,2) -altitude] ; [origin(1) origin(2) -a"
-      "ltitude] ; origin];\n%  \n% dest(1,:) = destinations(3,:);\n% dest(1,1) = -dest(1,1);\n% trajectory3 = [origin ;"
-      " [origin(1) origin(2) -altitude] ; [dest(1,1) dest(1,2) -altitude] ; ...\n%      dest ; [dest(1,1) dest(1,2) -al"
-      "titude] ; [origin(1) origin(2) -altitude] ; origin];\n%  \n%  trajectories(:,:,1) = trajectory1;\n%  \n%  trajec"
-      "tories(:,:,2) = trajectory2;\n%  \n%  trajectories(:,:,3) = trajectory3;"
+      "bles\nglobal num_delivered;\nlen = length(destinations(:,1));\ntrajectories = zeros(7,3,len);\norigin = [origin_"
+      "lat origin_lng 0];\ndestinations = [37.0629 -121.9746 0; 36.9120 -121.9642 0; 37.0077 -122.1559 0];\n\n%% Set de"
+      "stination\n% waypoint1 = [origin(1) origin(2) -altitude];\n% waypoint2 = [dest(1,1) dest(1,2) -altitude];\n% tra"
+      "jectory = [origin ; waypoint1 ; waypoint2 ; dest ; waypoint2 ; waypoint1 ; origin];\n\n%% temporary -- just test"
+      "ing to see if all three quads work.\nfor i = 1:len\n    dest = [destinations(i,1) destinations(i,2) 0];\n    tra"
+      "jectory = [origin ; [origin(1) origin(2) -altitude] ; [dest(1,1) dest(1,2) -altitude] ; ...\n            dest ; "
+      "[dest(1,1) dest(1,2) -altitude] ; [origin(1) origin(2) -altitude] ; origin];\n    trajectories(:,:,i) = trajecto"
+      "ry;\nend"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
@@ -7534,13 +7528,14 @@ Stateflow {
       isEML		      1
       script		      "function cmd = Controller( ref , state)\n% Controller for point-mass model of quadcopter\ncmd = z"
       "eros(3,1);\nglobal pos;\n\npos = state(1:3);\n%ref = [1;1;0];\nEx = ref(1) - pos(1); % Error in x-direction\nEy "
-      "= ref(2) - pos(2); % Error in y-direction\nEz = ref(3) - pos(3); % Error in z-direction\n\nXg = atan2(Ey,Ex);  %"
-      " tracking angle\n\n% \n% thresh = .25; % temporary threshold to see which way we are heading\n% thresh_z = .25;\n"
-      "% \n% \n% Vg = 0;\n% Vh = 0;\n%  \n% if( abs(Ex) >= thresh || abs(Ey) >= thresh )    % moving along x/y\n%     V"
-      "g = 1;                                     % use ground speed\n% end\n% if ( Ez >= thresh_z && Ez ~= 0 )        "
-      "           \n%     Vh = Ez;                                 \n% elseif ( Ez <= thresh_z && Ez ~= 0 )            "
-      "       \n%     Vh = Ez;              \n% end\n\nVg = abs(Ex) + abs(Ey);\nVh = Ez;\n\ncmd = [ Xg ; Vh ; Vg ];\nen"
-      "d"
+      "= ref(2) - pos(2); % Error in y-direction\nEz = ref(3) - pos(3); % Error in z-direction\n\n% Xg = atan2(Ey,Ex)  "
+      "% tracking angle\nXg = atan2d((sind(Ey)*cosd(ref(1))),(sind(ref(1))*cosd(pos(1)) - cosd(ref(1))*sind(pos(1))*cos"
+      "d(Ey)));\n% \n% thresh = .25; % temporary threshold to see which way we are heading\n% thresh_z = .25;\n% \n% \n"
+      "% Vg = 0;\n% Vh = 0;\n%  \n% if( abs(Ex) >= thresh || abs(Ey) >= thresh )    % moving along x/y\n%     Vg = 1;  "
+      "                                   % use ground speed\n% end\n% if ( Ez >= thresh_z && Ez ~= 0 )                "
+      "   \n%     Vh = Ez;                                 \n% elseif ( Ez <= thresh_z && Ez ~= 0 )                   \n"
+      "%     Vh = Ez;              \n% end\n\nVg = abs(Ex) + abs(Ey);\nVg = Vg*1000000;\n\nVh = Ez;\n\ncmd = [ Xg ; Vh "
+      "; Vg ];\nend"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
@@ -7770,13 +7765,11 @@ Stateflow {
     decomposition	    CLUSTER_STATE
     eml {
       isEML		      1
-      script		      "function state = Model( cmd )\n% Point-mass model of quadcopter\nstate = zeros(3,1);\n\nh = 8;   "
-      "   % altitude\nR = 6.371*10^6;      % mean radius of earth (meters)\n\n% Current position\nglobal pos;\n%cmd = ["
-      "0.7854; 0; 1];\nXg = cmd(1); % tracking angle\nVh = cmd(2); % climb rate\nVg = cmd(3); % ground speed\n\nx_dot ="
-      " (1/(R+h))*Vg*cos(Xg); % rate of change in x-direction\ny_dot = (1/((R+h)*cos(pos(1))))*Vg*sin(Xg); % rate of ch"
-      "ange in y-direction\nz_dot = Vh;         % rate of change in z-direction\n\n% state(1) = pos(1) + x_dot; % new x"
-      "-pos\n% state(2) = pos(2) + y_dot; % new y-pos\n% state(3) = pos(3) + z_dot; % new z-pos\n% pos = state;\n\nstat"
-      "e = [ x_dot ; y_dot ; z_dot ];\nend"
+      script		      "function state = Model( cmd )\n% Point-mass model of quadcopter\nstate = zeros(3,1);\n\n\nR = 6.3"
+      "71*10^6;      % mean radius of earth (meters)\n\n% Current position\nglobal pos;\n\nh = -pos(3);\nXg = cmd(1); %"
+      " tracking angle\nVh = cmd(2)*5; % climb rate\nVg = cmd(3); % ground speed\n\nx_dot = (1/(R+h))*Vg*cosd(Xg); % ra"
+      "te of change in x-direction\ny_dot = (1/((R+h)*cosd(pos(1))))*Vg*sind(Xg); % rate of change in y-direction\nz_do"
+      "t = Vh;         % rate of change in z-direction\n\n\nstate = [ x_dot ; y_dot ; z_dot ];\nend"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
