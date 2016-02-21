@@ -10,7 +10,7 @@ p_i(1,:) = -p_i(1,:);
 % p_i_2 = Rcam*state1.signals.values';
 % p_i_3 = Rcam*state2.signals.values';
 
-pdt = Rcam*ref.signals.values(:,1:3)';
+%pdt = Rcam*ref.signals.values(:,1:3)';
 t = ref.time;
 
 %draw
@@ -32,13 +32,9 @@ for t2 = 0:step:T
         display('Finished making video.')
         break
     end
-    if I >=length(p_i) || I >=length(pdt)
+    if I >=length(p_i)
         close(vidObj);
         display('length of internal variable caused the video to end.')
-        if I >=length(pdt)
-            display('pdt was the cause');
-            length(pdt)
-        end
         if I >=length(p_i)
             display('p_i was the cause');
             length(p_i)
