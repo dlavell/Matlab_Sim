@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.2587"
+    ComputedModelVersion    "1.2588"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -40,7 +40,7 @@ Model {
       $ObjectID		      3
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [-8.0, 0.0, 1936.0, 1066.0]
+      Location		      [-8.0, -8.0, 1936.0, 1066.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		4
@@ -62,11 +62,11 @@ Model {
 	$ObjectID		6
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
-	ViewObjType		"SimulinkTopLevel"
-	LoadSaveID		"0"
+	ViewObjType		"SimulinkSubsys"
+	LoadSaveID		"988"
 	Extents			[1886.0, 892.0]
-	ZoomFactor		[1.0]
-	Offset			[19.329629629629608, 23.639351851851757]
+	ZoomFactor		[1.25]
+	Offset			[0.0, 0.0]
       }
     }
   }
@@ -76,9 +76,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "dlavell"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sun Feb 21 15:34:36 2016"
-  RTWModifiedTimeStamp	  377969670
-  ModelVersionFormat	  "1.%<AutoIncrement:2587>"
+  LastModifiedDate	  "Sun Feb 21 16:18:54 2016"
+  RTWModifiedTimeStamp	  377972332
+  ModelVersionFormat	  "1.%<AutoIncrement:2588>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -4443,8 +4443,8 @@ Model {
   }
   System {
     Name		    "PackageDeliverySim"
-    Location		    [-8, 0, 1928, 1066]
-    Open		    on
+    Location		    [-8, -8, 1928, 1058]
+    Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    212
     ScreenColor		    "white"
@@ -4457,7 +4457,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "1118"
+    SIDHighWatermark	    "1120"
     Block {
       BlockType		      DataStoreMemory
       Name		      " "
@@ -5316,8 +5316,8 @@ Model {
       RequestExecContextInheritance off
       System {
 	Name			"Trajectory Genereator"
-	Location		[-8, 0, 1928, 1066]
-	Open			off
+	Location		[-8, -8, 1928, 1058]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -5330,23 +5330,10 @@ Model {
 	ShowPageBoundaries	off
 	ZoomFactor		"125"
 	Block {
-	  BlockType		  DataStoreMemory
-	  Name			  " "
-	  SID			  "1085"
-	  Position		  [585, 525, 697, 560]
-	  ZOrder		  77
-	  DataStoreName		  "prev_n_delivered"
-	  ReadBeforeWriteMsg	  "warning"
-	  WriteAfterWriteMsg	  "warning"
-	  WriteAfterReadMsg	  "warning"
-	  OutDataTypeStr	  "double"
-	  SignalType		  "real"
-	}
-	Block {
 	  BlockType		  Constant
 	  Name			  "Connection to Python for elevation"
 	  SID			  "965"
-	  Position		  [780, 375, 810, 405]
+	  Position		  [780, 245, 810, 275]
 	  ZOrder		  69
 	  Value			  ".1"
 	}
@@ -5490,7 +5477,7 @@ Model {
 	  BlockType		  Constant
 	  Name			  "Max Radius (NM)"
 	  SID			  "1001"
-	  Position		  [335, 385, 365, 415]
+	  Position		  [335, 430, 365, 460]
 	  ZOrder		  74
 	  Value			  "10"
 	}
@@ -5498,7 +5485,7 @@ Model {
 	  BlockType		  Constant
 	  Name			  "Min Radius (NM)"
 	  SID			  "1000"
-	  Position		  [335, 340, 365, 370]
+	  Position		  [335, 370, 365, 400]
 	  ZOrder		  73
 	  Value			  "2"
 	}
@@ -5514,7 +5501,7 @@ Model {
 	  BlockType		  Constant
 	  Name			  "Source Longitude"
 	  SID			  "999"
-	  Position		  [335, 295, 365, 325]
+	  Position		  [335, 310, 365, 340]
 	  ZOrder		  72
 	  Value			  "-122.06"
 	}
@@ -5523,7 +5510,7 @@ Model {
 	  Name			  "Trajectory Generator"
 	  SID			  "961"
 	  Ports			  [3, 1]
-	  Position		  [885, 252, 1095, 418]
+	  Position		  [890, 122, 1100, 288]
 	  ZOrder		  67
 	  LibraryVersion	  "1.32"
 	  ErrorFcn		  "Stateflow.Translate.translate"
@@ -5662,18 +5649,10 @@ Model {
 	  }
 	}
 	Block {
-	  BlockType		  Constant
-	  Name			  "number of \ndestination points"
-	  SID			  "1002"
-	  Position		  [335, 430, 365, 460]
-	  ZOrder		  75
-	  Value			  "3"
-	}
-	Block {
 	  BlockType		  Outport
 	  Name			  "trajectory"
 	  SID			  "1003"
-	  Position		  [1120, 328, 1150, 342]
+	  Position		  [1130, 198, 1160, 212]
 	  ZOrder		  76
 	  IconDisplay		  "Port number"
 	}
@@ -5689,7 +5668,7 @@ Model {
 	  }
 	  Branch {
 	    ZOrder		    20
-	    Points		    [0, -68; 394, 0; 0, 83]
+	    Points		    [0, -115]
 	    DstBlock		    "Trajectory Generator"
 	    DstPort		    1
 	  }
@@ -5707,15 +5686,14 @@ Model {
 	  SrcPort		  1
 	  Points		  [58, 0]
 	  Branch {
-	    ZOrder		    24
-	    Points		    [17, 0]
-	    DstBlock		    "MATLAB Function"
+	    ZOrder		    25
+	    Points		    [0, -120]
+	    DstBlock		    "Trajectory Generator"
 	    DstPort		    2
 	  }
 	  Branch {
-	    ZOrder		    22
-	    Points		    [0, -92; 345, 0; 0, 117]
-	    DstBlock		    "Trajectory Generator"
+	    ZOrder		    24
+	    DstBlock		    "MATLAB Function"
 	    DstPort		    2
 	  }
 	}
@@ -5723,7 +5701,6 @@ Model {
 	  ZOrder		  14
 	  SrcBlock		  "Min Radius (NM)"
 	  SrcPort		  1
-	  Points		  [75, 0]
 	  DstBlock		  "MATLAB Function"
 	  DstPort		  3
 	}
@@ -5731,15 +5708,8 @@ Model {
 	  ZOrder		  15
 	  SrcBlock		  "Max Radius (NM)"
 	  SrcPort		  1
-	  Points		  [75, 0]
 	  DstBlock		  "MATLAB Function"
 	  DstPort		  4
-	}
-	Line {
-	  ZOrder		  16
-	  SrcBlock		  "number of \ndestination points"
-	  SrcPort		  1
-	  Points		  [85, 0]
 	}
 	Line {
 	  ZOrder		  18
@@ -6181,6 +6151,10 @@ Model {
       SignalType	      "real"
     }
     Line {
+      FontName		      "Helvetica"
+      FontSize		      9
+      FontWeight	      "normal"
+      FontAngle		      "normal"
       ZOrder		      243
       SrcBlock		      "Controller1"
       SrcPort		      1
@@ -6189,6 +6163,10 @@ Model {
       DstPort		      1
     }
     Line {
+      FontName		      "Helvetica"
+      FontSize		      9
+      FontWeight	      "normal"
+      FontAngle		      "normal"
       ZOrder		      264
       SrcBlock		      "Model1"
       SrcPort		      1
@@ -6196,6 +6174,10 @@ Model {
       DstPort		      1
     }
     Line {
+      FontName		      "Helvetica"
+      FontSize		      9
+      FontWeight	      "normal"
+      FontAngle		      "normal"
       ZOrder		      245
       SrcBlock		      "Waypoint Generator1"
       SrcPort		      1
@@ -6203,6 +6185,10 @@ Model {
       DstPort		      1
     }
     Line {
+      FontName		      "Helvetica"
+      FontSize		      9
+      FontWeight	      "normal"
+      FontAngle		      "normal"
       ZOrder		      265
       SrcBlock		      "Integrator"
       SrcPort		      1
@@ -6665,7 +6651,6 @@ Stateflow {
     firstTransition	    28
     firstJunction	    27
     viewObj		    19
-    visible		    1
     machine		    1
     subviewS {
     }
@@ -7463,7 +7448,6 @@ Stateflow {
     firstTransition	    66
     firstJunction	    65
     viewObj		    60
-    visible		    1
     machine		    1
     subviewS {
     }
