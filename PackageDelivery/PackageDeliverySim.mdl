@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.2573"
+    ComputedModelVersion    "1.2587"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -76,9 +76,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "dlavell"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sun Feb 21 14:57:34 2016"
-  RTWModifiedTimeStamp	  377967408
-  ModelVersionFormat	  "1.%<AutoIncrement:2573>"
+  LastModifiedDate	  "Sun Feb 21 15:34:36 2016"
+  RTWModifiedTimeStamp	  377969670
+  ModelVersionFormat	  "1.%<AutoIncrement:2587>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -4457,12 +4457,12 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "1085"
+    SIDHighWatermark	    "1118"
     Block {
       BlockType		      DataStoreMemory
       Name		      " "
       SID		      "977"
-      Position		      [205, 250, 317, 285]
+      Position		      [375, 240, 487, 275]
       ZOrder		      51
       DataStoreName	      "destinations"
       ReadBeforeWriteMsg      "warning"
@@ -4473,52 +4473,11 @@ Model {
       SignalType	      "real"
     }
     Block {
-      BlockType		      DataStoreMemory
-      Name		      "       "
-      SID		      "981"
-      Position		      [1475, 200, 1587, 235]
-      ZOrder		      55
-      DataStoreName	      "curr_wp"
-      ReadBeforeWriteMsg      "warning"
-      WriteAfterWriteMsg      "warning"
-      WriteAfterReadMsg	      "warning"
-      OutDataTypeStr	      "double"
-      SignalType	      "real"
-    }
-    Block {
-      BlockType		      DataStoreMemory
-      Name		      "         "
-      SID		      "1011"
-      Position		      [1620, 200, 1732, 235]
-      ZOrder		      70
-      DataStoreName	      "pos"
-      ReadBeforeWriteMsg      "warning"
-      WriteAfterWriteMsg      "warning"
-      WriteAfterReadMsg	      "warning"
-      InitialValue	      "[ 37 ; -122.06 ; 0 ]"
-      OutDataTypeStr	      "double"
-      SignalType	      "real"
-    }
-    Block {
-      BlockType		      DataStoreMemory
-      Name		      "          "
-      SID		      "982"
-      Position		      [1340, 200, 1452, 235]
-      ZOrder		      56
-      DataStoreName	      "curr_tp"
-      ReadBeforeWriteMsg      "warning"
-      WriteAfterWriteMsg      "warning"
-      WriteAfterReadMsg	      "warning"
-      InitialValue	      "2"
-      OutDataTypeStr	      "double"
-      SignalType	      "real"
-    }
-    Block {
       BlockType		      SubSystem
-      Name		      "Controller"
+      Name		      "Controller1"
       SID		      "1009"
       Ports		      [2, 1]
-      Position		      [1085, 118, 1215, 202]
+      Position		      [950, 118, 1080, 202]
       ZOrder		      68
       LibraryVersion	      "1.32"
       ErrorFcn		      "Stateflow.Translate.translate"
@@ -4527,7 +4486,7 @@ Model {
       RequestExecContextInheritance off
       SFBlockType	      "MATLAB Function"
       System {
-	Name			"Controller"
+	Name			"Controller1"
 	Location		[223, 338, 826, 833]
 	Open			off
 	ModelBrowserVisibility	off
@@ -4641,21 +4600,295 @@ Model {
       }
     }
     Block {
+      BlockType		      SubSystem
+      Name		      "Controller2"
+      SID		      "1103"
+      Ports		      [2, 1]
+      Position		      [950, 383, 1080, 467]
+      ZOrder		      134
+      LibraryVersion	      "1.32"
+      ErrorFcn		      "Stateflow.Translate.translate"
+      PermitHierarchicalResolution "ExplicitOnly"
+      TreatAsAtomicUnit	      on
+      RequestExecContextInheritance off
+      SFBlockType	      "MATLAB Function"
+      System {
+	Name			"Controller2"
+	Location		[223, 338, 826, 833]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	SIDHighWatermark	"25"
+	Block {
+	  BlockType		  Inport
+	  Name			  "ref"
+	  SID			  "1103::1"
+	  Position		  [20, 101, 40, 119]
+	  ZOrder		  -1
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "state"
+	  SID			  "1103::24"
+	  Position		  [20, 136, 40, 154]
+	  ZOrder		  11
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  " Demux "
+	  SID			  "1103::17"
+	  Ports			  [1, 1]
+	  Position		  [270, 230, 320, 270]
+	  ZOrder		  8
+	  Outputs		  "1"
+	}
+	Block {
+	  BlockType		  S-Function
+	  Name			  " SFunction "
+	  SID			  "1103::16"
+	  Tag			  "Stateflow S-Function PackageDeliverySim 1"
+	  Ports			  [2, 2]
+	  Position		  [180, 115, 230, 175]
+	  ZOrder		  7
+	  FunctionName		  "sf_sfun"
+	  PortCounts		  "[2 2]"
+	  EnableBusSupport	  on
+	  Port {
+	    PortNumber		    2
+	    Name		    "cmd"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  " Terminator "
+	  SID			  "1103::18"
+	  Position		  [460, 241, 480, 259]
+	  ZOrder		  9
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "cmd"
+	  SID			  "1103::5"
+	  Position		  [460, 101, 480, 119]
+	  ZOrder		  -5
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  ZOrder		  1
+	  SrcBlock		  "ref"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  2
+	  SrcBlock		  "state"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  2
+	}
+	Line {
+	  Name			  "cmd"
+	  ZOrder		  3
+	  Labels		  [0, 0]
+	  SrcBlock		  " SFunction "
+	  SrcPort		  2
+	  DstBlock		  "cmd"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  4
+	  SrcBlock		  " Demux "
+	  SrcPort		  1
+	  DstBlock		  " Terminator "
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  5
+	  SrcBlock		  " SFunction "
+	  SrcPort		  1
+	  DstBlock		  " Demux "
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Controller3"
+      SID		      "1111"
+      Ports		      [2, 1]
+      Position		      [950, 633, 1080, 717]
+      ZOrder		      142
+      LibraryVersion	      "1.32"
+      ErrorFcn		      "Stateflow.Translate.translate"
+      PermitHierarchicalResolution "ExplicitOnly"
+      TreatAsAtomicUnit	      on
+      RequestExecContextInheritance off
+      SFBlockType	      "MATLAB Function"
+      System {
+	Name			"Controller3"
+	Location		[223, 338, 826, 833]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	SIDHighWatermark	"25"
+	Block {
+	  BlockType		  Inport
+	  Name			  "ref"
+	  SID			  "1111::1"
+	  Position		  [20, 101, 40, 119]
+	  ZOrder		  -1
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "state"
+	  SID			  "1111::24"
+	  Position		  [20, 136, 40, 154]
+	  ZOrder		  11
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  " Demux "
+	  SID			  "1111::17"
+	  Ports			  [1, 1]
+	  Position		  [270, 230, 320, 270]
+	  ZOrder		  8
+	  Outputs		  "1"
+	}
+	Block {
+	  BlockType		  S-Function
+	  Name			  " SFunction "
+	  SID			  "1111::16"
+	  Tag			  "Stateflow S-Function PackageDeliverySim 9"
+	  Ports			  [2, 2]
+	  Position		  [180, 115, 230, 175]
+	  ZOrder		  7
+	  FunctionName		  "sf_sfun"
+	  PortCounts		  "[2 2]"
+	  EnableBusSupport	  on
+	  Port {
+	    PortNumber		    2
+	    Name		    "cmd"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  " Terminator "
+	  SID			  "1111::18"
+	  Position		  [460, 241, 480, 259]
+	  ZOrder		  9
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "cmd"
+	  SID			  "1111::5"
+	  Position		  [460, 101, 480, 119]
+	  ZOrder		  -5
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  ZOrder		  1
+	  SrcBlock		  "ref"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  2
+	  SrcBlock		  "state"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  2
+	}
+	Line {
+	  Name			  "cmd"
+	  ZOrder		  3
+	  Labels		  [0, 0]
+	  SrcBlock		  " SFunction "
+	  SrcPort		  2
+	  DstBlock		  "cmd"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  4
+	  SrcBlock		  " Demux "
+	  SrcPort		  1
+	  DstBlock		  " Terminator "
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  5
+	  SrcBlock		  " SFunction "
+	  SrcPort		  1
+	  DstBlock		  " Demux "
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
       BlockType		      Integrator
       Name		      "Integrator"
       SID		      "1018"
       Ports		      [1, 1]
-      Position		      [1005, 265, 1035, 295]
+      Position		      [870, 265, 900, 295]
       ZOrder		      77
       BlockMirror	      on
       InitialCondition	      "[ 37 ; -122.06 ; 0 ]"
     }
     Block {
+      BlockType		      Integrator
+      Name		      "Integrator1"
+      SID		      "1104"
+      Ports		      [1, 1]
+      Position		      [870, 530, 900, 560]
+      ZOrder		      138
+      BlockMirror	      on
+      InitialCondition	      "[ 37 ; -122.06 ; 0 ]"
+    }
+    Block {
+      BlockType		      Integrator
+      Name		      "Integrator2"
+      SID		      "1112"
+      Ports		      [1, 1]
+      Position		      [870, 780, 900, 810]
+      ZOrder		      146
+      BlockMirror	      on
+      InitialCondition	      "[ 37 ; -122.06 ; 0 ]"
+    }
+    Block {
       BlockType		      SubSystem
-      Name		      "Model"
+      Name		      "Model1"
       SID		      "1010"
       Ports		      [1, 1]
-      Position		      [1085, 238, 1215, 322]
+      Position		      [950, 238, 1080, 322]
       ZOrder		      69
       BlockMirror	      on
       LibraryVersion	      "1.32"
@@ -4665,7 +4898,7 @@ Model {
       RequestExecContextInheritance off
       SFBlockType	      "MATLAB Function"
       System {
-	Name			"Model"
+	Name			"Model1"
 	Location		[223, 338, 826, 833]
 	Open			off
 	ModelBrowserVisibility	off
@@ -4763,14 +4996,310 @@ Model {
       }
     }
     Block {
+      BlockType		      SubSystem
+      Name		      "Model2"
+      SID		      "1105"
+      Ports		      [1, 1]
+      Position		      [950, 503, 1080, 587]
+      ZOrder		      135
+      BlockMirror	      on
+      LibraryVersion	      "1.32"
+      ErrorFcn		      "Stateflow.Translate.translate"
+      PermitHierarchicalResolution "ExplicitOnly"
+      TreatAsAtomicUnit	      on
+      RequestExecContextInheritance off
+      SFBlockType	      "MATLAB Function"
+      System {
+	Name			"Model2"
+	Location		[223, 338, 826, 833]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	SIDHighWatermark	"25"
+	Block {
+	  BlockType		  Inport
+	  Name			  "cmd"
+	  SID			  "1105::1"
+	  Position		  [20, 101, 40, 119]
+	  ZOrder		  -1
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  " Demux "
+	  SID			  "1105::17"
+	  Ports			  [1, 1]
+	  Position		  [270, 230, 320, 270]
+	  ZOrder		  8
+	  Outputs		  "1"
+	}
+	Block {
+	  BlockType		  S-Function
+	  Name			  " SFunction "
+	  SID			  "1105::16"
+	  Tag			  "Stateflow S-Function PackageDeliverySim 2"
+	  Ports			  [1, 2]
+	  Position		  [180, 115, 230, 175]
+	  ZOrder		  7
+	  FunctionName		  "sf_sfun"
+	  PortCounts		  "[1 2]"
+	  EnableBusSupport	  on
+	  Port {
+	    PortNumber		    2
+	    Name		    "state"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  " Terminator "
+	  SID			  "1105::18"
+	  Position		  [460, 241, 480, 259]
+	  ZOrder		  9
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "state"
+	  SID			  "1105::24"
+	  Position		  [460, 101, 480, 119]
+	  ZOrder		  11
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  ZOrder		  1
+	  SrcBlock		  "cmd"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "state"
+	  ZOrder		  2
+	  Labels		  [0, 0]
+	  SrcBlock		  " SFunction "
+	  SrcPort		  2
+	  DstBlock		  "state"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  3
+	  SrcBlock		  " Demux "
+	  SrcPort		  1
+	  DstBlock		  " Terminator "
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  4
+	  SrcBlock		  " SFunction "
+	  SrcPort		  1
+	  DstBlock		  " Demux "
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Model3"
+      SID		      "1113"
+      Ports		      [1, 1]
+      Position		      [950, 753, 1080, 837]
+      ZOrder		      143
+      BlockMirror	      on
+      LibraryVersion	      "1.32"
+      ErrorFcn		      "Stateflow.Translate.translate"
+      PermitHierarchicalResolution "ExplicitOnly"
+      TreatAsAtomicUnit	      on
+      RequestExecContextInheritance off
+      SFBlockType	      "MATLAB Function"
+      System {
+	Name			"Model3"
+	Location		[223, 338, 826, 833]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	SIDHighWatermark	"25"
+	Block {
+	  BlockType		  Inport
+	  Name			  "cmd"
+	  SID			  "1113::1"
+	  Position		  [20, 101, 40, 119]
+	  ZOrder		  -1
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  " Demux "
+	  SID			  "1113::17"
+	  Ports			  [1, 1]
+	  Position		  [270, 230, 320, 270]
+	  ZOrder		  8
+	  Outputs		  "1"
+	}
+	Block {
+	  BlockType		  S-Function
+	  Name			  " SFunction "
+	  SID			  "1113::16"
+	  Tag			  "Stateflow S-Function PackageDeliverySim 10"
+	  Ports			  [1, 2]
+	  Position		  [180, 115, 230, 175]
+	  ZOrder		  7
+	  FunctionName		  "sf_sfun"
+	  PortCounts		  "[1 2]"
+	  EnableBusSupport	  on
+	  Port {
+	    PortNumber		    2
+	    Name		    "state"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  " Terminator "
+	  SID			  "1113::18"
+	  Position		  [460, 241, 480, 259]
+	  ZOrder		  9
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "state"
+	  SID			  "1113::24"
+	  Position		  [460, 101, 480, 119]
+	  ZOrder		  11
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  ZOrder		  1
+	  SrcBlock		  "cmd"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "state"
+	  ZOrder		  2
+	  Labels		  [0, 0]
+	  SrcBlock		  " SFunction "
+	  SrcPort		  2
+	  DstBlock		  "state"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  3
+	  SrcBlock		  " Demux "
+	  SrcPort		  1
+	  DstBlock		  " Terminator "
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  4
+	  SrcBlock		  " SFunction "
+	  SrcPort		  1
+	  DstBlock		  " Demux "
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      DataStoreMemory
+      Name		      "Quad1 pos"
+      SID		      "1011"
+      Position		      [1485, 200, 1597, 235]
+      ZOrder		      70
+      DataStoreName	      "pos"
+      ReadBeforeWriteMsg      "warning"
+      WriteAfterWriteMsg      "warning"
+      WriteAfterReadMsg	      "warning"
+      InitialValue	      "[ 37 ; -122.06 ; 0 ]"
+      OutDataTypeStr	      "double"
+      SignalType	      "real"
+    }
+    Block {
+      BlockType		      DataStoreMemory
+      Name		      "Quad1 pos1"
+      SID		      "1106"
+      Position		      [1485, 465, 1597, 500]
+      ZOrder		      136
+      DataStoreName	      "pos2"
+      ReadBeforeWriteMsg      "warning"
+      WriteAfterWriteMsg      "warning"
+      WriteAfterReadMsg	      "warning"
+      InitialValue	      "[ 37 ; -122.06 ; 0 ]"
+      OutDataTypeStr	      "double"
+      SignalType	      "real"
+    }
+    Block {
+      BlockType		      DataStoreMemory
+      Name		      "Quad1 pos2"
+      SID		      "1114"
+      Position		      [1485, 715, 1597, 750]
+      ZOrder		      144
+      DataStoreName	      "pos3"
+      ReadBeforeWriteMsg      "warning"
+      WriteAfterWriteMsg      "warning"
+      WriteAfterReadMsg	      "warning"
+      InitialValue	      "[ 37 ; -122.06 ; 0 ]"
+      OutDataTypeStr	      "double"
+      SignalType	      "real"
+    }
+    Block {
       BlockType		      ToWorkspace
       Name		      "To Workspace"
       SID		      "1017"
       Ports		      [1]
-      Position		      [875, 265, 935, 295]
+      Position		      [740, 265, 800, 295]
       ZOrder		      76
       BlockMirror	      on
       VariableName	      "state"
+      MaxDataPoints	      "inf"
+      SaveFormat	      "Structure With Time"
+      Save2DSignal	      "3-D array (concatenate along third dimension)"
+      FixptAsFi		      on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "To Workspace1"
+      SID		      "1107"
+      Ports		      [1]
+      Position		      [740, 530, 800, 560]
+      ZOrder		      137
+      BlockMirror	      on
+      VariableName	      "state1"
+      MaxDataPoints	      "inf"
+      SaveFormat	      "Structure With Time"
+      Save2DSignal	      "3-D array (concatenate along third dimension)"
+      FixptAsFi		      on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "To Workspace2"
+      SID		      "1115"
+      Ports		      [1]
+      Position		      [740, 780, 800, 810]
+      ZOrder		      145
+      BlockMirror	      on
+      VariableName	      "state2"
       MaxDataPoints	      "inf"
       SaveFormat	      "Structure With Time"
       Save2DSignal	      "3-D array (concatenate along third dimension)"
@@ -4782,7 +5311,7 @@ Model {
       Name		      "Trajectory Genereator"
       SID		      "988"
       Ports		      [0, 1]
-      Position		      [175, 89, 340, 191]
+      Position		      [345, 89, 510, 191]
       ZOrder		      60
       RequestExecContextInheritance off
       System {
@@ -5239,10 +5768,10 @@ Model {
     }
     Block {
       BlockType		      SubSystem
-      Name		      "Waypoint Generator"
+      Name		      "Waypoint Generator1"
       SID		      "980"
       Ports		      [1, 1]
-      Position		      [805, 98, 935, 182]
+      Position		      [670, 98, 800, 182]
       ZOrder		      54
       LibraryVersion	      "1.32"
       ErrorFcn		      "Stateflow.Translate.translate"
@@ -5251,7 +5780,7 @@ Model {
       RequestExecContextInheritance off
       SFBlockType	      "MATLAB Function"
       System {
-	Name			"Waypoint Generator"
+	Name			"Waypoint Generator1"
 	Location		[223, 338, 826, 833]
 	Open			off
 	ModelBrowserVisibility	off
@@ -5348,33 +5877,329 @@ Model {
 	}
       }
     }
-    Line {
-      ZOrder		      204
-      SrcBlock		      "Trajectory Genereator"
-      SrcPort		      1
-      DstBlock		      "Waypoint Generator"
-      DstPort		      1
+    Block {
+      BlockType		      SubSystem
+      Name		      "Waypoint Generator2"
+      SID		      "1108"
+      Ports		      [1, 1]
+      Position		      [670, 363, 800, 447]
+      ZOrder		      131
+      LibraryVersion	      "1.32"
+      ErrorFcn		      "Stateflow.Translate.translate"
+      PermitHierarchicalResolution "ExplicitOnly"
+      TreatAsAtomicUnit	      on
+      RequestExecContextInheritance off
+      SFBlockType	      "MATLAB Function"
+      System {
+	Name			"Waypoint Generator2"
+	Location		[223, 338, 826, 833]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	SIDHighWatermark	"25"
+	Block {
+	  BlockType		  Inport
+	  Name			  "traj"
+	  SID			  "1108::1"
+	  Position		  [20, 101, 40, 119]
+	  ZOrder		  -1
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  " Demux "
+	  SID			  "1108::17"
+	  Ports			  [1, 1]
+	  Position		  [270, 230, 320, 270]
+	  ZOrder		  8
+	  Outputs		  "1"
+	}
+	Block {
+	  BlockType		  S-Function
+	  Name			  " SFunction "
+	  SID			  "1108::16"
+	  Tag			  "Stateflow S-Function PackageDeliverySim 8"
+	  Ports			  [1, 2]
+	  Position		  [180, 115, 230, 175]
+	  ZOrder		  7
+	  FunctionName		  "sf_sfun"
+	  PortCounts		  "[1 2]"
+	  EnableBusSupport	  on
+	  Port {
+	    PortNumber		    2
+	    Name		    "waypoint"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  " Terminator "
+	  SID			  "1108::18"
+	  Position		  [460, 241, 480, 259]
+	  ZOrder		  9
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "waypoint"
+	  SID			  "1108::5"
+	  Position		  [460, 101, 480, 119]
+	  ZOrder		  -5
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  ZOrder		  1
+	  SrcBlock		  "traj"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "waypoint"
+	  ZOrder		  2
+	  Labels		  [0, 0]
+	  SrcBlock		  " SFunction "
+	  SrcPort		  2
+	  DstBlock		  "waypoint"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  3
+	  SrcBlock		  " Demux "
+	  SrcPort		  1
+	  DstBlock		  " Terminator "
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  4
+	  SrcBlock		  " SFunction "
+	  SrcPort		  1
+	  DstBlock		  " Demux "
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Waypoint Generator3"
+      SID		      "1116"
+      Ports		      [1, 1]
+      Position		      [670, 613, 800, 697]
+      ZOrder		      139
+      LibraryVersion	      "1.32"
+      ErrorFcn		      "Stateflow.Translate.translate"
+      PermitHierarchicalResolution "ExplicitOnly"
+      TreatAsAtomicUnit	      on
+      RequestExecContextInheritance off
+      SFBlockType	      "MATLAB Function"
+      System {
+	Name			"Waypoint Generator3"
+	Location		[223, 338, 826, 833]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	SIDHighWatermark	"25"
+	Block {
+	  BlockType		  Inport
+	  Name			  "traj"
+	  SID			  "1116::1"
+	  Position		  [20, 101, 40, 119]
+	  ZOrder		  -1
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  " Demux "
+	  SID			  "1116::17"
+	  Ports			  [1, 1]
+	  Position		  [270, 230, 320, 270]
+	  ZOrder		  8
+	  Outputs		  "1"
+	}
+	Block {
+	  BlockType		  S-Function
+	  Name			  " SFunction "
+	  SID			  "1116::16"
+	  Tag			  "Stateflow S-Function PackageDeliverySim 11"
+	  Ports			  [1, 2]
+	  Position		  [180, 115, 230, 175]
+	  ZOrder		  7
+	  FunctionName		  "sf_sfun"
+	  PortCounts		  "[1 2]"
+	  EnableBusSupport	  on
+	  Port {
+	    PortNumber		    2
+	    Name		    "waypoint"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  " Terminator "
+	  SID			  "1116::18"
+	  Position		  [460, 241, 480, 259]
+	  ZOrder		  9
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "waypoint"
+	  SID			  "1116::5"
+	  Position		  [460, 101, 480, 119]
+	  ZOrder		  -5
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  ZOrder		  1
+	  SrcBlock		  "traj"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "waypoint"
+	  ZOrder		  2
+	  Labels		  [0, 0]
+	  SrcBlock		  " SFunction "
+	  SrcPort		  2
+	  DstBlock		  "waypoint"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  3
+	  SrcBlock		  " Demux "
+	  SrcPort		  1
+	  DstBlock		  " Terminator "
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  4
+	  SrcBlock		  " SFunction "
+	  SrcPort		  1
+	  DstBlock		  " Demux "
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      DataStoreMemory
+      Name		      "current traj point Quad1"
+      SID		      "982"
+      Position		      [1205, 200, 1317, 235]
+      ZOrder		      56
+      DataStoreName	      "curr_tp"
+      ReadBeforeWriteMsg      "warning"
+      WriteAfterWriteMsg      "warning"
+      WriteAfterReadMsg	      "warning"
+      InitialValue	      "2"
+      OutDataTypeStr	      "double"
+      SignalType	      "real"
+    }
+    Block {
+      BlockType		      DataStoreMemory
+      Name		      "current traj point Quad2"
+      SID		      "1109"
+      Position		      [1205, 465, 1317, 500]
+      ZOrder		      133
+      DataStoreName	      "curr_tp2"
+      ReadBeforeWriteMsg      "warning"
+      WriteAfterWriteMsg      "warning"
+      WriteAfterReadMsg	      "warning"
+      InitialValue	      "2"
+      OutDataTypeStr	      "double"
+      SignalType	      "real"
+    }
+    Block {
+      BlockType		      DataStoreMemory
+      Name		      "current traj point Quad3"
+      SID		      "1117"
+      Position		      [1205, 715, 1317, 750]
+      ZOrder		      141
+      DataStoreName	      "curr_tp3"
+      ReadBeforeWriteMsg      "warning"
+      WriteAfterWriteMsg      "warning"
+      WriteAfterReadMsg	      "warning"
+      InitialValue	      "2"
+      OutDataTypeStr	      "double"
+      SignalType	      "real"
+    }
+    Block {
+      BlockType		      DataStoreMemory
+      Name		      "current way point Quad1"
+      SID		      "981"
+      Position		      [1340, 200, 1452, 235]
+      ZOrder		      55
+      DataStoreName	      "curr_wp"
+      ReadBeforeWriteMsg      "warning"
+      WriteAfterWriteMsg      "warning"
+      WriteAfterReadMsg	      "warning"
+      OutDataTypeStr	      "double"
+      SignalType	      "real"
+    }
+    Block {
+      BlockType		      DataStoreMemory
+      Name		      "current way point Quad2"
+      SID		      "1110"
+      Position		      [1340, 465, 1452, 500]
+      ZOrder		      132
+      DataStoreName	      "curr_wp2"
+      ReadBeforeWriteMsg      "warning"
+      WriteAfterWriteMsg      "warning"
+      WriteAfterReadMsg	      "warning"
+      OutDataTypeStr	      "double"
+      SignalType	      "real"
+    }
+    Block {
+      BlockType		      DataStoreMemory
+      Name		      "current way point Quad3"
+      SID		      "1118"
+      Position		      [1340, 715, 1452, 750]
+      ZOrder		      140
+      DataStoreName	      "curr_wp3"
+      ReadBeforeWriteMsg      "warning"
+      WriteAfterWriteMsg      "warning"
+      WriteAfterReadMsg	      "warning"
+      OutDataTypeStr	      "double"
+      SignalType	      "real"
     }
     Line {
       ZOrder		      243
-      SrcBlock		      "Controller"
+      SrcBlock		      "Controller1"
       SrcPort		      1
       Points		      [92, 0; 0, 120]
-      DstBlock		      "Model"
+      DstBlock		      "Model1"
       DstPort		      1
     }
     Line {
       ZOrder		      264
-      SrcBlock		      "Model"
+      SrcBlock		      "Model1"
       SrcPort		      1
       DstBlock		      "Integrator"
       DstPort		      1
     }
     Line {
       ZOrder		      245
-      SrcBlock		      "Waypoint Generator"
+      SrcBlock		      "Waypoint Generator1"
       SrcPort		      1
-      DstBlock		      "Controller"
+      DstBlock		      "Controller1"
       DstPort		      1
     }
     Line {
@@ -5390,7 +6215,111 @@ Model {
       Branch {
 	ZOrder			248
 	Points			[0, -100]
-	DstBlock		"Controller"
+	DstBlock		"Controller1"
+	DstPort			2
+      }
+    }
+    Line {
+      ZOrder		      369
+      SrcBlock		      "Controller2"
+      SrcPort		      1
+      Points		      [92, 0; 0, 120]
+      DstBlock		      "Model2"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      370
+      SrcBlock		      "Model2"
+      SrcPort		      1
+      DstBlock		      "Integrator1"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      371
+      SrcBlock		      "Waypoint Generator2"
+      SrcPort		      1
+      DstBlock		      "Controller2"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      374
+      SrcBlock		      "Integrator1"
+      SrcPort		      1
+      Points		      [-24, 0]
+      Branch {
+	ZOrder			373
+	DstBlock		"To Workspace1"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			372
+	Points			[0, -100]
+	DstBlock		"Controller2"
+	DstPort			2
+      }
+    }
+    Line {
+      ZOrder		      204
+      SrcBlock		      "Trajectory Genereator"
+      SrcPort		      1
+      Points		      [65, 0]
+      Branch {
+	ZOrder			383
+	Points			[0, 265]
+	Branch {
+	  ZOrder		  385
+	  DstBlock		  "Waypoint Generator2"
+	  DstPort		  1
+	}
+	Branch {
+	  ZOrder		  384
+	  Points		  [0, 250]
+	  DstBlock		  "Waypoint Generator3"
+	  DstPort		  1
+	}
+      }
+      Branch {
+	ZOrder			382
+	DstBlock		"Waypoint Generator1"
+	DstPort			1
+      }
+    }
+    Line {
+      ZOrder		      376
+      SrcBlock		      "Controller3"
+      SrcPort		      1
+      Points		      [92, 0; 0, 120]
+      DstBlock		      "Model3"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      377
+      SrcBlock		      "Model3"
+      SrcPort		      1
+      DstBlock		      "Integrator2"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      378
+      SrcBlock		      "Waypoint Generator3"
+      SrcPort		      1
+      DstBlock		      "Controller3"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      381
+      SrcBlock		      "Integrator2"
+      SrcPort		      1
+      Points		      [-24, 0]
+      Branch {
+	ZOrder			380
+	DstBlock		"To Workspace2"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			379
+	Points			[0, -100]
+	DstBlock		"Controller3"
 	DstPort			2
       }
     }
@@ -5407,18 +6336,18 @@ Stateflow {
     name		    "PackageDeliverySim"
     created		    "28-May-2012 17:04:21"
     isLibrary		    0
-    firstTarget		    53
+    firstTarget		    107
     sfVersion		    80000001
   }
   chart {
     id			    2
-    name		    "Waypoint Generator"
+    name		    "Controller2"
     windowPosition	    [422 539.941 189 413]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 3600 1200 1.180555555555556]
     treeNode		    [0 3 0 0]
-    firstTransition	    11
-    firstJunction	    10
+    firstTransition	    9
+    firstJunction	    8
     viewObj		    2
     visible		    1
     machine		    1
@@ -5428,10 +6357,10 @@ Stateflow {
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
     firstData		    4
-    chartFileNumber	    3
+    chartFileNumber	    1
     disableImplicitCasting  1
     eml {
-      name		      "fcn"
+      name		      "Controller"
     }
   }
   state {
@@ -5448,27 +6377,18 @@ Stateflow {
     decomposition	    CLUSTER_STATE
     eml {
       isEML		      1
-      script		      "function waypoint = fcn(traj)\n%#codegen\ncoder.extrinsic('display')\n%display('current state:')\n"
-      "%state\n\nglobal curr_wp curr_tp destinations pos;\n\nquad_X = pos(1);\nquad_Y = pos(2);\nquad_Z = pos(3);\ntraj"
-      "ectory = traj(:,:,1);\n%% Specify last and next trajectory points\nlast_tp = trajectory(curr_tp - 1,:);\nnext_tp"
-      " = trajectory(curr_tp,:);\n\n%% Divide distance between last_wp and next_wp into evenly divided segments\n% wayp"
-      "oint distances\nwp_separation_dist = .01;\n\n% acceptable distance to waypoint\nthreshold = wp_separation_dist/3"
-      ";\n\n% trajectory point distances\ntp_separation_dist = sqrt((last_tp(1)-next_tp(1))^2 + (last_tp(2)-next_tp(2))"
-      "^2 + (last_tp(3)-next_tp(3))^2);\n\n%% Determine which segment to give next\nnumber_of_waypoints = floor(tp_sepa"
-      "ration_dist/wp_separation_dist);\nvec_norm = [(last_tp(1)-next_tp(1)) (last_tp(2)-next_tp(2)) (last_tp(3)-next_t"
-      "p(3))]/tp_separation_dist;\nif(isnan(vec_norm(1))) vec_norm(1) = 0; end\nif(isnan(vec_norm(2))) vec_norm(2) = 0;"
-      " end\nif(isnan(vec_norm(3))) vec_norm(3) = 0; end\n\nwp = last_tp + curr_wp*wp_separation_dist*-vec_norm;\n\n% d"
-      "istance to current waypoint\ndist1 = sqrt((quad_X-wp(1))^2 + (quad_Y-wp(2))^2 + (quad_Z-wp(3))^2);\n\nif(dist1 <"
-      "= threshold)\n    curr_wp = curr_wp + 1;\n    if(curr_wp == number_of_waypoints)\n        curr_tp = curr_tp + 1;"
-      "\n        curr_wp = 0;\n    end\nend\nif(curr_tp == length(trajectory(:,1)) + 1)\n    curr_tp = 2;\n    destinat"
-      "ions(1,:) = [0 0 0];\nend\n\n%% output\nwaypoint = wp;\nend"
+      script		      "function cmd = Controller( ref , state)\n% Controller for point-mass model of quadcopter\nglobal "
+      "pos2;\npos2 = state(1:3);\nEx = ref(1) - state(1); % Error in x-direction\nEy = ref(2) - state(2); % Error in y-"
+      "direction\nEz = ref(3) - state(3); % Error in z-direction\n\nXg = atan2d((sind(Ey)*cosd(ref(1))),(sind(ref(1))*c"
+      "osd(state(1)) - cosd(ref(1))*sind(state(1))*cosd(Ey)));\nVg = abs(Ex) + abs(Ey);\nVg = Vg*1000000;\n\nVh = Ez;\n"
+      "\ncmd = [ Xg ; Vh ; Vg ];\nend"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
   data {
     id			    4
     ssIdNumber		    4
-    name		    "traj"
+    name		    "ref"
     linkNode		    [2 0 5]
     scope		    INPUT_DATA
     machine		    1
@@ -5487,7 +6407,7 @@ Stateflow {
   data {
     id			    5
     ssIdNumber		    5
-    name		    "waypoint"
+    name		    "cmd"
     linkNode		    [2 4 6]
     scope		    OUTPUT_DATA
     machine		    1
@@ -5506,10 +6426,10 @@ Stateflow {
   }
   data {
     id			    6
-    ssIdNumber		    8
-    name		    "curr_wp"
+    ssIdNumber		    11
+    name		    "state"
     linkNode		    [2 5 7]
-    scope		    DATA_STORE_MEMORY_DATA
+    scope		    INPUT_DATA
     machine		    1
     props {
       array {
@@ -5528,53 +6448,9 @@ Stateflow {
   }
   data {
     id			    7
-    ssIdNumber		    9
-    name		    "curr_tp"
-    linkNode		    [2 6 8]
-    scope		    DATA_STORE_MEMORY_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    8
-    ssIdNumber		    10
-    name		    "destinations"
-    linkNode		    [2 7 9]
-    scope		    DATA_STORE_MEMORY_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    9
     ssIdNumber		    12
-    name		    "pos"
-    linkNode		    [2 8 0]
+    name		    "pos2"
+    linkNode		    [2 6 0]
     scope		    DATA_STORE_MEMORY_DATA
     machine		    1
     props {
@@ -5593,7 +6469,7 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   junction {
-    id			    10
+    id			    8
     position		    [23.5747 49.5747 7]
     chart		    2
     linkNode		    [2 0 0]
@@ -5602,7 +6478,7 @@ Stateflow {
     type		    CONNECTIVE_JUNCTION
   }
   transition {
-    id			    11
+    id			    9
     labelString		    "{eML_blk_kernel();}"
     labelPosition	    [28.125 13.875 102.544 14.964]
     fontSize		    12
@@ -5610,7 +6486,7 @@ Stateflow {
       intersection	      [0 0 1 0 23.5747 14.625 0 0]
     }
     dst {
-      id		      10
+      id		      8
       intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
     }
     midPoint		    [23.5747 24.9468]
@@ -5626,21 +6502,390 @@ Stateflow {
     ssIdNumber		    2
   }
   instance {
-    id			    12
-    name		    "Waypoint Generator"
+    id			    10
+    name		    "Controller2"
     machine		    1
     chart		    2
   }
   chart {
+    id			    11
+    name		    "Model2"
+    windowPosition	    [422 539.941 189 413]
+    viewLimits		    [0 156.75 0 153.75]
+    screen		    [1 1 3600 1200 1.180555555555556]
+    treeNode		    [0 12 0 0]
+    firstTransition	    17
+    firstJunction	    16
+    viewObj		    11
+    visible		    1
+    machine		    1
+    subviewS {
+    }
+    ssIdHighWaterMark	    11
+    decomposition	    CLUSTER_CHART
+    type		    EML_CHART
+    firstData		    13
+    chartFileNumber	    2
+    disableImplicitCasting  1
+    eml {
+      name		      "Model"
+    }
+  }
+  state {
+    id			    12
+    labelString		    "eML_blk_kernel()"
+    position		    [18 64.5 118 66]
+    fontSize		    12
+    chart		    11
+    treeNode		    [11 0 0 0]
+    superState		    SUBCHART
+    subviewer		    11
+    ssIdNumber		    1
+    type		    FUNC_STATE
+    decomposition	    CLUSTER_STATE
+    eml {
+      isEML		      1
+      script		      "function state = Model( cmd )\n% Point-mass model of quadcopter\n% Current position\nglobal pos2;"
+      "\nh = -pos2(3);\nR = 6.371*10^6;      % mean radius of earth (meters)\nXg = cmd(1);         % tracking angle\nVh"
+      " = cmd(2)*5;       % climb rate\nVg = cmd(3);         % ground speed\n\nx_dot = (1/(R+h))*Vg*cosd(Xg);          "
+      "      % rate of change in lat\ny_dot = (1/((R+h)*cosd(pos2(1))))*Vg*sind(Xg); % rate of change in long\nz_dot = "
+      "Vh;                                   % rate of change in altitude\n\nstate = [ x_dot ; y_dot ; z_dot ];\nend"
+      editorLayout	      "100 M4x1[10 5 700 500]"
+    }
+  }
+  data {
     id			    13
+    ssIdNumber		    4
+    name		    "cmd"
+    linkNode		    [11 0 14]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    14
+    ssIdNumber		    6
+    name		    "state"
+    linkNode		    [11 13 15]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    15
+    ssIdNumber		    11
+    name		    "pos2"
+    linkNode		    [11 14 0]
+    scope		    DATA_STORE_MEMORY_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  junction {
+    id			    16
+    position		    [23.5747 49.5747 7]
+    chart		    11
+    linkNode		    [11 0 0]
+    subviewer		    11
+    ssIdNumber		    3
+    type		    CONNECTIVE_JUNCTION
+  }
+  transition {
+    id			    17
+    labelString		    "{eML_blk_kernel();}"
+    labelPosition	    [28.125 13.875 102.544 14.964]
+    fontSize		    12
+    src {
+      intersection	      [0 0 1 0 23.5747 14.625 0 0]
+    }
+    dst {
+      id		      16
+      intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
+    }
+    midPoint		    [23.5747 24.9468]
+    chart		    11
+    linkNode		    [11 0 0]
+    dataLimits		    [21.175 25.975 14.625 42.575]
+    subviewer		    11
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    2
+  }
+  instance {
+    id			    18
+    name		    "Model2"
+    machine		    1
+    chart		    11
+  }
+  chart {
+    id			    19
+    name		    "Waypoint Generator1"
+    windowPosition	    [422 539.941 189 413]
+    viewLimits		    [0 156.75 0 153.75]
+    screen		    [1 1 3600 1200 1.180555555555556]
+    treeNode		    [0 20 0 0]
+    firstTransition	    28
+    firstJunction	    27
+    viewObj		    19
+    visible		    1
+    machine		    1
+    subviewS {
+    }
+    ssIdHighWaterMark	    12
+    decomposition	    CLUSTER_CHART
+    type		    EML_CHART
+    firstData		    21
+    chartFileNumber	    3
+    disableImplicitCasting  1
+    eml {
+      name		      "fcn"
+    }
+  }
+  state {
+    id			    20
+    labelString		    "eML_blk_kernel()"
+    position		    [18 64.5 118 66]
+    fontSize		    12
+    chart		    19
+    treeNode		    [19 0 0 0]
+    superState		    SUBCHART
+    subviewer		    19
+    ssIdNumber		    1
+    type		    FUNC_STATE
+    decomposition	    CLUSTER_STATE
+    eml {
+      isEML		      1
+      script		      "function waypoint = fcn(traj)\n%#codegen\ncoder.extrinsic('display')\n%display('current state:')\n"
+      "%state\nglobal curr_wp curr_tp destinations pos;\n\nquad_X = pos(1);\nquad_Y = pos(2);\nquad_Z = pos(3);\ntrajec"
+      "tory = traj(:,:,1);\n%% Specify last and next trajectory points\nlast_tp = trajectory(curr_tp - 1,:);\nnext_tp ="
+      " trajectory(curr_tp,:);\n\n%% Divide distance between last_wp and next_wp into evenly divided segments\n% waypoi"
+      "nt distances\nwp_separation_dist = .01;\n\n% acceptable distance to waypoint\nthreshold = wp_separation_dist/3;\n"
+      "\n% trajectory point distances\ntp_separation_dist = sqrt((last_tp(1)-next_tp(1))^2 + (last_tp(2)-next_tp(2))^2 "
+      "+ (last_tp(3)-next_tp(3))^2);\n\n%% Determine which segment to give next\nnumber_of_waypoints = floor(tp_separat"
+      "ion_dist/wp_separation_dist);\nvec_norm = [(last_tp(1)-next_tp(1)) (last_tp(2)-next_tp(2)) (last_tp(3)-next_tp(3"
+      "))]/tp_separation_dist;\nif(isnan(vec_norm(1))) vec_norm(1) = 0; end\nif(isnan(vec_norm(2))) vec_norm(2) = 0; en"
+      "d\nif(isnan(vec_norm(3))) vec_norm(3) = 0; end\n\nwp = last_tp + curr_wp*wp_separation_dist*-vec_norm;\n\n% dist"
+      "ance to current waypoint\ndist1 = sqrt((quad_X-wp(1))^2 + (quad_Y-wp(2))^2 + (quad_Z-wp(3))^2);\n\nif(dist1 <= t"
+      "hreshold)\n    curr_wp = curr_wp + 1;\n    if(curr_wp == number_of_waypoints)\n        curr_tp = curr_tp + 1;\n "
+      "       curr_wp = 0;\n    end\nend\nif(curr_tp == length(trajectory(:,1)) + 1)\n    curr_tp = 2;\n    destination"
+      "s(1,:) = [0 0 0];\nend\n\n%% output\nwaypoint = wp;\nend"
+      editorLayout	      "100 M4x1[10 5 700 500]"
+    }
+  }
+  data {
+    id			    21
+    ssIdNumber		    4
+    name		    "traj"
+    linkNode		    [19 0 22]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    22
+    ssIdNumber		    5
+    name		    "waypoint"
+    linkNode		    [19 21 23]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    23
+    ssIdNumber		    8
+    name		    "curr_wp"
+    linkNode		    [19 22 24]
+    scope		    DATA_STORE_MEMORY_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    24
+    ssIdNumber		    9
+    name		    "curr_tp"
+    linkNode		    [19 23 25]
+    scope		    DATA_STORE_MEMORY_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    25
+    ssIdNumber		    10
+    name		    "destinations"
+    linkNode		    [19 24 26]
+    scope		    DATA_STORE_MEMORY_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    26
+    ssIdNumber		    12
+    name		    "pos"
+    linkNode		    [19 25 0]
+    scope		    DATA_STORE_MEMORY_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  junction {
+    id			    27
+    position		    [23.5747 49.5747 7]
+    chart		    19
+    linkNode		    [19 0 0]
+    subviewer		    19
+    ssIdNumber		    3
+    type		    CONNECTIVE_JUNCTION
+  }
+  transition {
+    id			    28
+    labelString		    "{eML_blk_kernel();}"
+    labelPosition	    [28.125 13.875 102.544 14.964]
+    fontSize		    12
+    src {
+      intersection	      [0 0 1 0 23.5747 14.625 0 0]
+    }
+    dst {
+      id		      27
+      intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
+    }
+    midPoint		    [23.5747 24.9468]
+    chart		    19
+    linkNode		    [19 0 0]
+    dataLimits		    [21.175 25.975 14.625 42.575]
+    subviewer		    19
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    2
+  }
+  instance {
+    id			    29
+    name		    "Waypoint Generator1"
+    machine		    1
+    chart		    19
+  }
+  chart {
+    id			    30
     name		    "Trajectory Genereator/Trajectory Generator"
     windowPosition	    [422 539.941 189 413]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 3600 1200 1.180555555555556]
-    treeNode		    [0 14 0 0]
-    firstTransition	    21
-    firstJunction	    20
-    viewObj		    13
+    treeNode		    [0 31 0 0]
+    firstTransition	    38
+    firstJunction	    37
+    viewObj		    30
     visible		    1
     machine		    1
     subviewS {
@@ -5648,7 +6893,7 @@ Stateflow {
     ssIdHighWaterMark	    14
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
-    firstData		    15
+    firstData		    32
     chartFileNumber	    4
     disableImplicitCasting  1
     eml {
@@ -5656,14 +6901,14 @@ Stateflow {
     }
   }
   state {
-    id			    14
+    id			    31
     labelString		    "eML_blk_kernel()"
     position		    [18 64.5 118 66]
     fontSize		    12
-    chart		    13
-    treeNode		    [13 0 0 0]
+    chart		    30
+    treeNode		    [30 0 0 0]
     superState		    SUBCHART
-    subviewer		    13
+    subviewer		    30
     ssIdNumber		    1
     type		    FUNC_STATE
     decomposition	    CLUSTER_STATE
@@ -5681,10 +6926,10 @@ Stateflow {
     }
   }
   data {
-    id			    15
+    id			    32
     ssIdNumber		    5
     name		    "trajectories"
-    linkNode		    [13 0 16]
+    linkNode		    [30 0 33]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -5701,10 +6946,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    16
+    id			    33
     ssIdNumber		    6
     name		    "origin_lat"
-    linkNode		    [13 15 17]
+    linkNode		    [30 32 34]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -5723,10 +6968,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    17
+    id			    34
     ssIdNumber		    14
     name		    "origin_lng"
-    linkNode		    [13 16 18]
+    linkNode		    [30 33 35]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -5745,10 +6990,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    18
+    id			    35
     ssIdNumber		    8
     name		    "altitude"
-    linkNode		    [13 17 19]
+    linkNode		    [30 34 36]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -5767,10 +7012,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    19
+    id			    36
     ssIdNumber		    11
     name		    "destinations"
-    linkNode		    [13 18 0]
+    linkNode		    [30 35 0]
     scope		    DATA_STORE_MEMORY_DATA
     machine		    1
     props {
@@ -5789,16 +7034,16 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   junction {
-    id			    20
+    id			    37
     position		    [23.5747 49.5747 7]
-    chart		    13
-    linkNode		    [13 0 0]
-    subviewer		    13
+    chart		    30
+    linkNode		    [30 0 0]
+    subviewer		    30
     ssIdNumber		    3
     type		    CONNECTIVE_JUNCTION
   }
   transition {
-    id			    21
+    id			    38
     labelString		    "{eML_blk_kernel();}"
     labelPosition	    [28.125 13.875 102.544 14.964]
     fontSize		    12
@@ -5806,14 +7051,14 @@ Stateflow {
       intersection	      [0 0 1 0 23.5747 14.625 0 0]
     }
     dst {
-      id		      20
+      id		      37
       intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
     }
     midPoint		    [23.5747 24.9468]
-    chart		    13
-    linkNode		    [13 0 0]
+    chart		    30
+    linkNode		    [30 0 0]
     dataLimits		    [21.175 25.975 14.625 42.575]
-    subviewer		    13
+    subviewer		    30
     drawStyle		    SMART
     slide {
       sticky		      BOTH_STICK
@@ -5822,21 +7067,21 @@ Stateflow {
     ssIdNumber		    2
   }
   instance {
-    id			    22
+    id			    39
     name		    "Trajectory Genereator/Trajectory Generator"
     machine		    1
-    chart		    13
+    chart		    30
   }
   chart {
-    id			    23
+    id			    40
     name		    "Trajectory Genereator/MATLAB Function"
     windowPosition	    [422 539.941 189 413]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 3600 1200 1.180555555555556]
-    treeNode		    [0 24 0 0]
-    firstTransition	    32
-    firstJunction	    31
-    viewObj		    23
+    treeNode		    [0 41 0 0]
+    firstTransition	    49
+    firstJunction	    48
+    viewObj		    40
     visible		    1
     machine		    1
     subviewS {
@@ -5844,7 +7089,7 @@ Stateflow {
     ssIdHighWaterMark	    13
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
-    firstData		    25
+    firstData		    42
     chartFileNumber	    5
     disableImplicitCasting  1
     eml {
@@ -5852,14 +7097,14 @@ Stateflow {
     }
   }
   state {
-    id			    24
+    id			    41
     labelString		    "eML_blk_kernel()"
     position		    [18 64.5 118 66]
     fontSize		    12
-    chart		    23
-    treeNode		    [23 0 0 0]
+    chart		    40
+    treeNode		    [40 0 0 0]
     superState		    SUBCHART
-    subviewer		    23
+    subviewer		    40
     ssIdNumber		    1
     type		    FUNC_STATE
     decomposition	    CLUSTER_STATE
@@ -5873,10 +7118,10 @@ Stateflow {
     }
   }
   data {
-    id			    25
+    id			    42
     ssIdNumber		    4
     name		    "lat_s"
-    linkNode		    [23 0 26]
+    linkNode		    [40 0 43]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -5892,10 +7137,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    26
+    id			    43
     ssIdNumber		    6
     name		    "lng_s"
-    linkNode		    [23 25 27]
+    linkNode		    [40 42 44]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -5914,10 +7159,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    27
+    id			    44
     ssIdNumber		    7
     name		    "radius_min"
-    linkNode		    [23 26 28]
+    linkNode		    [40 43 45]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -5936,10 +7181,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    28
+    id			    45
     ssIdNumber		    8
     name		    "radius_max"
-    linkNode		    [23 27 29]
+    linkNode		    [40 44 46]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -5958,10 +7203,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    29
+    id			    46
     ssIdNumber		    12
     name		    "prev_n_delivered"
-    linkNode		    [23 28 30]
+    linkNode		    [40 45 47]
     scope		    DATA_STORE_MEMORY_DATA
     machine		    1
     props {
@@ -5980,10 +7225,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    30
+    id			    47
     ssIdNumber		    13
     name		    "destinations"
-    linkNode		    [23 29 0]
+    linkNode		    [40 46 0]
     scope		    DATA_STORE_MEMORY_DATA
     machine		    1
     props {
@@ -6002,16 +7247,16 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   junction {
-    id			    31
+    id			    48
     position		    [23.5747 49.5747 7]
-    chart		    23
-    linkNode		    [23 0 0]
-    subviewer		    23
+    chart		    40
+    linkNode		    [40 0 0]
+    subviewer		    40
     ssIdNumber		    3
     type		    CONNECTIVE_JUNCTION
   }
   transition {
-    id			    32
+    id			    49
     labelString		    "{eML_blk_kernel();}"
     labelPosition	    [28.125 13.875 102.544 14.964]
     fontSize		    12
@@ -6019,14 +7264,14 @@ Stateflow {
       intersection	      [0 0 1 0 23.5747 14.625 0 0]
     }
     dst {
-      id		      31
+      id		      48
       intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
     }
     midPoint		    [23.5747 24.9468]
-    chart		    23
-    linkNode		    [23 0 0]
+    chart		    40
+    linkNode		    [40 0 0]
     dataLimits		    [21.175 25.975 14.625 42.575]
-    subviewer		    23
+    subviewer		    40
     drawStyle		    SMART
     slide {
       sticky		      BOTH_STICK
@@ -6035,21 +7280,21 @@ Stateflow {
     ssIdNumber		    2
   }
   instance {
-    id			    33
+    id			    50
     name		    "Trajectory Genereator/MATLAB Function"
     machine		    1
-    chart		    23
+    chart		    40
   }
   chart {
-    id			    34
-    name		    "Controller"
+    id			    51
+    name		    "Controller1"
     windowPosition	    [422 539.941 189 413]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 3600 1200 1.180555555555556]
-    treeNode		    [0 35 0 0]
-    firstTransition	    41
-    firstJunction	    40
-    viewObj		    34
+    treeNode		    [0 52 0 0]
+    firstTransition	    58
+    firstJunction	    57
+    viewObj		    51
     visible		    1
     machine		    1
     subviewS {
@@ -6057,7 +7302,7 @@ Stateflow {
     ssIdHighWaterMark	    12
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
-    firstData		    36
+    firstData		    53
     chartFileNumber	    6
     disableImplicitCasting  1
     eml {
@@ -6065,37 +7310,32 @@ Stateflow {
     }
   }
   state {
-    id			    35
+    id			    52
     labelString		    "eML_blk_kernel()"
     position		    [18 64.5 118 66]
     fontSize		    12
-    chart		    34
-    treeNode		    [34 0 0 0]
+    chart		    51
+    treeNode		    [51 0 0 0]
     superState		    SUBCHART
-    subviewer		    34
+    subviewer		    51
     ssIdNumber		    1
     type		    FUNC_STATE
     decomposition	    CLUSTER_STATE
     eml {
       isEML		      1
-      script		      "function cmd = Controller( ref , state)\n% Controller for point-mass model of quadcopter\ncmd = z"
-      "eros(3,1);\nglobal pos;\n\npos = state(1:3);\n%ref = [1;1;0];\nEx = ref(1) - pos(1); % Error in x-direction\nEy "
-      "= ref(2) - pos(2); % Error in y-direction\nEz = ref(3) - pos(3); % Error in z-direction\n\n% Xg = atan2(Ey,Ex)  "
-      "% tracking angle\nXg = atan2d((sind(Ey)*cosd(ref(1))),(sind(ref(1))*cosd(pos(1)) - cosd(ref(1))*sind(pos(1))*cos"
-      "d(Ey)));\n% \n% thresh = .25; % temporary threshold to see which way we are heading\n% thresh_z = .25;\n% \n% \n"
-      "% Vg = 0;\n% Vh = 0;\n%  \n% if( abs(Ex) >= thresh || abs(Ey) >= thresh )    % moving along x/y\n%     Vg = 1;  "
-      "                                   % use ground speed\n% end\n% if ( Ez >= thresh_z && Ez ~= 0 )                "
-      "   \n%     Vh = Ez;                                 \n% elseif ( Ez <= thresh_z && Ez ~= 0 )                   \n"
-      "%     Vh = Ez;              \n% end\n\nVg = abs(Ex) + abs(Ey);\nVg = Vg*1000000;\n\nVh = Ez;\n\ncmd = [ Xg ; Vh "
-      "; Vg ];\nend"
+      script		      "function cmd = Controller( ref , state)\n% Controller for point-mass model of quadcopter\nglobal "
+      "pos;\npos = state(1:3);\nEx = ref(1) - state(1); % Error in x-direction\nEy = ref(2) - state(2); % Error in y-di"
+      "rection\nEz = ref(3) - state(3); % Error in z-direction\n\nXg = atan2d((sind(Ey)*cosd(ref(1))),(sind(ref(1))*cos"
+      "d(state(1)) - cosd(ref(1))*sind(state(1))*cosd(Ey)));\nVg = abs(Ex) + abs(Ey);\nVg = Vg*1000000;\n\nVh = Ez;\n\n"
+      "cmd = [ Xg ; Vh ; Vg ];\nend"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
   data {
-    id			    36
+    id			    53
     ssIdNumber		    4
     name		    "ref"
-    linkNode		    [34 0 37]
+    linkNode		    [51 0 54]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -6111,10 +7351,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    37
+    id			    54
     ssIdNumber		    5
     name		    "cmd"
-    linkNode		    [34 36 38]
+    linkNode		    [51 53 55]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -6131,10 +7371,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    38
+    id			    55
     ssIdNumber		    11
     name		    "state"
-    linkNode		    [34 37 39]
+    linkNode		    [51 54 56]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -6153,10 +7393,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    39
+    id			    56
     ssIdNumber		    12
     name		    "pos"
-    linkNode		    [34 38 0]
+    linkNode		    [51 55 0]
     scope		    DATA_STORE_MEMORY_DATA
     machine		    1
     props {
@@ -6175,16 +7415,16 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   junction {
-    id			    40
+    id			    57
     position		    [23.5747 49.5747 7]
-    chart		    34
-    linkNode		    [34 0 0]
-    subviewer		    34
+    chart		    51
+    linkNode		    [51 0 0]
+    subviewer		    51
     ssIdNumber		    3
     type		    CONNECTIVE_JUNCTION
   }
   transition {
-    id			    41
+    id			    58
     labelString		    "{eML_blk_kernel();}"
     labelPosition	    [28.125 13.875 102.544 14.964]
     fontSize		    12
@@ -6192,14 +7432,14 @@ Stateflow {
       intersection	      [0 0 1 0 23.5747 14.625 0 0]
     }
     dst {
-      id		      40
+      id		      57
       intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
     }
     midPoint		    [23.5747 24.9468]
-    chart		    34
-    linkNode		    [34 0 0]
+    chart		    51
+    linkNode		    [51 0 0]
     dataLimits		    [21.175 25.975 14.625 42.575]
-    subviewer		    34
+    subviewer		    51
     drawStyle		    SMART
     slide {
       sticky		      BOTH_STICK
@@ -6208,21 +7448,21 @@ Stateflow {
     ssIdNumber		    2
   }
   instance {
-    id			    42
-    name		    "Controller"
+    id			    59
+    name		    "Controller1"
     machine		    1
-    chart		    34
+    chart		    51
   }
   chart {
-    id			    43
-    name		    "Model"
+    id			    60
+    name		    "Model1"
     windowPosition	    [422 539.941 189 413]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 3600 1200 1.180555555555556]
-    treeNode		    [0 44 0 0]
-    firstTransition	    51
-    firstJunction	    50
-    viewObj		    43
+    treeNode		    [0 61 0 0]
+    firstTransition	    66
+    firstJunction	    65
+    viewObj		    60
     visible		    1
     machine		    1
     subviewS {
@@ -6230,7 +7470,7 @@ Stateflow {
     ssIdHighWaterMark	    11
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
-    firstData		    45
+    firstData		    62
     chartFileNumber	    7
     disableImplicitCasting  1
     eml {
@@ -6238,32 +7478,32 @@ Stateflow {
     }
   }
   state {
-    id			    44
+    id			    61
     labelString		    "eML_blk_kernel()"
     position		    [18 64.5 118 66]
     fontSize		    12
-    chart		    43
-    treeNode		    [43 0 0 0]
+    chart		    60
+    treeNode		    [60 0 0 0]
     superState		    SUBCHART
-    subviewer		    43
+    subviewer		    60
     ssIdNumber		    1
     type		    FUNC_STATE
     decomposition	    CLUSTER_STATE
     eml {
       isEML		      1
-      script		      "function state = Model( cmd )\n% Point-mass model of quadcopter\nstate = zeros(3,1);\n\n\nR = 6.3"
-      "71*10^6;      % mean radius of earth (meters)\n\n% Current position\nglobal pos;\n\nh = -pos(3);\nXg = cmd(1); %"
-      " tracking angle\nVh = cmd(2)*5; % climb rate\nVg = cmd(3); % ground speed\n\nx_dot = (1/(R+h))*Vg*cosd(Xg); % ra"
-      "te of change in x-direction\ny_dot = (1/((R+h)*cosd(pos(1))))*Vg*sind(Xg); % rate of change in y-direction\nz_do"
-      "t = Vh;         % rate of change in z-direction\n\n\nstate = [ x_dot ; y_dot ; z_dot ];\nend"
+      script		      "function state = Model( cmd )\n% Point-mass model of quadcopter\n% Current position\nglobal pos;\n"
+      "h = -pos(3);\nR = 6.371*10^6;      % mean radius of earth (meters)\nXg = cmd(1);         % tracking angle\nVh = "
+      "cmd(2)*5;       % climb rate\nVg = cmd(3);         % ground speed\n\nx_dot = (1/(R+h))*Vg*cosd(Xg);             "
+      "   % rate of change in lat\ny_dot = (1/((R+h)*cosd(pos(1))))*Vg*sind(Xg); % rate of change in long\nz_dot = Vh; "
+      "                                  % rate of change in altitude\n\nstate = [ x_dot ; y_dot ; z_dot ];\nend"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
   data {
-    id			    45
+    id			    62
     ssIdNumber		    4
     name		    "cmd"
-    linkNode		    [43 0 46]
+    linkNode		    [60 0 63]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -6279,10 +7519,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    46
+    id			    63
     ssIdNumber		    6
     name		    "state"
-    linkNode		    [43 45 47]
+    linkNode		    [60 62 64]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -6301,54 +7541,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    47
-    ssIdNumber		    8
-    name		    "curr_wp"
-    linkNode		    [43 46 48]
-    scope		    DATA_STORE_MEMORY_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    48
-    ssIdNumber		    9
-    name		    "curr_tp"
-    linkNode		    [43 47 49]
-    scope		    DATA_STORE_MEMORY_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    49
+    id			    64
     ssIdNumber		    11
     name		    "pos"
-    linkNode		    [43 48 0]
+    linkNode		    [60 63 0]
     scope		    DATA_STORE_MEMORY_DATA
     machine		    1
     props {
@@ -6367,16 +7563,16 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   junction {
-    id			    50
+    id			    65
     position		    [23.5747 49.5747 7]
-    chart		    43
-    linkNode		    [43 0 0]
-    subviewer		    43
+    chart		    60
+    linkNode		    [60 0 0]
+    subviewer		    60
     ssIdNumber		    3
     type		    CONNECTIVE_JUNCTION
   }
   transition {
-    id			    51
+    id			    66
     labelString		    "{eML_blk_kernel();}"
     labelPosition	    [28.125 13.875 102.544 14.964]
     fontSize		    12
@@ -6384,14 +7580,14 @@ Stateflow {
       intersection	      [0 0 1 0 23.5747 14.625 0 0]
     }
     dst {
-      id		      50
+      id		      65
       intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
     }
     midPoint		    [23.5747 24.9468]
-    chart		    43
-    linkNode		    [43 0 0]
+    chart		    60
+    linkNode		    [60 0 0]
     dataLimits		    [21.175 25.975 14.625 42.575]
-    subviewer		    43
+    subviewer		    60
     drawStyle		    SMART
     slide {
       sticky		      BOTH_STICK
@@ -6400,22 +7596,780 @@ Stateflow {
     ssIdNumber		    2
   }
   instance {
-    id			    52
-    name		    "Model"
+    id			    67
+    name		    "Model1"
     machine		    1
-    chart		    43
+    chart		    60
+  }
+  chart {
+    id			    68
+    name		    "Waypoint Generator2"
+    windowPosition	    [422 539.941 189 413]
+    viewLimits		    [0 156.75 0 153.75]
+    screen		    [1 1 3600 1200 1.180555555555556]
+    treeNode		    [0 69 0 0]
+    firstTransition	    77
+    firstJunction	    76
+    viewObj		    68
+    visible		    1
+    machine		    1
+    subviewS {
+    }
+    ssIdHighWaterMark	    12
+    decomposition	    CLUSTER_CHART
+    type		    EML_CHART
+    firstData		    70
+    chartFileNumber	    8
+    disableImplicitCasting  1
+    eml {
+      name		      "fcn"
+    }
+  }
+  state {
+    id			    69
+    labelString		    "eML_blk_kernel()"
+    position		    [18 64.5 118 66]
+    fontSize		    12
+    chart		    68
+    treeNode		    [68 0 0 0]
+    superState		    SUBCHART
+    subviewer		    68
+    ssIdNumber		    1
+    type		    FUNC_STATE
+    decomposition	    CLUSTER_STATE
+    eml {
+      isEML		      1
+      script		      "function waypoint = fcn(traj)\n%#codegen\ncoder.extrinsic('display')\n%display('current state:')\n"
+      "%state\nglobal curr_wp2 curr_tp2 destinations pos2;\n\nquad_X = pos2(1);\nquad_Y = pos2(2);\nquad_Z = pos2(3);\n"
+      "trajectory = traj(:,:,2);\n%% Specify last and next trajectory points\nlast_tp = trajectory(curr_tp2 - 1,:);\nne"
+      "xt_tp = trajectory(curr_tp2,:);\n\n%% Divide distance between last_wp and next_wp into evenly divided segments\n"
+      "% waypoint distances\nwp_separation_dist = .01;\n\n% acceptable distance to waypoint\nthreshold = wp_separation_"
+      "dist/3;\n\n% trajectory point distances\ntp_separation_dist = sqrt((last_tp(1)-next_tp(1))^2 + (last_tp(2)-next_"
+      "tp(2))^2 + (last_tp(3)-next_tp(3))^2);\n\n%% Determine which segment to give next\nnumber_of_waypoints = floor(t"
+      "p_separation_dist/wp_separation_dist);\nvec_norm = [(last_tp(1)-next_tp(1)) (last_tp(2)-next_tp(2)) (last_tp(3)-"
+      "next_tp(3))]/tp_separation_dist;\nif(isnan(vec_norm(1))) vec_norm(1) = 0; end\nif(isnan(vec_norm(2))) vec_norm(2"
+      ") = 0; end\nif(isnan(vec_norm(3))) vec_norm(3) = 0; end\n\nwp = last_tp + curr_wp2*wp_separation_dist*-vec_norm;"
+      "\n\n% distance to current waypoint\ndist1 = sqrt((quad_X-wp(1))^2 + (quad_Y-wp(2))^2 + (quad_Z-wp(3))^2);\n\nif("
+      "dist1 <= threshold)\n    curr_wp2 = curr_wp2 + 1;\n    if(curr_wp2 == number_of_waypoints)\n        curr_tp2 = c"
+      "urr_tp2 + 1;\n        curr_wp2 = 0;\n    end\nend\nif(curr_tp2 == length(trajectory(:,1)) + 1)\n    curr_tp2 = 2"
+      ";\n    destinations(2,:) = [0 0 0];\nend\n\n%% output\nwaypoint = wp;\nend"
+      editorLayout	      "100 M4x1[10 5 700 500]"
+    }
+  }
+  data {
+    id			    70
+    ssIdNumber		    4
+    name		    "traj"
+    linkNode		    [68 0 71]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    71
+    ssIdNumber		    5
+    name		    "waypoint"
+    linkNode		    [68 70 72]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    72
+    ssIdNumber		    8
+    name		    "curr_wp2"
+    linkNode		    [68 71 73]
+    scope		    DATA_STORE_MEMORY_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    73
+    ssIdNumber		    9
+    name		    "curr_tp2"
+    linkNode		    [68 72 74]
+    scope		    DATA_STORE_MEMORY_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    74
+    ssIdNumber		    10
+    name		    "destinations"
+    linkNode		    [68 73 75]
+    scope		    DATA_STORE_MEMORY_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    75
+    ssIdNumber		    12
+    name		    "pos2"
+    linkNode		    [68 74 0]
+    scope		    DATA_STORE_MEMORY_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  junction {
+    id			    76
+    position		    [23.5747 49.5747 7]
+    chart		    68
+    linkNode		    [68 0 0]
+    subviewer		    68
+    ssIdNumber		    3
+    type		    CONNECTIVE_JUNCTION
+  }
+  transition {
+    id			    77
+    labelString		    "{eML_blk_kernel();}"
+    labelPosition	    [28.125 13.875 102.544 14.964]
+    fontSize		    12
+    src {
+      intersection	      [0 0 1 0 23.5747 14.625 0 0]
+    }
+    dst {
+      id		      76
+      intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
+    }
+    midPoint		    [23.5747 24.9468]
+    chart		    68
+    linkNode		    [68 0 0]
+    dataLimits		    [21.175 25.975 14.625 42.575]
+    subviewer		    68
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    2
+  }
+  instance {
+    id			    78
+    name		    "Waypoint Generator2"
+    machine		    1
+    chart		    68
+  }
+  chart {
+    id			    79
+    name		    "Controller3"
+    windowPosition	    [422 539.941 189 413]
+    viewLimits		    [0 156.75 0 153.75]
+    screen		    [1 1 3600 1200 1.180555555555556]
+    treeNode		    [0 80 0 0]
+    firstTransition	    86
+    firstJunction	    85
+    viewObj		    79
+    visible		    1
+    machine		    1
+    subviewS {
+    }
+    ssIdHighWaterMark	    12
+    decomposition	    CLUSTER_CHART
+    type		    EML_CHART
+    firstData		    81
+    chartFileNumber	    9
+    disableImplicitCasting  1
+    eml {
+      name		      "Controller"
+    }
+  }
+  state {
+    id			    80
+    labelString		    "eML_blk_kernel()"
+    position		    [18 64.5 118 66]
+    fontSize		    12
+    chart		    79
+    treeNode		    [79 0 0 0]
+    superState		    SUBCHART
+    subviewer		    79
+    ssIdNumber		    1
+    type		    FUNC_STATE
+    decomposition	    CLUSTER_STATE
+    eml {
+      isEML		      1
+      script		      "function cmd = Controller( ref , state)\n% Controller for point-mass model of quadcopter\nglobal "
+      "pos3;\npos3 = state(1:3);\nEx = ref(1) - state(1); % Error in x-direction\nEy = ref(2) - state(2); % Error in y-"
+      "direction\nEz = ref(3) - state(3); % Error in z-direction\n\nXg = atan2d((sind(Ey)*cosd(ref(1))),(sind(ref(1))*c"
+      "osd(state(1)) - cosd(ref(1))*sind(state(1))*cosd(Ey)));\nVg = abs(Ex) + abs(Ey);\nVg = Vg*1000000;\n\nVh = Ez;\n"
+      "\ncmd = [ Xg ; Vh ; Vg ];\nend"
+      editorLayout	      "100 M4x1[10 5 700 500]"
+    }
+  }
+  data {
+    id			    81
+    ssIdNumber		    4
+    name		    "ref"
+    linkNode		    [79 0 82]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    82
+    ssIdNumber		    5
+    name		    "cmd"
+    linkNode		    [79 81 83]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    83
+    ssIdNumber		    11
+    name		    "state"
+    linkNode		    [79 82 84]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    84
+    ssIdNumber		    12
+    name		    "pos3"
+    linkNode		    [79 83 0]
+    scope		    DATA_STORE_MEMORY_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  junction {
+    id			    85
+    position		    [23.5747 49.5747 7]
+    chart		    79
+    linkNode		    [79 0 0]
+    subviewer		    79
+    ssIdNumber		    3
+    type		    CONNECTIVE_JUNCTION
+  }
+  transition {
+    id			    86
+    labelString		    "{eML_blk_kernel();}"
+    labelPosition	    [28.125 13.875 102.544 14.964]
+    fontSize		    12
+    src {
+      intersection	      [0 0 1 0 23.5747 14.625 0 0]
+    }
+    dst {
+      id		      85
+      intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
+    }
+    midPoint		    [23.5747 24.9468]
+    chart		    79
+    linkNode		    [79 0 0]
+    dataLimits		    [21.175 25.975 14.625 42.575]
+    subviewer		    79
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    2
+  }
+  instance {
+    id			    87
+    name		    "Controller3"
+    machine		    1
+    chart		    79
+  }
+  chart {
+    id			    88
+    name		    "Model3"
+    windowPosition	    [422 539.941 189 413]
+    viewLimits		    [0 156.75 0 153.75]
+    screen		    [1 1 3600 1200 1.180555555555556]
+    treeNode		    [0 89 0 0]
+    firstTransition	    94
+    firstJunction	    93
+    viewObj		    88
+    visible		    1
+    machine		    1
+    subviewS {
+    }
+    ssIdHighWaterMark	    11
+    decomposition	    CLUSTER_CHART
+    type		    EML_CHART
+    firstData		    90
+    chartFileNumber	    10
+    disableImplicitCasting  1
+    eml {
+      name		      "Model"
+    }
+  }
+  state {
+    id			    89
+    labelString		    "eML_blk_kernel()"
+    position		    [18 64.5 118 66]
+    fontSize		    12
+    chart		    88
+    treeNode		    [88 0 0 0]
+    superState		    SUBCHART
+    subviewer		    88
+    ssIdNumber		    1
+    type		    FUNC_STATE
+    decomposition	    CLUSTER_STATE
+    eml {
+      isEML		      1
+      script		      "function state = Model( cmd )\n% Point-mass model of quadcopter\n% Current position\nglobal pos3;"
+      "\nh = -pos3(3);\nR = 6.371*10^6;      % mean radius of earth (meters)\nXg = cmd(1);         % tracking angle\nVh"
+      " = cmd(2)*5;       % climb rate\nVg = cmd(3);         % ground speed\n\nx_dot = (1/(R+h))*Vg*cosd(Xg);          "
+      "      % rate of change in lat\ny_dot = (1/((R+h)*cosd(pos3(1))))*Vg*sind(Xg); % rate of change in long\nz_dot = "
+      "Vh;                                   % rate of change in altitude\n\nstate = [ x_dot ; y_dot ; z_dot ];\nend"
+      editorLayout	      "100 M4x1[10 5 700 500]"
+    }
+  }
+  data {
+    id			    90
+    ssIdNumber		    4
+    name		    "cmd"
+    linkNode		    [88 0 91]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    91
+    ssIdNumber		    6
+    name		    "state"
+    linkNode		    [88 90 92]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    92
+    ssIdNumber		    11
+    name		    "pos3"
+    linkNode		    [88 91 0]
+    scope		    DATA_STORE_MEMORY_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  junction {
+    id			    93
+    position		    [23.5747 49.5747 7]
+    chart		    88
+    linkNode		    [88 0 0]
+    subviewer		    88
+    ssIdNumber		    3
+    type		    CONNECTIVE_JUNCTION
+  }
+  transition {
+    id			    94
+    labelString		    "{eML_blk_kernel();}"
+    labelPosition	    [28.125 13.875 102.544 14.964]
+    fontSize		    12
+    src {
+      intersection	      [0 0 1 0 23.5747 14.625 0 0]
+    }
+    dst {
+      id		      93
+      intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
+    }
+    midPoint		    [23.5747 24.9468]
+    chart		    88
+    linkNode		    [88 0 0]
+    dataLimits		    [21.175 25.975 14.625 42.575]
+    subviewer		    88
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    2
+  }
+  instance {
+    id			    95
+    name		    "Model3"
+    machine		    1
+    chart		    88
+  }
+  chart {
+    id			    96
+    name		    "Waypoint Generator3"
+    windowPosition	    [422 539.941 189 413]
+    viewLimits		    [0 156.75 0 153.75]
+    screen		    [1 1 3600 1200 1.180555555555556]
+    treeNode		    [0 97 0 0]
+    firstTransition	    105
+    firstJunction	    104
+    viewObj		    96
+    visible		    1
+    machine		    1
+    subviewS {
+    }
+    ssIdHighWaterMark	    12
+    decomposition	    CLUSTER_CHART
+    type		    EML_CHART
+    firstData		    98
+    chartFileNumber	    11
+    disableImplicitCasting  1
+    eml {
+      name		      "fcn"
+    }
+  }
+  state {
+    id			    97
+    labelString		    "eML_blk_kernel()"
+    position		    [18 64.5 118 66]
+    fontSize		    12
+    chart		    96
+    treeNode		    [96 0 0 0]
+    superState		    SUBCHART
+    subviewer		    96
+    ssIdNumber		    1
+    type		    FUNC_STATE
+    decomposition	    CLUSTER_STATE
+    eml {
+      isEML		      1
+      script		      "function waypoint = fcn(traj)\n%#codegen\ncoder.extrinsic('display')\n%display('current state:')\n"
+      "%state\nglobal curr_wp3 curr_tp3 destinations pos3;\n\nquad_X = pos3(1);\nquad_Y = pos3(2);\nquad_Z = pos3(3);\n"
+      "trajectory = traj(:,:,3);\n%% Specify last and next trajectory points\nlast_tp = trajectory(curr_tp3 - 1,:);\nne"
+      "xt_tp = trajectory(curr_tp3,:);\n\n%% Divide distance between last_wp and next_wp into evenly divided segments\n"
+      "% waypoint distances\nwp_separation_dist = .01;\n\n% acceptable distance to waypoint\nthreshold = wp_separation_"
+      "dist/3;\n\n% trajectory point distances\ntp_separation_dist = sqrt((last_tp(1)-next_tp(1))^2 + (last_tp(2)-next_"
+      "tp(2))^2 + (last_tp(3)-next_tp(3))^2);\n\n%% Determine which segment to give next\nnumber_of_waypoints = floor(t"
+      "p_separation_dist/wp_separation_dist);\nvec_norm = [(last_tp(1)-next_tp(1)) (last_tp(2)-next_tp(2)) (last_tp(3)-"
+      "next_tp(3))]/tp_separation_dist;\nif(isnan(vec_norm(1))) vec_norm(1) = 0; end\nif(isnan(vec_norm(2))) vec_norm(2"
+      ") = 0; end\nif(isnan(vec_norm(3))) vec_norm(3) = 0; end\n\nwp = last_tp + curr_wp3*wp_separation_dist*-vec_norm;"
+      "\n\n% distance to current waypoint\ndist1 = sqrt((quad_X-wp(1))^2 + (quad_Y-wp(2))^2 + (quad_Z-wp(3))^2);\n\nif("
+      "dist1 <= threshold)\n    curr_wp3 = curr_wp3 + 1;\n    if(curr_wp3 == number_of_waypoints)\n        curr_tp3 = c"
+      "urr_tp3 + 1;\n        curr_wp3 = 0;\n    end\nend\nif(curr_tp3 == length(trajectory(:,1)) + 1)\n    curr_tp3 = 2"
+      ";\n    destinations(3,:) = [0 0 0];\nend\n\n%% output\nwaypoint = wp;\nend"
+      editorLayout	      "100 M4x1[10 5 700 500]"
+    }
+  }
+  data {
+    id			    98
+    ssIdNumber		    4
+    name		    "traj"
+    linkNode		    [96 0 99]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    99
+    ssIdNumber		    5
+    name		    "waypoint"
+    linkNode		    [96 98 100]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    100
+    ssIdNumber		    8
+    name		    "curr_wp3"
+    linkNode		    [96 99 101]
+    scope		    DATA_STORE_MEMORY_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    101
+    ssIdNumber		    9
+    name		    "curr_tp3"
+    linkNode		    [96 100 102]
+    scope		    DATA_STORE_MEMORY_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    102
+    ssIdNumber		    10
+    name		    "destinations"
+    linkNode		    [96 101 103]
+    scope		    DATA_STORE_MEMORY_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    103
+    ssIdNumber		    12
+    name		    "pos3"
+    linkNode		    [96 102 0]
+    scope		    DATA_STORE_MEMORY_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  junction {
+    id			    104
+    position		    [23.5747 49.5747 7]
+    chart		    96
+    linkNode		    [96 0 0]
+    subviewer		    96
+    ssIdNumber		    3
+    type		    CONNECTIVE_JUNCTION
+  }
+  transition {
+    id			    105
+    labelString		    "{eML_blk_kernel();}"
+    labelPosition	    [28.125 13.875 102.544 14.964]
+    fontSize		    12
+    src {
+      intersection	      [0 0 1 0 23.5747 14.625 0 0]
+    }
+    dst {
+      id		      104
+      intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
+    }
+    midPoint		    [23.5747 24.9468]
+    chart		    96
+    linkNode		    [96 0 0]
+    dataLimits		    [21.175 25.975 14.625 42.575]
+    subviewer		    96
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    2
+  }
+  instance {
+    id			    106
+    name		    "Waypoint Generator3"
+    machine		    1
+    chart		    96
   }
   target {
-    id			    53
+    id			    107
     name		    "sfun"
     description		    "Default Simulink S-Function Target."
     machine		    1
-    linkNode		    [1 0 54]
+    linkNode		    [1 0 108]
   }
   target {
-    id			    54
+    id			    108
     name		    "rtw"
     machine		    1
-    linkNode		    [1 53 0]
+    linkNode		    [1 107 0]
   }
 }
