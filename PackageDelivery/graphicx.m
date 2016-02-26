@@ -1,20 +1,7 @@
 %read data from sim
 
 load('SimResults.mat')
-%R = angle2dcm(euler.signals.values(:,1)'*pi/180,euler.signals.values(:,2)'*pi/180,euler.signals.values(:,3)'*pi/180,'ZYX');
-%Rcam = angle2dcm(pi,0,0,'YZX');
 Rcam = [-1 0 -0; 0 1 0; 0 0 -1];
-%Rcam = [1 0 0; 0 1 0; 0 0 1];
-% p_i = Rcam*state.signals.values';
-% p_i(1,:) = -p_i(1,:);
-p_i_1 = Rcam*state.signals.values';
-p_i_2 = Rcam*state1.signals.values';
-p_i_3 = Rcam*state2.signals.values';
-p_i_1(1,:) = -p_i_1(1,:);
-p_i_2(1,:) = -p_i_2(1,:);
-p_i_3(1,:) = -p_i_3(1,:);
-
-%pdt = Rcam*ref.signals.values(:,1:3)';
 t = ref.time;
 
 %draw
@@ -26,9 +13,10 @@ vidObj.FrameRate = 1/step;
 open(vidObj);
 frame = 1;
 figure('Units','centimeters','Position',[0 0 34 17])
-h = [1, 0.1 ,0.1 , 0.1];%create_axis([1, 0.1 ,0.1 , 0.1],[1 0.1 0.1 0.1]);
-%T = 100;
+h = [1, 0.1 ,0.1 , 0.1];
 axes
+scale = 0.005;
+
 for t2 = 0:step:T
     I = find(t>=t2,1);
     if isempty(I) 
@@ -45,55 +33,30 @@ for t2 = 0:step:T
         end
         break
     end
-    
     R(:,:,I) = eye(3);
-    hold on
-    cla
-    % leg(1) = plot3(pdt(1,1:I)',pdt(2,1:I)',pdt(3,1:I)');
-    
-%     leg(1) = plot3(p_i(1,1:I)',p_i(2,1:I)',p_i(3,1:I)','r-'); % single quad
-    leg(1) = plot3(p_i_1(1,1:I)',p_i_1(2,1:I)',p_i_1(3,1:I)','r-'); % first quad
-    leg(2) = plot3(p_i_2(1,1:I)',p_i_2(2,1:I)',p_i_2(3,1:I)','g-'); % second quad
-    leg(3) = plot3(p_i_3(1,1:I)',p_i_3(2,1:I)',p_i_3(3,1:I)','b-'); % third quad
-    
-    quiver3(P0(1,:),P0(2,:),P0(3,:),P1(1,:),P1(2,:),P1(3,:),'LineWidth',2,'Color','k');
-    grid on
-
-%     p_star = p_i(:,I);
-    p_star1 = p_i_1(:,I);
-    p_star2 = p_i_2(:,I);
-    p_star3 = p_i_3(:,I);
-    
     R_star = Rcam*R(:,:,I)';
-    scale = 0.005;
-    
-%     P0B = repmat(p_star,1,3);
-    P0B1 = repmat(p_star1,1,3);
-    P0B2 = repmat(p_star2,1,3);
-    P0B3 = repmat(p_star3,1,3);
-    
     P1B = R_star*scale;
     
-%     quiver3(P0B(1,:),P0B(2,:),P0B(3,:),P1B(1,:),P1B(2,:),P1B(3,:),'LineWidth',1,'Color','k');
-    quiver3(P0B1(1,:),P0B1(2,:),P0B1(3,:),P1B(1,:),P1B(2,:),P1B(3,:),'LineWidth',1,'Color','k');
-    quiver3(P0B2(1,:),P0B2(2,:),P0B2(3,:),P1B(1,:),P1B(2,:),P1B(3,:),'LineWidth',1,'Color','k');
-    quiver3(P0B3(1,:),P0B3(2,:),P0B3(3,:),P1B(1,:),P1B(2,:),P1B(3,:),'LineWidth',1,'Color','k');
+    hold on
+    grid on
+    cla
     
-%     quad_plot(p_star,R_star,0,[],0.5,scale);
-    quad_plot(p_star1,R_star,0,[],0.5,scale);
-    quad_plot(p_star2,R_star,0,[],0.5,scale);
-    quad_plot(p_star3,R_star,0,[],0.5,scale);
+    % cycle through each quad for each frame
+    for quad = 1: 10 % length(state.signals.values(1,:))/3
+        pos = state.signals.values(:,3*quad-2:3*quad)';
+        pos_R = Rcam*pos;
+        pos_R(1,:) = -pos_R(1,:);
+        leg(quad) = plot3(pos_R(1,1:I)',pos_R(2,1:I)',pos_R(3,1:I)','r-');
+        p_star = pos_R(:,I);
+        quad_plot(p_star,R_star,0,[],0.5,scale);
+        P0B = repmat(p_star,1,4);
+        
+    end % end for-loop
     
-%     P0B = repmat(p_star,1,4);
-    P0B1 = repmat(p_star1,1,4);
-    P0B2 = repmat(p_star2,1,4);
-    P0B3 = repmat(p_star3,1,4);
-    
-    % set(gca,'Xlim',[-5 30], 'YLim', [-5 30], 'ZLim', [0 40]);
     set(gca,'Xlim',[36.8 37.2], 'YLim', [-122.3 -121.8], 'ZLim', [0 .5]);
     %view(37.5,30);
     axis square;
-    legend(leg,{'Quad 1','Quad 2','Quad 3'},'location','NorthEast')
+    legend(leg,{'Quad 1','Quad 2','Quad 3','4'},'location','NorthEast')
     xlabel('Latitude (degrees)')
     ylabel('Longitude (degrees)')
     
