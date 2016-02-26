@@ -27,7 +27,6 @@ open(vidObj);
 frame = 1;
 figure('Units','centimeters','Position',[0 0 34 17])
 h = [1, 0.1 ,0.1 , 0.1];%create_axis([1, 0.1 ,0.1 , 0.1],[1 0.1 0.1 0.1]);
-%T = 100;
 axes
 for t2 = 0:step:T
     I = find(t>=t2,1);
