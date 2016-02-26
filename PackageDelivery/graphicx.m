@@ -4,6 +4,7 @@ load('SimResults.mat')
 %R = angle2dcm(euler.signals.values(:,1)'*pi/180,euler.signals.values(:,2)'*pi/180,euler.signals.values(:,3)'*pi/180,'ZYX');
 %Rcam = angle2dcm(pi,0,0,'YZX');
 Rcam = [-1 0 -0; 0 1 0; 0 0 -1];
+%Rcam = [1 0 0; 0 1 0; 0 0 1];
 % p_i = Rcam*state.signals.values';
 % p_i(1,:) = -p_i(1,:);
 p_i_1 = Rcam*state.signals.values';
@@ -90,8 +91,11 @@ for t2 = 0:step:T
     
     % set(gca,'Xlim',[-5 30], 'YLim', [-5 30], 'ZLim', [0 40]);
     set(gca,'Xlim',[36.8 37.2], 'YLim', [-122.3 -121.8], 'ZLim', [0 .5]);
-    view(37.5,30);axis square;
-    % legend(leg,{'Quad 1','Quad 2','Quad 3'},'location','NorthEast')
+    %view(37.5,30);
+    axis square;
+    legend(leg,{'Quad 1','Quad 2','Quad 3'},'location','NorthEast')
+    xlabel('Latitude (degrees)')
+    ylabel('Longitude (degrees)')
     
     F(frame) = getframe(gcf);
     writeVideo(vidObj,F(frame));

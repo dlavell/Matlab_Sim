@@ -2,8 +2,10 @@
 % Initialize workspace
 warning ('off','all');
 display('Initializing Sim...')
-% load('initialize_PackageDeliverySim.mat');
+load('initialize_PackageDeliverySim.mat');
+T = 200;
 ref.time = 0:.01:T*3;             % correct for non-linear time variable
+save('initialize_PackageDeliverySim.mat');
 
 display('Running Sim...')
 sim PackageDeliverySim          % Run Simulation
