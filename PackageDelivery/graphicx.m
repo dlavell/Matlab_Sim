@@ -5,8 +5,6 @@ Rcam = [-1 0 -0; 0 1 0; 0 0 -1];
 t = ref.time;
 
 %draw
-P0 = zeros(3);
-P1 = Rcam;
 vidObj = VideoWriter('sim_testing_live', 'Uncompressed AVI');
 step = 0.5;% was .05
 vidObj.FrameRate = 1/step;
@@ -24,15 +22,15 @@ for t2 = 0:step:T
         display('Finished making video.')
         break
     end
-    if I >=length(p_i_1)
-        close(vidObj);
-        display('length of internal variable caused the video to end.')
-        if I >=length(p_i_1)
-            display('p_i was the cause');
-            length(p_i_1)
-        end
-        break
-    end
+%     if I >=length(p_i_1)
+%         close(vidObj);
+%         display('length of internal variable caused the video to end.')
+%         if I >=length(p_i_1)
+%             display('p_i was the cause');
+%             length(p_i_1)
+%         end
+%         break
+%     end
     R(:,:,I) = eye(3);
     R_star = Rcam*R(:,:,I)';
     P1B = R_star*scale;
@@ -46,20 +44,28 @@ for t2 = 0:step:T
         pos = state.signals.values(:,3*quad-2:3*quad)';
         pos_R = Rcam*pos;
         pos_R(1,:) = -pos_R(1,:);
+        if I >=length(pos_R(1,:)) 
+            close(vidObj); 
+            break;
+        end
         leg(quad) = plot3(pos_R(1,1:I)',pos_R(2,1:I)',pos_R(3,1:I)','r-');
         p_star = pos_R(:,I);
         quad_plot(p_star,R_star,0,[],0.5,scale);
         P0B = repmat(p_star,1,4);
-        
     end % end for-loop
     
     set(gca,'Xlim',[36.8 37.2], 'YLim', [-122.3 -121.8], 'ZLim', [0 .5]);
     %view(37.5,30);
     axis square;
-    legend(leg,{'Quad 1','Quad 2','Quad 3','4'},'location','NorthEast')
+    %legend(leg,{'Quad 1','Quad 2','Quad 3','4'},'location','NorthEast')
     xlabel('Latitude (degrees)')
     ylabel('Longitude (degrees)')
     
+    
+    if I >=length(pos_R(1,:))
+        close(vidObj);
+        break;
+    end
     F(frame) = getframe(gcf);
     writeVideo(vidObj,F(frame));
     frame = frame+1;
