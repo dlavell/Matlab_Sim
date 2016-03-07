@@ -1,0 +1,34 @@
+{
+  "arch": "x86_64",
+  "build": "vc10_2",
+  "build_number": 2,
+  "channel": "https://repo.continuum.io/pkgs/free/win-64/",
+  "date": "2015-10-19",
+  "depends": [],
+  "features": "vc10",
+  "files": [
+    "Library/bin/zlib.dll",
+    "Library/include/zconf.h",
+    "Library/include/zlib.h",
+    "Library/lib/z.lib",
+    "Library/lib/zdll.lib",
+    "Library/lib/zlib.lib",
+    "Library/lib/zlibstatic.lib",
+    "Library/share/man/man3/zlib.3",
+    "Library/share/pkgconfig/zlib.pc"
+  ],
+  "license": "zlib (http://zlib.net/zlib_license.html)",
+  "license_family": "Other",
+  "link": {
+    "source": "C:\\Miniconda3\\pkgs\\zlib-1.2.8-vc10_2",
+    "type": "hard-link"
+  },
+  "md5": "90dbc1067d89203a890406eae44d9366",
+  "name": "zlib",
+  "platform": "win",
+  "requires": [],
+  "size": 109398,
+  "subdir": "win-64",
+  "url": "https://repo.continuum.io/pkgs/free/win-64/zlib-1.2.8-vc10_2.tar.bz2",
+  "version": "1.2.8"
+}

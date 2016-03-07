@@ -1,0 +1,36 @@
+{
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "channel": "https://repo.continuum.io/pkgs/free/win-64/",
+  "date": "2015-07-13",
+  "depends": [
+    "click",
+    "python 3.4*"
+  ],
+  "files": [
+    "Lib/site-packages/cligj-0.2.0-py3.4.egg-info/PKG-INFO",
+    "Lib/site-packages/cligj-0.2.0-py3.4.egg-info/SOURCES.txt",
+    "Lib/site-packages/cligj-0.2.0-py3.4.egg-info/dependency_links.txt",
+    "Lib/site-packages/cligj-0.2.0-py3.4.egg-info/not-zip-safe",
+    "Lib/site-packages/cligj-0.2.0-py3.4.egg-info/requires.txt",
+    "Lib/site-packages/cligj-0.2.0-py3.4.egg-info/top_level.txt",
+    "Lib/site-packages/cligj/__init__.py",
+    "Lib/site-packages/cligj/__pycache__/__init__.cpython-34.pyc",
+    "Lib/site-packages/cligj/__pycache__/plugins.cpython-34.pyc",
+    "Lib/site-packages/cligj/plugins.py"
+  ],
+  "license": "MIT",
+  "link": {
+    "source": "C:\\Miniconda3\\pkgs\\cligj-0.2.0-py34_0",
+    "type": "hard-link"
+  },
+  "md5": "290901ea54a40450e39cfa6ddf4cb7d7",
+  "name": "cligj",
+  "platform": "win",
+  "requires": [],
+  "size": 8073,
+  "subdir": "win-64",
+  "url": "https://repo.continuum.io/pkgs/free/win-64/cligj-0.2.0-py34_0.tar.bz2",
+  "version": "0.2.0"
+}

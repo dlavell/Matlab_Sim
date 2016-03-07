@@ -1,0 +1,40 @@
+{
+  "arch": "x86_64",
+  "build": "vc10_1",
+  "build_number": 1,
+  "channel": "https://repo.continuum.io/pkgs/free/win-64/",
+  "date": "2016-01-04",
+  "depends": [
+    "zlib 1.2*"
+  ],
+  "features": "vc10",
+  "files": [
+    "Library/bin/curl.exe",
+    "Library/bin/libcurl.dll",
+    "Library/include/curl/curl.h",
+    "Library/include/curl/curlbuild.h",
+    "Library/include/curl/curlrules.h",
+    "Library/include/curl/curlver.h",
+    "Library/include/curl/easy.h",
+    "Library/include/curl/mprintf.h",
+    "Library/include/curl/multi.h",
+    "Library/include/curl/stdcheaders.h",
+    "Library/include/curl/typecheck-gcc.h",
+    "Library/lib/libcurl.exp",
+    "Library/lib/libcurl.lib"
+  ],
+  "license": "MIT/X derivate (http://curl.haxx.se/docs/copyright.html)",
+  "license_family": "MIT",
+  "link": {
+    "source": "C:\\Miniconda3\\pkgs\\curl-7.45.0-vc10_1",
+    "type": "hard-link"
+  },
+  "md5": "446086e70dd18759d08d71e474031ffc",
+  "name": "curl",
+  "platform": "win",
+  "requires": [],
+  "size": 301440,
+  "subdir": "win-64",
+  "url": "https://repo.continuum.io/pkgs/free/win-64/curl-7.45.0-vc10_1.tar.bz2",
+  "version": "7.45.0"
+}

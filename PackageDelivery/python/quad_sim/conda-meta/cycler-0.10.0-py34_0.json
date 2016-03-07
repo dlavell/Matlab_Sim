@@ -1,0 +1,33 @@
+{
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "channel": "https://repo.continuum.io/pkgs/free/win-64/",
+  "date": "2016-02-29",
+  "depends": [
+    "python 3.4*",
+    "six"
+  ],
+  "files": [
+    "Lib/site-packages/__pycache__/cycler.cpython-34.pyc",
+    "Lib/site-packages/cycler-0.10.0-py3.4.egg-info/PKG-INFO",
+    "Lib/site-packages/cycler-0.10.0-py3.4.egg-info/SOURCES.txt",
+    "Lib/site-packages/cycler-0.10.0-py3.4.egg-info/dependency_links.txt",
+    "Lib/site-packages/cycler-0.10.0-py3.4.egg-info/requires.txt",
+    "Lib/site-packages/cycler-0.10.0-py3.4.egg-info/top_level.txt",
+    "Lib/site-packages/cycler.py"
+  ],
+  "license": "BSD",
+  "link": {
+    "source": "C:\\Miniconda3\\pkgs\\cycler-0.10.0-py34_0",
+    "type": "hard-link"
+  },
+  "md5": "94343fc3deb96b076b152c6dfebccc88",
+  "name": "cycler",
+  "platform": "win",
+  "requires": [],
+  "size": 11043,
+  "subdir": "win-64",
+  "url": "https://repo.continuum.io/pkgs/free/win-64/cycler-0.10.0-py34_0.tar.bz2",
+  "version": "0.10.0"
+}
