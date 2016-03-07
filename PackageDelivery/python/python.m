@@ -26,7 +26,7 @@ function [result, status] = python(varargin)
 %   Test cmd: python('C:\Users\dlavell\AppData\Local\Programs\Python\Python35-32\Tools\demo\beer.py')
 
 %   This is the hardcoded path to the python.exe
-pythonPath = 'C:\Miniconda3\envs\quad_sim\python.exe';
+pythonPath = fullfile('./python_library/python.exe');
 
 cmdString = '';
 

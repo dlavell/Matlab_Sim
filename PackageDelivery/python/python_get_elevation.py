@@ -1,6 +1,7 @@
 """
-WorldEngine is used as the data layer for the threaded server. Retrieves and processes data stored in raster images.
-Manages
+Python script to read raster images for elevation data.
+Input: string values of latitude, latitude arguments
+Output: returns a string of the elevation
 """
 from __future__ import absolute_import, division, print_function, unicode_literals
 from builtins import object
