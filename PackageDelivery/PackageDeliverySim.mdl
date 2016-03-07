@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.2759"
+    ComputedModelVersion    "1.2760"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -76,9 +76,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "dlavell"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sun Mar 06 18:55:02 2016"
-  RTWModifiedTimeStamp	  379191301
-  ModelVersionFormat	  "1.%<AutoIncrement:2759>"
+  LastModifiedDate	  "Sun Mar 06 18:57:48 2016"
+  RTWModifiedTimeStamp	  379191460
+  ModelVersionFormat	  "1.%<AutoIncrement:2760>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -5852,8 +5852,8 @@ Stateflow {
       "\n    \n    if(dist <= threshold)\n        curr_wp(quad_id) = curr_wp(quad_id) + 1;\n        if(curr_wp(quad_id)"
       " == number_of_waypoints)\n            curr_tp(quad_id) = curr_tp(quad_id) + 1;\n            curr_wp(quad_id) = 0"
       ";\n        end\n    end\n    if(curr_tp(quad_id) == length(trajectory(:,1)) + 1)\n        curr_tp(quad_id) = 2;\n"
-      "        destinations(quad_id,:) = [0 0 0];\n    end\n    \n    %% output\n    waypoint(quad_id,:) = wp\n    \nen"
-      "d % end for-loop\n\nend"
+      "        destinations(quad_id,:) = [0 0 0];\n    end\n    \n    %% output\n    waypoint(quad_id,:) = wp;\n    \ne"
+      "nd % end for-loop\n\nend"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
