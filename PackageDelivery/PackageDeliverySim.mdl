@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.2756"
+    ComputedModelVersion    "1.2759"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -40,7 +40,7 @@ Model {
       $ObjectID		      3
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [-8.0, -8.0, 1936.0, 1066.0]
+      Location		      [-8.0, 0.0, 1936.0, 1066.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		4
@@ -62,10 +62,10 @@ Model {
 	$ObjectID		6
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
-	ViewObjType		"SimulinkSubsys"
-	LoadSaveID		"988"
+	ViewObjType		"SimulinkTopLevel"
+	LoadSaveID		"0"
 	Extents			[1886.0, 892.0]
-	ZoomFactor		[1.25]
+	ZoomFactor		[1.06]
 	Offset			[0.0, 0.0]
       }
     }
@@ -76,9 +76,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "dlavell"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sun Mar 06 17:30:35 2016"
-  RTWModifiedTimeStamp	  379186233
-  ModelVersionFormat	  "1.%<AutoIncrement:2756>"
+  LastModifiedDate	  "Sun Mar 06 18:55:02 2016"
+  RTWModifiedTimeStamp	  379191301
+  ModelVersionFormat	  "1.%<AutoIncrement:2759>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -4911,8 +4911,8 @@ Model {
   }
   System {
     Name		    "PackageDeliverySim"
-    Location		    [-8, -8, 1928, 1058]
-    Open		    off
+    Location		    [-8, 0, 1928, 1066]
+    Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    212
     ScreenColor		    "white"
@@ -5058,7 +5058,7 @@ Model {
       Name		      "Integrator"
       SID		      "1018"
       Ports		      [1, 1]
-      Position		      [880, 512, 930, 578]
+      Position		      [875, 512, 925, 578]
       ZOrder		      77
       BlockMirror	      on
       InitialCondition	      "IC"
@@ -5200,8 +5200,8 @@ Model {
       RequestExecContextInheritance off
       System {
 	Name			"Trajectory Genereator"
-	Location		[-8, -8, 1928, 1058]
-	Open			on
+	Location		[-8, 0, 1928, 1066]
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -5743,7 +5743,6 @@ Model {
       ZOrder		      264
       SrcBlock		      "Model1"
       SrcPort		      1
-      Points		      [-10, 0]
       DstBlock		      "Integrator"
       DstPort		      1
     }
@@ -5758,7 +5757,7 @@ Model {
       ZOrder		      265
       SrcBlock		      "Integrator"
       SrcPort		      1
-      Points		      [-24, 0]
+      Points		      [-19, 0]
       Branch {
 	ZOrder			280
 	Points			[0, -100]
@@ -5792,6 +5791,8 @@ Stateflow {
     created		    "28-May-2012 17:04:21"
     isLibrary		    0
     firstTarget		    55
+    debug {
+    }
     sfVersion		    80000001
   }
   chart {
@@ -5804,7 +5805,10 @@ Stateflow {
     firstTransition	    12
     firstJunction	    11
     viewObj		    2
+    visible		    1
     machine		    1
+    subviewS {
+    }
     ssIdHighWaterMark	    15
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -5848,8 +5852,8 @@ Stateflow {
       "\n    \n    if(dist <= threshold)\n        curr_wp(quad_id) = curr_wp(quad_id) + 1;\n        if(curr_wp(quad_id)"
       " == number_of_waypoints)\n            curr_tp(quad_id) = curr_tp(quad_id) + 1;\n            curr_wp(quad_id) = 0"
       ";\n        end\n    end\n    if(curr_tp(quad_id) == length(trajectory(:,1)) + 1)\n        curr_tp(quad_id) = 2;\n"
-      "        destinations(quad_id,:) = [0 0 0];\n    end\n    \n    %% output\n    waypoint(quad_id,:) = wp;\n    \ne"
-      "nd % end for-loop\n\nend"
+      "        destinations(quad_id,:) = [0 0 0];\n    end\n    \n    %% output\n    waypoint(quad_id,:) = wp\n    \nen"
+      "d % end for-loop\n\nend"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
@@ -6051,10 +6055,7 @@ Stateflow {
     firstTransition	    23
     firstJunction	    22
     viewObj		    14
-    visible		    1
     machine		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    15
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -6515,14 +6516,14 @@ Stateflow {
     eml {
       isEML		      1
       script		      "function cmd = Controller( ref , state)\n% Controller for point-mass model of quadcopter\nglobal "
-      "pos n_quads;\ncmd = zeros(100,3);\n\nfor quad_id = 1:n_quads\n    \n    % update position\n    pos(quad_id,1) = "
-      "state(3*quad_id-2);\n    pos(quad_id,2) = state(3*quad_id-1);\n    pos(quad_id,3) = state(3*quad_id);\n    \n   "
-      " % compute error terms\n    Ex = ref(quad_id,1) - state(3*quad_id-2); \n    Ey = ref(quad_id,2) - state(3*quad_i"
-      "d-1); \n    Ez = ref(quad_id,3) - state(3*quad_id);   \n    \n    % compute tracking angle and ground speed\n   "
-      " Xg = atan2d((sind(Ey)*cosd(ref(quad_id,1))),(sind(ref(quad_id,1))*cosd(state(3*quad_id-2)) ...\n        - cosd("
-      "ref(quad_id,1))*sind(state(3*quad_id-2))*cosd(Ey)));\n    Vg = abs(Ex) + abs(Ey);\n    Vg = Vg*10000000;\n    \n"
-      "    % climb rate\n    Vh = Ez*10;\n%    if(Ez > 10) Vh = 100; end\n    \n    % output command\n    cmd(quad_id,:"
-      ") = [ Xg  Vh  Vg ];\n    \nend % end for-loop\n\nend"
+      "pos n_quads;\ncmd = zeros(100,3);\nfor quad_id = 1:n_quads\n    \n    % update position\n    pos(quad_id,1) = st"
+      "ate(3*quad_id-2);\n    pos(quad_id,2) = state(3*quad_id-1);\n    pos(quad_id,3) = state(3*quad_id);\n    \n    %"
+      " compute error terms\n    Ex = ref(quad_id,1) - state(3*quad_id-2); \n    Ey = ref(quad_id,2) - state(3*quad_id-"
+      "1); \n    Ez = ref(quad_id,3) - state(3*quad_id);   \n    \n    % compute tracking angle and ground speed\n    X"
+      "g = atan2d((sind(Ey)*cosd(ref(quad_id,1))),(sind(ref(quad_id,1))*cosd(state(3*quad_id-2)) ...\n        - cosd(re"
+      "f(quad_id,1))*sind(state(3*quad_id-2))*cosd(Ey)));\n    Vg = abs(Ex) + abs(Ey);\n    Vg = Vg*10000000;\n    \n  "
+      "  % climb rate\n    Vh = Ez*10;\n%    if(Ez > 10) Vh = 100; end\n    \n    % output command\n    cmd(quad_id,:) "
+      "= [ Xg  Vh  Vg ];\n    \nend % end for-loop\n\nend"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }

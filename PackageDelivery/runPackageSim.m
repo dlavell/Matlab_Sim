@@ -69,7 +69,7 @@ for simRun = 1:numRuns
 end
 
 display('Sim finished, saving results...')
-save('SimResults.mat');         % Save workspace
+save('SimResults2.mat');         % Save workspace
 
 display('Creating Sim video...')
 graphicx                        % Run graphics and create video

@@ -1,6 +1,6 @@
 %read data from sim
-
-load('SimResults.mat')
+clear all
+load('SimResults2.mat')
 Rcam = [1 0 0; 0 1 0; 0 0 1];
 t = ref.time;
 
