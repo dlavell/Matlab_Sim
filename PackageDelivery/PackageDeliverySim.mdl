@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.2684"
+    ComputedModelVersion    "1.2756"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -62,11 +62,11 @@ Model {
 	$ObjectID		6
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
-	ViewObjType		"SimulinkTopLevel"
-	LoadSaveID		"0"
+	ViewObjType		"SimulinkSubsys"
+	LoadSaveID		"988"
 	Extents			[1886.0, 892.0]
-	ZoomFactor		[1.0614250614250615]
-	Offset			[-110.45297164264184, 33.769178094119184]
+	ZoomFactor		[1.25]
+	Offset			[0.0, 0.0]
       }
     }
   }
@@ -76,9 +76,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "dlavell"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Feb 26 14:54:18 2016"
-  RTWModifiedTimeStamp	  378399257
-  ModelVersionFormat	  "1.%<AutoIncrement:2684>"
+  LastModifiedDate	  "Sun Mar 06 17:30:35 2016"
+  RTWModifiedTimeStamp	  379186233
+  ModelVersionFormat	  "1.%<AutoIncrement:2756>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -183,7 +183,7 @@ Model {
   ShowModelReferenceBlockIO off
   Array {
     Type		    "Handle"
-    Dimension		    8
+    Dimension		    9
     Simulink.ConfigSet {
       $ObjectID		      8
       Version		      "1.14.3"
@@ -4223,15 +4223,508 @@ Model {
       CurrentDlgPage	      "Code Generation"
       ConfigPrmDlgPosition     [ 102, 21, 1246, 861 ] 
     }
+    Simulink.ConfigSet {
+      $ObjectID		      104
+      Version		      "1.14.3"
+      Array {
+	Type			"Handle"
+	Dimension		9
+	Simulink.SolverCC {
+	  $ObjectID		  105
+	  Version		  "1.14.3"
+	  StartTime		  "0.0"
+	  StopTime		  "T"
+	  AbsTol		  "1e-8"
+	  FixedStep		  "vicon_ts"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ZcThreshold		  "auto"
+	  ConsecutiveZCsStepRelTol "10*128*eps"
+	  MaxConsecutiveZCs	  "1000"
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  MaxConsecutiveMinStep	  "1"
+	  RelTol		  "1e-3"
+	  SolverMode		  "Auto"
+	  EnableConcurrentExecution off
+	  ConcurrentTasks	  off
+	  Solver		  "ode45"
+	  SolverName		  "ode45"
+	  SolverJacobianMethodControl "auto"
+	  ShapePreserveControl	  "DisableAll"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  ZeroCrossAlgorithm	  "Nonadaptive"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  InsertRTBMode		  "Whenever possible"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  106
+	  Version		  "1.14.3"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  on
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveCompleteFinalSimState off
+	  SaveFormat		  "Array"
+	  SignalLoggingSaveFormat "ModelDataLogs"
+	  SaveOutput		  on
+	  SaveState		  off
+	  SignalLogging		  on
+	  DSMLogging		  on
+	  InspectSignalLogs	  off
+	  VisualizeSimOutput	  on
+	  SaveTime		  on
+	  ReturnWorkspaceOutputs  off
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "logsout"
+	  DSMLoggingName	  "dsmout"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  ReturnWorkspaceOutputsName "out"
+	  Refine		  "1"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  107
+	  Version		  "1.14.3"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    8
+	    Cell		    "BooleansAsBitfields"
+	    Cell		    "PassReuseOutputArgsAs"
+	    Cell		    "PassReuseOutputArgsThreshold"
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "OptimizeModelRefInitCode"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    Cell		    "UseSpecifiedMinMax"
+	    PropName		    "DisabledProps"
+	  }
+	  BlockReduction	  on
+	  BooleanDataType	  on
+	  ConditionallyExecuteInputs on
+	  InlineParams		  off
+	  UseDivisionForNetSlopeComputation "Off"
+	  UseFloatMulNetSlope	  off
+	  DefaultUnderspecifiedDataType	"double"
+	  UseSpecifiedMinMax	  off
+	  InlineInvariantSignals  off
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnhancedBackFolding	  off
+	  CachingGlobalReferences off
+	  GlobalBufferReuse	  on
+	  StrengthReduction	  off
+	  ExpressionFolding	  on
+	  BooleansAsBitfields	  off
+	  BitfieldContainerType	  "uint_T"
+	  EnableMemcpy		  on
+	  MemcpyThreshold	  64
+	  PassReuseOutputArgsAs	  "Structure reference"
+	  ExpressionDepthLimit	  2147483647
+	  FoldNonRolledExpr	  on
+	  LocalBlockOutputs	  on
+	  RollThreshold		  5
+	  SystemCodeInlineAuto	  off
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  ActiveStateOutputEnumStorageType "Native Integer"
+	  UseTempVars		  off
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  off
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  EfficientMapNaN2IntZero off
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	  MaxStackSize		  "Inherit from target"
+	  BufferReusableBoundary  on
+	  SimCompilerOptimization "Off"
+	  AccelVerboseBuild	  off
+	  ParallelExecutionInRapidAccelerator on
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  108
+	  Version		  "1.14.3"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  SignalRangeChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "none"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  SaveWithDisabledLinksMsg "warning"
+	  SaveWithParameterizedLinksMsg	"warning"
+	  CheckSSInitialOutputMsg on
+	  UnderspecifiedInitializationDetection	"Classic"
+	  MergeDetectMultiDrivingBlocksExec "none"
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "UseLocalSettings"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  TimeAdjustmentMsg	  "none"
+	  MaxConsecutiveZCsMsg	  "error"
+	  MaskedZcDiagnostic	  "warning"
+	  IgnoredZcDiagnostic	  "warning"
+	  SolverPrmCheckMsg	  "warning"
+	  InheritedTsInSrcMsg	  "warning"
+	  DiscreteInheritContinuousMsg "warning"
+	  MultiTaskDSMMsg	  "error"
+	  MultiTaskCondExecSysMsg "error"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  SigSpecEnsureSampleTimeMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  ParameterTunabilityLossMsg "warning"
+	  FixptConstUnderflowMsg  "none"
+	  FixptConstOverflowMsg	  "none"
+	  FixptConstPrecisionLossMsg "none"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "EnableAllAsWarning"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  FrameProcessingCompatibilityMsg "warning"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  EnableOverflowDetection off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceMultiInstanceNormalModeStructChecksumCheck "error"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  ModelReferenceCSMismatchMessage "none"
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	  StateNameClashWarn	  "warning"
+	  SimStateInterfaceChecksumMismatchMsg "warning"
+	  SimStateOlderReleaseMsg "error"
+	  InitInArrayFormatMsg	  "warning"
+	  StrictBusMsg		  "ErrorLevel1"
+	  BusNameAdapt		  "WarnAndRepair"
+	  NonBusSignalsTreatedAsBus "none"
+	  LoggingUnavailableSignals "error"
+	  BlockIODiagnostic	  "none"
+	  SFUnusedDataAndEventsDiag "warning"
+	  SFUnexpectedBacktrackingDiag "warning"
+	  SFInvalidInputDataAccessInChartInitDiag "warning"
+	  SFNoUnconditionalDefaultTransitionDiag "warning"
+	  SFTransitionOutsideNaturalParentDiag "warning"
+	  SFUnconditionalTransitionShadowingDiag "warning"
+	  SFUndirectedBroadcastEventsDiag "warning"
+	  SFTransitionActionBeforeConditionDiag	"warning"
+	  IntegerSaturationMsg	  "warning"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  109
+	  Version		  "1.14.3"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdBitPerLongLong	  64
+	  ProdBitPerFloat	  32
+	  ProdBitPerDouble	  64
+	  ProdBitPerPointer	  32
+	  ProdLargestAtomicInteger "Char"
+	  ProdLargestAtomicFloat  "None"
+	  ProdIntDivRoundTo	  "Undefined"
+	  ProdEndianess		  "Unspecified"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdLongLongMode	  off
+	  ProdHWDeviceType	  "32-bit Generic"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetBitPerLongLong	  64
+	  TargetBitPerFloat	  32
+	  TargetBitPerDouble	  64
+	  TargetBitPerPointer	  32
+	  TargetLargestAtomicInteger "Char"
+	  TargetLargestAtomicFloat "None"
+	  TargetShiftRightIntArith on
+	  TargetLongLongMode	  on
+	  TargetIntDivRoundTo	  "Zero"
+	  TargetEndianess	  "LittleEndian"
+	  TargetWordSize	  32
+	  TargetTypeEmulationWarnSuppressLevel 0
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "MATLAB Host"
+	  TargetUnknown		  off
+	  ProdEqTarget		  off
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  110
+	  Version		  "1.14.3"
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  CheckModelReferenceTargetMessage "error"
+	  EnableParallelModelReferenceBuilds off
+	  ParallelModelReferenceErrorOnInvalidPool on
+	  ParallelModelReferenceMATLABWorkerInit "None"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  PropagateVarSize	  "Infer from blocks in model"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	  PropagateSignalLabelsOutOfModel off
+	  SupportModelReferenceSimTargetCustomCode off
+	}
+	Simulink.SFSimCC {
+	  $ObjectID		  111
+	  Version		  "1.14.3"
+	  SFSimEnableDebug	  on
+	  SFSimOverflowDetection  on
+	  SFSimEcho		  on
+	  SimBlas		  on
+	  SimCtrlC		  on
+	  SimExtrinsic		  on
+	  SimIntegrity		  on
+	  SimUseLocalCustomCode	  off
+	  SimParseCustomCode	  on
+	  SimBuildMode		  "sf_incremental_build"
+	  SimGenImportedTypeDefs  off
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  112
+	  Version		  "1.14.3"
+	  SystemTargetFile	  "grt.tlc"
+	  TLCOptions		  ""
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  GenerateMakefile	  on
+	  PackageGeneratedCodeAndArtifacts off
+	  PackageName		  ""
+	  TemplateMakefile	  "grt_default_tmf"
+	  PostCodeGenCommand	  ""
+	  Description		  ""
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  ProcessScriptMode	  "Default"
+	  ConfigurationMode	  "Optimized"
+	  ProcessScript		  ""
+	  ConfigurationScript	  ""
+	  ConfigAtBuild		  off
+	  RTWUseLocalCustomCode	  off
+	  RTWUseSimCustomCode	  off
+	  CustomSourceCode	  ""
+	  CustomHeaderCode	  ""
+	  CustomInclude		  ""
+	  CustomSource		  ""
+	  CustomLibrary		  ""
+	  CustomInitializer	  ""
+	  CustomTerminator	  ""
+	  Toolchain		  "Automatically locate an installed toolchain"
+	  BuildConfiguration	  "Faster Builds"
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  PortableWordSizes	  off
+	  CreateSILPILBlock	  "None"
+	  CodeExecutionProfiling  off
+	  CodeExecutionProfileVariable "executionProfile"
+	  CodeProfilingSaveOptions "SummaryOnly"
+	  CodeProfilingInstrumentation off
+	  SILDebugging		  off
+	  TargetLang		  "C"
+	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
+	  IncludeERTFirstTime	  off
+	  GenerateTraceInfo	  off
+	  GenerateTraceReport	  off
+	  GenerateTraceReportSl	  off
+	  GenerateTraceReportSf	  off
+	  GenerateTraceReportEml  off
+	  GenerateCodeInfo	  off
+	  GenerateWebview	  off
+	  GenerateCodeMetricsReport off
+	  GenerateCodeReplacementReport	off
+	  RTWCompilerOptimization "Off"
+	  RTWCustomCompilerOptimizations ""
+	  CheckMdlBeforeBuild	  "Off"
+	  CustomRebuildMode	  "OnUpdate"
+	  DataInitializer	  ""
+	  SharedConstantsCachingThreshold 1024
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      113
+	      Version		      "1.14.3"
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      CommentStyle	      "Auto"
+	      IgnoreCustomStorageClasses on
+	      IgnoreTestpoints	      off
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      128
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      OperatorAnnotations     off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      MATLABFcnDesc	      off
+	      IncDataTypeInIds	      off
+	      MangleLength	      1
+	      CustomSymbolStrGlobalVar "$R$N$M"
+	      CustomSymbolStrType     "$N$R$M_T"
+	      CustomSymbolStrField    "$N$M"
+	      CustomSymbolStrFcn      "$R$N$M$F"
+	      CustomSymbolStrFcnArg   "rt$I$N$M"
+	      CustomSymbolStrBlkIO    "rtb_$N$M"
+	      CustomSymbolStrTmpVar   "$N$M"
+	      CustomSymbolStrMacro    "$R$N$M"
+	      CustomSymbolStrUtil     "$N$C"
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      InsertPolySpaceComments off
+	      SimulinkBlockComments   on
+	      MATLABSourceComments    off
+	      EnableCustomComments    off
+	      InternalIdentifier      "Shortened"
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	      UseSimReservedNames     off
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      114
+	      Version		      "1.14.3"
+	      TargetFcnLib	      "ansi_tfl_table_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      GenFloatMathFcnCalls    "NOT IN USE"
+	      TargetLangStandard      "C89/C90 (ANSI)"
+	      CodeReplacementLibrary  "None"
+	      UtilityFuncGeneration   "Auto"
+	      ERTMultiwordTypeDef     "System defined"
+	      ERTMultiwordLength      256
+	      MultiwordLength	      2048
+	      GenerateFullHeader      on
+	      GenerateSampleERTMain   off
+	      GenerateTestInterfaces  off
+	      ModelReferenceCompliant on
+	      ParMdlRefBuildCompliant on
+	      CompOptLevelCompliant   on
+	      ConcurrentExecutionCompliant on
+	      IncludeMdlTerminateFcn  on
+	      GeneratePreprocessorConditionals "Disable all"
+	      CombineOutputUpdateFcns off
+	      CombineSignalStateStructs	off
+	      SuppressErrorStatus     off
+	      ERTFirstTimeCompliant   off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      MultiInstanceERTCode    off
+	      CodeInterfacePackaging  "Nonreusable function"
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      SupportVariableSizeSignals off
+	      EnableShiftOperators    on
+	      ParenthesesLevel	      "Nominal"
+	      CastingMode	      "Nominal"
+	      MATLABClassNameForMDSCustomization "Simulink.SoftwareTarget.GRTCustomization"
+	      ModelStepFunctionPrototypeControlCompliant off
+	      CPPClassGenCompliant    on
+	      AutosarCompliant	      off
+	      GRTInterface	      on
+	      GenerateAllocFcn	      off
+	      GenerateSharedConstants on
+	      UseMalloc		      off
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      ExtModeIntrfLevel	      "Level1"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      RTWCAPIRootIO	      off
+	      GenerateASAP2	      off
+	      MultiInstanceErrorCode  "Error"
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	hdlcoderui.hdlcc {
+	  $ObjectID		  115
+	  Version		  "1.14.3"
+	  Description		  "HDL Coder custom configuration component"
+	  Name			  "HDL Coder"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    1
+	    Cell		    ""
+	    PropName		    "HDLConfigFile"
+	  }
+	  HDLCActiveTab		  "0"
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration8"
+      CurrentDlgPage	      "Code Generation"
+      ConfigPrmDlgPosition     [ 102, 21, 1246, 861 ] 
+    }
     PropName		    "ConfigurationSets"
   }
   Simulink.ConfigSet {
     $PropName		    "ActiveConfigurationSet"
-    $ObjectID		    92
+    $ObjectID		    104
   }
   Object {
     $PropName		    "DataTransfer"
-    $ObjectID		    104
+    $ObjectID		    116
     $ClassName		    "Simulink.GlobalDataTransfer"
     DefaultTransitionBetweenSyncTasks "Ensure deterministic transfer (maximum delay)"
     DefaultTransitionBetweenAsyncTasks "Ensure data integrity only"
@@ -4419,7 +4912,7 @@ Model {
   System {
     Name		    "PackageDeliverySim"
     Location		    [-8, -8, 1928, 1058]
-    Open		    on
+    Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    212
     ScreenColor		    "white"
@@ -4432,7 +4925,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "106"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "1120"
+    SIDHighWatermark	    "1124"
     Block {
       BlockType		      SubSystem
       Name		      "Controller1"
@@ -4565,10 +5058,10 @@ Model {
       Name		      "Integrator"
       SID		      "1018"
       Ports		      [1, 1]
-      Position		      [880, 529, 910, 561]
+      Position		      [880, 512, 930, 578]
       ZOrder		      77
       BlockMirror	      on
-      InitialCondition	      "repmat([37 ; -122.06 ; 0], 100, 1)"
+      InitialCondition	      "IC"
     }
     Block {
       BlockType		      SubSystem
@@ -4599,7 +5092,7 @@ Model {
 	TiledPageScale		1
 	ShowPageBoundaries	off
 	ZoomFactor		"100"
-	SIDHighWatermark	"26"
+	SIDHighWatermark	"28"
 	Block {
 	  BlockType		  Inport
 	  Name			  "cmd"
@@ -4651,7 +5144,7 @@ Model {
 	  IconDisplay		  "Port number"
 	}
 	Line {
-	  ZOrder		  28
+	  ZOrder		  48
 	  SrcBlock		  "cmd"
 	  SrcPort		  1
 	  DstBlock		  " SFunction "
@@ -4659,7 +5152,7 @@ Model {
 	}
 	Line {
 	  Name			  "state"
-	  ZOrder		  29
+	  ZOrder		  49
 	  Labels		  [0, 0]
 	  SrcBlock		  " SFunction "
 	  SrcPort		  2
@@ -4667,14 +5160,14 @@ Model {
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  30
+	  ZOrder		  50
 	  SrcBlock		  " Demux "
 	  SrcPort		  1
 	  DstBlock		  " Terminator "
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  31
+	  ZOrder		  51
 	  SrcBlock		  " SFunction "
 	  SrcPort		  1
 	  DstBlock		  " Demux "
@@ -4702,13 +5195,13 @@ Model {
       Name		      "Trajectory Genereator"
       SID		      "988"
       Ports		      [0, 1]
-      Position		      [370, 354, 535, 456]
+      Position		      [385, 354, 550, 456]
       ZOrder		      60
       RequestExecContextInheritance off
       System {
 	Name			"Trajectory Genereator"
 	Location		[-8, -8, 1928, 1058]
-	Open			off
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -4870,7 +5363,7 @@ Model {
 	  SID			  "1001"
 	  Position		  [335, 430, 365, 460]
 	  ZOrder		  74
-	  Value			  "10"
+	  Value			  "3"
 	}
 	Block {
 	  BlockType		  Constant
@@ -4878,7 +5371,7 @@ Model {
 	  SID			  "1000"
 	  Position		  [335, 370, 365, 400]
 	  ZOrder		  73
-	  Value			  "2"
+	  Value			  "0"
 	}
 	Block {
 	  BlockType		  Constant
@@ -4886,7 +5379,7 @@ Model {
 	  SID			  "998"
 	  Position		  [335, 250, 365, 280]
 	  ZOrder		  71
-	  Value			  "37"
+	  Value			  "IC(1)"
 	}
 	Block {
 	  BlockType		  Constant
@@ -4894,7 +5387,7 @@ Model {
 	  SID			  "999"
 	  Position		  [335, 310, 365, 340]
 	  ZOrder		  72
-	  Value			  "-122.06"
+	  Value			  "IC(2)"
 	}
 	Block {
 	  BlockType		  SubSystem
@@ -5092,7 +5585,6 @@ Model {
 	  ZOrder		  14
 	  SrcBlock		  "Min Radius (NM)"
 	  SrcPort		  1
-	  Points		  [75, 0]
 	  DstBlock		  "MATLAB Function"
 	  DstPort		  3
 	}
@@ -5100,7 +5592,6 @@ Model {
 	  ZOrder		  15
 	  SrcBlock		  "Max Radius (NM)"
 	  SrcPort		  1
-	  Points		  [75, 0]
 	  DstBlock		  "MATLAB Function"
 	  DstPort		  4
 	}
@@ -5252,6 +5743,7 @@ Model {
       ZOrder		      264
       SrcBlock		      "Model1"
       SrcPort		      1
+      Points		      [-10, 0]
       DstBlock		      "Integrator"
       DstPort		      1
     }
@@ -5268,15 +5760,15 @@ Model {
       SrcPort		      1
       Points		      [-24, 0]
       Branch {
-	ZOrder			266
-	DstBlock		"To Workspace"
-	DstPort			1
-      }
-      Branch {
-	ZOrder			248
+	ZOrder			280
 	Points			[0, -100]
 	DstBlock		"Controller1"
 	DstPort			2
+      }
+      Branch {
+	ZOrder			279
+	DstBlock		"To Workspace"
+	DstPort			1
       }
     }
     Line {
@@ -5300,8 +5792,6 @@ Stateflow {
     created		    "28-May-2012 17:04:21"
     isLibrary		    0
     firstTarget		    55
-    debug {
-    }
     sfVersion		    80000001
   }
   chart {
@@ -5314,10 +5804,7 @@ Stateflow {
     firstTransition	    12
     firstJunction	    11
     viewObj		    2
-    visible		    1
     machine		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    15
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -5342,23 +5829,27 @@ Stateflow {
     decomposition	    CLUSTER_STATE
     eml {
       isEML		      1
-      script		      "function waypoint = fcn(traj)\n%#codegen\ncoder.extrinsic('display')\n%display('current state:')\n"
-      "%state\nwaypoint = zeros(100,3); \nglobal curr_wp curr_tp destinations pos n_quads;\nfor quad_id = 1:n_quads\n\n"
-      "    \nif(pos(quad_id,1) == 0) pos(quad_id,:) = traj(1,:,quad_id); end % temporary fix\n\nquad_X = pos(quad_id,1)"
-      ";\nquad_Y = pos(quad_id,2);\nquad_Z = pos(quad_id,3);\ntrajectory = traj(:,:,quad_id);\n%% Specify last and next"
-      " trajectory points\nlast_tp = trajectory(curr_tp(quad_id) - 1,:);\nnext_tp = trajectory(curr_tp(quad_id),:);\n\n"
-      "%% Divide distance between last_wp and next_wp into evenly divided segments\n% waypoint distances\nwp_separation"
-      "_dist = .01;\n\n% acceptable distance to waypoint\nthreshold = wp_separation_dist/3;\n\n% trajectory point dista"
-      "nces\ntp_separation_dist = sqrt((last_tp(1)-next_tp(1))^2 + (last_tp(2)-next_tp(2))^2 + (last_tp(3)-next_tp(3))^"
-      "2);\n\n%% Determine which segment to give next\nnumber_of_waypoints = floor(tp_separation_dist/wp_separation_dis"
-      "t);\nvec_norm = [(last_tp(1)-next_tp(1)) (last_tp(2)-next_tp(2)) (last_tp(3)-next_tp(3))]/tp_separation_dist;\ni"
-      "f(isnan(vec_norm(1))) vec_norm(1) = 0; end\nif(isnan(vec_norm(2))) vec_norm(2) = 0; end\nif(isnan(vec_norm(3))) "
-      "vec_norm(3) = 0; end\nwp = last_tp + curr_wp(quad_id)*wp_separation_dist*-vec_norm;\n\n% distance to current way"
-      "point\ndist1 = sqrt((quad_X-wp(1))^2 + (quad_Y-wp(2))^2 + (quad_Z-wp(3))^2);\n\nif(dist1 <= threshold)\n    curr"
-      "_wp(quad_id) = curr_wp(quad_id) + 1;\n    if(curr_wp(quad_id) == number_of_waypoints)\n        curr_tp(quad_id) "
-      "= curr_tp(quad_id) + 1;\n        curr_wp(quad_id) = 0;\n    end\nend\nif(curr_tp(quad_id) == length(trajectory(:"
-      ",1)) + 1)\n    curr_tp(quad_id) = 2;\n    destinations(quad_id,:) = [0 0 0];\nend\n\n%% output\nwaypoint(quad_id"
-      ",:) = wp;\n\nend % end for-loop\n\nend"
+      script		      "function waypoint = fcn(traj)\n%#codegen\n\nglobal curr_wp curr_tp destinations pos n_quads;\nway"
+      "point = zeros(100,3);\n\n% Divide distance between last_wp and next_wp into evenly divided segments\n% waypoint "
+      "distances\nwp_separation_dist = .01;\n\n% acceptable distance to waypoint\nthreshold = wp_separation_dist/3;\n\n"
+      "for quad_id = 1:n_quads\n    \n    % current position\n    if(pos(quad_id,1) == 0) pos(quad_id,:) = traj(1,:,qua"
+      "d_id); end % temporary fix\n    quad_X = pos(quad_id,1);\n    quad_Y = pos(quad_id,2);\n    quad_Z = pos(quad_id"
+      ",3);\n    \n    % associated trajectory\n    trajectory = traj(:,:,quad_id);\n    \n    % Specify last and next "
+      "trajectory points\n    last_tp = trajectory(curr_tp(quad_id) - 1,:);\n    next_tp = trajectory(curr_tp(quad_id),"
+      ":);\n    \n%     if(abs(last_tp(3) - next_tp(3)) > 350)\n%         wp_separation_dist = 10;    \n%         % acc"
+      "eptable distance to waypoint\n%         threshold = wp_separation_dist/3;\n%     end\n    \n    \n    % trajecto"
+      "ry point distances\n    tp_separation_dist = sqrt((last_tp(1)-next_tp(1))^2 + ...\n        (last_tp(2)-next_tp(2"
+      "))^2 + (last_tp(3)-next_tp(3))^2);\n    \n    % Determine which segment along trajectory to give next and in wha"
+      "t\n    % direction\n    number_of_waypoints = floor(tp_separation_dist/wp_separation_dist);\n    vec_norm = [(la"
+      "st_tp(1)-next_tp(1)) (last_tp(2)-next_tp(2)) ...\n                        (last_tp(3)-next_tp(3))]/tp_separation"
+      "_dist;\n    if(isnan(vec_norm(1))) vec_norm(1) = 0; end\n    if(isnan(vec_norm(2))) vec_norm(2) = 0; end\n    if"
+      "(isnan(vec_norm(3))) vec_norm(3) = 0; end\n    wp = last_tp + curr_wp(quad_id)*wp_separation_dist*-vec_norm;\n  "
+      "  \n    % distance to current waypoint\n    dist = sqrt((quad_X-wp(1))^2 + (quad_Y-wp(2))^2 + (quad_Z-wp(3))^2);"
+      "\n    \n    if(dist <= threshold)\n        curr_wp(quad_id) = curr_wp(quad_id) + 1;\n        if(curr_wp(quad_id)"
+      " == number_of_waypoints)\n            curr_tp(quad_id) = curr_tp(quad_id) + 1;\n            curr_wp(quad_id) = 0"
+      ";\n        end\n    end\n    if(curr_tp(quad_id) == length(trajectory(:,1)) + 1)\n        curr_tp(quad_id) = 2;\n"
+      "        destinations(quad_id,:) = [0 0 0];\n    end\n    \n    %% output\n    waypoint(quad_id,:) = wp;\n    \ne"
+      "nd % end for-loop\n\nend"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
@@ -5589,11 +6080,16 @@ Stateflow {
     eml {
       isEML		      1
       script		      "function trajectories = fcn(origin_lat, origin_lng, altitude)\n\n%% Initialize variables\nglobal "
-      "destinations n_quads;\n\n\n% Note: n_quads < 100 must hold\n% so that the output variable doesnt change size\ntr"
-      "ajectories = zeros(7,3,100); \norigin = [origin_lat origin_lng 0];\n\nfor quad_id = 1:n_quads\n    dest = [desti"
-      "nations(quad_id,1) destinations(quad_id,2) 0];\n    trajectory = [origin ; [origin(1) origin(2) -altitude] ; [de"
-      "st(1,1) dest(1,2) -altitude] ; ...\n            dest ; [dest(1,1) dest(1,2) -altitude] ; [origin(1) origin(2) -a"
-      "ltitude] ; origin];\n    trajectories(:,:,quad_id) = trajectory;\nend"
+      "destinations n_quads;\n\n% Note: altitude is measured feet\n\n\n% Note: n_quads < 100 must hold\n% so that the o"
+      "utput variable doesnt change size\ntrajectories = zeros(7,3,100);\norigin = [origin_lat origin_lng 0];\n\nfor qu"
+      "ad_id = 1:n_quads\n    dest = [destinations(quad_id,1) destinations(quad_id,2) 0];\n    if(dest(1) == 0 || dest("
+      "2) == 0)\n        trajectory = repmat([origin(1) origin(2) getElevation(origin(1),origin(2))], 7, 1);\n    else\n"
+      "        trajectory = [[origin(1) origin(2) getElevation(origin(1),origin(2))];\n            [origin(1) origin(2)"
+      " getElevation(origin(1),origin(2)) + altitude] ;\n            [dest(1,1) dest(1,2) getElevation(dest(1),dest(2))"
+      " + altitude] ;\n            [dest(1,1) dest(1,2) getElevation(dest(1),dest(2))] ;\n            [dest(1,1) dest(1"
+      ",2) getElevation(dest(1),dest(2)) + altitude] ;\n            [origin(1) origin(2) getElevation(origin(1),origin("
+      "2)) + altitude] ;\n            [origin(1) origin(2) getElevation(origin(1),origin(2))]];\n    end\n    trajector"
+      "ies(:,:,quad_id) = trajectory;\nend"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
@@ -5806,9 +6302,9 @@ Stateflow {
       isEML		      1
       script		      "function dest_generator(lat_s, lng_s, radius_min, radius_max)\n%   \n%   proc_simulate_destinatio"
       "n\n%\nglobal destinations n_quads;\n\n\nfor quad_id = 1:n_quads\n    if(destinations(quad_id,1) == 0 && destinat"
-      "ions(quad_id,2) == 0  && destinations(quad_id,3) == 0 )\n        [lat,lng]=simulate_destination_v2(lat_s,lng_s,r"
-      "adius_min,radius_max);\n        destinations(quad_id,1) = lat;\n        destinations(quad_id,2) = lng;\n    end\n"
-      "end\n\nend\n\n"
+      "ions(quad_id,2) == 0  && destinations(quad_id,3) == 0 )\n        if(rand < .25)\n            [lat,lng]=simulate_"
+      "destination_v2(lat_s,lng_s,radius_min,radius_max);\n            destinations(quad_id,1) = lat;\n            dest"
+      "inations(quad_id,2) = lng;\n        end\n    end\nend\n\nend\n\n"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
@@ -6019,12 +6515,14 @@ Stateflow {
     eml {
       isEML		      1
       script		      "function cmd = Controller( ref , state)\n% Controller for point-mass model of quadcopter\nglobal "
-      "pos n_quads;\ncmd = zeros(100,3); \n\nfor quad_id = 1:n_quads\npos(quad_id,1) = state(3*quad_id-2);\npos(quad_id"
-      ",2) = state(3*quad_id-1);\npos(quad_id,3) = state(3*quad_id);\nEx = ref(quad_id,1) - state(3*quad_id-2); % Error"
-      " in x-direction\nEy = ref(quad_id,2) - state(3*quad_id-1); % Error in y-direction\nEz = ref(quad_id,3) - state(3"
-      "*quad_id); % Error in z-direction\n\nXg = atan2d((sind(Ey)*cosd(ref(quad_id,1))),(sind(ref(quad_id,1))*cosd(stat"
-      "e(3*quad_id-2)) ...\n            - cosd(ref(quad_id,1))*sind(state(3*quad_id-2))*cosd(Ey)));\nVg = abs(Ex) + abs"
-      "(Ey);\nVg = Vg*1000000;\n\nVh = Ez;\ncmd(quad_id,:) = [ Xg  Vh  Vg ];\nend % end for-loop\n\nend"
+      "pos n_quads;\ncmd = zeros(100,3);\n\nfor quad_id = 1:n_quads\n    \n    % update position\n    pos(quad_id,1) = "
+      "state(3*quad_id-2);\n    pos(quad_id,2) = state(3*quad_id-1);\n    pos(quad_id,3) = state(3*quad_id);\n    \n   "
+      " % compute error terms\n    Ex = ref(quad_id,1) - state(3*quad_id-2); \n    Ey = ref(quad_id,2) - state(3*quad_i"
+      "d-1); \n    Ez = ref(quad_id,3) - state(3*quad_id);   \n    \n    % compute tracking angle and ground speed\n   "
+      " Xg = atan2d((sind(Ey)*cosd(ref(quad_id,1))),(sind(ref(quad_id,1))*cosd(state(3*quad_id-2)) ...\n        - cosd("
+      "ref(quad_id,1))*sind(state(3*quad_id-2))*cosd(Ey)));\n    Vg = abs(Ex) + abs(Ey);\n    Vg = Vg*10000000;\n    \n"
+      "    % climb rate\n    Vh = Ez*10;\n%    if(Ez > 10) Vh = 100; end\n    \n    % output command\n    cmd(quad_id,:"
+      ") = [ Xg  Vh  Vg ];\n    \nend % end for-loop\n\nend"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
@@ -6186,7 +6684,7 @@ Stateflow {
     machine		    1
     subviewS {
     }
-    ssIdHighWaterMark	    12
+    ssIdHighWaterMark	    14
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
     firstData		    48
@@ -6211,12 +6709,13 @@ Stateflow {
     eml {
       isEML		      1
       script		      "function state = Model( cmd)\n% Point-mass model of quadcopter\n% Current position\nglobal pos n_"
-      "quads;\n\nstate = zeros(300,1); \n\nfor quad_id = 1:n_quads\n\nh = -pos(quad_id,3);\nR = 6.371*10^6;      % mean"
-      " radius of earth (meters)\nXg = cmd(quad_id,1);         % tracking angle\nVh = cmd(quad_id,2)*5;       % climb r"
-      "ate\nVg = cmd(quad_id,3);         % ground speed\n\nx_dot = (1/(R+h))*Vg*cosd(Xg);                % rate of chan"
-      "ge in lat\ny_dot = (1/((R+h)*cosd(pos(quad_id,1))))*Vg*sind(Xg); % rate of change in long\nz_dot = Vh;          "
-      "                         % rate of change in altitude\n\nstate(3*quad_id-2) = x_dot;\nstate(3*quad_id-1) = y_dot"
-      ";\nstate(3*quad_id)   = z_dot;\n\nend % end for-loop\n\nend"
+      "quads;\nstate = zeros(300,1);\n\nfor quad_id = 1:n_quads\n    \n    h = pos(quad_id,3);\n    R = 6.371*10^6;    "
+      "          % mean radius of earth (meters)\n    Xg = cmd(quad_id,1);         % tracking angle (degrees)\n    Vh ="
+      " cmd(quad_id,2);       % climb rate\n    Vg = cmd(quad_id,3);         % ground speed\n    \n    x_dot = (1/(R+h)"
+      ")*Vg*cosd(Xg);                        % rate of change in lat\n    y_dot = (1/((R+h)*cosd(pos(quad_id,1))))*Vg*s"
+      "ind(Xg); % rate of change in long\n    z_dot = Vh;                                           % rate of change in"
+      " altitude\n    \n    state(3*quad_id-2) = x_dot;\n    state(3*quad_id-1) = y_dot;\n    state(3*quad_id)   = z_do"
+      "t;\n%     state(quad_id,:) = [x_dot y_dot z_dot];\n    \nend % end for-loop\n\n\nend"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }

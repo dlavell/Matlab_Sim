@@ -1,12 +1,12 @@
 %read data from sim
 
 load('SimResults.mat')
-Rcam = [-1 0 -0; 0 1 0; 0 0 -1];
+Rcam = [1 0 0; 0 1 0; 0 0 1];
 t = ref.time;
 
 %draw
 vidObj = VideoWriter('sim_testing_live', 'Uncompressed AVI');
-step = 0.5;% was .05
+step = 0.01;% was .05
 vidObj.FrameRate = 1/step;
 open(vidObj);
 frame = 1;
@@ -15,6 +15,14 @@ h = [1, 0.1 ,0.1 , 0.1];
 axes
 scale = 0.005;
 
+%%
+
+%yegeta added this to test displaying picture on the background
+img = imread('map.JPG');
+%imgsec([min_x,maxx],[min_y max_y],img);
+%imagesc([36.8 37.2], [-122.3 -121.8],img);
+%%
+
 for t2 = 0:step:T
     I = find(t>=t2,1);
     if isempty(I) 
@@ -22,39 +30,30 @@ for t2 = 0:step:T
         display('Finished making video.')
         break
     end
-%     if I >=length(p_i_1)
-%         close(vidObj);
-%         display('length of internal variable caused the video to end.')
-%         if I >=length(p_i_1)
-%             display('p_i was the cause');
-%             length(p_i_1)
-%         end
-%         break
-%     end
-    R(:,:,I) = eye(3);
-    R_star = Rcam*R(:,:,I)';
-    P1B = R_star*scale;
+    %R(:,:,I) = eye(3);
+    R_star = Rcam*eye(3);%R(:,:,I)';
     
     hold on
     grid on
     cla
     
     % cycle through each quad for each frame
-    for quad = 1: 10 % length(state.signals.values(1,:))/3
-        pos = state.signals.values(:,3*quad-2:3*quad)';
+    for quad = 1: 60 % length(state.signals.values(1,:))/3
+        %pos = state.signals.values(:,3*quad-2:3*quad)';
+        pos = quads.signals.values(:,3*quad-2:3*quad)';
         pos_R = Rcam*pos;
-        pos_R(1,:) = -pos_R(1,:);
         if I >=length(pos_R(1,:)) 
             close(vidObj); 
             break;
         end
+        %imagesc([36.8 37.2], [-122.3 -121.8],img); %added
         leg(quad) = plot3(pos_R(1,1:I)',pos_R(2,1:I)',pos_R(3,1:I)','r-');
         p_star = pos_R(:,I);
         quad_plot(p_star,R_star,0,[],0.5,scale);
-        P0B = repmat(p_star,1,4);
     end % end for-loop
     
-    set(gca,'Xlim',[36.8 37.2], 'YLim', [-122.3 -121.8], 'ZLim', [0 .5]);
+    %set(gca,'Xlim',[36.8 37.2], 'YLim', [-122.3 -121.8], 'ZLim', [0 .4]);
+    set(gca,'Xlim',[37.15 37.45], 'YLim', [-122.1 -121.65], 'ZLim', [0 .4]);
     %view(37.5,30);
     axis square;
     %legend(leg,{'Quad 1','Quad 2','Quad 3','4'},'location','NorthEast')
@@ -71,5 +70,5 @@ for t2 = 0:step:T
     frame = frame+1;
 end
 
-hold off
-hold off;grid off;
+hold off;
+grid off;

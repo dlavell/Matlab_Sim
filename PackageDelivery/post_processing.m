@@ -19,7 +19,7 @@ classdef post_processing
 
             function total_dist = calc_distance(trajectory)
                 display('calculating result');
-                R = 6371000 ;% radius of the earth
+                R = 6371000 ;% radiuth
                 lat = trajectory(:,1);
                 lon = trajectory(:,2);
                 alt = trajectory(:,3);
