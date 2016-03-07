@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.2763"
+    ComputedModelVersion    "1.2765"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -62,10 +62,10 @@ Model {
 	$ObjectID		6
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
-	ViewObjType		"SimulinkSubsys"
-	LoadSaveID		"988"
+	ViewObjType		"SimulinkTopLevel"
+	LoadSaveID		"0"
 	Extents			[1886.0, 892.0]
-	ZoomFactor		[1.25]
+	ZoomFactor		[1.06]
 	Offset			[0.0, 0.0]
       }
     }
@@ -76,9 +76,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "dlavell"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sun Mar 06 19:22:03 2016"
-  RTWModifiedTimeStamp	  379192922
-  ModelVersionFormat	  "1.%<AutoIncrement:2763>"
+  LastModifiedDate	  "Sun Mar 06 19:36:19 2016"
+  RTWModifiedTimeStamp	  379193775
+  ModelVersionFormat	  "1.%<AutoIncrement:2765>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -4912,7 +4912,7 @@ Model {
   System {
     Name		    "PackageDeliverySim"
     Location		    [-8, 0, 1928, 1066]
-    Open		    off
+    Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    212
     ScreenColor		    "white"
@@ -5201,7 +5201,7 @@ Model {
       System {
 	Name			"Trajectory Genereator"
 	Location		[-8, 0, 1928, 1066]
-	Open			on
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -6678,7 +6678,10 @@ Stateflow {
     firstTransition	    53
     firstJunction	    52
     viewObj		    46
+    visible		    1
     machine		    1
+    subviewS {
+    }
     ssIdHighWaterMark	    14
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -6710,7 +6713,7 @@ Stateflow {
       ")*Vg*cosd(Xg);                        % rate of change in lat\n    y_dot = (1/((R+h)*cosd(pos(quad_id,1))))*Vg*s"
       "ind(Xg); % rate of change in long\n    z_dot = Vh;                                           % rate of change in"
       " altitude\n    \n    state(3*quad_id-2) = x_dot;\n    state(3*quad_id-1) = y_dot;\n    state(3*quad_id)   = z_do"
-      "t;\n%     state(quad_id,:) = [x_dot y_dot z_dot];\n    \nend % end for-loop\n\n\nend"
+      "t;\n    \n%     state(quad_id,:) = [x_dot y_dot z_dot];\n    \nend % end for-loop\n\n\nend"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
