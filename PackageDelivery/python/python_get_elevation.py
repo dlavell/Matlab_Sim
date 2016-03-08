@@ -212,7 +212,8 @@ def main():
     output: elevation point of the specified coordinate after it is translated into a pixel location
     """
 
-    path = "C:/Users/bmluu/Desktop/USGS_Rasters/ned19_n37x50_w122x00_ca_santaclaraco_2006/ned19_n37x50_w122x00_ca_santaclaraco_2006.img"
+    # path = "C:/Users/bmluu/Desktop/USGS_Rasters/ned19_n37x50_w122x00_ca_santaclaraco_2006/ned19_n37x50_w122x00_ca_santaclaraco_2006.img"
+    path = "C:/Users/bmluu/Desktop/santa-clara-rasters/santa-clara-virt-raster.vrt"
     map = Map(path)
 
     # User args
