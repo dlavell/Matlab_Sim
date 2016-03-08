@@ -2,18 +2,19 @@
 clear all
 load('SimResults2.mat')
 Rcam = [1 0 0; 0 1 0; 0 0 1];
-t = ref.time;
+% t = ref.time;
+t = 0:.0001:T*3;
 
 %draw
 vidObj = VideoWriter('sim_testing_live', 'Uncompressed AVI');
-step = 0.01;% was .05
+step = .05;
 vidObj.FrameRate = 1/step;
 open(vidObj);
 frame = 1;
 figure('Units','centimeters','Position',[0 0 34 17])
 h = [1, 0.1 ,0.1 , 0.1];
 axes
-scale = 0.005;
+scale = 0.0025; % size of quadcopter
 
 %%
 
@@ -43,7 +44,8 @@ for t2 = 0:step:T
         pos = quads.signals.values(:,3*quad-2:3*quad)';
         pos_R = Rcam*pos;
         if I >=length(pos_R(1,:)) 
-            close(vidObj); 
+            close(vidObj);
+            display('Finished making video.')
             break;
         end
         %imagesc([36.8 37.2], [-122.3 -121.8],img); %added

@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.2765"
+    ComputedModelVersion    "1.2805"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -40,7 +40,7 @@ Model {
       $ObjectID		      3
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [-8.0, 0.0, 1936.0, 1066.0]
+      Location		      [-8.0, -8.0, 1936.0, 1066.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		4
@@ -62,10 +62,10 @@ Model {
 	$ObjectID		6
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
-	ViewObjType		"SimulinkTopLevel"
-	LoadSaveID		"0"
+	ViewObjType		"SimulinkSubsys"
+	LoadSaveID		"988"
 	Extents			[1886.0, 892.0]
-	ZoomFactor		[1.06]
+	ZoomFactor		[1.25]
 	Offset			[0.0, 0.0]
       }
     }
@@ -76,9 +76,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "dlavell"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sun Mar 06 19:36:19 2016"
-  RTWModifiedTimeStamp	  379193775
-  ModelVersionFormat	  "1.%<AutoIncrement:2765>"
+  LastModifiedDate	  "Mon Mar 07 17:34:00 2016"
+  RTWModifiedTimeStamp	  379272836
+  ModelVersionFormat	  "1.%<AutoIncrement:2805>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -4911,8 +4911,8 @@ Model {
   }
   System {
     Name		    "PackageDeliverySim"
-    Location		    [-8, 0, 1928, 1066]
-    Open		    on
+    Location		    [-8, -8, 1928, 1058]
+    Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    212
     ScreenColor		    "white"
@@ -5200,8 +5200,8 @@ Model {
       RequestExecContextInheritance off
       System {
 	Name			"Trajectory Genereator"
-	Location		[-8, 0, 1928, 1066]
-	Open			off
+	Location		[-8, -8, 1928, 1058]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -5217,7 +5217,7 @@ Model {
 	  BlockType		  Constant
 	  Name			  "Connection to Python for elevation"
 	  SID			  "965"
-	  Position		  [780, 245, 810, 275]
+	  Position		  [780, 210, 810, 240]
 	  ZOrder		  69
 	  Value			  ".1"
 	}
@@ -5363,7 +5363,7 @@ Model {
 	  SID			  "1001"
 	  Position		  [335, 430, 365, 460]
 	  ZOrder		  74
-	  Value			  "3"
+	  Value			  "maxRadius"
 	}
 	Block {
 	  BlockType		  Constant
@@ -5417,7 +5417,7 @@ Model {
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
 	    ZoomFactor		    "100"
-	    SIDHighWatermark	    "28"
+	    SIDHighWatermark	    "29"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "origin_lat"
@@ -5459,7 +5459,7 @@ Model {
 	      SID		      "961::16"
 	      Tag		      "Stateflow S-Function PackageDeliverySim 4"
 	      Ports		      [3, 2]
-	      Position		      [180, 130, 230, 210]
+	      Position		      [180, 135, 230, 215]
 	      ZOrder		      7
 	      FunctionName	      "sf_sfun"
 	      PortCounts	      "[3 2]"
@@ -5487,21 +5487,21 @@ Model {
 	      IconDisplay	      "Port number"
 	    }
 	    Line {
-	      ZOrder		      41
+	      ZOrder		      54
 	      SrcBlock		      "origin_lat"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      42
+	      ZOrder		      55
 	      SrcBlock		      "origin_lng"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      2
 	    }
 	    Line {
-	      ZOrder		      43
+	      ZOrder		      56
 	      SrcBlock		      "altitude"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
@@ -5509,7 +5509,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "trajectories"
-	      ZOrder		      44
+	      ZOrder		      57
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      2
@@ -5517,14 +5517,14 @@ Model {
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      45
+	      ZOrder		      58
 	      SrcBlock		      " Demux "
 	      SrcPort		      1
 	      DstBlock		      " Terminator "
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      46
+	      ZOrder		      59
 	      SrcBlock		      " SFunction "
 	      SrcPort		      1
 	      DstBlock		      " Demux "
@@ -5561,6 +5561,7 @@ Model {
 	  ZOrder		  10
 	  SrcBlock		  "Connection to Python for elevation"
 	  SrcPort		  1
+	  Points		  [60, 0]
 	  DstBlock		  "Trajectory Generator"
 	  DstPort		  3
 	}
@@ -5835,25 +5836,25 @@ Stateflow {
       isEML		      1
       script		      "function waypoint = fcn(traj)\n%#codegen\n\nglobal curr_wp curr_tp destinations pos n_quads;\nway"
       "point = zeros(100,3);\n\n% Divide distance between last_wp and next_wp into evenly divided segments\n% waypoint "
-      "distances\nwp_separation_dist = .01;\n\n% acceptable distance to waypoint\nthreshold = wp_separation_dist/3;\n\n"
-      "for quad_id = 1:n_quads\n    \n    % current position\n    if(pos(quad_id,1) == 0) pos(quad_id,:) = traj(1,:,qua"
-      "d_id); end % temporary fix\n    quad_X = pos(quad_id,1);\n    quad_Y = pos(quad_id,2);\n    quad_Z = pos(quad_id"
-      ",3);\n    \n    % associated trajectory\n    trajectory = traj(:,:,quad_id);\n    \n    % Specify last and next "
-      "trajectory points\n    last_tp = trajectory(curr_tp(quad_id) - 1,:);\n    next_tp = trajectory(curr_tp(quad_id),"
-      ":);\n    \n%     if(abs(last_tp(3) - next_tp(3)) > 350)\n%         wp_separation_dist = 10;    \n%         % acc"
-      "eptable distance to waypoint\n%         threshold = wp_separation_dist/3;\n%     end\n    \n    \n    % trajecto"
-      "ry point distances\n    tp_separation_dist = sqrt((last_tp(1)-next_tp(1))^2 + ...\n        (last_tp(2)-next_tp(2"
-      "))^2 + (last_tp(3)-next_tp(3))^2);\n    \n    % Determine which segment along trajectory to give next and in wha"
-      "t\n    % direction\n    number_of_waypoints = floor(tp_separation_dist/wp_separation_dist);\n    vec_norm = [(la"
-      "st_tp(1)-next_tp(1)) (last_tp(2)-next_tp(2)) ...\n                        (last_tp(3)-next_tp(3))]/tp_separation"
-      "_dist;\n    if(isnan(vec_norm(1))) vec_norm(1) = 0; end\n    if(isnan(vec_norm(2))) vec_norm(2) = 0; end\n    if"
-      "(isnan(vec_norm(3))) vec_norm(3) = 0; end\n    wp = last_tp + curr_wp(quad_id)*wp_separation_dist*-vec_norm;\n  "
-      "  \n    % distance to current waypoint\n    dist = sqrt((quad_X-wp(1))^2 + (quad_Y-wp(2))^2 + (quad_Z-wp(3))^2);"
-      "\n    \n    if(dist <= threshold)\n        curr_wp(quad_id) = curr_wp(quad_id) + 1;\n        if(curr_wp(quad_id)"
-      " == number_of_waypoints)\n            curr_tp(quad_id) = curr_tp(quad_id) + 1;\n            curr_wp(quad_id) = 0"
-      ";\n        end\n    end\n    if(curr_tp(quad_id) == length(trajectory(:,1)) + 1)\n        curr_tp(quad_id) = 2;\n"
-      "        destinations(quad_id,:) = [0 0 0];\n    end\n    \n    %% output\n    waypoint(quad_id,:) = wp;\n    \ne"
-      "nd % end for-loop\n\nend"
+      "distances\nwp_separation_dist = .0001; % was .01\n\n% acceptable distance to waypoint\nthreshold = wp_separation"
+      "_dist/3;\n\nfor quad_id = 1:n_quads\n    \n    % current position\n    if(pos(quad_id,1) == 0) pos(quad_id,:) = "
+      "traj(1,:,quad_id); end % temporary fix\n    quad_X = pos(quad_id,1);\n    quad_Y = pos(quad_id,2);\n    quad_Z ="
+      " pos(quad_id,3);\n    \n    % associated trajectory\n    trajectory = traj(:,:,quad_id);\n    \n    % Specify la"
+      "st and next trajectory points\n    last_tp = trajectory(curr_tp(quad_id) - 1,:);\n    next_tp = trajectory(curr_"
+      "tp(quad_id),:);\n    \n%     if(abs(last_tp(3) - next_tp(3)) > 350)\n%         wp_separation_dist = 10;    \n%  "
+      "       % acceptable distance to waypoint\n%         threshold = wp_separation_dist/3;\n%     end\n    \n    \n  "
+      "  % trajectory point distances\n    tp_separation_dist = sqrt((last_tp(1)-next_tp(1))^2 + ...\n        (last_tp("
+      "2)-next_tp(2))^2 + (last_tp(3)-next_tp(3))^2);\n    \n    % Determine which segment along trajectory to give nex"
+      "t and in what\n    % direction\n    number_of_waypoints = floor(tp_separation_dist/wp_separation_dist);\n    vec"
+      "_norm = [(last_tp(1)-next_tp(1)) (last_tp(2)-next_tp(2)) ...\n                        (last_tp(3)-next_tp(3))]/t"
+      "p_separation_dist;\n    if(isnan(vec_norm(1))) vec_norm(1) = 0; end\n    if(isnan(vec_norm(2))) vec_norm(2) = 0;"
+      " end\n    if(isnan(vec_norm(3))) vec_norm(3) = 0; end\n    wp = last_tp + curr_wp(quad_id)*wp_separation_dist*-v"
+      "ec_norm;\n    \n    % distance to current waypoint\n    dist = sqrt((quad_X-wp(1))^2 + (quad_Y-wp(2))^2 + (quad_"
+      "Z-wp(3))^2);\n    \n    if(dist <= threshold)\n        curr_wp(quad_id) = curr_wp(quad_id) + 1;\n        if(curr"
+      "_wp(quad_id) == number_of_waypoints)\n            curr_tp(quad_id) = curr_tp(quad_id) + 1;\n            curr_wp("
+      "quad_id) = 0;\n        end\n    end\n    if(curr_tp(quad_id) == length(trajectory(:,1)) + 1)\n        curr_tp(qu"
+      "ad_id) = 2;\n        destinations(quad_id,:) = [0 0 0];\n    end\n    \n    %% output\n    waypoint(quad_id,:) ="
+      " wp;\n    \nend % end for-loop\n\nend"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
@@ -6055,8 +6056,11 @@ Stateflow {
     firstTransition	    23
     firstJunction	    22
     viewObj		    14
+    visible		    1
     machine		    1
-    ssIdHighWaterMark	    15
+    subviewS {
+    }
+    ssIdHighWaterMark	    16
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
     firstData		    16
@@ -6089,8 +6093,8 @@ Stateflow {
       " getElevation(origin(1),origin(2)) + altitude] ;\n            [dest(1,1) dest(1,2) getElevation(dest(1),dest(2))"
       " + altitude] ;\n            [dest(1,1) dest(1,2) getElevation(dest(1),dest(2))] ;\n            [dest(1,1) dest(1"
       ",2) getElevation(dest(1),dest(2)) + altitude] ;\n            [origin(1) origin(2) getElevation(origin(1),origin("
-      "2)) + altitude] ;\n            [origin(1) origin(2) getElevation(origin(1),origin(2))]];\n    end\n    trajector"
-      "ies(:,:,quad_id) = trajectory;\nend"
+      "2)) + altitude] ;\n            [origin(1) origin(2) getElevation(origin(1),origin(2))]];\n    end\n\n    traject"
+      "ories(:,:,quad_id) = trajectory;\nend"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
@@ -6304,8 +6308,10 @@ Stateflow {
       script		      "function dest_generator(lat_s, lng_s, radius_min, radius_max)\n%   \n%   proc_simulate_destinatio"
       "n\n%\nglobal destinations n_quads;\n\nfor quad_id = 1:n_quads\n    if(destinations(quad_id,1) == 0 && destinatio"
       "ns(quad_id,2) == 0  && destinations(quad_id,3) == 0 )\n        if(rand < .25)\n            [lat,lng]=simulate_de"
-      "stination_v2(lat_s,lng_s,radius_min,radius_max);\n            destinations(quad_id,1) = lat;\n            destin"
-      "ations(quad_id,2) = lng;\n        end\n    end\nend\n\nend\n\n"
+      "stination_v2(lat_s,lng_s,radius_min,radius_max);\n            d = deg2nm(lat_s,lng_s,lat,lng);\n            if(d"
+      " < radius_max && d > 0) \n                destinations(quad_id,1) = lat;\n                destinations(quad_id,2"
+      ") = lng;\n            else\n                destinations(quad_id,1);\n                destinations(quad_id,2);\n"
+      "            end\n        end\n    end\nend\n\nend\n\n"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
@@ -6487,7 +6493,10 @@ Stateflow {
     firstTransition	    44
     firstJunction	    43
     viewObj		    36
+    visible		    1
     machine		    1
+    subviewS {
+    }
     ssIdHighWaterMark	    14
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
