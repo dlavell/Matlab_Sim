@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.2805"
+    ComputedModelVersion    "1.2830"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -62,10 +62,10 @@ Model {
 	$ObjectID		6
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
-	ViewObjType		"SimulinkSubsys"
-	LoadSaveID		"988"
+	ViewObjType		"SimulinkTopLevel"
+	LoadSaveID		"0"
 	Extents			[1886.0, 892.0]
-	ZoomFactor		[1.25]
+	ZoomFactor		[1.06]
 	Offset			[0.0, 0.0]
       }
     }
@@ -76,9 +76,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "dlavell"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Mar 07 17:34:00 2016"
-  RTWModifiedTimeStamp	  379272836
-  ModelVersionFormat	  "1.%<AutoIncrement:2805>"
+  LastModifiedDate	  "Wed Mar 09 16:44:39 2016"
+  RTWModifiedTimeStamp	  379442658
+  ModelVersionFormat	  "1.%<AutoIncrement:2830>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -4734,8 +4734,6 @@ Model {
   }
   ExplicitPartitioning	  off
   WSDataSource		  "MAT-File"
-  WSSourceFileName	  "C:\\Users\\dlavell\\Desktop\\SeniorDesign\\Matlab_Sim\\PackageDelivery\\initialize_PackageDelive"
-  "rySim.mat"
   BlockDefaults {
     ForegroundColor	    "black"
     BackgroundColor	    "white"
@@ -4912,7 +4910,7 @@ Model {
   System {
     Name		    "PackageDeliverySim"
     Location		    [-8, -8, 1928, 1058]
-    Open		    off
+    Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    212
     ScreenColor		    "white"
@@ -4925,10 +4923,10 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "106"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "1124"
+    SIDHighWatermark	    "1125"
     Block {
       BlockType		      SubSystem
-      Name		      "Controller1"
+      Name		      "Controller"
       SID		      "1009"
       Ports		      [2, 1]
       Position		      [960, 383, 1090, 467]
@@ -4940,7 +4938,7 @@ Model {
       RequestExecContextInheritance off
       SFBlockType	      "MATLAB Function"
       System {
-	Name			"Controller1"
+	Name			"Controller"
 	Location		[223, 338, 826, 833]
 	Open			off
 	ModelBrowserVisibility	off
@@ -5065,7 +5063,7 @@ Model {
     }
     Block {
       BlockType		      SubSystem
-      Name		      "Model1"
+      Name		      "Model"
       SID		      "1010"
       Ports		      [1, 1]
       Position		      [960, 503, 1090, 587]
@@ -5078,7 +5076,7 @@ Model {
       RequestExecContextInheritance off
       SFBlockType	      "MATLAB Function"
       System {
-	Name			"Model1"
+	Name			"Model"
 	Location		[223, 338, 826, 833]
 	Open			off
 	ModelBrowserVisibility	off
@@ -5201,7 +5199,7 @@ Model {
       System {
 	Name			"Trajectory Genereator"
 	Location		[-8, -8, 1928, 1058]
-	Open			on
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -5212,21 +5210,21 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"125"
+	ZoomFactor		"80"
 	Block {
 	  BlockType		  Constant
 	  Name			  "Connection to Python for elevation"
 	  SID			  "965"
-	  Position		  [780, 210, 810, 240]
+	  Position		  [780, 245, 810, 275]
 	  ZOrder		  69
 	  Value			  ".1"
 	}
 	Block {
 	  BlockType		  SubSystem
-	  Name			  "MATLAB Function"
+	  Name			  "Destination Generator"
 	  SID			  "987"
 	  Ports			  [4]
-	  Position		  [460, 237, 690, 473]
+	  Position		  [460, 241, 695, 584]
 	  ZOrder		  70
 	  LibraryVersion	  "1.32"
 	  ErrorFcn		  "Stateflow.Translate.translate"
@@ -5235,7 +5233,7 @@ Model {
 	  RequestExecContextInheritance	off
 	  SFBlockType		  "MATLAB Function"
 	  System {
-	    Name		    "MATLAB Function"
+	    Name		    "Destination Generator"
 	    Location		    [223, 338, 826, 833]
 	    Open		    off
 	    ModelBrowserVisibility  off
@@ -5249,7 +5247,7 @@ Model {
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
 	    ZoomFactor		    "100"
-	    SIDHighWatermark	    "27"
+	    SIDHighWatermark	    "28"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "lat_s"
@@ -5300,7 +5298,7 @@ Model {
 	      SID		      "987::16"
 	      Tag		      "Stateflow S-Function PackageDeliverySim 5"
 	      Ports		      [4, 1]
-	      Position		      [180, 122, 230, 223]
+	      Position		      [180, 127, 230, 228]
 	      ZOrder		      7
 	      FunctionName	      "sf_sfun"
 	      PortCounts	      "[4 1]"
@@ -5314,42 +5312,42 @@ Model {
 	      ZOrder		      9
 	    }
 	    Line {
-	      ZOrder		      72
+	      ZOrder		      85
 	      SrcBlock		      "lat_s"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      73
+	      ZOrder		      86
 	      SrcBlock		      "lng_s"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      2
 	    }
 	    Line {
-	      ZOrder		      74
+	      ZOrder		      87
 	      SrcBlock		      "radius_min"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      3
 	    }
 	    Line {
-	      ZOrder		      75
+	      ZOrder		      88
 	      SrcBlock		      "radius_max"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      4
 	    }
 	    Line {
-	      ZOrder		      76
+	      ZOrder		      89
 	      SrcBlock		      " Demux "
 	      SrcPort		      1
 	      DstBlock		      " Terminator "
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      77
+	      ZOrder		      90
 	      SrcBlock		      " SFunction "
 	      SrcPort		      1
 	      DstBlock		      " Demux "
@@ -5361,7 +5359,7 @@ Model {
 	  BlockType		  Constant
 	  Name			  "Max Radius (NM)"
 	  SID			  "1001"
-	  Position		  [335, 430, 365, 460]
+	  Position		  [335, 465, 365, 495]
 	  ZOrder		  74
 	  Value			  "maxRadius"
 	}
@@ -5369,7 +5367,7 @@ Model {
 	  BlockType		  Constant
 	  Name			  "Min Radius (NM)"
 	  SID			  "1000"
-	  Position		  [335, 370, 365, 400]
+	  Position		  [335, 395, 365, 425]
 	  ZOrder		  73
 	  Value			  "0"
 	}
@@ -5377,7 +5375,7 @@ Model {
 	  BlockType		  Constant
 	  Name			  "Source Latitude"
 	  SID			  "998"
-	  Position		  [335, 250, 365, 280]
+	  Position		  [335, 255, 365, 285]
 	  ZOrder		  71
 	  Value			  "IC(1)"
 	}
@@ -5385,7 +5383,7 @@ Model {
 	  BlockType		  Constant
 	  Name			  "Source Longitude"
 	  SID			  "999"
-	  Position		  [335, 310, 365, 340]
+	  Position		  [335, 325, 365, 355]
 	  ZOrder		  72
 	  Value			  "IC(2)"
 	}
@@ -5546,14 +5544,15 @@ Model {
 	  SrcPort		  1
 	  Points		  [43, 0]
 	  Branch {
-	    ZOrder		    23
-	    DstBlock		    "MATLAB Function"
+	    ZOrder		    36
+	    Points		    [0, -120]
+	    DstBlock		    "Trajectory Generator"
 	    DstPort		    1
 	  }
 	  Branch {
-	    ZOrder		    20
-	    Points		    [0, -115]
-	    DstBlock		    "Trajectory Generator"
+	    ZOrder		    23
+	    Points		    [32, 0]
+	    DstBlock		    "Destination Generator"
 	    DstPort		    1
 	  }
 	}
@@ -5561,7 +5560,6 @@ Model {
 	  ZOrder		  10
 	  SrcBlock		  "Connection to Python for elevation"
 	  SrcPort		  1
-	  Points		  [60, 0]
 	  DstBlock		  "Trajectory Generator"
 	  DstPort		  3
 	}
@@ -5571,14 +5569,15 @@ Model {
 	  SrcPort		  1
 	  Points		  [58, 0]
 	  Branch {
-	    ZOrder		    25
-	    Points		    [0, -120]
+	    ZOrder		    35
+	    Points		    [0, -135]
 	    DstBlock		    "Trajectory Generator"
 	    DstPort		    2
 	  }
 	  Branch {
 	    ZOrder		    24
-	    DstBlock		    "MATLAB Function"
+	    Points		    [17, 0]
+	    DstBlock		    "Destination Generator"
 	    DstPort		    2
 	  }
 	}
@@ -5586,14 +5585,16 @@ Model {
 	  ZOrder		  14
 	  SrcBlock		  "Min Radius (NM)"
 	  SrcPort		  1
-	  DstBlock		  "MATLAB Function"
+	  Points		  [75, 0]
+	  DstBlock		  "Destination Generator"
 	  DstPort		  3
 	}
 	Line {
 	  ZOrder		  15
 	  SrcBlock		  "Max Radius (NM)"
 	  SrcPort		  1
-	  DstBlock		  "MATLAB Function"
+	  Points		  [75, 0]
+	  DstBlock		  "Destination Generator"
 	  DstPort		  4
 	}
 	Line {
@@ -5734,15 +5735,15 @@ Model {
     }
     Line {
       ZOrder		      243
-      SrcBlock		      "Controller1"
+      SrcBlock		      "Controller"
       SrcPort		      1
       Points		      [92, 0; 0, 120]
-      DstBlock		      "Model1"
+      DstBlock		      "Model"
       DstPort		      1
     }
     Line {
       ZOrder		      264
-      SrcBlock		      "Model1"
+      SrcBlock		      "Model"
       SrcPort		      1
       DstBlock		      "Integrator"
       DstPort		      1
@@ -5751,7 +5752,7 @@ Model {
       ZOrder		      245
       SrcBlock		      "Waypoint Generator1"
       SrcPort		      1
-      DstBlock		      "Controller1"
+      DstBlock		      "Controller"
       DstPort		      1
     }
     Line {
@@ -5762,7 +5763,7 @@ Model {
       Branch {
 	ZOrder			280
 	Points			[0, -100]
-	DstBlock		"Controller1"
+	DstBlock		"Controller"
 	DstPort			2
       }
       Branch {
@@ -6269,7 +6270,7 @@ Stateflow {
   }
   chart {
     id			    25
-    name		    "Trajectory Genereator/MATLAB Function"
+    name		    "Trajectory Genereator/Destination Generator"
     windowPosition	    [422 539.941 189 413]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 3600 1200 1.180555555555556]
@@ -6281,7 +6282,7 @@ Stateflow {
     machine		    1
     subviewS {
     }
-    ssIdHighWaterMark	    14
+    ssIdHighWaterMark	    15
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
     firstData		    27
@@ -6306,12 +6307,11 @@ Stateflow {
     eml {
       isEML		      1
       script		      "function dest_generator(lat_s, lng_s, radius_min, radius_max)\n%   \n%   proc_simulate_destinatio"
-      "n\n%\nglobal destinations n_quads;\n\nfor quad_id = 1:n_quads\n    if(destinations(quad_id,1) == 0 && destinatio"
-      "ns(quad_id,2) == 0  && destinations(quad_id,3) == 0 )\n        if(rand < .25)\n            [lat,lng]=simulate_de"
-      "stination_v2(lat_s,lng_s,radius_min,radius_max);\n            d = deg2nm(lat_s,lng_s,lat,lng);\n            if(d"
-      " < radius_max && d > 0) \n                destinations(quad_id,1) = lat;\n                destinations(quad_id,2"
-      ") = lng;\n            else\n                destinations(quad_id,1);\n                destinations(quad_id,2);\n"
-      "            end\n        end\n    end\nend\n\nend\n\n"
+      "n\n%\nglobal destinations n_quads;\nEMPTY = 0;\n\n\nfor quad_id = 1:n_quads\n    if(destinations(quad_id,1) == 0"
+      " && destinations(quad_id,2) == 0  && destinations(quad_id,3) == 0 )\n        if(rand < .25)\n            [lat,ln"
+      "g]=simulate_destination_v2(lat_s,lng_s,radius_min,radius_max);\n            d = deg2nm(lat_s,lng_s,lat,lng);\n  "
+      "          if(d < radius_max && d > 0) \n                destinations(quad_id,1) = lat;\n                destinat"
+      "ions(quad_id,2) = lng;\n            end\n        end\n    end\nend\n\nend\n\n"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
@@ -6479,13 +6479,13 @@ Stateflow {
   }
   instance {
     id			    35
-    name		    "Trajectory Genereator/MATLAB Function"
+    name		    "Trajectory Genereator/Destination Generator"
     machine		    1
     chart		    25
   }
   chart {
     id			    36
-    name		    "Controller1"
+    name		    "Controller"
     windowPosition	    [422 539.941 189 413]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 3600 1200 1.180555555555556]
@@ -6523,13 +6523,16 @@ Stateflow {
       isEML		      1
       script		      "function cmd = Controller( ref , state)\n% Controller for point-mass model of quadcopter\nglobal "
       "pos n_quads;\ncmd = zeros(100,3);\nfor quad_id = 1:n_quads\n    \n    % update position\n    pos(quad_id,1) = st"
-      "ate(3*quad_id-2);\n    pos(quad_id,2) = state(3*quad_id-1);\n    pos(quad_id,3) = state(3*quad_id);\n    \n    %"
-      " compute error terms\n    Ex = ref(quad_id,1) - state(3*quad_id-2); \n    Ey = ref(quad_id,2) - state(3*quad_id-"
-      "1); \n    Ez = ref(quad_id,3) - state(3*quad_id);   \n    \n    % compute tracking angle and ground speed\n    X"
-      "g = atan2d((sind(Ey)*cosd(ref(quad_id,1))),(sind(ref(quad_id,1))*cosd(state(3*quad_id-2)) ...\n        - cosd(re"
-      "f(quad_id,1))*sind(state(3*quad_id-2))*cosd(Ey)));\n    Vg = abs(Ex) + abs(Ey);\n    Vg = Vg*10000000;\n    \n  "
-      "  % climb rate\n    Vh = Ez*10;\n%    if(Ez > 10) Vh = 100; end\n    \n    % output command\n    cmd(quad_id,:) "
-      "= [ Xg  Vh  Vg ];\n    \nend % end for-loop\n\nend"
+      "ate(3*quad_id-2); % current latitude (degrees)\n    pos(quad_id,2) = state(3*quad_id-1); % current longitude (de"
+      "grees)\n    pos(quad_id,3) = state(3*quad_id);   % current altitude\n    \n    % compute error terms\n    Ex = r"
+      "ef(quad_id,1) - state(3*quad_id-2); % error latitude (degrees)\n    Ey = ref(quad_id,2) - state(3*quad_id-1); % "
+      "error longitude (degrees)\n    Ez = ref(quad_id,3) - state(3*quad_id);   % error altitude\n    \n    % compute t"
+      "racking angle (degrees)\n    Xg = atan2d((sind(Ey)*cosd(ref(quad_id,1))),(sind(ref(quad_id,1))*cosd(state(3*quad"
+      "_id-2)) ...\n        - cosd(ref(quad_id,1))*sind(state(3*quad_id-2))*cosd(Ey)));\n    \n    % compute ground spe"
+      "ed\n    Vg = abs(Ex) + abs(Ey);\n    Vg;\n    Vg = Vg*10000000;\n    \n    % get distance apart in nautical mile"
+      "s\n    d = abs(deg2nm(pos(quad_id,1), pos(quad_id,2),...\n                   ref(quad_id,1), ref(quad_id,2)));\n"
+      "    % convert to meters\n    d = d*1852;\n    %Vg = d; % this is now meters/timestep\n    \n    % climb rate\n  "
+      "  Vh = Ez*10;\n    \n    % output command\n    cmd(quad_id,:) = [ Xg  Vh  Vg ];\n    \nend % end for-loop\n\nend"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
@@ -6673,13 +6676,13 @@ Stateflow {
   }
   instance {
     id			    45
-    name		    "Controller1"
+    name		    "Controller"
     machine		    1
     chart		    36
   }
   chart {
     id			    46
-    name		    "Model1"
+    name		    "Model"
     windowPosition	    [422 539.941 189 413]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 3600 1200 1.180555555555556]
@@ -6718,11 +6721,11 @@ Stateflow {
       script		      "function state = Model( cmd)\n% Point-mass model of quadcopter\n% Current position\nglobal pos n_"
       "quads;\nstate = zeros(300,1);\n\nfor quad_id = 1:n_quads\n    \n    h = pos(quad_id,3);\n    R = 6.371*10^6;    "
       "          % mean radius of earth (meters)\n    Xg = cmd(quad_id,1);         % tracking angle (degrees)\n    Vh ="
-      " cmd(quad_id,2);       % climb rate\n    Vg = cmd(quad_id,3);         % ground speed\n    \n    x_dot = (1/(R+h)"
-      ")*Vg*cosd(Xg);                        % rate of change in lat\n    y_dot = (1/((R+h)*cosd(pos(quad_id,1))))*Vg*s"
-      "ind(Xg); % rate of change in long\n    z_dot = Vh;                                           % rate of change in"
-      " altitude\n    \n    state(3*quad_id-2) = x_dot;\n    state(3*quad_id-1) = y_dot;\n    state(3*quad_id)   = z_do"
-      "t;\n    \n%     state(quad_id,:) = [x_dot y_dot z_dot];\n    \nend % end for-loop\n\n\nend"
+      " cmd(quad_id,2);         % climb rate\n    Vg = cmd(quad_id,3);         % ground speed\n    \n    x_dot = (1/(R+"
+      "h))*Vg*cosd(Xg);                        % rate of change in lat\n    y_dot = (1/((R+h)*cosd(pos(quad_id,1))))*Vg"
+      "*sind(Xg); % rate of change in long\n    z_dot = Vh;                                           % rate of change "
+      "in altitude\n    \n    state(3*quad_id-2) = x_dot;\n    state(3*quad_id-1) = y_dot;\n    state(3*quad_id)   = z_"
+      "dot;\n    \nend % end for-loop\n\n\nend"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
@@ -6846,7 +6849,7 @@ Stateflow {
   }
   instance {
     id			    54
-    name		    "Model1"
+    name		    "Model"
     machine		    1
     chart		    46
   }

@@ -3,11 +3,14 @@
 clear all
 warning ('off','all');
 display('Initializing Sim...')
-%load('initialize_PackageDeliverySim.mat');
-T = 10000;
-ref.time = 0:.0001:T*3;
-%save('initialize_PackageDeliverySim.mat');
 
+%% Only need to load and save if making changes to variables
+% clear all
+%load('initialize_PackageDeliverySim.mat');
+%T = 4000;
+%ref.time = 0:.0001:T*3;
+%save('initialize_PackageDeliverySim.mat');
+%%
 warehouses = [37.3154997	-121.8728929;
               37.2912864	-121.9896046;
               37.313593	    -121.7731222;
@@ -16,27 +19,27 @@ warehouses = [37.3154997	-121.8728929;
               37.3310001	-121.860433 ];
 
 
-R = 6.371*10^6;              % mean radius of earth (meters)
-
-% Initial condition:
-    % sets initial condition for integrator
-    % sets warehouse origin in destination generator
-IC = Simulink.Parameter;
-IC.DataType = 'double';
-
-% max Radius:
-    % sets maximum radius for deliveries around current warehouse
-maxRadius = Simulink.Parameter;
-maxRadius.DataType = 'double';
+%% Macro constants
+SetSimVariables();
 
 numRuns = length(warehouses(:,1));
 
-
+%% Iterate over all warehouses
 for simRun = 1:numRuns
+    %% set global vaiables
+    % set initial condition - different for each run
     IC.Value = repmat([warehouses(simRun,1) ; warehouses(simRun,2) ; 0], 100, 1);
+    
+    % clear/reset global variables
+    curr_wp      .InitialValue = 'zeros(100,1)';
+    curr_tp      .InitialValue = 'ones(100,1)*2';
+    destinations .InitialValue = 'zeros(100,3)';
+    current_que  .InitialValue = 'req_que';
+    n_quads      .InitialValue = '10';
+    pos          .InitialValue = 'zeros(100,3)';
+    time_stamp   .InitialValue = '1';
 
-    % determine maximum radius of delivery relative to next closest
-    % warehouse
+    % determine max radius of delivery relative to next closest warehouse
     maxDist = inf;
     for w = 1:numRuns
        % skip current warehouse
@@ -47,14 +50,13 @@ for simRun = 1:numRuns
        if(dist < maxDist) maxDist = dist; end
     end
     maxRadius.Value = maxDist/2;
-
+    
+    %% Run Simulation
     display('Running Sim...')
-    sim('PackageDeliverySim')          % Run Simulation
+    sim('PackageDeliverySim')
     
     
-    
-    
-    % Save quadcopter states into one variable quads for video.... NEEDS WORK
+    %% Save quadcopter states into one variable quads for video.... NEEDS WORK
     if(simRun == 1)
         quads = state;
     else % voodoo magic
@@ -65,11 +67,12 @@ for simRun = 1:numRuns
         end
     end
 end
-
+%% Save results
 display('Sim finished, saving results...')
-save('SimResults2.mat');         % Save workspace
+save('SimResults2.mat');    
 
+%% Run graphics and create video
 display('Creating Sim video...')
-graphicx                        % Run graphics and create video
+graphicx
 
 clear all
