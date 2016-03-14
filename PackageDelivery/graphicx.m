@@ -1,29 +1,30 @@
 %read data from sim
-clear all
-load('SimResults2.mat')
+%clear all
+%load('SimResults2.mat')
 Rcam = [1 0 0; 0 1 0; 0 0 1];
-T = 4000;
-ref.time = 0:.01:4000*3;
-t = ref.time;
+% T = 8000;
+% ref.time = 0:.0001:T*3;
+% t = ref.time;
 
 %draw
 vidObj = VideoWriter('sim_testing_live', 'Uncompressed AVI');
-step = 0.01;
+step = 1;
 vidObj.FrameRate = 1/step;
 open(vidObj);
 frame = 1;
 figure('Units','centimeters','Position',[0 0 34 17])
 h = [1, 0.1 ,0.1 , 0.1];
 axes
-scale = 0.005; % size of quadcopter
+scale = 0.0025; % size of quadcopter
 
 
 %%
 
 %yegeta added this to test displaying picture on the background
-img = imread('map.JPG');
+img = imread('San_Jose.JPG');
 %imgsec([min_x,maxx],[min_y max_y],img);
 %imagesc([36.8 37.2], [-122.3 -121.8],img);
+imagesc( [37.15 37.45], [-122.1 -121.65] ,img);
 %%
 
 for t2 = 0:step:T
@@ -50,7 +51,7 @@ for t2 = 0:step:T
             display('Finished making video.')
             break;
         end
-        %imagesc([36.8 37.2], [-122.3 -121.8],img); %added
+        imagesc( [37.15 37.45], [-122.1 -121.65] ,img); %added
         leg(quad) = plot3(pos_R(1,1:I)',pos_R(2,1:I)',pos_R(3,1:I)','r-');
         p_star = pos_R(:,I);
         quad_plot(p_star,R_star,0,[],0.5,scale);

@@ -7,8 +7,9 @@ display('Initializing Sim...')
 %% Only need to load and save if making changes to variables
 % clear all
 %load('initialize_PackageDeliverySim.mat');
-%T = 4000;
-%ref.time = 0:.0001:T*3;
+T = 10000;
+ref.time = 0:.01:T*3;
+t = ref.time;
 %save('initialize_PackageDeliverySim.mat');
 %%
 warehouses = [37.3154997	-121.8728929;
@@ -49,7 +50,7 @@ for simRun = 1:numRuns
        % find closet warehouse
        if(dist < maxDist) maxDist = dist; end
     end
-    maxRadius.Value = maxDist/2;
+    maxRadius.Value = maxDist*2/3;
     
     %% Run Simulation
     display('Running Sim...')
@@ -69,10 +70,10 @@ for simRun = 1:numRuns
 end
 %% Save results
 display('Sim finished, saving results...')
-save('SimResults2.mat');    
+%save('SimResults2.mat');    
 
 %% Run graphics and create video
 display('Creating Sim video...')
 graphicx
 
-clear all
+%clear all
