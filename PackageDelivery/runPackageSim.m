@@ -6,7 +6,7 @@ display('Initializing Sim...')
 
 % Testing new branch
 
-warehouses = [37.3154997	-121.8728929;
+warehouses = [37.25	-121.75;
               37.2912864	-121.9896046;
               37.313593	    -121.7731222;
               37.3217542	-121.9732432;
@@ -44,7 +44,7 @@ for simRun = 1:numRuns
        % find closet warehouse
        if(dist < maxDist) maxDist = dist; end
     end
-    maxRadius.Value = maxDist*2/3;
+    maxRadius.Value = 15;
     
     %% Run Simulation
     fprintf('Running Sim for warehouse %d of %d\n',simRun,numRuns)
@@ -54,6 +54,7 @@ for simRun = 1:numRuns
     %% Save quadcopter states into one variable quads for video.... NEEDS WORK
     if(simRun == 1)
         quads = state;
+        break;
     else % voodoo magic
         if(length(quads.signals.values(:,1)) > length(state.signals.values(:,1)))
             quads.signals.values(1:length(state.signals.values(:,1)),((simRun*30)-29):(simRun*30)) = state.signals.values(:,1:30);
