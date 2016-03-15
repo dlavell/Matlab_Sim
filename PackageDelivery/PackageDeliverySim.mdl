@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.2834"
+    ComputedModelVersion    "1.2835"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -62,11 +62,11 @@ Model {
 	$ObjectID		6
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
-	ViewObjType		"SimulinkTopLevel"
-	LoadSaveID		"0"
+	ViewObjType		"SimulinkSubsys"
+	LoadSaveID		"988"
 	Extents			[1886.0, 892.0]
-	ZoomFactor		[1.75]
-	Offset			[300.72295597484265, 151.88903863432154]
+	ZoomFactor		[0.8]
+	Offset			[0.0, 0.0]
       }
     }
   }
@@ -76,9 +76,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "dlavell"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sun Mar 13 19:54:31 2016"
-  RTWModifiedTimeStamp	  379799653
-  ModelVersionFormat	  "1.%<AutoIncrement:2834>"
+  LastModifiedDate	  "Tue Mar 15 12:03:37 2016"
+  RTWModifiedTimeStamp	  379799743
+  ModelVersionFormat	  "1.%<AutoIncrement:2835>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -4910,7 +4910,7 @@ Model {
   System {
     Name		    "PackageDeliverySim"
     Location		    [-8, 0, 1928, 1066]
-    Open		    on
+    Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    212
     ScreenColor		    "white"
@@ -4925,27 +4925,12 @@ Model {
     ReportName		    "simulink-default.rpt"
     SIDHighWatermark	    "1126"
     Block {
-      BlockType		      ToWorkspace
-      Name		      " "
-      SID		      "1017"
-      Ports		      [1]
-      Position		      [750, 530, 810, 560]
-      ZOrder		      76
-      BlockMirror	      on
-      VariableName	      "state"
-      MaxDataPoints	      "inf"
-      SaveFormat	      "Structure With Time"
-      Save2DSignal	      "3-D array (concatenate along third dimension)"
-      FixptAsFi		      on
-      SampleTime	      "-1"
-    }
-    Block {
       BlockType		      SubSystem
-      Name		      "   "
-      SID		      "980"
-      Ports		      [1, 1]
-      Position		      [680, 363, 810, 447]
-      ZOrder		      54
+      Name		      "Controller"
+      SID		      "1009"
+      Ports		      [2, 1]
+      Position		      [960, 383, 1090, 467]
+      ZOrder		      68
       LibraryVersion	      "1.32"
       ErrorFcn		      "Stateflow.Translate.translate"
       PermitHierarchicalResolution "ExplicitOnly"
@@ -4953,7 +4938,145 @@ Model {
       RequestExecContextInheritance off
       SFBlockType	      "MATLAB Function"
       System {
-	Name			"   "
+	Name			"Controller"
+	Location		[223, 338, 826, 833]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	SIDHighWatermark	"26"
+	Block {
+	  BlockType		  Inport
+	  Name			  "ref"
+	  SID			  "1009::1"
+	  Position		  [20, 101, 40, 119]
+	  ZOrder		  -1
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "state"
+	  SID			  "1009::24"
+	  Position		  [20, 136, 40, 154]
+	  ZOrder		  11
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  " Demux "
+	  SID			  "1009::17"
+	  Ports			  [1, 1]
+	  Position		  [270, 230, 320, 270]
+	  ZOrder		  8
+	  Outputs		  "1"
+	}
+	Block {
+	  BlockType		  S-Function
+	  Name			  " SFunction "
+	  SID			  "1009::16"
+	  Tag			  "Stateflow S-Function PackageDeliverySim 6"
+	  Ports			  [2, 2]
+	  Position		  [180, 115, 230, 175]
+	  ZOrder		  7
+	  FunctionName		  "sf_sfun"
+	  PortCounts		  "[2 2]"
+	  EnableBusSupport	  on
+	  Port {
+	    PortNumber		    2
+	    Name		    "cmd"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  " Terminator "
+	  SID			  "1009::18"
+	  Position		  [460, 241, 480, 259]
+	  ZOrder		  9
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "cmd"
+	  SID			  "1009::5"
+	  Position		  [460, 101, 480, 119]
+	  ZOrder		  -5
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  ZOrder		  32
+	  SrcBlock		  "ref"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  33
+	  SrcBlock		  "state"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  2
+	}
+	Line {
+	  Name			  "cmd"
+	  ZOrder		  34
+	  Labels		  [0, 0]
+	  SrcBlock		  " SFunction "
+	  SrcPort		  2
+	  DstBlock		  "cmd"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  35
+	  SrcBlock		  " Demux "
+	  SrcPort		  1
+	  DstBlock		  " Terminator "
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  36
+	  SrcBlock		  " SFunction "
+	  SrcPort		  1
+	  DstBlock		  " Demux "
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      Integrator
+      Name		      "Integrator"
+      SID		      "1018"
+      Ports		      [1, 1]
+      Position		      [875, 512, 925, 578]
+      ZOrder		      77
+      BlockMirror	      on
+      InitialCondition	      "IC"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Model"
+      SID		      "1010"
+      Ports		      [1, 1]
+      Position		      [960, 503, 1090, 587]
+      ZOrder		      69
+      BlockMirror	      on
+      LibraryVersion	      "1.32"
+      ErrorFcn		      "Stateflow.Translate.translate"
+      PermitHierarchicalResolution "ExplicitOnly"
+      TreatAsAtomicUnit	      on
+      RequestExecContextInheritance off
+      SFBlockType	      "MATLAB Function"
+      System {
+	Name			"Model"
 	Location		[223, 338, 826, 833]
 	Open			off
 	ModelBrowserVisibility	off
@@ -4970,8 +5093,8 @@ Model {
 	SIDHighWatermark	"28"
 	Block {
 	  BlockType		  Inport
-	  Name			  "traj"
-	  SID			  "980::1"
+	  Name			  "cmd"
+	  SID			  "1010::1"
 	  Position		  [20, 101, 40, 119]
 	  ZOrder		  -1
 	  IconDisplay		  "Port number"
@@ -4979,7 +5102,7 @@ Model {
 	Block {
 	  BlockType		  Demux
 	  Name			  " Demux "
-	  SID			  "980::17"
+	  SID			  "1010::17"
 	  Ports			  [1, 1]
 	  Position		  [270, 230, 320, 270]
 	  ZOrder		  8
@@ -4988,8 +5111,8 @@ Model {
 	Block {
 	  BlockType		  S-Function
 	  Name			  " SFunction "
-	  SID			  "980::16"
-	  Tag			  "Stateflow S-Function PackageDeliverySim 3"
+	  SID			  "1010::16"
+	  Tag			  "Stateflow S-Function PackageDeliverySim 7"
 	  Ports			  [1, 2]
 	  Position		  [180, 115, 230, 175]
 	  ZOrder		  7
@@ -4998,7 +5121,7 @@ Model {
 	  EnableBusSupport	  on
 	  Port {
 	    PortNumber		    2
-	    Name		    "waypoint"
+	    Name		    "state"
 	    RTWStorageClass	    "Auto"
 	    DataLoggingNameMode	    "SignalName"
 	  }
@@ -5006,43 +5129,43 @@ Model {
 	Block {
 	  BlockType		  Terminator
 	  Name			  " Terminator "
-	  SID			  "980::18"
+	  SID			  "1010::18"
 	  Position		  [460, 241, 480, 259]
 	  ZOrder		  9
 	}
 	Block {
 	  BlockType		  Outport
-	  Name			  "waypoint"
-	  SID			  "980::5"
+	  Name			  "state"
+	  SID			  "1010::24"
 	  Position		  [460, 101, 480, 119]
-	  ZOrder		  -5
+	  ZOrder		  11
 	  IconDisplay		  "Port number"
 	}
 	Line {
-	  ZOrder		  119
-	  SrcBlock		  "traj"
+	  ZOrder		  48
+	  SrcBlock		  "cmd"
 	  SrcPort		  1
 	  DstBlock		  " SFunction "
 	  DstPort		  1
 	}
 	Line {
-	  Name			  "waypoint"
-	  ZOrder		  120
+	  Name			  "state"
+	  ZOrder		  49
 	  Labels		  [0, 0]
 	  SrcBlock		  " SFunction "
 	  SrcPort		  2
-	  DstBlock		  "waypoint"
+	  DstBlock		  "state"
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  121
+	  ZOrder		  50
 	  SrcBlock		  " Demux "
 	  SrcPort		  1
 	  DstBlock		  " Terminator "
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  122
+	  ZOrder		  51
 	  SrcBlock		  " SFunction "
 	  SrcPort		  1
 	  DstBlock		  " Demux "
@@ -5051,27 +5174,32 @@ Model {
       }
     }
     Block {
-      BlockType		      Integrator
-      Name		      "     "
-      SID		      "1018"
-      Ports		      [1, 1]
-      Position		      [875, 512, 925, 578]
-      ZOrder		      77
+      BlockType		      ToWorkspace
+      Name		      "To Workspace"
+      SID		      "1017"
+      Ports		      [1]
+      Position		      [750, 530, 810, 560]
+      ZOrder		      76
       BlockMirror	      on
-      InitialCondition	      "IC"
+      VariableName	      "state"
+      MaxDataPoints	      "inf"
+      SaveFormat	      "Structure With Time"
+      Save2DSignal	      "3-D array (concatenate along third dimension)"
+      FixptAsFi		      on
+      SampleTime	      "-1"
     }
     Block {
       BlockType		      SubSystem
-      Name		      "      "
+      Name		      "Trajectory Genereator"
       SID		      "988"
       Ports		      [0, 1]
       Position		      [460, 354, 625, 456]
       ZOrder		      60
       RequestExecContextInheritance off
       System {
-	Name			"      "
+	Name			"Trajectory Genereator"
 	Location		[-8, 0, 1928, 1066]
-	Open			off
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -5496,12 +5624,11 @@ Model {
     }
     Block {
       BlockType		      SubSystem
-      Name		      "           "
-      SID		      "1010"
+      Name		      "Waypoint Generator1"
+      SID		      "980"
       Ports		      [1, 1]
-      Position		      [960, 503, 1090, 587]
-      ZOrder		      69
-      BlockMirror	      on
+      Position		      [680, 363, 810, 447]
+      ZOrder		      54
       LibraryVersion	      "1.32"
       ErrorFcn		      "Stateflow.Translate.translate"
       PermitHierarchicalResolution "ExplicitOnly"
@@ -5509,7 +5636,7 @@ Model {
       RequestExecContextInheritance off
       SFBlockType	      "MATLAB Function"
       System {
-	Name			"           "
+	Name			"Waypoint Generator1"
 	Location		[223, 338, 826, 833]
 	Open			off
 	ModelBrowserVisibility	off
@@ -5526,8 +5653,8 @@ Model {
 	SIDHighWatermark	"28"
 	Block {
 	  BlockType		  Inport
-	  Name			  "cmd"
-	  SID			  "1010::1"
+	  Name			  "traj"
+	  SID			  "980::1"
 	  Position		  [20, 101, 40, 119]
 	  ZOrder		  -1
 	  IconDisplay		  "Port number"
@@ -5535,7 +5662,7 @@ Model {
 	Block {
 	  BlockType		  Demux
 	  Name			  " Demux "
-	  SID			  "1010::17"
+	  SID			  "980::17"
 	  Ports			  [1, 1]
 	  Position		  [270, 230, 320, 270]
 	  ZOrder		  8
@@ -5544,8 +5671,8 @@ Model {
 	Block {
 	  BlockType		  S-Function
 	  Name			  " SFunction "
-	  SID			  "1010::16"
-	  Tag			  "Stateflow S-Function PackageDeliverySim 7"
+	  SID			  "980::16"
+	  Tag			  "Stateflow S-Function PackageDeliverySim 3"
 	  Ports			  [1, 2]
 	  Position		  [180, 115, 230, 175]
 	  ZOrder		  7
@@ -5554,7 +5681,7 @@ Model {
 	  EnableBusSupport	  on
 	  Port {
 	    PortNumber		    2
-	    Name		    "state"
+	    Name		    "waypoint"
 	    RTWStorageClass	    "Auto"
 	    DataLoggingNameMode	    "SignalName"
 	  }
@@ -5562,170 +5689,43 @@ Model {
 	Block {
 	  BlockType		  Terminator
 	  Name			  " Terminator "
-	  SID			  "1010::18"
+	  SID			  "980::18"
 	  Position		  [460, 241, 480, 259]
 	  ZOrder		  9
 	}
 	Block {
 	  BlockType		  Outport
-	  Name			  "state"
-	  SID			  "1010::24"
-	  Position		  [460, 101, 480, 119]
-	  ZOrder		  11
-	  IconDisplay		  "Port number"
-	}
-	Line {
-	  ZOrder		  48
-	  SrcBlock		  "cmd"
-	  SrcPort		  1
-	  DstBlock		  " SFunction "
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "state"
-	  ZOrder		  49
-	  Labels		  [0, 0]
-	  SrcBlock		  " SFunction "
-	  SrcPort		  2
-	  DstBlock		  "state"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  50
-	  SrcBlock		  " Demux "
-	  SrcPort		  1
-	  DstBlock		  " Terminator "
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  51
-	  SrcBlock		  " SFunction "
-	  SrcPort		  1
-	  DstBlock		  " Demux "
-	  DstPort		  1
-	}
-      }
-    }
-    Block {
-      BlockType		      SubSystem
-      Name		      "                         "
-      SID		      "1009"
-      Ports		      [2, 1]
-      Position		      [960, 383, 1090, 467]
-      ZOrder		      68
-      LibraryVersion	      "1.32"
-      ErrorFcn		      "Stateflow.Translate.translate"
-      PermitHierarchicalResolution "ExplicitOnly"
-      TreatAsAtomicUnit	      on
-      RequestExecContextInheritance off
-      SFBlockType	      "MATLAB Function"
-      System {
-	Name			"                         "
-	Location		[223, 338, 826, 833]
-	Open			off
-	ModelBrowserVisibility	off
-	ModelBrowserWidth	200
-	ScreenColor		"white"
-	PaperOrientation	"landscape"
-	PaperPositionMode	"auto"
-	PaperType		"usletter"
-	PaperUnits		"inches"
-	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
-	TiledPageScale		1
-	ShowPageBoundaries	off
-	ZoomFactor		"100"
-	SIDHighWatermark	"26"
-	Block {
-	  BlockType		  Inport
-	  Name			  "ref"
-	  SID			  "1009::1"
-	  Position		  [20, 101, 40, 119]
-	  ZOrder		  -1
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Inport
-	  Name			  "state"
-	  SID			  "1009::24"
-	  Position		  [20, 136, 40, 154]
-	  ZOrder		  11
-	  Port			  "2"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Demux
-	  Name			  " Demux "
-	  SID			  "1009::17"
-	  Ports			  [1, 1]
-	  Position		  [270, 230, 320, 270]
-	  ZOrder		  8
-	  Outputs		  "1"
-	}
-	Block {
-	  BlockType		  S-Function
-	  Name			  " SFunction "
-	  SID			  "1009::16"
-	  Tag			  "Stateflow S-Function PackageDeliverySim 6"
-	  Ports			  [2, 2]
-	  Position		  [180, 115, 230, 175]
-	  ZOrder		  7
-	  FunctionName		  "sf_sfun"
-	  PortCounts		  "[2 2]"
-	  EnableBusSupport	  on
-	  Port {
-	    PortNumber		    2
-	    Name		    "cmd"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	}
-	Block {
-	  BlockType		  Terminator
-	  Name			  " Terminator "
-	  SID			  "1009::18"
-	  Position		  [460, 241, 480, 259]
-	  ZOrder		  9
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "cmd"
-	  SID			  "1009::5"
+	  Name			  "waypoint"
+	  SID			  "980::5"
 	  Position		  [460, 101, 480, 119]
 	  ZOrder		  -5
 	  IconDisplay		  "Port number"
 	}
 	Line {
-	  ZOrder		  32
-	  SrcBlock		  "ref"
+	  ZOrder		  119
+	  SrcBlock		  "traj"
 	  SrcPort		  1
 	  DstBlock		  " SFunction "
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  33
-	  SrcBlock		  "state"
-	  SrcPort		  1
-	  DstBlock		  " SFunction "
-	  DstPort		  2
-	}
-	Line {
-	  Name			  "cmd"
-	  ZOrder		  34
+	  Name			  "waypoint"
+	  ZOrder		  120
 	  Labels		  [0, 0]
 	  SrcBlock		  " SFunction "
 	  SrcPort		  2
-	  DstBlock		  "cmd"
+	  DstBlock		  "waypoint"
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  35
+	  ZOrder		  121
 	  SrcBlock		  " Demux "
 	  SrcPort		  1
 	  DstBlock		  " Terminator "
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  36
+	  ZOrder		  122
 	  SrcBlock		  " SFunction "
 	  SrcPort		  1
 	  DstBlock		  " Demux "
@@ -5739,10 +5739,10 @@ Model {
       FontWeight	      "normal"
       FontAngle		      "normal"
       ZOrder		      243
-      SrcBlock		      "                         "
+      SrcBlock		      "Controller"
       SrcPort		      1
       Points		      [92, 0; 0, 120]
-      DstBlock		      "           "
+      DstBlock		      "Model"
       DstPort		      1
     }
     Line {
@@ -5751,9 +5751,9 @@ Model {
       FontWeight	      "normal"
       FontAngle		      "normal"
       ZOrder		      264
-      SrcBlock		      "           "
+      SrcBlock		      "Model"
       SrcPort		      1
-      DstBlock		      "     "
+      DstBlock		      "Integrator"
       DstPort		      1
     }
     Line {
@@ -5762,29 +5762,25 @@ Model {
       FontWeight	      "normal"
       FontAngle		      "normal"
       ZOrder		      245
-      SrcBlock		      "   "
+      SrcBlock		      "Waypoint Generator1"
       SrcPort		      1
-      DstBlock		      "                         "
+      DstBlock		      "Controller"
       DstPort		      1
     }
     Line {
-      FontName		      "Helvetica"
-      FontSize		      9
-      FontWeight	      "normal"
-      FontAngle		      "normal"
       ZOrder		      265
-      SrcBlock		      "     "
+      SrcBlock		      "Integrator"
       SrcPort		      1
       Points		      [-19, 0]
       Branch {
 	ZOrder			280
 	Points			[0, -100]
-	DstBlock		"                         "
+	DstBlock		"Controller"
 	DstPort			2
       }
       Branch {
 	ZOrder			279
-	DstBlock		" "
+	DstBlock		"To Workspace"
 	DstPort			1
       }
     }
@@ -5794,9 +5790,9 @@ Model {
       FontWeight	      "normal"
       FontAngle		      "normal"
       ZOrder		      204
-      SrcBlock		      "      "
+      SrcBlock		      "Trajectory Genereator"
       SrcPort		      1
-      DstBlock		      "   "
+      DstBlock		      "Waypoint Generator1"
       DstPort		      1
     }
   }
@@ -5813,11 +5809,13 @@ Stateflow {
     created		    "28-May-2012 17:04:21"
     isLibrary		    0
     firstTarget		    55
+    debug {
+    }
     sfVersion		    80000001
   }
   chart {
     id			    2
-    name		    "   "
+    name		    "Waypoint Generator1"
     windowPosition	    [422 539.941 189 413]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 3600 1200 1.180555555555556]
@@ -6061,13 +6059,13 @@ Stateflow {
   }
   instance {
     id			    13
-    name		    "   "
+    name		    "Waypoint Generator1"
     machine		    1
     chart		    2
   }
   chart {
     id			    14
-    name		    "      /Trajectory Generator"
+    name		    "Trajectory Genereator/Trajectory Generator"
     windowPosition	    [422 539.941 189 413]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 3600 1200 1.180555555555556]
@@ -6075,6 +6073,7 @@ Stateflow {
     firstTransition	    23
     firstJunction	    22
     viewObj		    14
+    visible		    1
     machine		    1
     subviewS {
     }
@@ -6281,13 +6280,13 @@ Stateflow {
   }
   instance {
     id			    24
-    name		    "      /Trajectory Generator"
+    name		    "Trajectory Genereator/Trajectory Generator"
     machine		    1
     chart		    14
   }
   chart {
     id			    25
-    name		    "      /Destination Generator"
+    name		    "Trajectory Genereator/Destination Generator"
     windowPosition	    [422 539.941 189 413]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 3600 1200 1.180555555555556]
@@ -6495,13 +6494,13 @@ Stateflow {
   }
   instance {
     id			    35
-    name		    "      /Destination Generator"
+    name		    "Trajectory Genereator/Destination Generator"
     machine		    1
     chart		    25
   }
   chart {
     id			    36
-    name		    "                         "
+    name		    "Controller"
     windowPosition	    [422 539.941 189 413]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 3600 1200 1.180555555555556]
@@ -6689,13 +6688,13 @@ Stateflow {
   }
   instance {
     id			    45
-    name		    "                         "
+    name		    "Controller"
     machine		    1
     chart		    36
   }
   chart {
     id			    46
-    name		    "           "
+    name		    "Model"
     windowPosition	    [422 539.941 189 413]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 3600 1200 1.180555555555556]
@@ -6859,7 +6858,7 @@ Stateflow {
   }
   instance {
     id			    54
-    name		    "           "
+    name		    "Model"
     machine		    1
     chart		    46
   }

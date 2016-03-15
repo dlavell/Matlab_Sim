@@ -4,6 +4,8 @@ clear all
 warning ('off','all');
 display('Initializing Sim...')
 
+% Testing new branch
+
 warehouses = [37.3154997	-121.8728929;
               37.2912864	-121.9896046;
               37.313593	    -121.7731222;
