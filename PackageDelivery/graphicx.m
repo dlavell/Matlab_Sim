@@ -42,6 +42,7 @@ for t2 = 0:step:T
     
     % cycle through each quad for each frame
     for quad = 1: 10 
+        %state.signals.values(1:9,25:27) = remap([37.25 -121.75 0], 9,1);
         pos = state.signals.values(:,3*quad-2:3*quad)';
         % pos = quads.signals.values(:,3*quad-2:3*quad)';
         pos_R = Rcam*pos;
