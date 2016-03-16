@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.2873"
+    ComputedModelVersion    "1.2875"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -76,9 +76,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "dlavell"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Mar 15 21:50:11 2016"
-  RTWModifiedTimeStamp	  379979397
-  ModelVersionFormat	  "1.%<AutoIncrement:2873>"
+  LastModifiedDate	  "Tue Mar 15 22:17:30 2016"
+  RTWModifiedTimeStamp	  379980933
+  ModelVersionFormat	  "1.%<AutoIncrement:2875>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -6110,23 +6110,23 @@ Stateflow {
       isEML		      1
       script		      "function traj = fcn(origin_lat, origin_lng, altitude)\n\n%% Initialize variables\nglobal destinat"
       "ions n_quads trajectories;\ntraj = 0;\n% Note: altitude is measured feet\n\nobstacles = [\n    0  0  0  0  0    "
-      "0  0  0  0  0;\n    0  0  0  0  0    0  0  0  0  0;\n    0  0  0  0  0    0  1  1  0  0;\n    0  0  0  1  1    1"
-      "  1  0  0  0;\n    0  0  0  0  0.0  0  0  0  0  0;\n    0  0  0  0  0    0  0  0  0  0;\n    0  0  0  0  1    1 "
-      " 0  0  0  0;\n    0  0  0  0  1    1  0  0  0  0;\n    0  0  0  0  0    0  0  0  0  0;\n    0  0  0  0  0    0  "
+      "0  0  0  0  0;\n    0  0  0  0  0    0  0  0  0  0;\n    0  0  0  0  0    0  0  0  0  0;\n    0  0  0  1  1    1"
+      "  1  0  0  0;\n    0  0  0  0  0.0  0  0  0  0  0;\n    0  0  0  1  1    1  1  0  0  0;\n    0  0  0  0  0    0 "
+      " 0  0  0  0;\n    0  0  0  0  0    0  0  0  0  0;\n    0  0  0  0  0    0  0  0  0  0;\n    0  0  0  0  0    0  "
       "0  0  0  0];\n\n\n% Note: n_quads < 100 must hold\n% so that the output variable doesnt change size\n%trajectori"
       "es = zeros(23,3,100);\norigin = [origin_lat origin_lng 0];\n\nfor quad_id = 1:n_quads\n    dest = [destinations("
       "quad_id,1) destinations(quad_id,2) 0];\n    if(dest(1) == 0 || dest(2) == 0)\n        trajectory = repmat([origi"
       "n(1) origin(2) 0], 23, 1);\n    elseif (trajectories(4,1,quad_id) ~= origin(1))\n        continue\n    else\n   "
       "     index = 1;\n        trajectory = zeros(23,3);\n        [path, path_len] = PathOptimizer(obstacles, dest(1,1"
       ") ,dest(1,2));\n        if(path_len == 0)\n            trajectory = repmat([origin(1) origin(2) 0], 23, 1);\n   "
-      "         continue \n        end\n        trajectory(index,:) = [origin(1) origin(2) 0 ];\n        index = index "
-      "+1;\n        trajectory(index,:) = [origin(1) origin(2) altitude ];\n        index = index +1;\n        for i = "
-      "1:path_len\n            trajectory(index,:) = [path(i,1) path(i,2) altitude];\n            index = index +1;\n  "
-      "      end\n        trajectory(index,:) = [path(path_len,1) path(path_len,2) 0];\n        index = index +1;\n    "
-      "    for i = 1:path_len\n            trajectory(index,:) = [path(path_len-i+1,1) path(path_len-i+1,2) altitude];\n"
-      "            index = index +1;\n        end\n        trajectory(index,:) = [origin(1) origin(2) altitude ];\n    "
-      "    index = index +1;\n        trajectory(index,:) = [origin(1) origin(2) 0 ];\n        %trajectory\n    end\n  "
-      "  \n    trajectories(:,:,quad_id) = trajectory;\nend\ntraj;"
+      "         destinations(quad_id,:) = [0 0 0];\n            continue \n        end\n        trajectory(index,:) = ["
+      "origin(1) origin(2) 0 ];\n        index = index +1;\n        trajectory(index,:) = [origin(1) origin(2) altitude"
+      " ];\n        index = index +1;\n        for i = 1:path_len\n            trajectory(index,:) = [path(i,1) path(i,"
+      "2) altitude];\n            index = index +1;\n        end\n        trajectory(index,:) = [path(path_len,1) path("
+      "path_len,2) 0];\n        index = index +1;\n        for i = 1:path_len\n            trajectory(index,:) = [path("
+      "path_len-i+1,1) path(path_len-i+1,2) altitude];\n            index = index +1;\n        end\n        trajectory("
+      "index,:) = [origin(1) origin(2) altitude ];\n        index = index +1;\n        trajectory(index,:) = [origin(1)"
+      " origin(2) 0 ];\n        %trajectory\n    end\n    \n    trajectories(:,:,quad_id) = trajectory;\nend\ntraj;"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
