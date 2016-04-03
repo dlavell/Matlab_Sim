@@ -57,7 +57,7 @@ for t2 = 0:step:T
         quad_plot(p_star,R_star,0,[],0.5,scale);
     end % end for-loop
     
-    set(gca,'Xlim',[37.15 37.45], 'YLim', [-122.1 -121.65], 'ZLim', [0 .4]);
+    set(gca,'Xlim',[37.15 37.45], 'YLim', [-122.1 -121.65], 'ZLim', [0 500]);
     %view(37.5,30);
     axis square;
     %legend(leg,{'Quad 1','Quad 2','Quad 3','4'},'location','NorthEast')

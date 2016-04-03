@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.2834"
+    ComputedModelVersion    "1.2889"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -40,7 +40,7 @@ Model {
       $ObjectID		      3
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [-8.0, 0.0, 1936.0, 1066.0]
+      Location		      [-8.0, -8.0, 1936.0, 1066.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		4
@@ -66,7 +66,7 @@ Model {
 	LoadSaveID		"0"
 	Extents			[1886.0, 892.0]
 	ZoomFactor		[1.75]
-	Offset			[300.72295597484265, 151.88903863432154]
+	Offset			[303.58009883198577, 182.17475292003587]
       }
     }
   }
@@ -76,9 +76,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "dlavell"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sun Mar 13 19:54:31 2016"
-  RTWModifiedTimeStamp	  379799653
-  ModelVersionFormat	  "1.%<AutoIncrement:2834>"
+  LastModifiedDate	  "Sat Apr 02 20:09:09 2016"
+  RTWModifiedTimeStamp	  381528545
+  ModelVersionFormat	  "1.%<AutoIncrement:2889>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -4909,7 +4909,7 @@ Model {
   }
   System {
     Name		    "PackageDeliverySim"
-    Location		    [-8, 0, 1928, 1066]
+    Location		    [-8, -8, 1928, 1058]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    212
@@ -4940,117 +4940,6 @@ Model {
       SampleTime	      "-1"
     }
     Block {
-      BlockType		      SubSystem
-      Name		      "   "
-      SID		      "980"
-      Ports		      [1, 1]
-      Position		      [680, 363, 810, 447]
-      ZOrder		      54
-      LibraryVersion	      "1.32"
-      ErrorFcn		      "Stateflow.Translate.translate"
-      PermitHierarchicalResolution "ExplicitOnly"
-      TreatAsAtomicUnit	      on
-      RequestExecContextInheritance off
-      SFBlockType	      "MATLAB Function"
-      System {
-	Name			"   "
-	Location		[223, 338, 826, 833]
-	Open			off
-	ModelBrowserVisibility	off
-	ModelBrowserWidth	200
-	ScreenColor		"white"
-	PaperOrientation	"landscape"
-	PaperPositionMode	"auto"
-	PaperType		"usletter"
-	PaperUnits		"inches"
-	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
-	TiledPageScale		1
-	ShowPageBoundaries	off
-	ZoomFactor		"100"
-	SIDHighWatermark	"28"
-	Block {
-	  BlockType		  Inport
-	  Name			  "traj"
-	  SID			  "980::1"
-	  Position		  [20, 101, 40, 119]
-	  ZOrder		  -1
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Demux
-	  Name			  " Demux "
-	  SID			  "980::17"
-	  Ports			  [1, 1]
-	  Position		  [270, 230, 320, 270]
-	  ZOrder		  8
-	  Outputs		  "1"
-	}
-	Block {
-	  BlockType		  S-Function
-	  Name			  " SFunction "
-	  SID			  "980::16"
-	  Tag			  "Stateflow S-Function PackageDeliverySim 3"
-	  Ports			  [1, 2]
-	  Position		  [180, 115, 230, 175]
-	  ZOrder		  7
-	  FunctionName		  "sf_sfun"
-	  PortCounts		  "[1 2]"
-	  EnableBusSupport	  on
-	  Port {
-	    PortNumber		    2
-	    Name		    "waypoint"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	}
-	Block {
-	  BlockType		  Terminator
-	  Name			  " Terminator "
-	  SID			  "980::18"
-	  Position		  [460, 241, 480, 259]
-	  ZOrder		  9
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "waypoint"
-	  SID			  "980::5"
-	  Position		  [460, 101, 480, 119]
-	  ZOrder		  -5
-	  IconDisplay		  "Port number"
-	}
-	Line {
-	  ZOrder		  119
-	  SrcBlock		  "traj"
-	  SrcPort		  1
-	  DstBlock		  " SFunction "
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "waypoint"
-	  ZOrder		  120
-	  Labels		  [0, 0]
-	  SrcBlock		  " SFunction "
-	  SrcPort		  2
-	  DstBlock		  "waypoint"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  121
-	  SrcBlock		  " Demux "
-	  SrcPort		  1
-	  DstBlock		  " Terminator "
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  122
-	  SrcBlock		  " SFunction "
-	  SrcPort		  1
-	  DstBlock		  " Demux "
-	  DstPort		  1
-	}
-      }
-    }
-    Block {
       BlockType		      Integrator
       Name		      "     "
       SID		      "1018"
@@ -5070,7 +4959,7 @@ Model {
       RequestExecContextInheritance off
       System {
 	Name			"      "
-	Location		[-8, 0, 1928, 1066]
+	Location		[-8, -8, 1928, 1058]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -5089,7 +4978,7 @@ Model {
 	  SID			  "965"
 	  Position		  [780, 245, 810, 275]
 	  ZOrder		  69
-	  Value			  ".1"
+	  Value			  "400"
 	}
 	Block {
 	  BlockType		  SubSystem
@@ -5231,7 +5120,7 @@ Model {
 	  BlockType		  Constant
 	  Name			  "Max Radius (NM)"
 	  SID			  "1001"
-	  Position		  [335, 465, 365, 495]
+	  Position		  [335, 525, 365, 555]
 	  ZOrder		  74
 	  Value			  "maxRadius"
 	}
@@ -5239,7 +5128,7 @@ Model {
 	  BlockType		  Constant
 	  Name			  "Min Radius (NM)"
 	  SID			  "1000"
-	  Position		  [335, 395, 365, 425]
+	  Position		  [335, 440, 365, 470]
 	  ZOrder		  73
 	  Value			  "0"
 	}
@@ -5247,7 +5136,7 @@ Model {
 	  BlockType		  Constant
 	  Name			  "Source Latitude"
 	  SID			  "998"
-	  Position		  [335, 255, 365, 285]
+	  Position		  [335, 270, 365, 300]
 	  ZOrder		  71
 	  Value			  "IC(1)"
 	}
@@ -5255,7 +5144,7 @@ Model {
 	  BlockType		  Constant
 	  Name			  "Source Longitude"
 	  SID			  "999"
-	  Position		  [335, 325, 365, 355]
+	  Position		  [335, 355, 365, 385]
 	  ZOrder		  72
 	  Value			  "IC(2)"
 	}
@@ -5414,16 +5303,15 @@ Model {
 	  ZOrder		  12
 	  SrcBlock		  "Source Latitude"
 	  SrcPort		  1
-	  Points		  [43, 0]
+	  Points		  [38, 0]
 	  Branch {
 	    ZOrder		    36
-	    Points		    [0, -120]
+	    Points		    [0, -135]
 	    DstBlock		    "Trajectory Generator"
 	    DstPort		    1
 	  }
 	  Branch {
 	    ZOrder		    23
-	    Points		    [32, 0]
 	    DstBlock		    "Destination Generator"
 	    DstPort		    1
 	  }
@@ -5439,16 +5327,15 @@ Model {
 	  ZOrder		  13
 	  SrcBlock		  "Source Longitude"
 	  SrcPort		  1
-	  Points		  [58, 0]
+	  Points		  [58, 0; 0, 0]
 	  Branch {
 	    ZOrder		    35
-	    Points		    [0, -135]
+	    Points		    [0, -165]
 	    DstBlock		    "Trajectory Generator"
 	    DstPort		    2
 	  }
 	  Branch {
 	    ZOrder		    24
-	    Points		    [17, 0]
 	    DstBlock		    "Destination Generator"
 	    DstPort		    2
 	  }
@@ -5457,7 +5344,6 @@ Model {
 	  ZOrder		  14
 	  SrcBlock		  "Min Radius (NM)"
 	  SrcPort		  1
-	  Points		  [75, 0]
 	  DstBlock		  "Destination Generator"
 	  DstPort		  3
 	}
@@ -5465,7 +5351,6 @@ Model {
 	  ZOrder		  15
 	  SrcBlock		  "Max Radius (NM)"
 	  SrcPort		  1
-	  Points		  [75, 0]
 	  DstBlock		  "Destination Generator"
 	  DstPort		  4
 	}
@@ -5496,119 +5381,7 @@ Model {
     }
     Block {
       BlockType		      SubSystem
-      Name		      "           "
-      SID		      "1010"
-      Ports		      [1, 1]
-      Position		      [960, 503, 1090, 587]
-      ZOrder		      69
-      BlockMirror	      on
-      LibraryVersion	      "1.32"
-      ErrorFcn		      "Stateflow.Translate.translate"
-      PermitHierarchicalResolution "ExplicitOnly"
-      TreatAsAtomicUnit	      on
-      RequestExecContextInheritance off
-      SFBlockType	      "MATLAB Function"
-      System {
-	Name			"           "
-	Location		[223, 338, 826, 833]
-	Open			off
-	ModelBrowserVisibility	off
-	ModelBrowserWidth	200
-	ScreenColor		"white"
-	PaperOrientation	"landscape"
-	PaperPositionMode	"auto"
-	PaperType		"usletter"
-	PaperUnits		"inches"
-	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
-	TiledPageScale		1
-	ShowPageBoundaries	off
-	ZoomFactor		"100"
-	SIDHighWatermark	"28"
-	Block {
-	  BlockType		  Inport
-	  Name			  "cmd"
-	  SID			  "1010::1"
-	  Position		  [20, 101, 40, 119]
-	  ZOrder		  -1
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Demux
-	  Name			  " Demux "
-	  SID			  "1010::17"
-	  Ports			  [1, 1]
-	  Position		  [270, 230, 320, 270]
-	  ZOrder		  8
-	  Outputs		  "1"
-	}
-	Block {
-	  BlockType		  S-Function
-	  Name			  " SFunction "
-	  SID			  "1010::16"
-	  Tag			  "Stateflow S-Function PackageDeliverySim 7"
-	  Ports			  [1, 2]
-	  Position		  [180, 115, 230, 175]
-	  ZOrder		  7
-	  FunctionName		  "sf_sfun"
-	  PortCounts		  "[1 2]"
-	  EnableBusSupport	  on
-	  Port {
-	    PortNumber		    2
-	    Name		    "state"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	}
-	Block {
-	  BlockType		  Terminator
-	  Name			  " Terminator "
-	  SID			  "1010::18"
-	  Position		  [460, 241, 480, 259]
-	  ZOrder		  9
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "state"
-	  SID			  "1010::24"
-	  Position		  [460, 101, 480, 119]
-	  ZOrder		  11
-	  IconDisplay		  "Port number"
-	}
-	Line {
-	  ZOrder		  48
-	  SrcBlock		  "cmd"
-	  SrcPort		  1
-	  DstBlock		  " SFunction "
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "state"
-	  ZOrder		  49
-	  Labels		  [0, 0]
-	  SrcBlock		  " SFunction "
-	  SrcPort		  2
-	  DstBlock		  "state"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  50
-	  SrcBlock		  " Demux "
-	  SrcPort		  1
-	  DstBlock		  " Terminator "
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  51
-	  SrcBlock		  " SFunction "
-	  SrcPort		  1
-	  DstBlock		  " Demux "
-	  DstPort		  1
-	}
-      }
-    }
-    Block {
-      BlockType		      SubSystem
-      Name		      "                         "
+      Name		      "Controller"
       SID		      "1009"
       Ports		      [2, 1]
       Position		      [960, 383, 1090, 467]
@@ -5620,7 +5393,7 @@ Model {
       RequestExecContextInheritance off
       SFBlockType	      "MATLAB Function"
       System {
-	Name			"                         "
+	Name			"Controller"
 	Location		[223, 338, 826, 833]
 	Open			off
 	ModelBrowserVisibility	off
@@ -5733,45 +5506,252 @@ Model {
 	}
       }
     }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Model"
+      SID		      "1010"
+      Ports		      [1, 1]
+      Position		      [960, 503, 1090, 587]
+      ZOrder		      69
+      BlockMirror	      on
+      LibraryVersion	      "1.32"
+      ErrorFcn		      "Stateflow.Translate.translate"
+      PermitHierarchicalResolution "ExplicitOnly"
+      TreatAsAtomicUnit	      on
+      RequestExecContextInheritance off
+      SFBlockType	      "MATLAB Function"
+      System {
+	Name			"Model"
+	Location		[223, 338, 826, 833]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	SIDHighWatermark	"28"
+	Block {
+	  BlockType		  Inport
+	  Name			  "cmd"
+	  SID			  "1010::1"
+	  Position		  [20, 101, 40, 119]
+	  ZOrder		  -1
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  " Demux "
+	  SID			  "1010::17"
+	  Ports			  [1, 1]
+	  Position		  [270, 230, 320, 270]
+	  ZOrder		  8
+	  Outputs		  "1"
+	}
+	Block {
+	  BlockType		  S-Function
+	  Name			  " SFunction "
+	  SID			  "1010::16"
+	  Tag			  "Stateflow S-Function PackageDeliverySim 7"
+	  Ports			  [1, 2]
+	  Position		  [180, 115, 230, 175]
+	  ZOrder		  7
+	  FunctionName		  "sf_sfun"
+	  PortCounts		  "[1 2]"
+	  EnableBusSupport	  on
+	  Port {
+	    PortNumber		    2
+	    Name		    "state"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  " Terminator "
+	  SID			  "1010::18"
+	  Position		  [460, 241, 480, 259]
+	  ZOrder		  9
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "state"
+	  SID			  "1010::24"
+	  Position		  [460, 101, 480, 119]
+	  ZOrder		  11
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  ZOrder		  48
+	  SrcBlock		  "cmd"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "state"
+	  ZOrder		  49
+	  Labels		  [0, 0]
+	  SrcBlock		  " SFunction "
+	  SrcPort		  2
+	  DstBlock		  "state"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  50
+	  SrcBlock		  " Demux "
+	  SrcPort		  1
+	  DstBlock		  " Terminator "
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  51
+	  SrcBlock		  " SFunction "
+	  SrcPort		  1
+	  DstBlock		  " Demux "
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Waypoint Generator "
+      SID		      "980"
+      Ports		      [1, 1]
+      Position		      [680, 363, 810, 447]
+      ZOrder		      54
+      LibraryVersion	      "1.32"
+      ErrorFcn		      "Stateflow.Translate.translate"
+      PermitHierarchicalResolution "ExplicitOnly"
+      TreatAsAtomicUnit	      on
+      RequestExecContextInheritance off
+      SFBlockType	      "MATLAB Function"
+      System {
+	Name			"Waypoint Generator "
+	Location		[223, 338, 826, 833]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	SIDHighWatermark	"28"
+	Block {
+	  BlockType		  Inport
+	  Name			  "traj"
+	  SID			  "980::1"
+	  Position		  [20, 101, 40, 119]
+	  ZOrder		  -1
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  " Demux "
+	  SID			  "980::17"
+	  Ports			  [1, 1]
+	  Position		  [270, 230, 320, 270]
+	  ZOrder		  8
+	  Outputs		  "1"
+	}
+	Block {
+	  BlockType		  S-Function
+	  Name			  " SFunction "
+	  SID			  "980::16"
+	  Tag			  "Stateflow S-Function PackageDeliverySim 3"
+	  Ports			  [1, 2]
+	  Position		  [180, 115, 230, 175]
+	  ZOrder		  7
+	  FunctionName		  "sf_sfun"
+	  PortCounts		  "[1 2]"
+	  EnableBusSupport	  on
+	  Port {
+	    PortNumber		    2
+	    Name		    "waypoint"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  " Terminator "
+	  SID			  "980::18"
+	  Position		  [460, 241, 480, 259]
+	  ZOrder		  9
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "waypoint"
+	  SID			  "980::5"
+	  Position		  [460, 101, 480, 119]
+	  ZOrder		  -5
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  ZOrder		  119
+	  SrcBlock		  "traj"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "waypoint"
+	  ZOrder		  120
+	  Labels		  [0, 0]
+	  SrcBlock		  " SFunction "
+	  SrcPort		  2
+	  DstBlock		  "waypoint"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  121
+	  SrcBlock		  " Demux "
+	  SrcPort		  1
+	  DstBlock		  " Terminator "
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  122
+	  SrcBlock		  " SFunction "
+	  SrcPort		  1
+	  DstBlock		  " Demux "
+	  DstPort		  1
+	}
+      }
+    }
     Line {
-      FontName		      "Helvetica"
-      FontSize		      9
-      FontWeight	      "normal"
-      FontAngle		      "normal"
       ZOrder		      243
-      SrcBlock		      "                         "
+      SrcBlock		      "Controller"
       SrcPort		      1
       Points		      [92, 0; 0, 120]
-      DstBlock		      "           "
+      DstBlock		      "Model"
       DstPort		      1
     }
     Line {
-      FontName		      "Helvetica"
-      FontSize		      9
-      FontWeight	      "normal"
-      FontAngle		      "normal"
       ZOrder		      264
-      SrcBlock		      "           "
+      SrcBlock		      "Model"
       SrcPort		      1
       DstBlock		      "     "
       DstPort		      1
     }
     Line {
-      FontName		      "Helvetica"
-      FontSize		      9
-      FontWeight	      "normal"
-      FontAngle		      "normal"
       ZOrder		      245
-      SrcBlock		      "   "
+      SrcBlock		      "Waypoint Generator "
       SrcPort		      1
-      DstBlock		      "                         "
+      DstBlock		      "Controller"
       DstPort		      1
     }
     Line {
-      FontName		      "Helvetica"
-      FontSize		      9
-      FontWeight	      "normal"
-      FontAngle		      "normal"
       ZOrder		      265
       SrcBlock		      "     "
       SrcPort		      1
@@ -5779,7 +5759,7 @@ Model {
       Branch {
 	ZOrder			280
 	Points			[0, -100]
-	DstBlock		"                         "
+	DstBlock		"Controller"
 	DstPort			2
       }
       Branch {
@@ -5789,14 +5769,10 @@ Model {
       }
     }
     Line {
-      FontName		      "Helvetica"
-      FontSize		      9
-      FontWeight	      "normal"
-      FontAngle		      "normal"
       ZOrder		      204
       SrcBlock		      "      "
       SrcPort		      1
-      DstBlock		      "   "
+      DstBlock		      "Waypoint Generator "
       DstPort		      1
     }
   }
@@ -5817,7 +5793,7 @@ Stateflow {
   }
   chart {
     id			    2
-    name		    "   "
+    name		    "Waypoint Generator "
     windowPosition	    [422 539.941 189 413]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 3600 1200 1.180555555555556]
@@ -5854,26 +5830,35 @@ Stateflow {
     eml {
       isEML		      1
       script		      "function waypoint = Waypoint_generator(traj)\n%#codegen\n\nglobal curr_wp curr_tp destinations po"
-      "s n_quads;\nwaypoint = zeros(100,3);\n\n% Divide distance between last_wp and next_wp into evenly divided segmen"
-      "ts\n% waypoint distances\nwp_separation_dist = .0001; % was .01\n\n% acceptable distance to waypoint\nthreshold "
-      "= wp_separation_dist/2;\n\nfor quad_id = 1:n_quads\n    \n    % current position\n    if(pos(quad_id,1) == 0) po"
-      "s(quad_id,:) = traj(1,:,quad_id); end % temporary fix\n    quad_X = pos(quad_id,1);\n    quad_Y = pos(quad_id,2)"
-      ";\n    quad_Z = pos(quad_id,3);\n    \n    % associated trajectory\n    trajectory = traj(:,:,quad_id);\n    \n "
-      "   % Specify last and next trajectory points\n    last_tp = trajectory(curr_tp(quad_id) - 1,:);\n    next_tp = t"
-      "rajectory(curr_tp(quad_id),:);\n    \n%     if(abs(last_tp(3) - next_tp(3)) > 350)\n%         wp_separation_dist"
-      " = 10;    \n%         % acceptable distance to waypoint\n%         threshold = wp_separation_dist/3;\n%     end\n"
-      "    \n    \n    % trajectory point distances\n    tp_separation_dist = sqrt((last_tp(1)-next_tp(1))^2 + ...\n   "
-      "     (last_tp(2)-next_tp(2))^2 + (last_tp(3)-next_tp(3))^2);\n    \n    % Determine which segment along trajecto"
-      "ry to give next and in what\n    % direction\n    number_of_waypoints = floor(tp_separation_dist/wp_separation_d"
-      "ist);\n    vec_norm = [(last_tp(1)-next_tp(1)) (last_tp(2)-next_tp(2)) ...\n                        (last_tp(3)-"
-      "next_tp(3))]/tp_separation_dist;\n    if(isnan(vec_norm(1))) vec_norm(1) = 0; end\n    if(isnan(vec_norm(2))) ve"
-      "c_norm(2) = 0; end\n    if(isnan(vec_norm(3))) vec_norm(3) = 0; end\n    wp = last_tp + curr_wp(quad_id)*wp_sepa"
-      "ration_dist*-vec_norm;\n    \n    % distance to current waypoint\n    dist = sqrt((quad_X-wp(1))^2 + (quad_Y-wp("
-      "2))^2 + (quad_Z-wp(3))^2);\n    \n    if(dist <= threshold)\n        curr_wp(quad_id) = curr_wp(quad_id) + 1;\n "
-      "       if(curr_wp(quad_id) == number_of_waypoints)\n            curr_tp(quad_id) = curr_tp(quad_id) + 1;\n      "
-      "      curr_wp(quad_id) = 0;\n        end\n    end\n    if(curr_tp(quad_id) == length(trajectory(:,1)) + 1)\n    "
-      "    curr_tp(quad_id) = 2;\n        destinations(quad_id,:) = [0 0 0];\n    end\n    \n    %% output\n    waypoin"
-      "t(quad_id,:) = wp;\n    \nend % end for-loop\n\nend"
+      "s n_quads;\nwaypoint = zeros(100,3);\nprint = 0;\nfor quad_id = 1:n_quads\n    if quad_id == 1\n        print = "
+      "1;\n    else \n        print = 0;\n    end\n    % current position\n    if(pos(quad_id,1) == 0) pos(quad_id,:) ="
+      " traj(1,:,quad_id); end % temporary fix\n    quad_X = pos(quad_id,1);\n    quad_Y = pos(quad_id,2);\n    quad_Z "
+      "= pos(quad_id,3);\n    \n    % associated trajectory\n    trajectory = traj(:,:,quad_id);\n    \n    % Specify l"
+      "ast and next trajectory points\n    last_tp = trajectory(curr_tp(quad_id)-1,:);\n    next_tp = trajectory(curr_t"
+      "p(quad_id),:);\n    \n    % trajectory point distances\n    tp_separation_dist_xy = sqrt((last_tp(1)-next_tp(1))"
+      "^2 + ...\n        (last_tp(2)-next_tp(2))^2);\n    tp_separation_dist_z =  abs(last_tp(3)-next_tp(3));\n    \n  "
+      "  % Divide distance between last_tp and next_tp into evenly divided segments\n    % waypoint distances\n    wp_s"
+      "eparation_dist = 0;\n    tp_separation_dist = 0;\n    if tp_separation_dist_z > 50\n        wp_separation_dist ="
+      " tp_separation_dist_z/4;\n        tp_separation_dist = tp_separation_dist_z;\n    else\n        wp_separation_di"
+      "st = tp_separation_dist_xy/4;\n        tp_separation_dist = tp_separation_dist_xy;\n    end\n    \n    \n    % a"
+      "cceptable distance to waypoint\n    threshold_z = 5;\n    threshold_xy = .0005;\n    \n    % Determine which seg"
+      "ment along trajectory to give next and in what\n    % direction\n    number_of_waypoints = floor(tp_separation_d"
+      "ist/wp_separation_dist);\n    vec_norm = [(last_tp(1)-next_tp(1)) (last_tp(2)-next_tp(2)) ...\n                 "
+      "       (last_tp(3)-next_tp(3))]/tp_separation_dist;\n    if(isnan(vec_norm(1))) vec_norm(1) = 0; end\n    if(isn"
+      "an(vec_norm(2))) vec_norm(2) = 0; end\n    if(isnan(vec_norm(3))) vec_norm(3) = 0; end\n    wp = last_tp + curr_"
+      "wp(quad_id)*wp_separation_dist*-vec_norm;\n   \n    % distance to current waypoint\n    dist_xy = sqrt((quad_X-w"
+      "p(1))^2 + (quad_Y-wp(2))^2);\n    dist_z = abs(quad_Z-wp(3));\n    not_same_tp = last_tp(1) ~= next_tp(1) || ..."
+      "\n            last_tp(2) ~= next_tp(2) || last_tp(3) ~= next_tp(3);\n    if print \n        fprintf('last_tp    "
+      "   : %f  %f  %f \\n',last_tp(1),last_tp(2),last_tp(3));\n        fprintf('Quad position : %f  %f  %f \\n',quad_X"
+      ",quad_Y,quad_Z);\n        fprintf('Waypoint      : %f  %f  %f \\n',wp(1),wp(2),wp(3));\n        fprintf('next_tp"
+      "       : %f  %f  %f \\n',next_tp(1),next_tp(2),next_tp(3));\n        fprintf('distance to wp_xy : %f with thresh"
+      "old_xy : %f \\n',dist_xy, threshold_xy);\n        fprintf('distance to wp_z  : %f with threshold_z  : %f \\n',di"
+      "st_z, threshold_z);\n        fprintf('curr_wp : %f out of %f \\n\\n',curr_wp(quad_id),number_of_waypoints);\n   "
+      " end\n    if(dist_xy <= threshold_xy && dist_z <= threshold_z && not_same_tp)\n        curr_wp(quad_id) = curr_w"
+      "p(quad_id) + 1;\n        if(curr_wp(quad_id) == number_of_waypoints)\n            curr_tp(quad_id) = curr_tp(qua"
+      "d_id) + 1;\n            curr_wp(quad_id) = 0;\n        end\n    end\n    if(curr_tp(quad_id) == length(trajector"
+      "y(:,1)) + 1)\n        curr_tp(quad_id) = 2;\n        destinations(quad_id,:) = [0 0 0];\n    end\n    \n    %% o"
+      "utput\n    waypoint(quad_id,:) = wp;\n    \nend % end for-loop\n\nend"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
@@ -6061,7 +6046,7 @@ Stateflow {
   }
   instance {
     id			    13
-    name		    "   "
+    name		    "Waypoint Generator "
     machine		    1
     chart		    2
   }
@@ -6075,6 +6060,7 @@ Stateflow {
     firstTransition	    23
     firstJunction	    22
     viewObj		    14
+    visible		    1
     machine		    1
     subviewS {
     }
@@ -6106,13 +6092,13 @@ Stateflow {
       "destinations n_quads;\n\n% Note: altitude is measured feet\n\n\n% Note: n_quads < 100 must hold\n% so that the o"
       "utput variable doesnt change size\ntrajectories = zeros(7,3,100);\norigin = [origin_lat origin_lng 0];\n\nfor qu"
       "ad_id = 1:n_quads\n    dest = [destinations(quad_id,1) destinations(quad_id,2) 0];\n    if(dest(1) == 0 || dest("
-      "2) == 0)\n        trajectory = repmat([origin(1) origin(2) getElevation(origin(1),origin(2))], 7, 1);\n    else\n"
-      "        trajectory = [[origin(1) origin(2) getElevation(origin(1),origin(2))];\n            [origin(1) origin(2)"
-      " getElevation(origin(1),origin(2)) + altitude] ;\n            [dest(1,1) dest(1,2) getElevation(dest(1),dest(2))"
-      " + altitude] ;\n            [dest(1,1) dest(1,2) getElevation(dest(1),dest(2))] ;\n            [dest(1,1) dest(1"
-      ",2) getElevation(dest(1),dest(2)) + altitude] ;\n            [origin(1) origin(2) getElevation(origin(1),origin("
-      "2)) + altitude] ;\n            [origin(1) origin(2) getElevation(origin(1),origin(2))]];\n    end\n\n    traject"
-      "ories(:,:,quad_id) = trajectory;\nend"
+      "2) == 0) % No destination assigned \n        trajectory = repmat([origin(1) origin(2) getElevation(origin(1),ori"
+      "gin(2))], 7, 1);\n    else % Desitination assigned, build trajectory\n        trajectory = [[origin(1) origin(2)"
+      " getElevation(origin(1),origin(2))];\n            [origin(1) origin(2) getElevation(origin(1),origin(2)) + altit"
+      "ude] ;\n            [dest(1,1) dest(1,2) getElevation(dest(1),dest(2)) + altitude] ;\n            [dest(1,1) des"
+      "t(1,2) getElevation(dest(1),dest(2))] ;\n            [dest(1,1) dest(1,2) getElevation(dest(1),dest(2)) + altitu"
+      "de] ;\n            [origin(1) origin(2) getElevation(origin(1),origin(2)) + altitude] ;\n            [origin(1) "
+      "origin(2) getElevation(origin(1),origin(2))]];\n    end\n    \n    trajectories(:,:,quad_id) = trajectory;\nend"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
@@ -6295,6 +6281,7 @@ Stateflow {
     firstTransition	    34
     firstJunction	    33
     viewObj		    25
+    visible		    1
     machine		    1
     subviewS {
     }
@@ -6326,8 +6313,8 @@ Stateflow {
       "n\n%\nglobal destinations n_quads;\nEMPTY = 0;\n\n\nfor quad_id = 1:n_quads\n    if(destinations(quad_id,1) == 0"
       " && destinations(quad_id,2) == 0  && destinations(quad_id,3) == 0 )\n        if(rand < .25)\n            [lat,ln"
       "g]=simulate_destination_v2(lat_s,lng_s,radius_min,radius_max);\n            d = deg2nm(lat_s,lng_s,lat,lng);\n  "
-      "          if(d < radius_max && d > 0) \n                destinations(quad_id,1) = lat;\n                destinat"
-      "ions(quad_id,2) = lng;\n            end\n        end\n    end\nend\n\nend\n\n"
+      "          if(d < radius_max && d > 0 ) \n                destinations(quad_id,1) = lat;\n                destina"
+      "tions(quad_id,2) = lng;\n            end\n        end\n    end\nend\n\nend\n\n"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
@@ -6501,7 +6488,7 @@ Stateflow {
   }
   chart {
     id			    36
-    name		    "                         "
+    name		    "Controller"
     windowPosition	    [422 539.941 189 413]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 3600 1200 1.180555555555556]
@@ -6509,7 +6496,10 @@ Stateflow {
     firstTransition	    44
     firstJunction	    43
     viewObj		    36
+    visible		    1
     machine		    1
+    subviewS {
+    }
     ssIdHighWaterMark	    14
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -6540,12 +6530,14 @@ Stateflow {
       "grees)\n    pos(quad_id,3) = state(3*quad_id);   % current altitude\n    \n    % compute error terms\n    Ex = r"
       "ef(quad_id,1) - state(3*quad_id-2); % error latitude (degrees)\n    Ey = ref(quad_id,2) - state(3*quad_id-1); % "
       "error longitude (degrees)\n    Ez = ref(quad_id,3) - state(3*quad_id);   % error altitude\n    \n    % compute t"
-      "racking angle (degrees)\n    Xg = atan2d((sind(Ey)*cosd(ref(quad_id,1))),(sind(ref(quad_id,1))*cosd(state(3*quad"
-      "_id-2)) ...\n        - cosd(ref(quad_id,1))*sind(state(3*quad_id-2))*cosd(Ey)));\n    \n    % compute ground spe"
-      "ed\n    Vg = abs(Ex) + abs(Ey);\n    Vg;\n    Vg = Vg*10000000;\n    \n    % get distance apart in nautical mile"
-      "s\n    d = abs(deg2nm(pos(quad_id,1), pos(quad_id,2),...\n                   ref(quad_id,1), ref(quad_id,2)));\n"
-      "    % convert to meters\n    d = d*1852;\n    %Vg = d; % this is now meters/timestep\n    \n    % climb rate\n  "
-      "  Vh = Ez*10;\n    \n    % output command\n    cmd(quad_id,:) = [ Xg  Vh  Vg ];\n    \nend % end for-loop\n\nend"
+      "racking angle (degrees)\n    % Great Circle Navigation Law - Gano's slides\n    Xg = atan2d((sind(Ey)*cosd(ref(q"
+      "uad_id,1))),(sind(ref(quad_id,1))*cosd(state(3*quad_id-2)) ...\n        - cosd(ref(quad_id,1))*sind(state(3*quad"
+      "_id-2))*cosd(Ey)));\n    \n    % Set ground speed\n    % If any error in latitude or longitude move laterally\n "
+      "   % Else don't move laterally\n    if Ex ~= 0 || Ey ~= 0\n        Vg = 50;\n    else\n        Vg = 0;\n    end\n"
+      "    \n    % Set climb rate\n    % If reference point is above then climb\n    % If reference point is below then"
+      " descend\n    % Else climb rate is zero\n    if Ez > 0\n        Vh = 5;\n    elseif Ez < 0\n        Vh = -5;\n  "
+      "  else \n        Vh = 0;\n    end\n    % output command\n    cmd(quad_id,:) = [ Xg  Vh  Vg ];\n    \nend % end f"
+      "or-loop\n\nend"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
@@ -6689,13 +6681,13 @@ Stateflow {
   }
   instance {
     id			    45
-    name		    "                         "
+    name		    "Controller"
     machine		    1
     chart		    36
   }
   chart {
     id			    46
-    name		    "           "
+    name		    "Model"
     windowPosition	    [422 539.941 189 413]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 3600 1200 1.180555555555556]
@@ -6703,7 +6695,10 @@ Stateflow {
     firstTransition	    53
     firstJunction	    52
     viewObj		    46
+    visible		    1
     machine		    1
+    subviewS {
+    }
     ssIdHighWaterMark	    14
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -6859,7 +6854,7 @@ Stateflow {
   }
   instance {
     id			    54
-    name		    "           "
+    name		    "Model"
     machine		    1
     chart		    46
   }
