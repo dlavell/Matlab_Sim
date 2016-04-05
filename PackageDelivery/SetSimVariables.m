@@ -2,7 +2,7 @@
 
 % t*10^3 gives about t hours of sim time for 5m/s vehicles 
 % example... 10000 = 10*10^3 gives about 10 hours of sim time
-T = 4000; 
+T = 12000; 
 ref.time = 0:.01:T*3;
 t = ref.time;
 
@@ -73,6 +73,10 @@ time_stamp.DataType = 'double';
 time_stamp.Complexity = 'real';
 time_stamp.SamplingMode = 'Sample based';
 
-
+%% Elevation
+elevation = Simulink.Parameter;
+elevation.DataType = 'double';
+data = csvread('SJ-lat-lng-3decimal.csv');
+elevation.Value = data;
 
 
