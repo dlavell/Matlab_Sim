@@ -22,9 +22,9 @@ maxRadius.DataType = 'double';
 %
 pop_density = 1;
 sim_start = 0;
-sim_step = .001;
-sim_stop = 40000;
-MAX_REQUEST_PER_SIM = 500;
+sim_step = 1;
+sim_stop = T;
+MAX_REQUEST_PER_SIM = 20;
 %
 req_que = Simulink.Parameter;
 req_que.DataType = 'double';
@@ -72,6 +72,12 @@ time_stamp = Simulink.Signal;
 time_stamp.DataType = 'double';
 time_stamp.Complexity = 'real';
 time_stamp.SamplingMode = 'Sample based';
+
+%% Queue_idx :
+Queue_idx = Simulink.Signal;
+Queue_idx.DataType = 'double';
+Queue_idx.Complexity = 'real';
+Queue_idx.SamplingMode = 'Sample based';
 
 %% Elevation
 elevation = Simulink.Parameter;

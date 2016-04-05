@@ -27,20 +27,13 @@ function request_queue = req_queue_generator(pop_density,sim_start,step, sim_sto
         request_queue(i+1,1) = request_queue(i,1) + step;
     end
     
-    for i = 1:1:total_req
+    while req_left >0
         random_time = ceil(rand*len);
-        %trying to gennerate random request based on population density
-       if(req_left <=0)
-           %request_queue(random_time),2) = req_left;
-           break;
-       else
-             request_queue(random_time,2) =  request_queue(random_time,2)+1;
-             req_left= req_left- 1;
-      
-       end
-       
+        request_queue(random_time,2) =  request_queue(random_time,2)+1;
+        req_left= req_left- 1;
     end
-    %save('Request_Queue','request_queue');
+
+
 end
 
 
