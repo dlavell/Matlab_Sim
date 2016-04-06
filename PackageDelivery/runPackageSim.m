@@ -26,6 +26,7 @@ for simRun = 1:numRuns
     curr_wp      .InitialValue = 'zeros(100,1)';
     curr_tp      .InitialValue = 'ones(100,1)*2';
     destinations .InitialValue = 'zeros(100,3)';
+    trajectories .InitialValue = 'zeros(7,3,100)';
     current_que  .InitialValue = 'req_que';
     n_quads      .InitialValue = '10';
     pos          .InitialValue = 'zeros(100,3)';

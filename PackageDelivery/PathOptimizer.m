@@ -3,7 +3,7 @@ function [ path ] = PathOptimizer( obstacles, destination )
 
 dir = obstacles;
 % source
-s = [5 5];
+s = [8 8];
 c = [1 1];
 cur_value = 2;
 dir(destination(1),destination(2)) = cur_value;

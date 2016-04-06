@@ -24,7 +24,11 @@ scale = 0.0025; % size of quadcopter
 img = imread('San_Jose.JPG');
 %imgsec([min_x,maxx],[min_y max_y],img);
 %imagesc([36.8 37.2], [-122.3 -121.8],img);
-imagesc( [37.15 37.45], [-122.1 -121.65] ,img);
+
+%source lat and long
+lat_s = 37.3154997;
+lng_s = -121.8728929;
+imagesc( [lat_s-1.5 lat_s+1.5], [lng_s-2.25 lng_s+2.25] ,img);
 %%
 
 for t2 = 0:step:T
@@ -51,13 +55,13 @@ for t2 = 0:step:T
             display('Finished making video.')
             break;
         end
-        imagesc( [37.15 37.45], [-122.1 -121.65] ,img); %added
+        imagesc( [lat_s-.15 lat_s+.15], [lng_s-.225 lng_s+.225] ,img); %added
         leg(quad) = plot3(pos_R(1,1:I)',pos_R(2,1:I)',pos_R(3,1:I)','r-');
         p_star = pos_R(:,I);
         quad_plot(p_star,R_star,0,[],0.5,scale);
     end % end for-loop
     
-    set(gca,'Xlim',[37.15 37.45], 'YLim', [-122.1 -121.65], 'ZLim', [0 800]);
+    set(gca,'Xlim',[lat_s-.15 lat_s+.15], 'YLim', [lng_s-.225 lng_s+.225], 'ZLim', [0 800]);
     %view(37.5,30);
     axis square;
     %legend(leg,{'Quad 1','Quad 2','Quad 3','4'},'location','NorthEast')
