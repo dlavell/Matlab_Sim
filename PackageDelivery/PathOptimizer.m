@@ -49,7 +49,8 @@ while(~done)
                     elseif(i == 6) row = -1; col = -1; 
                     elseif(i == 7) row = -1; col =  0; 
                     elseif(i == 8) row = -1; col =  1;
-                    else row = 0; col = 0; end
+                    else row = 0; col = 0; 
+                    end
                     
                     if(c(1)+row > 0 && c(1)+row <= length(dir(:,1)) && ...
                             c(2)+col > 0 && c(2)+col <= length(dir(1,:)) )
@@ -67,7 +68,7 @@ while(~done)
         if(dir(s(1),s(2)) == 0) 
             path_len = 0;
             return
-            x = 999999999
+            % x = 999999999
             % display('impossible');
         end
         done = 1;
@@ -124,7 +125,7 @@ while(done ~= 1)
         done = 1;
         path_len = 0;
         return
-        x = 5555555
+        % x = 5555555;
         % display('no path found');
     end
 end % found path
