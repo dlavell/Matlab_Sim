@@ -20,16 +20,16 @@ numRuns = length(warehouses(:,1));
 for simRun = 1:numRuns
     %% set global vaiables
     % set initial condition - different for each run
-    IC.Value = repmat([warehouses(simRun,1) ; warehouses(simRun,2) ; 0], 100, 1);
+    IC.Value = repmat([warehouses(simRun,1) ; warehouses(simRun,2) ; 0], 10, 1);
     
     % clear/reset global variables
-    curr_wp      .InitialValue = 'zeros(100,1)';
-    curr_tp      .InitialValue = 'ones(100,1)*2';
-    destinations .InitialValue = 'zeros(100,3)';
-    trajectories .InitialValue = 'zeros(7,3,100)';
+    curr_wp      .InitialValue = 'zeros(10,1)';
+    curr_tp      .InitialValue = 'ones(10,1)*2';
+    destinations .InitialValue = 'zeros(10,3)';
+    trajectories .InitialValue = 'zeros(40,3,10)';
     current_que  .InitialValue = 'req_que';
     n_quads      .InitialValue = '10';
-    pos          .InitialValue = 'zeros(100,3)';
+    pos          .InitialValue = 'zeros(10,3)';
     time_stamp   .InitialValue = '1';
     Queue_idx    .InitialValue = '1';
 

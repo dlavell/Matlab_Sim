@@ -46,7 +46,7 @@ for t2 = 0:step:T
     cla
     
     % cycle through each quad for each frame
-    for quad = 1: 60 % length(state.signals.values(1,:))/3
+    for quad = 1: 10 % length(state.signals.values(1,:))/3
         %pos = state.signals.values(:,3*quad-2:3*quad)';
         pos = quads.signals.values(:,3*quad-2:3*quad)';
         pos_R = Rcam*pos;
