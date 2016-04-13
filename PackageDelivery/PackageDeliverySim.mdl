@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.2951"
+    ComputedModelVersion    "1.2993"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -62,11 +62,11 @@ Model {
 	$ObjectID		6
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
-	ViewObjType		"SimulinkSubsys"
-	LoadSaveID		"988"
+	ViewObjType		"SimulinkTopLevel"
+	LoadSaveID		"0"
 	Extents			[1246.0, 866.0]
-	ZoomFactor		[0.8]
-	Offset			[0.0, 0.0]
+	ZoomFactor		[1.5]
+	Offset			[143.00000000000017, -96.333333333333371]
       }
     }
   }
@@ -76,9 +76,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "dlavell"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Apr 12 16:27:08 2016"
-  RTWModifiedTimeStamp	  382374559
-  ModelVersionFormat	  "1.%<AutoIncrement:2951>"
+  LastModifiedDate	  "Wed Apr 13 14:55:53 2016"
+  RTWModifiedTimeStamp	  382460151
+  ModelVersionFormat	  "1.%<AutoIncrement:2993>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -4913,7 +4913,7 @@ Model {
   System {
     Name		    "PackageDeliverySim"
     Location		    [1912, -8, 3208, 1032]
-    Open		    off
+    Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    212
     ScreenColor		    "white"
@@ -4963,7 +4963,7 @@ Model {
       System {
 	Name			"      "
 	Location		[1912, -8, 3208, 1032]
-	Open			on
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -6466,44 +6466,31 @@ Stateflow {
     eml {
       isEML		      1
       script		      "function traj = fcn(origin_lat, origin_lng, altitude, elevation_data)\n%% Initialize variables\ng"
-      "lobal destinations n_quads trajectories;\n\n% Note: altitude is measured feet\nuse_obstacle_avoidance = 1;\n\nob"
-      "stacles = [\n    \n0     0     0     0     0     0     0     0     0     0     0     0     0     0     0;\n0    "
-      " 0     0     0     0     0     0     0     0     0     0     0     0     0     0;\n0     0     0     0     0    "
-      " 0     0     0     0     0     0     0     0     0     0;\n0     0     0     0     0     0     0     1     0    "
-      " 0     0     0     0     0     0;\n0     0     0     0     0     0     0     0     0     0     0     0     0    "
-      " 0     0;\n0     0     0     0     0     0     0     0     0     0     0     0     0     0     0;\n0     0     0"
-      "     0     0     0     0     0     1     0     0     1     0     0     0;\n0     0     0     1     1     1     1"
-      "     0     0     0     1     0     0     0     0;\n0     0     1     0     0     0     0     0     1     1     0"
-      "     0     0     0     0;\n0     0     0     0     0     0     0     0     0     1     1     1     0     0     0"
-      ";\n0     0     0     0     0     0     0     0     0     0     0     0     0     0     0;\n0     0     0     0  "
-      "   0     0     0     0     0     0     0     0     0     0     0;\n0     0     0     0     0     0     0     0  "
-      "   0     0     0     0     0     0     0;\n0     0     0     0     0     0     0     0     0     0     0     0  "
-      "   0     0     0;\n0     0     0     0     0     0     0     0     0     0     0     0     0     0     0];\n\n\n"
-      "% Note: n_quads < 100 must hold\n% so that the output variable doesnt change size\n%trajectories = zeros(7,3,100"
-      ");\norigin = [origin_lat origin_lng 0];\nheight_ori = 0;\nheight_dst = 0;\ntraj_length = 40;\n\n\nfor quad_id = "
-      "1:n_quads\n    dest = [destinations(quad_id,1) destinations(quad_id,2) 0];\n    if(dest(1) == 0 || dest(2) == 0)"
-      " % No destination assigned\n        height_ori = get_elevation(origin(1),origin(2),elevation_data);\n        tra"
-      "jectory = repmat([origin(1) origin(2) height_ori], traj_length, 1);\n        %elseif % Trajectory has been assig"
-      "ned, do nothing\n        %involves using a global trajectory variable instead or constant\n        %generation\n"
-      "        %   continue\n    elseif (trajectories(4,1,quad_id) ~= origin(1))\n        continue\n    else % Desitina"
-      "tion assigned, build trajectory\n        height_ori = get_elevation(origin(1),origin(2),elevation_data);\n      "
-      "  height_dst = get_elevation(dest(1),dest(2),elevation_data);\n        index = 1;\n        trajectory = zeros(tr"
-      "aj_length,3);\n        if(~use_obstacle_avoidance)\n            trajectory(1:7,:) = [[origin(1) origin(2) height"
-      "_ori];\n                [origin(1) origin(2) height_ori + altitude] ;\n                [dest(1,1) dest(1,2) heig"
-      "ht_dst + altitude] ;\n                [dest(1,1) dest(1,2) height_dst] ;\n                [dest(1,1) dest(1,2) h"
-      "eight_dst + altitude] ;\n                [origin(1) origin(2) height_ori + altitude] ;\n                [origin("
-      "1) origin(2) height_ori]];\n        else\n            [path, path_len] = PathOptimizer(obstacles, [dest(1,1) des"
-      "t(1,2)]);\n            if(path_len == 0)\n                trajectory = repmat([origin(1) origin(2) 0], traj_leng"
-      "th, 1);\n                x = 9999\n                %destinations\n                destinations(quad_id,:) = [0 0"
-      " 0];\n                continue\n            end\n            %path\n            trajectory(index,:) = [origin(1)"
-      " origin(2) 0 ];\n            index = index +1;\n            trajectory(index,:) = [origin(1) origin(2) altitude "
-      "];\n            index = index +1;\n            for i = 1:path_len\n                trajectory(index,:) = [path(i"
-      ",1) path(i,2) altitude];\n                index = index +1;\n            end\n            trajectory(index,:) = "
-      "[path(path_len,1) path(path_len,2) 0];\n            index = index +1;\n            for i = 1:path_len\n         "
-      "       trajectory(index,:) = [path(path_len-i+1,1) path(path_len-i+1,2) altitude];\n                index = inde"
-      "x +1;\n            end\n            trajectory(index,:) = [origin(1) origin(2) altitude ];\n            index = "
-      "index +1;\n            trajectory(index,:) = [origin(1) origin(2) 0 ];\n        end\n    end\n    \n    trajecto"
-      "ries(:,:,quad_id) = trajectory;\nend\n\ntraj = 0;\nend"
+      "lobal destinations n_quads trajectories;\ncoder.extrinsic('shortest_path');\n\n% Note: altitude is measured feet"
+      "\nuse_obstacle_avoidance = 1;\n\n\n% Note: n_quads < 100 must hold\n% so that the output variable doesnt change "
+      "size\n%trajectories = zeros(7,3,100);\norigin = [origin_lat origin_lng 0];\nheight_ori = 0;\nheight_dst = 0;\ntr"
+      "aj_length = 40;\n\n\nfor quad_id = 1:n_quads\n    dest = [destinations(quad_id,1) destinations(quad_id,2) 0];\n "
+      "   if(dest(1) == 0 || dest(2) == 0) % No destination assigned\n        height_ori = get_elevation(origin(1),orig"
+      "in(2),elevation_data);\n        trajectory = repmat([origin(1) origin(2) height_ori], traj_length, 1);\n    else"
+      "if (trajectories(4,1,quad_id) ~= origin(1))\n        continue\n    else % Desitination assigned, build trajector"
+      "y\n        height_ori = get_elevation(origin(1),origin(2),elevation_data);\n        height_dst = get_elevation(d"
+      "est(1),dest(2),elevation_data);\n        index = 1;\n        trajectory = zeros(traj_length,3);\n        if(~use"
+      "_obstacle_avoidance)\n            %shortest_path([37.3 -121.875],[37.3 -121.875])\n            trajectory(1:7,:)"
+      " = [[origin(1) origin(2) height_ori];\n                [origin(1) origin(2) height_ori + altitude] ;\n          "
+      "      [dest(1,1) dest(1,2) height_dst + altitude] ;\n                [dest(1,1) dest(1,2) height_dst] ;\n       "
+      "         [dest(1,1) dest(1,2) height_dst + altitude] ;\n                [origin(1) origin(2) height_ori + altitu"
+      "de] ;\n                [origin(1) origin(2) height_ori]];\n        else\n            path = zeros(15,2);\n      "
+      "      path_len = 0;\n            [path, path_len] = shortest_path([origin(1) origin(2)],[dest(1,1) dest(1,2)]);\n"
+      "            \n            if(path_len == 0)\n                trajectory = repmat([origin(1) origin(2) 0], traj_l"
+      "ength, 1);\n                destinations(quad_id,:) = [0 0 0];\n                continue\n            end\n     "
+      "       %path\n            trajectory(index,:) = [origin(1) origin(2) 0 ];\n            index = index +1;\n      "
+      "      trajectory(index,:) = [origin(1) origin(2) altitude ];\n            index = index +1;\n            for i ="
+      " 2:path_len\n                trajectory(index,:) = [path(i,1) path(i,2) altitude];\n                index = inde"
+      "x +1;\n            end\n            trajectory(index,:) = [path(path_len,1) path(path_len,2) 0];\n            in"
+      "dex = index +1;\n            for i = 1:path_len\n                trajectory(index,:) = [path(path_len-i+1,1) pat"
+      "h(path_len-i+1,2) altitude];\n                index = index +1;\n            end\n            trajectory(index,:"
+      ") = [origin(1) origin(2) altitude ];\n            index = index +1;\n            trajectory(index,:) = [origin(1"
+      ") origin(2) 0 ];\n        end\n    end\n    \n    trajectories(:,:,quad_id) = trajectory;\nend\n\ntraj = 0;\nend"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }

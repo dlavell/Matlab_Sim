@@ -5,7 +5,7 @@ dir = obstacles;
 % source
 s = [8 8];
 c = [1 1];
-route = zeros(10);
+route = zeros(length(obstacles));
 
 map_width = 15;
 map_height = 15;
@@ -72,10 +72,10 @@ while(~done)
     cur_value = cur_value+1;
     if(~still_going)
         %if(dir(s(1),s(2)) == 0) display('impossible'); end
-        path_len = 0;
-        path = route;
+        %path_len = 0;
+        %path = route;
         %display('no path found');
-        return
+        %return
         done = 1;
     end
 end
@@ -122,9 +122,10 @@ while(done ~= 1)
     map(c(1),c(2)) = inf;
     stuck = stuck + 1;
     % finished finding path
-    if(c == goal ) done = 1; end
+    if(c(1) == goal(1) && c(2) == goal(2)) done = 1; end
     if(stuck == 15)
         done = 1;
+        x = 88888
         path_len = 0;
         path = route;
         %display('no path found');
