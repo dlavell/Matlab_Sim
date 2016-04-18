@@ -30,6 +30,11 @@ req_que = Simulink.Parameter;
 req_que.DataType = 'double';
 req_que.Value = req_queue_generator(pop_density,sim_start,sim_step,sim_stop,MAX_REQUEST_PER_SIM);
 
+%% current destination:
+curr_dest = Simulink.Signal;
+curr_dest.DataType = 'double';
+curr_dest.Complexity = 'real';
+curr_dest.SamplingMode = 'Sample based';
 
 %% current waypoint:
 curr_wp = Simulink.Signal;

@@ -14,22 +14,24 @@ warehouses = [37.3154997	-121.8728929;
 
 %% Macro constants
 SetSimVariables();
-
+numberOfQuads = 2;
 numRuns = length(warehouses(:,1));
 %% Iterate over all warehouses
 for simRun = 1:numRuns
     %% set global vaiables
     % set initial condition - different for each run
-    IC.Value = repmat([warehouses(simRun,1) ; warehouses(simRun,2) ; 0], 10, 1);
+    IC.Value = repmat([warehouses(simRun,1) ; warehouses(simRun,2) ; 0], numberOfQuads, 1);
     
     % clear/reset global variables
-    curr_wp      .InitialValue = 'zeros(10,1)';
-    curr_tp      .InitialValue = 'ones(10,1)*2';
-    destinations .InitialValue = 'zeros(10,3)';
-    trajectories .InitialValue = 'zeros(40,3,10)';
+    curr_wp      .InitialValue = 'zeros(numberOfQuads,1)';
+    curr_tp      .InitialValue = 'ones(numberOfQuads,1)*2';
+    curr_dest    .InitialValue = 'ones(numberOfQuads,1)';
+    %destinations .InitialValue = 'zeros(numberOfQuads,3)';
+    destinations .InitialValue = 'zeros(3,3,numberOfQuads)';
+    trajectories .InitialValue = 'zeros(40,3,numberOfQuads)';
     current_que  .InitialValue = 'req_que';
-    n_quads      .InitialValue = '10';
-    pos          .InitialValue = 'zeros(10,3)';
+    n_quads      .InitialValue = 'numberOfQuads';
+    pos          .InitialValue = 'zeros(numberOfQuads,3)';
     time_stamp   .InitialValue = '1';
     Queue_idx    .InitialValue = '1';
 

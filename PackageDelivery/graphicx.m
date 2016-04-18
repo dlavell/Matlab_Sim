@@ -2,9 +2,7 @@
 %clear all
 %load('SimResults2.mat')
 Rcam = [1 0 0; 0 1 0; 0 0 1];
-% T = 8000;
-% ref.time = 0:.0001:T*3;
-% t = ref.time;
+numQuads = 2;
 
 %draw
 vidObj = VideoWriter('sim_testing_live', 'Uncompressed AVI');
@@ -46,7 +44,7 @@ for t2 = 0:step:T
     cla
     
     % cycle through each quad for each frame
-    for quad = 1: 10 % length(state.signals.values(1,:))/3
+    for quad = 1: numQuads % length(state.signals.values(1,:))/3
         %pos = state.signals.values(:,3*quad-2:3*quad)';
         pos = quads.signals.values(:,3*quad-2:3*quad)';
         pos_R = Rcam*pos;
