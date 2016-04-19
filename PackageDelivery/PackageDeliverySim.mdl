@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.3152"
+    ComputedModelVersion    "1.3157"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -76,9 +76,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "dlavell"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Apr 19 12:11:14 2016"
-  RTWModifiedTimeStamp	  382968673
-  ModelVersionFormat	  "1.%<AutoIncrement:3152>"
+  LastModifiedDate	  "Tue Apr 19 12:16:56 2016"
+  RTWModifiedTimeStamp	  382969016
+  ModelVersionFormat	  "1.%<AutoIncrement:3157>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -6517,13 +6517,13 @@ Stateflow {
       "in(1) origin(2)],[dest(1,1) dest(1,2)]);\n            \n            if(path_len == 0)\n                trajector"
       "y = repmat([origin(1) origin(2) 0], traj_length, 1);\n                % TODO:\n                % NEED a better f"
       "ix!!! this does not work!!!!\n                destinations(curr_d,:,quad_id) = [0 0 0];\n                x = 666"
-      ";\n                continue\n            end\n            %path\n            trajectory(index,:) = [origin(1) or"
-      "igin(2) 0 ];\n            index = index +1;\n            trajectory(index,:) = [origin(1) origin(2) altitude ];\n"
+      "\n                continue\n            end\n            %path\n            trajectory(index,:) = [origin(1) ori"
+      "gin(2) 0 ];\n            index = index +1;\n            trajectory(index,:) = [origin(1) origin(2) altitude ];\n"
       "            index = index +1;\n            for i = 1:path_len\n                trajectory(index,:) = [path(i,1) "
       "path(i,2) altitude];\n                index = index +1;\n            end\n            trajectory(index,:) = [des"
       "t(1) dest(2) altitude];\n            index = index +1;\n            trajectory(index,:) = [dest(1) dest(2) 0];\n"
-      "            \n            \n                %origin\n                %trajectory(1:10,:)\n                %dest\n"
-      "        end\n    end\n    \n    trajectories(:,:,quad_id) = trajectory;\nend\n\ntraj = 0;\nend"
+      "            \n                %origin\n                %trajectory(1:10,:)\n                %dest\n        end\n"
+      "    end\n    \n    trajectories(:,:,quad_id) = trajectory;\nend\n\ntraj = 0;\nend"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
@@ -6812,10 +6812,10 @@ Stateflow {
       "       output_text = sprintf('quad sent to destination lat %0.2f long%0.2f at time: %d ', lat, lng, time_stamp);"
       "\n                %disp(output_text);\n                %destinations(quad_id,1) = lat;\n                %destina"
       "tions(quad_id,2) = lng;\n                destinations(i,1,quad_id) = lat;\n                destinations(i,2,quad"
-      "_id) = lng;\n                destinations(2,1,quad_id) = lat_s;\n                destinations(2,2,quad_id) = lng"
-      "_s;\n                %destinations(3,1,quad_id) = lat_s;\n                %destinations(3,2,quad_id) = lng_s;\n "
-      "               current_que(time_stamp,2) = current_que(time_stamp, 2) - 1;\n                send_quad = EMPTY;\n"
-      "            end\n        end\n    end\nend\n\nend\n"
+      "_id) = lng;\n                destinations(2,1,quad_id) = lat2;\n                destinations(2,2,quad_id) = lng2"
+      ";\n                destinations(3,1,quad_id) = lat_s;\n                destinations(3,2,quad_id) = lng_s;\n     "
+      "           current_que(time_stamp,2) = current_que(time_stamp, 2) - 1;\n                send_quad = EMPTY;\n    "
+      "        end\n        end\n    end\nend\n\nend\n"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
