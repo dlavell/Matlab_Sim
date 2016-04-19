@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.3048"
+    ComputedModelVersion    "1.3152"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -40,7 +40,7 @@ Model {
       $ObjectID		      3
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [1912.0, -8.0, 1296.0, 1040.0]
+      Location		      [-8.0, -8.0, 1936.0, 1066.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		4
@@ -64,7 +64,7 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkSubsys"
 	LoadSaveID		"988"
-	Extents			[1246.0, 866.0]
+	Extents			[1886.0, 892.0]
 	ZoomFactor		[0.8]
 	Offset			[0.0, 0.0]
       }
@@ -76,9 +76,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "dlavell"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sun Apr 17 17:06:11 2016"
-  RTWModifiedTimeStamp	  382813571
-  ModelVersionFormat	  "1.%<AutoIncrement:3048>"
+  LastModifiedDate	  "Tue Apr 19 12:11:14 2016"
+  RTWModifiedTimeStamp	  382968673
+  ModelVersionFormat	  "1.%<AutoIncrement:3152>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -4912,7 +4912,7 @@ Model {
   }
   System {
     Name		    "PackageDeliverySim"
-    Location		    [1912, -8, 3208, 1032]
+    Location		    [-8, -8, 1928, 1058]
     Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    212
@@ -4924,7 +4924,7 @@ Model {
     TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "150"
+    ZoomFactor		    "175"
     ReportName		    "simulink-default.rpt"
     SIDHighWatermark	    "1128"
     Block {
@@ -4962,7 +4962,7 @@ Model {
       RequestExecContextInheritance off
       System {
 	Name			"      "
-	Location		[1912, -8, 3208, 1032]
+	Location		[-8, -8, 1928, 1058]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -5817,7 +5817,7 @@ Model {
 	TiledPageScale		1
 	ShowPageBoundaries	off
 	ZoomFactor		"100"
-	SIDHighWatermark	"29"
+	SIDHighWatermark	"30"
 	Block {
 	  BlockType		  Inport
 	  Name			  "traj"
@@ -5869,7 +5869,7 @@ Model {
 	  IconDisplay		  "Port number"
 	}
 	Line {
-	  ZOrder		  128
+	  ZOrder		  137
 	  SrcBlock		  "traj"
 	  SrcPort		  1
 	  DstBlock		  " SFunction "
@@ -5877,7 +5877,7 @@ Model {
 	}
 	Line {
 	  Name			  "waypoint"
-	  ZOrder		  129
+	  ZOrder		  138
 	  Labels		  [0, 0]
 	  SrcBlock		  " SFunction "
 	  SrcPort		  2
@@ -5885,14 +5885,14 @@ Model {
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  130
+	  ZOrder		  139
 	  SrcBlock		  " Demux "
 	  SrcPort		  1
 	  DstBlock		  " Terminator "
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  131
+	  ZOrder		  140
 	  SrcBlock		  " SFunction "
 	  SrcPort		  1
 	  DstBlock		  " Demux "
@@ -5959,7 +5959,9 @@ Stateflow {
     name		    "PackageDeliverySim"
     created		    "28-May-2012 17:04:21"
     isLibrary		    0
-    firstTarget		    72
+    firstTarget		    73
+    debug {
+    }
     sfVersion		    80000001
   }
   chart {
@@ -6153,14 +6155,14 @@ Stateflow {
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 3600 1200 1.180555555555556]
     treeNode		    [0 12 0 0]
-    firstTransition	    22
-    firstJunction	    21
+    firstTransition	    23
+    firstJunction	    22
     viewObj		    11
     visible		    1
     machine		    1
     subviewS {
     }
-    ssIdHighWaterMark	    16
+    ssIdHighWaterMark	    17
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
     firstData		    13
@@ -6185,36 +6187,40 @@ Stateflow {
     eml {
       isEML		      1
       script		      "function waypoint = Waypoint_generator(traj)\n%#codegen\n\nglobal curr_wp curr_tp destinations po"
-      "s n_quads trajectories;\nwaypoint = zeros(100,3);\nprint = 0;\nfor quad_id = 1:n_quads\n    if quad_id == 1\n   "
-      "    % print = 1;\n    else \n       % print = 0;\n    end\n    % current position\n    if(pos(quad_id,1) == 0) p"
-      "os(quad_id,:) = trajectories(1,:,quad_id); end % temporary fix\n    quad_X = pos(quad_id,1);\n    quad_Y = pos(q"
-      "uad_id,2);\n    quad_Z = pos(quad_id,3);\n    \n    % associated trajectory\n    trajectory = trajectories(:,:,q"
-      "uad_id);\n    \n    % Specify last and next trajectory points\n    last_tp = trajectory(curr_tp(quad_id)-1,:);\n"
-      "    next_tp = trajectory(curr_tp(quad_id),:);\n    \n    % trajectory point distances\n    tp_separation_dist_xy"
-      " = sqrt((last_tp(1)-next_tp(1))^2 + ...\n        (last_tp(2)-next_tp(2))^2);\n    tp_separation_dist_z =  abs(la"
-      "st_tp(3)-next_tp(3));\n    \n    % Divide distance between last_tp and next_tp into evenly divided segments\n   "
-      " % waypoint distances\n    wp_separation_dist = 0;\n    tp_separation_dist = 0;\n    if tp_separation_dist_z > 5"
-      "0\n        wp_separation_dist = tp_separation_dist_z/4;\n        tp_separation_dist = tp_separation_dist_z;\n   "
-      " else\n        wp_separation_dist = tp_separation_dist_xy/4;\n        tp_separation_dist = tp_separation_dist_xy"
-      ";\n    end\n    \n    \n    % acceptable distance to waypoint\n    threshold_z = 5;\n    threshold_xy = .0005;\n"
-      "    \n    % Determine which segment along trajectory to give next and in what\n    % direction\n    number_of_wa"
-      "ypoints = floor(tp_separation_dist/wp_separation_dist);\n    vec_norm = [(last_tp(1)-next_tp(1)) (last_tp(2)-nex"
-      "t_tp(2)) ...\n                        (last_tp(3)-next_tp(3))]/tp_separation_dist;\n    if(isnan(vec_norm(1))) v"
-      "ec_norm(1) = 0; end\n    if(isnan(vec_norm(2))) vec_norm(2) = 0; end\n    if(isnan(vec_norm(3))) vec_norm(3) = 0"
-      "; end\n    wp = last_tp + curr_wp(quad_id)*wp_separation_dist*-vec_norm;\n   \n    % distance to current waypoin"
-      "t\n    dist_xy = sqrt((quad_X-wp(1))^2 + (quad_Y-wp(2))^2);\n    dist_z = abs(quad_Z-wp(3));\n    not_same_tp = "
-      "last_tp(1) ~= next_tp(1) || ...\n            last_tp(2) ~= next_tp(2) || last_tp(3) ~= next_tp(3);\n    if print"
-      " \n       % fprintf('last_tp       : %f  %f  %f \\n',last_tp(1),last_tp(2),last_tp(3));\n       % fprintf('Quad "
-      "position : %f  %f  %f \\n',quad_X,quad_Y,quad_Z);\n       % fprintf('Waypoint      : %f  %f  %f \\n',wp(1),wp(2)"
-      ",wp(3));\n       % fprintf('next_tp       : %f  %f  %f \\n',next_tp(1),next_tp(2),next_tp(3));\n       % fprintf"
-      "('distance to wp_xy : %f with threshold_xy : %f \\n',dist_xy, threshold_xy);\n       % fprintf('distance to wp_z"
-      "  : %f with threshold_z  : %f \\n',dist_z, threshold_z);\n       % fprintf('curr_wp : %f out of %f \\n\\n',curr_"
-      "wp(quad_id),number_of_waypoints);\n    end\n    if(dist_xy <= threshold_xy && dist_z <= threshold_z && not_same_"
-      "tp)\n        curr_wp(quad_id) = curr_wp(quad_id) + 1;\n        if(curr_wp(quad_id) == number_of_waypoints)\n    "
-      "        curr_tp(quad_id) = curr_tp(quad_id) + 1;\n            curr_wp(quad_id) = 0;\n        end\n    end\n    i"
-      "f(trajectory(curr_tp(quad_id),1) == 0)\n        curr_tp(quad_id) = 2;\n        %destinations(quad_id,:) = [0 0 0"
-      "];\n        destinations(1,:,quad_id) = [0 0 0];\n    end\n    \n    %% output\n    waypoint(quad_id,:) = wp;\n "
-      "   \nend % end for-loop\n\nend"
+      "s n_quads trajectories curr_dest;\nwaypoint = zeros(100,3);\nprint = 0;\nfor quad_id = 1:n_quads\n    if quad_id"
+      " == 1\n       % print = 1;\n    else \n       % print = 0;\n    end\n    % current position\n    if(pos(quad_id,"
+      "1) == 0) pos(quad_id,:) = trajectories(1,:,quad_id); end % temporary fix\n    quad_X = pos(quad_id,1);\n    quad"
+      "_Y = pos(quad_id,2);\n    quad_Z = pos(quad_id,3);\n    \n    % associated trajectory\n    trajectory = trajecto"
+      "ries(:,:,quad_id);\n    \n    % Specify last and next trajectory points\n    last_tp = trajectory(curr_tp(quad_i"
+      "d)-1,:);\n    next_tp = trajectory(curr_tp(quad_id),:);\n    \n    % trajectory point distances\n    tp_separati"
+      "on_dist_xy = sqrt((last_tp(1)-next_tp(1))^2 + ...\n        (last_tp(2)-next_tp(2))^2);\n    tp_separation_dist_z"
+      " =  abs(last_tp(3)-next_tp(3));\n    \n    % Divide distance between last_tp and next_tp into evenly divided seg"
+      "ments\n    % waypoint distances\n    wp_separation_dist = 0;\n    tp_separation_dist = 0;\n    if tp_separation_"
+      "dist_z > 50\n        wp_separation_dist = tp_separation_dist_z/4;\n        tp_separation_dist = tp_separation_di"
+      "st_z;\n    else\n        wp_separation_dist = tp_separation_dist_xy/4;\n        tp_separation_dist = tp_separati"
+      "on_dist_xy;\n    end\n    \n    \n    % acceptable distance to waypoint\n    threshold_z = 5;\n    threshold_xy "
+      "= .0005;\n    \n    % Determine which segment along trajectory to give next and in what\n    % direction\n    nu"
+      "mber_of_waypoints = floor(tp_separation_dist/wp_separation_dist);\n    vec_norm = [(last_tp(1)-next_tp(1)) (last"
+      "_tp(2)-next_tp(2)) ...\n                        (last_tp(3)-next_tp(3))]/tp_separation_dist;\n    if(isnan(vec_n"
+      "orm(1))) vec_norm(1) = 0; end\n    if(isnan(vec_norm(2))) vec_norm(2) = 0; end\n    if(isnan(vec_norm(3))) vec_n"
+      "orm(3) = 0; end\n    wp = last_tp + curr_wp(quad_id)*wp_separation_dist*-vec_norm;\n   \n    % distance to curre"
+      "nt waypoint\n    dist_xy = sqrt((quad_X-wp(1))^2 + (quad_Y-wp(2))^2);\n    dist_z = abs(quad_Z-wp(3));\n    not_"
+      "same_tp = last_tp(1) ~= next_tp(1) || ...\n            last_tp(2) ~= next_tp(2) || last_tp(3) ~= next_tp(3);\n  "
+      "  if print \n       % fprintf('last_tp       : %f  %f  %f \\n',last_tp(1),last_tp(2),last_tp(3));\n       % fpri"
+      "ntf('Quad position : %f  %f  %f \\n',quad_X,quad_Y,quad_Z);\n       % fprintf('Waypoint      : %f  %f  %f \\n',w"
+      "p(1),wp(2),wp(3));\n       % fprintf('next_tp       : %f  %f  %f \\n',next_tp(1),next_tp(2),next_tp(3));\n      "
+      " % fprintf('distance to wp_xy : %f with threshold_xy : %f \\n',dist_xy, threshold_xy);\n       % fprintf('distan"
+      "ce to wp_z  : %f with threshold_z  : %f \\n',dist_z, threshold_z);\n       % fprintf('curr_wp : %f out of %f \\n"
+      "\\n',curr_wp(quad_id),number_of_waypoints);\n    end\n    \n    if(dist_xy <= threshold_xy && dist_z <= threshol"
+      "d_z && not_same_tp)\n        curr_wp(quad_id) = curr_wp(quad_id) + 1;\n        if(curr_wp(quad_id) == number_of_"
+      "waypoints)\n            curr_tp(quad_id) = curr_tp(quad_id) + 1;\n            curr_wp(quad_id) = 0;\n        end"
+      "\n    end\n    \n    traj_length = 40;\n    if(trajectory(curr_tp(quad_id),1) == 0 || curr_tp(quad_id) == length"
+      "(trajectories(:,1,quad_id)))\n        curr_tp(quad_id) = 2;\n        curr_dest(quad_id) = curr_dest(quad_id)+1;\n"
+      "        if(curr_dest(quad_id) == 4 || (curr_dest(quad_id) == 3 && destinations(3,1,quad_id) == 0))\n            "
+      "destinations(1,:,quad_id) = [0 0 0];\n            destinations(2,:,quad_id) = [0 0 0];\n            destinations"
+      "(3,:,quad_id) = [0 0 0];\n            trajectories(:,:,quad_id) = repmat([37.3154997 -121.8728929 0], traj_lengt"
+      "h, 1);\n            curr_dest(quad_id) = 1;\n        end\n    end\n    \n    %% output\n    waypoint(quad_id,:) "
+      "= wp;\n    \nend % end for-loop\n\nend"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
@@ -6371,7 +6377,29 @@ Stateflow {
     id			    20
     ssIdNumber		    16
     name		    "trajectories"
-    linkNode		    [11 19 0]
+    linkNode		    [11 19 21]
+    scope		    DATA_STORE_MEMORY_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    21
+    ssIdNumber		    17
+    name		    "curr_dest"
+    linkNode		    [11 20 0]
     scope		    DATA_STORE_MEMORY_DATA
     machine		    1
     props {
@@ -6390,7 +6418,7 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   junction {
-    id			    21
+    id			    22
     position		    [23.5747 49.5747 7]
     chart		    11
     linkNode		    [11 0 0]
@@ -6399,7 +6427,7 @@ Stateflow {
     type		    CONNECTIVE_JUNCTION
   }
   transition {
-    id			    22
+    id			    23
     labelString		    "{eML_blk_kernel();}"
     labelPosition	    [28.125 13.875 102.544 14.964]
     fontSize		    12
@@ -6407,7 +6435,7 @@ Stateflow {
       intersection	      [0 0 1 0 23.5747 14.625 0 0]
     }
     dst {
-      id		      21
+      id		      22
       intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
     }
     midPoint		    [23.5747 24.9468]
@@ -6423,21 +6451,21 @@ Stateflow {
     ssIdNumber		    2
   }
   instance {
-    id			    23
+    id			    24
     name		    "Waypoint Generator "
     machine		    1
     chart		    11
   }
   chart {
-    id			    24
+    id			    25
     name		    "      /Trajectory Generator"
     windowPosition	    [422 539.941 189 413]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 3600 1200 1.180555555555556]
-    treeNode		    [0 25 0 0]
-    firstTransition	    36
-    firstJunction	    35
-    viewObj		    24
+    treeNode		    [0 26 0 0]
+    firstTransition	    37
+    firstJunction	    36
+    viewObj		    25
     visible		    1
     machine		    1
     subviewS {
@@ -6445,7 +6473,7 @@ Stateflow {
     ssIdHighWaterMark	    19
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
-    firstData		    26
+    firstData		    27
     chartFileNumber	    4
     disableImplicitCasting  1
     eml {
@@ -6453,14 +6481,14 @@ Stateflow {
     }
   }
   state {
-    id			    25
+    id			    26
     labelString		    "eML_blk_kernel()"
     position		    [18 64.5 118 66]
     fontSize		    12
-    chart		    24
-    treeNode		    [24 0 0 0]
+    chart		    25
+    treeNode		    [25 0 0 0]
     superState		    SUBCHART
-    subviewer		    24
+    subviewer		    25
     ssIdNumber		    1
     type		    FUNC_STATE
     decomposition	    CLUSTER_STATE
@@ -6472,37 +6500,38 @@ Stateflow {
       "nt change size\n%trajectories = zeros(7,3,100);\norigin = [origin_lat origin_lng 0];\nheight_ori = 0;\nheight_ds"
       "t = 0;\ntraj_length = 40;\n\n\nfor quad_id = 1:n_quads\n    %dest = [destinations(quad_id,1) destinations(quad_i"
       "d,2) 0];\n    curr_d = curr_dest(quad_id);\n    dest = [destinations(curr_d,1,quad_id) destinations(curr_d,2,qua"
-      "d_id) 0];\n    \n    if(dest(1) == 0 || dest(2) == 0) % No destination assigned\n        height_ori = get_elevat"
-      "ion(origin(1),origin(2),elevation_data);\n        trajectory = repmat([origin(1) origin(2) height_ori], traj_len"
-      "gth, 1);\n    elseif (trajectories(4,1,quad_id) ~= origin(1))\n        continue\n    else % Desitination assigne"
-      "d, build trajectory\n        if(curr_d > 1)\n           origin = [destinations(curr_d-1,2,quad_id) destinations("
-      "curr_d-1,2,quad_id) 0]; \n        end\n        height_ori = get_elevation(origin(1),origin(2),elevation_data);\n"
-      "        height_dst = get_elevation(dest(1),dest(2),elevation_data);\n        index = 1;\n        trajectory = ze"
-      "ros(traj_length,3);\n        if(~use_obstacle_avoidance)\n            trajectory(1:7,:) = [[origin(1) origin(2) "
-      "height_ori];\n                [origin(1) origin(2) height_ori + altitude] ;\n                [dest(1,1) dest(1,2"
-      ") height_dst + altitude] ;\n                [dest(1,1) dest(1,2) height_dst] ;\n                [dest(1,1) dest("
-      "1,2) height_dst + altitude] ;\n                [origin(1) origin(2) height_ori + altitude] ;\n                [o"
-      "rigin(1) origin(2) height_ori]];\n        else\n            path = zeros(15,2);\n            path_len = 0;\n    "
-      "        [path, path_len] = shortest_path([origin(1) origin(2)],[dest(1,1) dest(1,2)]);\n            \n          "
-      "  if(path_len == 0)\n                trajectory = repmat([origin(1) origin(2) 0], traj_length, 1);\n            "
-      "    %destinations(quad_id,:) = [0 0 0];\n                destinations(curr_d,:,quad_id) = [0 0 0];\n            "
-      "    continue\n            end\n            %path\n            trajectory(index,:) = [origin(1) origin(2) 0 ];\n "
-      "           index = index +1;\n            trajectory(index,:) = [origin(1) origin(2) altitude ];\n            in"
-      "dex = index +1;\n            for i = 1:path_len\n                trajectory(index,:) = [path(i,1) path(i,2) alti"
-      "tude];\n                index = index +1;\n            end\n            trajectory(index,:) = [path(path_len,1) "
-      "path(path_len,2) 0];\n            index = index +1;\n            % made it to the destination, now back to origi"
-      "n...\n            for i = 1:path_len\n                trajectory(index,:) = [path(path_len-i+1,1) path(path_len-"
-      "i+1,2) altitude];\n                index = index +1;\n            end\n            trajectory(index,:) = [origin"
-      "(1) origin(2) altitude ];\n            index = index +1;\n            trajectory(index,:) = [origin(1) origin(2)"
-      " 0 ];\n        end\n    end\n    \n    trajectories(:,:,quad_id) = trajectory;\nend\n\ntraj = 0;\nend"
+      "d_id) 0];\n    hasTrajectory = 0;\n    \n    % check if it already has a trajectory\n    if(trajectories(4,1,qua"
+      "d_id) ~= origin(1) && curr_d == 1)\n        hasTrajectory = 1;\n    end\n    if(curr_d > 1)\n        if(trajecto"
+      "ries(1,1,quad_id) == destinations(curr_d-1,1,quad_id))\n           hasTrajectory = 1; \n        end\n    end\n  "
+      "  \n    if((dest(1) == 0 || dest(2) == 0)) % No destination assigned\n        height_ori = get_elevation(origin("
+      "1),origin(2),elevation_data);\n        trajectory = repmat([origin(1) origin(2) 0], traj_length, 1);\n    elseif"
+      " (hasTrajectory)\n        continue\n    else % Desitination assigned, build trajectory\n        if(curr_d > 1)\n"
+      "           origin = [destinations(curr_d-1,1,quad_id) destinations(curr_d-1,2,quad_id) 0];\n        end\n       "
+      " height_ori = get_elevation(origin(1),origin(2),elevation_data);\n        height_dst = get_elevation(dest(1),des"
+      "t(2),elevation_data);\n        index = 1;\n        trajectory = zeros(traj_length,3);\n        if(~use_obstacle_"
+      "avoidance)\n            trajectory(1:7,:) = [[origin(1) origin(2) height_ori];\n                [origin(1) origi"
+      "n(2) height_ori + altitude] ;\n                [dest(1,1) dest(1,2) height_dst + altitude] ;\n                [d"
+      "est(1,1) dest(1,2) height_dst] ;\n                [dest(1,1) dest(1,2) height_dst + altitude] ;\n               "
+      " [origin(1) origin(2) height_ori + altitude] ;\n                [origin(1) origin(2) height_ori]];\n        else"
+      "\n            path = zeros(15,2);\n            path_len = 0;\n            [path, path_len] = shortest_path([orig"
+      "in(1) origin(2)],[dest(1,1) dest(1,2)]);\n            \n            if(path_len == 0)\n                trajector"
+      "y = repmat([origin(1) origin(2) 0], traj_length, 1);\n                % TODO:\n                % NEED a better f"
+      "ix!!! this does not work!!!!\n                destinations(curr_d,:,quad_id) = [0 0 0];\n                x = 666"
+      ";\n                continue\n            end\n            %path\n            trajectory(index,:) = [origin(1) or"
+      "igin(2) 0 ];\n            index = index +1;\n            trajectory(index,:) = [origin(1) origin(2) altitude ];\n"
+      "            index = index +1;\n            for i = 1:path_len\n                trajectory(index,:) = [path(i,1) "
+      "path(i,2) altitude];\n                index = index +1;\n            end\n            trajectory(index,:) = [des"
+      "t(1) dest(2) altitude];\n            index = index +1;\n            trajectory(index,:) = [dest(1) dest(2) 0];\n"
+      "            \n            \n                %origin\n                %trajectory(1:10,:)\n                %dest\n"
+      "        end\n    end\n    \n    trajectories(:,:,quad_id) = trajectory;\nend\n\ntraj = 0;\nend"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
   data {
-    id			    26
+    id			    27
     ssIdNumber		    5
     name		    "traj"
-    linkNode		    [24 0 27]
+    linkNode		    [25 0 28]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -6519,32 +6548,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    27
+    id			    28
     ssIdNumber		    6
     name		    "origin_lat"
-    linkNode		    [24 26 28]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    28
-    ssIdNumber		    14
-    name		    "origin_lng"
-    linkNode		    [24 27 29]
+    linkNode		    [25 27 29]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -6564,9 +6571,9 @@ Stateflow {
   }
   data {
     id			    29
-    ssIdNumber		    8
-    name		    "altitude"
-    linkNode		    [24 28 30]
+    ssIdNumber		    14
+    name		    "origin_lng"
+    linkNode		    [25 28 30]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -6586,10 +6593,10 @@ Stateflow {
   }
   data {
     id			    30
-    ssIdNumber		    11
-    name		    "destinations"
-    linkNode		    [24 29 31]
-    scope		    DATA_STORE_MEMORY_DATA
+    ssIdNumber		    8
+    name		    "altitude"
+    linkNode		    [25 29 31]
+    scope		    INPUT_DATA
     machine		    1
     props {
       array {
@@ -6608,9 +6615,9 @@ Stateflow {
   }
   data {
     id			    31
-    ssIdNumber		    15
-    name		    "n_quads"
-    linkNode		    [24 30 32]
+    ssIdNumber		    11
+    name		    "destinations"
+    linkNode		    [25 30 32]
     scope		    DATA_STORE_MEMORY_DATA
     machine		    1
     props {
@@ -6630,10 +6637,10 @@ Stateflow {
   }
   data {
     id			    32
-    ssIdNumber		    17
-    name		    "elevation_data"
-    linkNode		    [24 31 33]
-    scope		    INPUT_DATA
+    ssIdNumber		    15
+    name		    "n_quads"
+    linkNode		    [25 31 33]
+    scope		    DATA_STORE_MEMORY_DATA
     machine		    1
     props {
       array {
@@ -6652,10 +6659,10 @@ Stateflow {
   }
   data {
     id			    33
-    ssIdNumber		    18
-    name		    "trajectories"
-    linkNode		    [24 32 34]
-    scope		    DATA_STORE_MEMORY_DATA
+    ssIdNumber		    17
+    name		    "elevation_data"
+    linkNode		    [25 32 34]
+    scope		    INPUT_DATA
     machine		    1
     props {
       array {
@@ -6674,9 +6681,31 @@ Stateflow {
   }
   data {
     id			    34
+    ssIdNumber		    18
+    name		    "trajectories"
+    linkNode		    [25 33 35]
+    scope		    DATA_STORE_MEMORY_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    35
     ssIdNumber		    19
     name		    "curr_dest"
-    linkNode		    [24 33 0]
+    linkNode		    [25 34 0]
     scope		    DATA_STORE_MEMORY_DATA
     machine		    1
     props {
@@ -6695,16 +6724,16 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   junction {
-    id			    35
+    id			    36
     position		    [23.5747 49.5747 7]
-    chart		    24
-    linkNode		    [24 0 0]
-    subviewer		    24
+    chart		    25
+    linkNode		    [25 0 0]
+    subviewer		    25
     ssIdNumber		    3
     type		    CONNECTIVE_JUNCTION
   }
   transition {
-    id			    36
+    id			    37
     labelString		    "{eML_blk_kernel();}"
     labelPosition	    [28.125 13.875 102.544 14.964]
     fontSize		    12
@@ -6712,14 +6741,14 @@ Stateflow {
       intersection	      [0 0 1 0 23.5747 14.625 0 0]
     }
     dst {
-      id		      35
+      id		      36
       intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
     }
     midPoint		    [23.5747 24.9468]
-    chart		    24
-    linkNode		    [24 0 0]
+    chart		    25
+    linkNode		    [25 0 0]
     dataLimits		    [21.175 25.975 14.625 42.575]
-    subviewer		    24
+    subviewer		    25
     drawStyle		    SMART
     slide {
       sticky		      BOTH_STICK
@@ -6728,21 +6757,21 @@ Stateflow {
     ssIdNumber		    2
   }
   instance {
-    id			    37
+    id			    38
     name		    "      /Trajectory Generator"
     machine		    1
-    chart		    24
+    chart		    25
   }
   chart {
-    id			    38
+    id			    39
     name		    "      /Destination Generator"
     windowPosition	    [422 539.941 189 413]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 3600 1200 1.180555555555556]
-    treeNode		    [0 39 0 0]
-    firstTransition	    51
-    firstJunction	    50
-    viewObj		    38
+    treeNode		    [0 40 0 0]
+    firstTransition	    52
+    firstJunction	    51
+    viewObj		    39
     visible		    1
     machine		    1
     subviewS {
@@ -6750,7 +6779,7 @@ Stateflow {
     ssIdHighWaterMark	    20
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
-    firstData		    40
+    firstData		    41
     chartFileNumber	    5
     disableImplicitCasting  1
     eml {
@@ -6758,14 +6787,14 @@ Stateflow {
     }
   }
   state {
-    id			    39
+    id			    40
     labelString		    "eML_blk_kernel()"
     position		    [18 64.5 118 66]
     fontSize		    12
-    chart		    38
-    treeNode		    [38 0 0 0]
+    chart		    39
+    treeNode		    [39 0 0 0]
     superState		    SUBCHART
-    subviewer		    38
+    subviewer		    39
     ssIdNumber		    1
     type		    FUNC_STATE
     decomposition	    CLUSTER_STATE
@@ -6776,22 +6805,25 @@ Stateflow {
       "MPTY = 0;\n\nsend_quad = Queue_Head;\nfor quad_id = 1:n_quads\n    X = sprintf('at time stamp %d there is %drequ"
       "est',time_stamp,Queue_Head);\n    %disp(X)\n    \n    destination_list_length = 1; % max number of destinations\n"
       "    % needed for two package delivery\n    for i = 1:destination_list_length\n        if(destinations(i,1,quad_i"
-      "d) == 0 && destinations(i,2,quad_id) == 0  && destinations(i,3,quad_id) == 0&& send_quad)\n            \n       "
-      "     [lat,lng]=simulate_destination_v2(lat_s,lng_s,radius_min,radius_max);\n            d = deg2nm(lat_s,lng_s,l"
-      "at,lng);\n            if(d < radius_max && d > 0)\n                output_text = sprintf('quad sent to destinati"
-      "on lat %0.2f long%0.2f at time: %d ', lat, lng, time_stamp);\n                %disp(output_text);\n             "
-      "   %destinations(quad_id,1) = lat;\n                %destinations(quad_id,2) = lng;\n                destination"
-      "s(i,1,quad_id) = lat;\n                destinations(i,2,quad_id) = lng;\n                current_que(time_stamp,"
-      "2) = current_que(time_stamp, 2) - 1;\n                send_quad = EMPTY;\n            end\n        end\n    end\n"
-      "end\n\nend\n"
+      "d) == 0 && destinations(i,2,quad_id) == 0  && destinations(i,3,quad_id) == 0 && send_quad)\n            \n      "
+      "      [lat,lng]=simulate_destination_v2(lat_s,lng_s,radius_min,radius_max);\n            [lat2,lng2]=simulate_de"
+      "stination_v2(lat_s,lng_s,radius_min,radius_max);\n            d = deg2nm(lat_s,lng_s,lat,lng);\n            d2 ="
+      " deg2nm(lat_s,lng_s,lat2,lng2);\n            if(d < radius_max && d > 0 && d2 < radius_max && d2 > 0)\n         "
+      "       output_text = sprintf('quad sent to destination lat %0.2f long%0.2f at time: %d ', lat, lng, time_stamp);"
+      "\n                %disp(output_text);\n                %destinations(quad_id,1) = lat;\n                %destina"
+      "tions(quad_id,2) = lng;\n                destinations(i,1,quad_id) = lat;\n                destinations(i,2,quad"
+      "_id) = lng;\n                destinations(2,1,quad_id) = lat_s;\n                destinations(2,2,quad_id) = lng"
+      "_s;\n                %destinations(3,1,quad_id) = lat_s;\n                %destinations(3,2,quad_id) = lng_s;\n "
+      "               current_que(time_stamp,2) = current_que(time_stamp, 2) - 1;\n                send_quad = EMPTY;\n"
+      "            end\n        end\n    end\nend\n\nend\n"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
   data {
-    id			    40
+    id			    41
     ssIdNumber		    4
     name		    "lat_s"
-    linkNode		    [38 0 41]
+    linkNode		    [39 0 42]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -6803,36 +6835,14 @@ Stateflow {
 	primitive		SF_DOUBLE_TYPE
       }
       complexity	      SF_COMPLEX_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    41
-    ssIdNumber		    6
-    name		    "lng_s"
-    linkNode		    [38 40 42]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
     }
     dataType		    "Inherit: Same as Simulink"
   }
   data {
     id			    42
-    ssIdNumber		    7
-    name		    "radius_min"
-    linkNode		    [38 41 43]
+    ssIdNumber		    6
+    name		    "lng_s"
+    linkNode		    [39 41 43]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -6852,9 +6862,9 @@ Stateflow {
   }
   data {
     id			    43
-    ssIdNumber		    8
-    name		    "radius_max"
-    linkNode		    [38 42 44]
+    ssIdNumber		    7
+    name		    "radius_min"
+    linkNode		    [39 42 44]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -6874,10 +6884,10 @@ Stateflow {
   }
   data {
     id			    44
-    ssIdNumber		    13
-    name		    "destinations"
-    linkNode		    [38 43 45]
-    scope		    DATA_STORE_MEMORY_DATA
+    ssIdNumber		    8
+    name		    "radius_max"
+    linkNode		    [39 43 45]
+    scope		    INPUT_DATA
     machine		    1
     props {
       array {
@@ -6896,9 +6906,9 @@ Stateflow {
   }
   data {
     id			    45
-    ssIdNumber		    14
-    name		    "n_quads"
-    linkNode		    [38 44 46]
+    ssIdNumber		    13
+    name		    "destinations"
+    linkNode		    [39 44 46]
     scope		    DATA_STORE_MEMORY_DATA
     machine		    1
     props {
@@ -6918,31 +6928,9 @@ Stateflow {
   }
   data {
     id			    46
-    ssIdNumber		    16
-    name		    "Queue_Head"
-    linkNode		    [38 45 47]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    47
-    ssIdNumber		    17
-    name		    "time_stamp"
-    linkNode		    [38 46 48]
+    ssIdNumber		    14
+    name		    "n_quads"
+    linkNode		    [39 45 47]
     scope		    DATA_STORE_MEMORY_DATA
     machine		    1
     props {
@@ -6961,10 +6949,32 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
+    id			    47
+    ssIdNumber		    16
+    name		    "Queue_Head"
+    linkNode		    [39 46 48]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
     id			    48
-    ssIdNumber		    18
-    name		    "current_que"
-    linkNode		    [38 47 49]
+    ssIdNumber		    17
+    name		    "time_stamp"
+    linkNode		    [39 47 49]
     scope		    DATA_STORE_MEMORY_DATA
     machine		    1
     props {
@@ -6984,9 +6994,31 @@ Stateflow {
   }
   data {
     id			    49
+    ssIdNumber		    18
+    name		    "current_que"
+    linkNode		    [39 48 50]
+    scope		    DATA_STORE_MEMORY_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    50
     ssIdNumber		    19
     name		    "Queue_idx"
-    linkNode		    [38 48 0]
+    linkNode		    [39 49 0]
     scope		    DATA_STORE_MEMORY_DATA
     machine		    1
     props {
@@ -7005,16 +7037,16 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   junction {
-    id			    50
+    id			    51
     position		    [23.5747 49.5747 7]
-    chart		    38
-    linkNode		    [38 0 0]
-    subviewer		    38
+    chart		    39
+    linkNode		    [39 0 0]
+    subviewer		    39
     ssIdNumber		    3
     type		    CONNECTIVE_JUNCTION
   }
   transition {
-    id			    51
+    id			    52
     labelString		    "{eML_blk_kernel();}"
     labelPosition	    [28.125 13.875 102.544 14.964]
     fontSize		    12
@@ -7022,14 +7054,14 @@ Stateflow {
       intersection	      [0 0 1 0 23.5747 14.625 0 0]
     }
     dst {
-      id		      50
+      id		      51
       intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
     }
     midPoint		    [23.5747 24.9468]
-    chart		    38
-    linkNode		    [38 0 0]
+    chart		    39
+    linkNode		    [39 0 0]
     dataLimits		    [21.175 25.975 14.625 42.575]
-    subviewer		    38
+    subviewer		    39
     drawStyle		    SMART
     slide {
       sticky		      BOTH_STICK
@@ -7038,21 +7070,21 @@ Stateflow {
     ssIdNumber		    2
   }
   instance {
-    id			    52
+    id			    53
     name		    "      /Destination Generator"
     machine		    1
-    chart		    38
+    chart		    39
   }
   chart {
-    id			    53
+    id			    54
     name		    "Controller"
     windowPosition	    [422 539.941 189 413]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 3600 1200 1.180555555555556]
-    treeNode		    [0 54 0 0]
-    firstTransition	    61
-    firstJunction	    60
-    viewObj		    53
+    treeNode		    [0 55 0 0]
+    firstTransition	    62
+    firstJunction	    61
+    viewObj		    54
     visible		    1
     machine		    1
     subviewS {
@@ -7060,7 +7092,7 @@ Stateflow {
     ssIdHighWaterMark	    14
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
-    firstData		    55
+    firstData		    56
     chartFileNumber	    6
     disableImplicitCasting  1
     eml {
@@ -7068,14 +7100,14 @@ Stateflow {
     }
   }
   state {
-    id			    54
+    id			    55
     labelString		    "eML_blk_kernel()"
     position		    [18 64.5 118 66]
     fontSize		    12
-    chart		    53
-    treeNode		    [53 0 0 0]
+    chart		    54
+    treeNode		    [54 0 0 0]
     superState		    SUBCHART
-    subviewer		    53
+    subviewer		    54
     ssIdNumber		    1
     type		    FUNC_STATE
     decomposition	    CLUSTER_STATE
@@ -7099,10 +7131,10 @@ Stateflow {
     }
   }
   data {
-    id			    55
+    id			    56
     ssIdNumber		    4
     name		    "ref"
-    linkNode		    [53 0 56]
+    linkNode		    [54 0 57]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -7118,10 +7150,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    56
+    id			    57
     ssIdNumber		    5
     name		    "cmd"
-    linkNode		    [53 55 57]
+    linkNode		    [54 56 58]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -7138,33 +7170,11 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    57
+    id			    58
     ssIdNumber		    11
     name		    "state"
-    linkNode		    [53 56 58]
+    linkNode		    [54 57 59]
     scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    58
-    ssIdNumber		    13
-    name		    "pos"
-    linkNode		    [53 57 59]
-    scope		    DATA_STORE_MEMORY_DATA
     machine		    1
     props {
       array {
@@ -7183,9 +7193,31 @@ Stateflow {
   }
   data {
     id			    59
+    ssIdNumber		    13
+    name		    "pos"
+    linkNode		    [54 58 60]
+    scope		    DATA_STORE_MEMORY_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    60
     ssIdNumber		    14
     name		    "n_quads"
-    linkNode		    [53 58 0]
+    linkNode		    [54 59 0]
     scope		    DATA_STORE_MEMORY_DATA
     machine		    1
     props {
@@ -7204,16 +7236,16 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   junction {
-    id			    60
+    id			    61
     position		    [23.5747 49.5747 7]
-    chart		    53
-    linkNode		    [53 0 0]
-    subviewer		    53
+    chart		    54
+    linkNode		    [54 0 0]
+    subviewer		    54
     ssIdNumber		    3
     type		    CONNECTIVE_JUNCTION
   }
   transition {
-    id			    61
+    id			    62
     labelString		    "{eML_blk_kernel();}"
     labelPosition	    [28.125 13.875 102.544 14.964]
     fontSize		    12
@@ -7221,14 +7253,14 @@ Stateflow {
       intersection	      [0 0 1 0 23.5747 14.625 0 0]
     }
     dst {
-      id		      60
+      id		      61
       intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
     }
     midPoint		    [23.5747 24.9468]
-    chart		    53
-    linkNode		    [53 0 0]
+    chart		    54
+    linkNode		    [54 0 0]
     dataLimits		    [21.175 25.975 14.625 42.575]
-    subviewer		    53
+    subviewer		    54
     drawStyle		    SMART
     slide {
       sticky		      BOTH_STICK
@@ -7237,21 +7269,21 @@ Stateflow {
     ssIdNumber		    2
   }
   instance {
-    id			    62
+    id			    63
     name		    "Controller"
     machine		    1
-    chart		    53
+    chart		    54
   }
   chart {
-    id			    63
+    id			    64
     name		    "Model"
     windowPosition	    [422 539.941 189 413]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 3600 1200 1.180555555555556]
-    treeNode		    [0 64 0 0]
-    firstTransition	    70
-    firstJunction	    69
-    viewObj		    63
+    treeNode		    [0 65 0 0]
+    firstTransition	    71
+    firstJunction	    70
+    viewObj		    64
     visible		    1
     machine		    1
     subviewS {
@@ -7259,7 +7291,7 @@ Stateflow {
     ssIdHighWaterMark	    14
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
-    firstData		    65
+    firstData		    66
     chartFileNumber	    7
     disableImplicitCasting  1
     eml {
@@ -7267,14 +7299,14 @@ Stateflow {
     }
   }
   state {
-    id			    64
+    id			    65
     labelString		    "eML_blk_kernel()"
     position		    [18 64.5 118 66]
     fontSize		    12
-    chart		    63
-    treeNode		    [63 0 0 0]
+    chart		    64
+    treeNode		    [64 0 0 0]
     superState		    SUBCHART
-    subviewer		    63
+    subviewer		    64
     ssIdNumber		    1
     type		    FUNC_STATE
     decomposition	    CLUSTER_STATE
@@ -7292,10 +7324,10 @@ Stateflow {
     }
   }
   data {
-    id			    65
+    id			    66
     ssIdNumber		    4
     name		    "cmd"
-    linkNode		    [63 0 66]
+    linkNode		    [64 0 67]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -7311,10 +7343,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    66
+    id			    67
     ssIdNumber		    6
     name		    "state"
-    linkNode		    [63 65 67]
+    linkNode		    [64 66 68]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -7333,10 +7365,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    67
+    id			    68
     ssIdNumber		    11
     name		    "pos"
-    linkNode		    [63 66 68]
+    linkNode		    [64 67 69]
     scope		    DATA_STORE_MEMORY_DATA
     machine		    1
     props {
@@ -7355,10 +7387,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    68
+    id			    69
     ssIdNumber		    12
     name		    "n_quads"
-    linkNode		    [63 67 0]
+    linkNode		    [64 68 0]
     scope		    DATA_STORE_MEMORY_DATA
     machine		    1
     props {
@@ -7377,16 +7409,16 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   junction {
-    id			    69
+    id			    70
     position		    [23.5747 49.5747 7]
-    chart		    63
-    linkNode		    [63 0 0]
-    subviewer		    63
+    chart		    64
+    linkNode		    [64 0 0]
+    subviewer		    64
     ssIdNumber		    3
     type		    CONNECTIVE_JUNCTION
   }
   transition {
-    id			    70
+    id			    71
     labelString		    "{eML_blk_kernel();}"
     labelPosition	    [28.125 13.875 102.544 14.964]
     fontSize		    12
@@ -7394,14 +7426,14 @@ Stateflow {
       intersection	      [0 0 1 0 23.5747 14.625 0 0]
     }
     dst {
-      id		      69
+      id		      70
       intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
     }
     midPoint		    [23.5747 24.9468]
-    chart		    63
-    linkNode		    [63 0 0]
+    chart		    64
+    linkNode		    [64 0 0]
     dataLimits		    [21.175 25.975 14.625 42.575]
-    subviewer		    63
+    subviewer		    64
     drawStyle		    SMART
     slide {
       sticky		      BOTH_STICK
@@ -7410,22 +7442,22 @@ Stateflow {
     ssIdNumber		    2
   }
   instance {
-    id			    71
+    id			    72
     name		    "Model"
     machine		    1
-    chart		    63
-  }
-  target {
-    id			    72
-    name		    "sfun"
-    description		    "Default Simulink S-Function Target."
-    machine		    1
-    linkNode		    [1 0 73]
+    chart		    64
   }
   target {
     id			    73
+    name		    "sfun"
+    description		    "Default Simulink S-Function Target."
+    machine		    1
+    linkNode		    [1 0 74]
+  }
+  target {
+    id			    74
     name		    "rtw"
     machine		    1
-    linkNode		    [1 72 0]
+    linkNode		    [1 73 0]
   }
 }
