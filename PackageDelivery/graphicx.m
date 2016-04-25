@@ -2,7 +2,7 @@
 %clear all
 %load('SimResults2.mat')
 Rcam = [1 0 0; 0 1 0; 0 0 1];
-numQuads = 2;
+numQuads = 10;
 
 %draw
 vidObj = VideoWriter('sim_testing_live', 'Uncompressed AVI');
@@ -26,7 +26,7 @@ img = imread('San_Jose.JPG');
 %source lat and long
 lat_s = 37.3154997;
 lng_s = -121.8728929;
-imagesc( [lat_s-1.5 lat_s+1.5], [lng_s-2.25 lng_s+2.25] ,img);
+imagesc( [lat_s-.15 lat_s+.15], [lng_s-2.25 lng_s+2.25] ,img);
 %%
 
 for t2 = 0:step:T

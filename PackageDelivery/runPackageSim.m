@@ -14,7 +14,7 @@ warehouses = [37.3154997	-121.8728929;
 
 %% Macro constants
 SetSimVariables();
-numberOfQuads = 2;
+numberOfQuads = 10;
 numRuns = length(warehouses(:,1));
 %% Iterate over all warehouses
 for simRun = 1:numRuns

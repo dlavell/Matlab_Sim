@@ -87,11 +87,6 @@ end
 %if(debug)fprintf('\nPath length = %d\n',path_len);end
 
 path(1:path_len,:) = path_;
-s_node;
-d_node;
-p;
-path_;
-path_len;
 
 end
 
