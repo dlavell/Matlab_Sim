@@ -40,6 +40,7 @@ obstacles = [
     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0; % 196 - 210
     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0];% 211 - 225
 
+
 graph = zeros(length(obstacles(1,:))*length(obstacles(:,1)));
 rowLength = length(obstacles(1,:));
 colLength = length(obstacles(:,1));
@@ -61,14 +62,18 @@ d_y = floor((lng_d - lng_min)/lng_resolution) + 1;
 % Destination node index on graph
 d_node = mod(d_x,rowLength) + rowLength*(d_y - 1);
 
-
+if(obstacles(s_y,s_x) == 1 || obstacles(d_y,d_x) == 1)
+   [ path , path_len ] = exit();
+   return; 
+end
 
 % Dijkstra's shortest path algorithm
 [p, c, f] = dijkstra(graph, s_node, d_node);
 path_len = length(p);
-if(path_len ~= c) 
-    path_len;
-    c;
+
+
+if(path_len == 0 )
+    SHOULDNT_BE_HERE = 1
 end
 
 path_ = zeros(path_len,2);
@@ -91,7 +96,7 @@ path(1:path_len,:) = path_;
 end
 
 function [ path , path_len ] = exit()
-    path = 0;
+    path = zeros(15,2);
     path_len = 0;
     return
 end

@@ -54,11 +54,24 @@ destinations.DataType = 'double';
 destinations.Complexity = 'real';
 destinations.SamplingMode = 'Sample based';
 
+%% destination queue:
+dest_queue = Simulink.Signal;
+dest_queue.DataType = 'double';
+dest_queue.Complexity = 'real';
+dest_queue.SamplingMode = 'Sample based';
+
 %% list of trajectories:
 trajectories = Simulink.Signal;
 trajectories.DataType = 'double';
 trajectories.Complexity = 'real';
 trajectories.SamplingMode = 'Sample based';
+
+%% list of quads as a structure with trajectories and time:
+quads = Simulink.Signal;
+s = struct('traj', zeros(5,3,3),'time', zeros(3,1));
+quads.DataType = 'Bus: <s>';
+quads.Complexity = 'real';
+quads.SamplingMode = 'Sample based';
 
 %% Queue of requests:
 current_que = Simulink.Signal;
