@@ -19,14 +19,22 @@ scale = 0.0025; % size of quadcopter
 %%
 
 %yegeta added this to test displaying picture on the background
-img = imread('San_Jose.JPG');
+%img = imread('San_Jose.JPG');
 %imgsec([min_x,maxx],[min_y max_y],img);
 %imagesc([36.8 37.2], [-122.3 -121.8],img);
+
+% Terrain Graph
+x = 37:.001:38;
+y = 121:.001:122.5;
+y = y * -1;
+z = csvread('SJ-lat-lng-3decimal.csv');
+z = transpose(z(:,1:1501));
+
 
 %source lat and long
 lat_s = 37.3154997;
 lng_s = -121.8728929;
-imagesc( [lat_s-.15 lat_s+.15], [lng_s-2.25 lng_s+2.25] ,img);
+%imagesc( [lat_s-1.5 lat_s+1.5], [lng_s-2.25 lng_s+2.25] ,img);
 %%
 
 for t2 = 0:step:T
@@ -43,6 +51,10 @@ for t2 = 0:step:T
     grid on
     cla
     
+    % Terrain Graph    
+    mesh(x,y,z);
+    shading interp;
+    
     % cycle through each quad for each frame
     for quad = 1: numQuads % length(state.signals.values(1,:))/3
         %pos = state.signals.values(:,3*quad-2:3*quad)';
@@ -53,7 +65,7 @@ for t2 = 0:step:T
             display('Finished making video.')
             break;
         end
-        imagesc( [lat_s-.15 lat_s+.15], [lng_s-.225 lng_s+.225] ,img); %added
+        %imagesc( [lat_s-.15 lat_s+.15], [lng_s-.225 lng_s+.225] ,img); %added
         leg(quad) = plot3(pos_R(1,1:I)',pos_R(2,1:I)',pos_R(3,1:I)','r-');
         p_star = pos_R(:,I);
         quad_plot(p_star,R_star,0,[],0.5,scale);
