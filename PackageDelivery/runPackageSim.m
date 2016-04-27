@@ -15,6 +15,7 @@ warehouses = [37.3154997	-121.8728929;
 %% Macro constants
 SetSimVariables();
 numberOfQuads = 10;
+numberOfTrajectories = 3;
 numRuns = length(warehouses(:,1));
 %% Iterate over all warehouses
 for simRun = 1:numRuns
@@ -26,13 +27,12 @@ for simRun = 1:numRuns
     curr_wp      .InitialValue = 'zeros(numberOfQuads,1)';
     curr_tp      .InitialValue = 'ones(numberOfQuads,1)*2';
     curr_dest    .InitialValue = 'ones(numberOfQuads,1)';
-    %destinations .InitialValue = 'zeros(numberOfQuads,3)';
     destinations .InitialValue = 'zeros(3,3,numberOfQuads)';
-    dest_queue   .InitialValue = 'zeros(10,3)';
-    traj = 'traj';
-    time = 'time';
-    %quads.InitialValue = 'struct(traj, zeros(5,3,3),time, zeros(3,1))';
-    trajectories .InitialValue = 'zeros(40,3,numberOfQuads)';
+    dest_queue   .InitialValue = 'zeros(5000,3)';
+    dest_queue_index.InitialValue = '1';
+    service_index.InitialValue = '1';
+    trajectories .InitialValue = 'zeros(40,3,numberOfTrajectories,numberOfQuads)';
+    takeoff      .InitialValue = 'zeros(numberOfQuads,1)';
     current_que  .InitialValue = 'req_que';
     n_quads      .InitialValue = 'numberOfQuads';
     pos          .InitialValue = 'zeros(numberOfQuads,3)';

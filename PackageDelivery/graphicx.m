@@ -52,8 +52,8 @@ for t2 = 0:step:T
     cla
     
     % Terrain Graph    
-    mesh(x,y,z);
-    shading interp;
+    %mesh(x,y,z);
+    %shading interp;
     
     % cycle through each quad for each frame
     for quad = 1: numQuads % length(state.signals.values(1,:))/3

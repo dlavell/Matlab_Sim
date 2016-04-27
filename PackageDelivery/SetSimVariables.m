@@ -60,18 +60,29 @@ dest_queue.DataType = 'double';
 dest_queue.Complexity = 'real';
 dest_queue.SamplingMode = 'Sample based';
 
+%% index for destination queue:
+dest_queue_index = Simulink.Signal;
+dest_queue_index.DataType = 'double';
+dest_queue_index.Complexity = 'real';
+dest_queue_index.SamplingMode = 'Sample based';
+
+%% index for destination servicing:
+service_index = Simulink.Signal;
+service_index.DataType = 'double';
+service_index.Complexity = 'real';
+service_index.SamplingMode = 'Sample based';
+
 %% list of trajectories:
 trajectories = Simulink.Signal;
 trajectories.DataType = 'double';
 trajectories.Complexity = 'real';
 trajectories.SamplingMode = 'Sample based';
 
-%% list of quads as a structure with trajectories and time:
-% quads = Simulink.Signal;
-% s = struct('traj', zeros(5,3,3),'time', zeros(3,1));
-% quads.DataType = 'Bus: <s>';
-% quads.Complexity = 'real';
-% quads.SamplingMode = 'Sample based';
+%% flags for takeoff
+takeoff = Simulink.Signal;
+takeoff.DataType = 'double';
+takeoff.Complexity = 'real';
+takeoff.SamplingMode = 'Sample based';
 
 %% Queue of requests:
 current_que = Simulink.Signal;
