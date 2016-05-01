@@ -24,20 +24,22 @@ for simRun = 1:numRuns
     IC.Value = repmat([warehouses(simRun,1) ; warehouses(simRun,2) ; 0], numberOfQuads, 1);
     
     % clear/reset global variables
-    curr_wp      .InitialValue = 'zeros(numberOfQuads,1)';
-    curr_tp      .InitialValue = 'ones(numberOfQuads,1)*2';
-    curr_dest    .InitialValue = 'ones(numberOfQuads,1)';
-    destinations .InitialValue = 'zeros(3,3,numberOfQuads)';
-    dest_queue   .InitialValue = 'zeros(5000,3)';
+    curr_wp         .InitialValue = 'zeros(numberOfQuads,1)';
+    curr_tp         .InitialValue = 'ones(numberOfQuads,1)*2';
+    curr_dest       .InitialValue = 'ones(numberOfQuads,1)';
+    destinations    .InitialValue = 'zeros(3,3,numberOfQuads)';
+    dest_queue      .InitialValue = 'zeros(5000,3)';
     dest_queue_index.InitialValue = '1';
-    service_index.InitialValue = '1';
-    trajectories .InitialValue = 'zeros(40,3,numberOfTrajectories,numberOfQuads)';
-    takeoff      .InitialValue = 'zeros(numberOfQuads,1)';
-    current_que  .InitialValue = 'req_que';
-    n_quads      .InitialValue = 'numberOfQuads';
-    pos          .InitialValue = 'zeros(numberOfQuads,3)';
-    time_stamp   .InitialValue = '1';
-    Queue_idx    .InitialValue = '1';
+    service_index   .InitialValue = '1';
+    trajectories    .InitialValue = 'zeros(40,3,numberOfTrajectories,numberOfQuads)';
+    trajectory_times.InitialValue = 'zeros(numberOfTrajectories,numberOfQuads)';
+    takeoff         .InitialValue = 'zeros(numberOfQuads,1)';
+    current_que     .InitialValue = 'req_que';
+    n_quads         .InitialValue = 'numberOfQuads';
+    pos             .InitialValue = 'zeros(numberOfQuads,3)';
+    time_stamp      .InitialValue = '1';
+    timeOnGround    .InitialValue = 'zeros(numberOfQuads,1)'; 
+    Queue_idx       .InitialValue = '1';
 
     % determine max radius of delivery relative to next closest warehouse
     maxDist = inf;

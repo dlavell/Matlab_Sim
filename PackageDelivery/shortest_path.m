@@ -64,7 +64,7 @@ d_node = mod(d_x,rowLength) + rowLength*(d_y - 1);
 
 if(obstacles(s_y,s_x) == 1 || obstacles(d_y,d_x) == 1)
    [ path , path_len ] = exit();
-    dest_is_obstacle = 1
+    dest_is_obstacle = 1;
    return; 
 end
 
@@ -74,7 +74,7 @@ path_len = length(p);
 
 
 if(path_len == 0 )
-    SHOULDNT_BE_HERE = 1
+    SHOULDNT_BE_HERE = 1;
 end
 
 path_ = zeros(path_len,2);

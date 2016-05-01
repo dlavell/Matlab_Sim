@@ -78,6 +78,12 @@ trajectories.DataType = 'double';
 trajectories.Complexity = 'real';
 trajectories.SamplingMode = 'Sample based';
 
+%% Times to traverse each logged trajectory:
+trajectory_times = Simulink.Signal;
+trajectory_times.DataType = 'double';
+trajectory_times.Complexity = 'real';
+trajectory_times.SamplingMode = 'Sample based';
+
 %% flags for takeoff
 takeoff = Simulink.Signal;
 takeoff.DataType = 'double';
@@ -107,6 +113,13 @@ time_stamp = Simulink.Signal;
 time_stamp.DataType = 'double';
 time_stamp.Complexity = 'real';
 time_stamp.SamplingMode = 'Sample based';
+
+%% Amount of time each quad has been waiting on the ground after first 
+%  package assign:
+timeOnGround = Simulink.Signal;
+timeOnGround.DataType = 'double';
+timeOnGround.Complexity = 'real';
+timeOnGround.SamplingMode = 'Sample based';
 
 %% Queue_idx :
 Queue_idx = Simulink.Signal;

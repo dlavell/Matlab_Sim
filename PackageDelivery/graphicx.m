@@ -52,8 +52,8 @@ for t2 = 0:step:T
     cla
     
     % Terrain Graph    
-    %mesh(x,y,z);
-    %shading interp;
+    mesh(x,y,z);
+    shading interp;
     
     % cycle through each quad for each frame
     for quad = 1: numQuads % length(state.signals.values(1,:))/3
@@ -71,7 +71,8 @@ for t2 = 0:step:T
         quad_plot(p_star,R_star,0,[],0.5,scale);
     end % end for-loop
     
-    set(gca,'Xlim',[lat_s-.15 lat_s+.15], 'YLim', [lng_s-.225 lng_s+.225], 'ZLim', [0 800]);
+    set(gca,'Xlim',[lat_s-.15 lat_s+.15], 'YLim', [lng_s-.225 lng_s+.225], 'ZLim', [0 2000]);
+    set(gcf,'Units','Normalized','OuterPosition',[0 0 1 1]);
     %view(37.5,30);
     axis square;
     %legend(leg,{'Quad 1','Quad 2','Quad 3','4'},'location','NorthEast')
