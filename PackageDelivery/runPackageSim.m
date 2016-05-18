@@ -21,7 +21,7 @@ numRuns = length(warehouses(:,1));
 for simRun = 1:numRuns
     %% set global vaiables
     % set initial condition - different for each run
-    IC.Value = repmat([warehouses(simRun,1) ; warehouses(simRun,2) ; 0], numberOfQuads, 1);
+    IC.Value = repmat([warehouses(simRun,1) ; warehouses(simRun,2) ; 31.7583], numberOfQuads, 1);
     
     % clear/reset global variables
     curr_wp         .InitialValue = 'zeros(numberOfQuads,1)';
@@ -83,19 +83,20 @@ display('Performing Postprocess Analysis')
 i =1;
 start_idx = 1;
 stop_idx = 3;
-distance = zeros(1,10,'uint32')
+distance = zeros(1,10,'uint32');
 
 
-while i < str2num(n_quads.InitialValue)
-    distance(i) = post_processing.calc_distance(state.signals.values(:,start_idx:stop_idx))
+while i <= numberOfQuads
+    distance(i) = post_processing.calc_distance(state.signals.values(:,start_idx:stop_idx));
     i = i +1;
     start_idx = start_idx + 3;
     stop_idx =  stop_idx +3;
 end
 
-formatSpec = 'Average Distance covered by a quadcopter is: %d';
-Average_distance = sum(distance)/ str2num(n_quads.InitialValue);
-str = sprintf(formatSpec,Average_distance)
+formatSpec = 'Average Distance covered by a quadcopter\nIn meters: %d\In Miles: %d';
+Average_distance = sum(distance)/ numberOfQuads;
+toMiles = .000621371;
+str = sprintf(formatSpec,Average_distance,Average_distance*toMiles);
 display(str);
 
 

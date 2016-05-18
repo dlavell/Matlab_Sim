@@ -9,10 +9,10 @@ dlat  = (lat2  - lat1) * toRadians;
 
 a = (sin(dlat/2))^2 + cos(lat1) * cos(lat2) * (sin(dlong/2))^2;
 c = 2 * atan2( sqrt(a), sqrt(1-a) );
-dist = R * c;
+dist = R * c; % meters
 
 toNauticalMiles = .000539957;
-
 dist = dist*toNauticalMiles;
+
 end
 

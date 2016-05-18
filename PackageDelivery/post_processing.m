@@ -18,7 +18,7 @@ classdef post_processing
         % @Revision: None
         
         function total_dist = calc_distance(trajectory)
-            display('calculating result');
+            %display('calculating result');
             R = 6371000 ;% radiuth
             lat = trajectory(:,1);
             lon = trajectory(:,2);

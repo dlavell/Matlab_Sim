@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.3427"
+    ComputedModelVersion    "1.3448"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -40,7 +40,7 @@ Model {
       $ObjectID		      3
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [-96.0, 0.0, 1296.0, 1040.0]
+      Location		      [2.0, 0.0, 1278.0, 994.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		4
@@ -62,11 +62,11 @@ Model {
 	$ObjectID		6
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
-	ViewObjType		"SimulinkTopLevel"
-	LoadSaveID		"0"
-	Extents			[1246.0, 866.0]
-	ZoomFactor		[1.5]
-	Offset			[352.33333333333348, 45.666666666666636]
+	ViewObjType		"SimulinkSubsys"
+	LoadSaveID		"988"
+	Extents			[1228.0, 820.0]
+	ZoomFactor		[1.29]
+	Offset			[0.0, 0.0]
       }
     }
   }
@@ -76,9 +76,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "dlavell"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sun May 01 14:28:09 2016"
-  RTWModifiedTimeStamp	  384013688
-  ModelVersionFormat	  "1.%<AutoIncrement:3427>"
+  LastModifiedDate	  "Wed May 18 15:24:30 2016"
+  RTWModifiedTimeStamp	  385485869
+  ModelVersionFormat	  "1.%<AutoIncrement:3448>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -4714,7 +4714,7 @@ Model {
       }
       Name		      "Configuration8"
       CurrentDlgPage	      "Solver"
-      ConfigPrmDlgPosition     [ 78, 21, 1270, 975 ] 
+      ConfigPrmDlgPosition     [ 469, 105, 1565, 901 ] 
     }
     PropName		    "ConfigurationSets"
   }
@@ -4912,8 +4912,8 @@ Model {
   }
   System {
     Name		    "PackageDeliverySim"
-    Location		    [-96, 0, 1200, 1040]
-    Open		    on
+    Location		    [2, 0, 1280, 994]
+    Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    212
     ScreenColor		    "white"
@@ -4962,8 +4962,8 @@ Model {
       RequestExecContextInheritance off
       System {
 	Name			"      "
-	Location		[-8, -8, 1928, 1058]
-	Open			off
+	Location		[2, 0, 1280, 994]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -5820,7 +5820,7 @@ Model {
 	SIDHighWatermark	"32"
 	Block {
 	  BlockType		  Inport
-	  Name			  "traj"
+	  Name			  "unused"
 	  SID			  "980::1"
 	  Position		  [20, 101, 40, 119]
 	  ZOrder		  -1
@@ -5870,7 +5870,7 @@ Model {
 	}
 	Line {
 	  ZOrder		  155
-	  SrcBlock		  "traj"
+	  SrcBlock		  "unused"
 	  SrcPort		  1
 	  DstBlock		  " SFunction "
 	  DstPort		  1
@@ -6186,52 +6186,56 @@ Stateflow {
     decomposition	    CLUSTER_STATE
     eml {
       isEML		      1
-      script		      "function waypoint = Waypoint_generator(traj)\n%#codegen\n\nglobal curr_wp curr_tp destinations po"
-      "s n_quads trajectories curr_dest ...\n        takeoff trajectory_times;\nwaypoint = zeros(100,3);\nprint = 0;\nt"
-      "raj_length = 40;\n\nfor quad_id = 1:n_quads\n    if quad_id == 1\n       % print = 1;\n    else \n       % print"
-      " = 0;\n    end\n    % current position\n    if(pos(quad_id,1) == 0) pos(quad_id,:) = trajectories(1,:,curr_dest("
-      "quad_id),quad_id); end % temporary fix\n    quad_X = pos(quad_id,1);\n    quad_Y = pos(quad_id,2);\n    quad_Z ="
-      " pos(quad_id,3);\n    \n    % associated trajectory\n    if(takeoff(quad_id)) \n        trajectory = trajectorie"
-      "s(:,:,curr_dest(quad_id),quad_id);\n    else\n        trajectory = repmat([37.3154997 -121.8728929 0], traj_leng"
-      "th, 1);\n    end\n    % Specify last and next trajectory points\n    last_tp = trajectory(curr_tp(quad_id)-1,:);"
-      "\n    next_tp = trajectory(curr_tp(quad_id),:);\n    \n    % trajectory point distances\n    tp_separation_dist_"
-      "xy = sqrt((last_tp(1)-next_tp(1))^2 + ...\n        (last_tp(2)-next_tp(2))^2);\n    tp_separation_dist_z =  abs("
-      "last_tp(3)-next_tp(3));\n    \n    % Divide distance between last_tp and next_tp into evenly divided segments\n "
-      "   % waypoint distances\n    wp_separation_dist = 0;\n    tp_separation_dist = 0;\n    if tp_separation_dist_z >"
-      " 50\n        wp_separation_dist = tp_separation_dist_z/4;\n        tp_separation_dist = tp_separation_dist_z;\n "
-      "   else\n        wp_separation_dist = tp_separation_dist_xy/4;\n        tp_separation_dist = tp_separation_dist_"
-      "xy;\n    end\n    \n    \n    % acceptable distance to waypoint\n    threshold_z = 5;\n    threshold_xy = .0005;"
-      "\n    \n    % Determine which segment along trajectory to give next and in what\n    % direction\n    number_of_"
-      "waypoints = floor(tp_separation_dist/wp_separation_dist);\n    vec_norm = [(last_tp(1)-next_tp(1)) (last_tp(2)-n"
-      "ext_tp(2)) ...\n                        (last_tp(3)-next_tp(3))]/tp_separation_dist;\n    if(isnan(vec_norm(1)))"
-      " vec_norm(1) = 0; end\n    if(isnan(vec_norm(2))) vec_norm(2) = 0; end\n    if(isnan(vec_norm(3))) vec_norm(3) ="
-      " 0; end\n    wp = last_tp + curr_wp(quad_id)*wp_separation_dist*-vec_norm;\n   \n    % distance to current waypo"
-      "int\n    dist_xy = sqrt((quad_X-wp(1))^2 + (quad_Y-wp(2))^2);\n    dist_z = abs(quad_Z-wp(3));\n    not_same_tp "
-      "= last_tp(1) ~= next_tp(1) || ...\n            last_tp(2) ~= next_tp(2) || last_tp(3) ~= next_tp(3);\n    if pri"
-      "nt \n       % fprintf('last_tp       : %f  %f  %f \\n',last_tp(1),last_tp(2),last_tp(3));\n       % fprintf('Qua"
-      "d position : %f  %f  %f \\n',quad_X,quad_Y,quad_Z);\n       % fprintf('Waypoint      : %f  %f  %f \\n',wp(1),wp("
-      "2),wp(3));\n       % fprintf('next_tp       : %f  %f  %f \\n',next_tp(1),next_tp(2),next_tp(3));\n       % fprin"
-      "tf('distance to wp_xy : %f with threshold_xy : %f \\n',dist_xy, threshold_xy);\n       % fprintf('distance to wp"
-      "_z  : %f with threshold_z  : %f \\n',dist_z, threshold_z);\n       % fprintf('curr_wp : %f out of %f \\n\\n',cur"
-      "r_wp(quad_id),number_of_waypoints);\n    end\n    \n    if(dist_xy <= threshold_xy && dist_z <= threshold_z && n"
-      "ot_same_tp)\n        curr_wp(quad_id) = curr_wp(quad_id) + 1;\n        if(curr_wp(quad_id) == number_of_waypoint"
-      "s)\n            curr_tp(quad_id) = curr_tp(quad_id) + 1;\n            curr_wp(quad_id) = 0;\n        end\n    en"
-      "d\n    \n    if(trajectory(curr_tp(quad_id),1) == 0 || curr_tp(quad_id) == length(trajectories(:,1,1,quad_id)))\n"
-      "        curr_tp(quad_id) = 2;\n        curr_dest(quad_id) = curr_dest(quad_id)+1;\n        if(curr_dest(quad_id)"
-      " == 4 || (curr_dest(quad_id) == 3 && destinations(3,1,quad_id) == 0))\n            destinations(1,:,quad_id) = ["
-      "0 0 0];\n            destinations(2,:,quad_id) = [0 0 0];\n            destinations(3,:,quad_id) = [0 0 0];\n   "
-      "         trajectories(:,:,1,quad_id) = repmat([0 0 0], traj_length, 1);\n            trajectories(:,:,2,quad_id)"
-      " = repmat([0 0 0], traj_length, 1);\n            trajectories(:,:,3,quad_id) = repmat([0 0 0], traj_length, 1);\n"
-      "            trajectory_times(:,quad_id) = [0; 0; 0];\n            curr_dest(quad_id) = 1;\n            takeoff(q"
-      "uad_id) = 0;\n        end\n    end\n    \n    %% output\n    waypoint(quad_id,:) = wp;\n    \nend % end for-loop"
-      "\n\nend"
+      script		      "%%\n% @Function: Waypoint_generator\n% @parameter: ~\n% \n% @return: waypoint - vector of referen"
+      "ce points (one for each quad in the\n%                       simulation)\n% @brief: This function generates inte"
+      "rmediate waypoints for quads along\n%           their designated trajcetory. This function also manages\n%      "
+      "     resetting all vehicle specific variables once the quad has\n%           completed its delivery\n% @note: ~\n"
+      "% @assumtion: ~ \n% @Author: Quadcopter team(Daniel Lavell, Brandon Luu and Yegeta Zeleke)\n% @Revision: May 10,"
+      " 2016 - Began Documentation\nfunction waypoint = Waypoint_generator(~)\nglobal curr_wp curr_tp destinations pos "
+      "n_quads trajectories curr_dest ...\n        takeoff trajectory_times;\nwaypoint = zeros(100,3);\nprint = 0;\ntra"
+      "j_length = 40;\n\nfor quad_id = 1:n_quads\n    % current position\n    if(pos(quad_id,1) == 0) pos(quad_id,:) = "
+      "trajectories(1,:,curr_dest(quad_id),quad_id); end % temporary fix\n    quad_X = pos(quad_id,1);\n    quad_Y = po"
+      "s(quad_id,2);\n    quad_Z = pos(quad_id,3);\n    \n    % associated trajectory\n    if(takeoff(quad_id)) \n     "
+      "   trajectory = trajectories(:,:,curr_dest(quad_id),quad_id);\n    else\n        trajectory = repmat([37.3154997"
+      " -121.8728929 31.7583], traj_length, 1);\n    end\n    % Specify last and next trajectory points\n    last_tp = "
+      "trajectory(curr_tp(quad_id)-1,:);\n    next_tp = trajectory(curr_tp(quad_id),:);\n    \n    % trajectory point d"
+      "istances\n    tp_separation_dist_xy = sqrt((last_tp(1)-next_tp(1))^2 + ...\n        (last_tp(2)-next_tp(2))^2);\n"
+      "    tp_separation_dist_z =  abs(last_tp(3)-next_tp(3));\n    \n    % Divide distance between last_tp and next_tp"
+      " into evenly divided segments\n    % waypoint distances\n    wp_separation_dist = 0;\n    tp_separation_dist = 0"
+      ";\n    if tp_separation_dist_z > 50\n        wp_separation_dist = tp_separation_dist_z/4;\n        tp_separation"
+      "_dist = tp_separation_dist_z;\n    else\n        wp_separation_dist = tp_separation_dist_xy/4;\n        tp_separ"
+      "ation_dist = tp_separation_dist_xy;\n    end\n    \n    \n    % acceptable distance to waypoint\n    threshold_z"
+      " = 5;\n    threshold_xy = .0005;\n    \n    % Determine which segment along trajectory to give next and in what\n"
+      "    % direction\n    number_of_waypoints = floor(tp_separation_dist/wp_separation_dist);\n    vec_norm = [(last_"
+      "tp(1)-next_tp(1)) (last_tp(2)-next_tp(2)) ...\n                        (last_tp(3)-next_tp(3))]/tp_separation_di"
+      "st;\n    if(isnan(vec_norm(1))) vec_norm(1) = 0; end\n    if(isnan(vec_norm(2))) vec_norm(2) = 0; end\n    if(is"
+      "nan(vec_norm(3))) vec_norm(3) = 0; end\n    wp = last_tp + curr_wp(quad_id)*wp_separation_dist*-vec_norm;\n   \n"
+      "    % distance to current waypoint\n    dist_xy = sqrt((quad_X-wp(1))^2 + (quad_Y-wp(2))^2);\n    dist_z = abs(q"
+      "uad_Z-wp(3));\n    not_same_tp = last_tp(1) ~= next_tp(1) || ...\n            last_tp(2) ~= next_tp(2) || last_t"
+      "p(3) ~= next_tp(3);\n    if print \n       % fprintf('last_tp       : %f  %f  %f \\n',last_tp(1),last_tp(2),last"
+      "_tp(3));\n       % fprintf('Quad position : %f  %f  %f \\n',quad_X,quad_Y,quad_Z);\n       % fprintf('Waypoint  "
+      "    : %f  %f  %f \\n',wp(1),wp(2),wp(3));\n       % fprintf('next_tp       : %f  %f  %f \\n',next_tp(1),next_tp("
+      "2),next_tp(3));\n       % fprintf('distance to wp_xy : %f with threshold_xy : %f \\n',dist_xy, threshold_xy);\n "
+      "      % fprintf('distance to wp_z  : %f with threshold_z  : %f \\n',dist_z, threshold_z);\n       % fprintf('cur"
+      "r_wp : %f out of %f \\n\\n',curr_wp(quad_id),number_of_waypoints);\n    end\n    \n    if(dist_xy <= threshold_x"
+      "y && dist_z <= threshold_z && not_same_tp)\n        curr_wp(quad_id) = curr_wp(quad_id) + 1;\n        if(curr_wp"
+      "(quad_id) == number_of_waypoints)\n            curr_tp(quad_id) = curr_tp(quad_id) + 1;\n            curr_wp(qua"
+      "d_id) = 0;\n        end\n    end\n    \n    if(trajectory(curr_tp(quad_id),1) == 0 || curr_tp(quad_id) == length"
+      "(trajectories(:,1,1,quad_id)))\n        curr_tp(quad_id) = 2;\n        curr_dest(quad_id) = curr_dest(quad_id)+1"
+      ";\n        if(curr_dest(quad_id) == 4 || (curr_dest(quad_id) == 3 && destinations(3,1,quad_id) == 0))\n         "
+      "   destinations(1,:,quad_id) = [0 0 0];\n            destinations(2,:,quad_id) = [0 0 0];\n            destinati"
+      "ons(3,:,quad_id) = [0 0 0];\n            trajectories(:,:,1,quad_id) = repmat([0 0 0], traj_length, 1);\n       "
+      "     trajectories(:,:,2,quad_id) = repmat([0 0 0], traj_length, 1);\n            trajectories(:,:,3,quad_id) = r"
+      "epmat([0 0 0], traj_length, 1);\n            trajectory_times(:,quad_id) = [0; 0; 0];\n            curr_dest(qua"
+      "d_id) = 1;\n            takeoff(quad_id) = 0;\n        end\n    end\n    \n    %% output\n    waypoint(quad_id,:"
+      ") = wp;\n    \nend % end for-loop\n\nend"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
   data {
     id			    13
     ssIdNumber		    4
-    name		    "traj"
+    name		    "unused"
     linkNode		    [11 0 14]
     scope		    INPUT_DATA
     machine		    1
@@ -6542,58 +6546,78 @@ Stateflow {
     decomposition	    CLUSTER_STATE
     eml {
       isEML		      1
-      script		      "function traj = fcn(origin_lat, origin_lng, altitude, elevation_data)\n%% Initialize variables\ng"
-      "lobal destinations n_quads trajectories curr_dest dest_queue ...\n        dest_queue_index service_index takeoff"
-      " trajectory_times ...\n        timeOnGround;\ncoder.extrinsic('shortest_path');\n\n% Note: altitude is measured "
-      "feet\nuse_obstacle_avoidance = 1;\n\n\n% Note: n_quads < 100 must hold\n% so that the output variable doesnt cha"
-      "nge size\norigin = [origin_lat origin_lng 0];\nheight_ori = 0;\nheight_dst = 0;\ntraj_length = 40;\n\nto_ms = 60"
-      "00;\nto_min = 1/(60);\n%T_constraint = 30*to_ms;\nT_constraint = 14;\nspeed = 10; %m/s\ncurrTransitTime = 0;\n\n"
-      "incTimeOnGround();\n\n% If there are more destinations that have not been serviced\nif(dest_queue_index > servic"
-      "e_index)\n    % If -> the destination can be assigned to a quad that already has one\n    % dest... check all qu"
-      "ads that have one dest, see if new dest is within\n    % time radius\n    % Else -> build trajectory and assign "
-      "to a quad that is on the ground\n    served = 0;\n    for quad_id = 1:n_quads\n        if(~takeoff(quad_id) && t"
-      "rajectories(1,1,1,quad_id) ~= 0)\n            % if quad doesnt have a destination.. continue\n            % buil"
-      "d trajectory for quad from first dest to new dest\n            source = destinations(1,:,quad_id);\n            "
-      "dest = [dest_queue(service_index,1) dest_queue(service_index,2) 0];\n            trajectory = build_traj(source,"
-      " dest, origin, elevation_data, altitude,quad_id);\n            if(trajectory(1,1) == 0)\n                served "
-      "= 1;\n                service_index = service_index+1;\n                break;\n            end\n            % g"
-      "et time for how long trajectory would take to travel\n            t_traverse = calc_time(trajectory , speed);\n "
-      "           t_traverse = t_traverse*to_min\n            \n            if(t_traverse < T_constraint - trajectory_t"
-      "imes(1,quad_id))\n                two_package = 2\n                % Assign second trajectory\n                t"
-      "rajectories(:,:,2,quad_id) = trajectory;\n                destinations(2,:,quad_id) = dest;\n                tra"
-      "jectory_times(2,quad_id) = t_traverse;\n                \n                % Assign trajectory home and takeoff\n"
-      "                source = dest;\n                dest = origin;\n                trajectory = build_traj(source, "
-      "dest, origin, elevation_data, altitude,quad_id);\n                if(trajectory(1,1) == 0)\n                    "
-      "help_me = 1;\n                    served = 1;\n                    break;\n                end\n                "
-      "trajectories(:,:,3,quad_id) = trajectory;\n                destinations(3,:,quad_id) = dest;\n                ta"
-      "keoff(quad_id) = 1;\n                timeOnGround(quad_id) = 0;\n                served = 1;\n            elseif"
-      "(timeOnGround(quad_id) >= T_constraint - trajectory_times(1,quad_id)) \n                one_package = 1\n       "
-      "         source = destinations(1,:,quad_id);\n                dest = origin;\n                trajectory = build"
-      "_traj(source, dest, origin, elevation_data, altitude,quad_id);\n                if(trajectory(1,1) == 0)\n      "
-      "              help_me = 1;\n                    served = 1;\n                    break;\n                end\n  "
-      "              trajectories(:,:,2,quad_id) = trajectory;\n                destinations(2,:,quad_id) = dest;\n    "
-      "            takeoff(quad_id) = 1;\n                served = 1;\n            end\n        end\n    end\n    \n   "
-      " if(~served)\n        for quad_id = 1:n_quads\n            if(~takeoff(quad_id) && trajectories(1,1,1,quad_id) ="
-      "= 0)\n                source = origin;\n                dest = [dest_queue(service_index,1) dest_queue(service_i"
-      "ndex,2) 0];\n                trajectory = build_traj(source, dest, origin, elevation_data, altitude,quad_id);\n "
-      "               if(trajectory(1,1) == 0)\n                    service_index = service_index+1;\n                 "
-      "   break;\n                end\n                % get time for how long trajectory would take to travel\n       "
-      "         t_traverse = calc_time(trajectory , speed);\n                t_traverse = t_traverse*to_min;\n         "
-      "       trajectories(:,:,1,quad_id) = trajectory;\n                destinations(1,:,quad_id) = dest;\n           "
-      "     trajectory_times(1,quad_id) = t_traverse;\n                service_index = service_index+1;\n              "
-      "  served = 1;\n                break\n            end\n        end\n    end\n    \n    \n    \nend\n\ntraj = 0;\n"
-      "end\n\n\n\nfunction traj = build_traj(source, dest, origin, elevation_data,altitude, id)\nglobal destinations cu"
-      "rr_dest;\ncoder.extrinsic('shortest_path');\ntraj_length = 40;\nheight_src = get_elevation(source(1),source(2),e"
-      "levation_data);\nheight_dst = get_elevation(dest(1),dest(2),elevation_data);\nindex = 1;\ntraj = zeros(traj_leng"
-      "th,3);\n\npath = zeros(15,2);\npath_len = 0;\n[path, path_len] = shortest_path(source,dest);\n\nif(path_len == 0"
-      ")\n    SHOULDNT_BE_HERE = 2;\n    curr_dest(id) = 1;\n    return\nend\n%path\ntraj(index,:) = [source(1) source("
-      "2) height_src ];\nindex = index +1;\ntraj(index,:) = [source(1) source(2) height_src+altitude ];\nindex = index "
-      "+1;\nfor i = 1:path_len\n    height = get_elevation(path(i,1), path(i,2),elevation_data);\n    %height = 0;\n   "
-      " traj(index,:) = [path(i,1) path(i,2) height+altitude];\n    index = index +1;\nend\ntraj(index,:) = [dest(1) de"
-      "st(2) height_dst+altitude];\nindex = index +1;\ntraj(index,:) = [dest(1) dest(2) height_dst];\n\nend\n\nfunction"
-      " incTimeOnGround()\nglobal timeOnGround n_quads takeoff trajectories;\n\nfor quad_id = 1:n_quads\n    if(~takeof"
-      "f(quad_id) && trajectories(1,1,1,quad_id) ~= 0)\n        timeOnGround(quad_id) = timeOnGround(quad_id) + 1; \n  "
-      "  end\nend\n\nend"
+      script		      "%%\n% @Function: fcn    (trajectory_generator)\n% @parameter:   origin_lat           - latitude o"
+      "f source node\n%               origin_lng           - longitude of source node\n%               altitude(feet)  "
+      "     - min radius for destination around source\n%               elevation_data(feet) - max radius for destinati"
+      "on around source\n% \n% @return: ~\n% @brief: This function has the main logic for assigning trajectories to\n% "
+      "          meet the delivery time constraint. If there are destinations in\n%           the destination queue tha"
+      "t have not been serviced, then this\n%           function tries to assign it to a quadcopter. Only quadcopters\n"
+      "%           on the ground can be assigned a trajectory so all quads that\n%           have not taken off are che"
+      "ck to see if they can make it to the\n%           new destination under the time constraint. \n% @note: Of the q"
+      "uadcopters on the ground, the ones that have already been\n%           assigned one trajcetory are searched firs"
+      "t to see if the new\n%           destination is valid. This ensures that priority is given to\n%           those"
+      " that have been waiting longer.\n% @assumtion: ~ \n% @Author: Quadcopter team(Daniel Lavell, Brandon Luu and Yeg"
+      "eta Zeleke)\n% @Revision: May 10, 2016 - Began Documentation\nfunction traj = fcn(origin_lat, origin_lng, altitu"
+      "de, elevation_data)\n%% Initialize variables\nglobal destinations n_quads trajectories curr_dest dest_queue ...\n"
+      "        dest_queue_index service_index takeoff trajectory_times ...\n        timeOnGround;\ncoder.extrinsic('sho"
+      "rtest_path');\n\norigin = [origin_lat origin_lng 0];\nheight_ori = 0;\nheight_dst = 0;\ntraj_length = 40;\n\nto_"
+      "min = 1/(100);\nT_constraint = 30;\nspeed = 10; %m/s\n\nincTimeOnGround();\n\n% If there are more destinations t"
+      "hat have not been serviced\nif(dest_queue_index > service_index)\n    % If -> the destination can be assigned to"
+      " a quad that already has one\n    % dest... check all quads that have one dest, see if new dest is within\n    %"
+      " time radius\n    % Else -> build trajectory and assign to a quad that is on the ground\n    served = 0;\n    fo"
+      "r quad_id = 1:n_quads\n        if(~takeoff(quad_id) && trajectories(1,1,1,quad_id) ~= 0)\n            % if quad "
+      "doesnt have a destination.. continue\n            % build trajectory for quad from first dest to new dest\n     "
+      "       source = destinations(1,:,quad_id);\n            dest = [dest_queue(service_index,1) dest_queue(service_i"
+      "ndex,2) 0];\n            trajectory = build_traj(source, dest, elevation_data, altitude,quad_id);\n            i"
+      "f(trajectory(1,1) == 0)\n                served = 1;\n                service_index = service_index+1;\n        "
+      "        break;\n            end\n            % get time for how long trajectory would take to travel\n          "
+      "  t_traverse = calc_time(trajectory , speed);\n            t_traverse = t_traverse*to_min;\n            \n      "
+      "      if(t_traverse < T_constraint - trajectory_times(1,quad_id))\n                two_package = 2\n            "
+      "    % Assign second trajectory\n                trajectories(:,:,2,quad_id) = trajectory;\n                desti"
+      "nations(2,:,quad_id) = dest;\n                trajectory_times(2,quad_id) = t_traverse;\n                \n     "
+      "           % Assign trajectory home and takeoff\n                source = dest;\n                dest = origin;\n"
+      "                trajectory = build_traj(source, dest, elevation_data, altitude,quad_id);\n                if(tra"
+      "jectory(1,1) == 0)\n                    help_me = 1;\n                    served = 1;\n                    break"
+      ";\n                end\n                trajectories(:,:,3,quad_id) = trajectory;\n                destinations("
+      "3,:,quad_id) = dest;\n                takeoff(quad_id) = 1;\n                timeOnGround(quad_id) = 0;\n       "
+      "         served = 1;\n            elseif(timeOnGround(quad_id) >= T_constraint - trajectory_times(1,quad_id)) \n"
+      "                one_package = 1\n                source = destinations(1,:,quad_id);\n                dest = ori"
+      "gin;\n                trajectory = build_traj(source, dest, elevation_data, altitude,quad_id);\n                "
+      "if(trajectory(1,1) == 0)\n                    help_me = 1;\n                    served = 1;\n                   "
+      " break;\n                end\n                trajectories(:,:,2,quad_id) = trajectory;\n                destina"
+      "tions(2,:,quad_id) = dest;\n                takeoff(quad_id) = 1;\n                served = 1;\n            end\n"
+      "        end\n    end\n    \n    if(~served)\n        for quad_id = 1:n_quads\n            if(~takeoff(quad_id) &"
+      "& trajectories(1,1,1,quad_id) == 0)\n                source = origin;\n                dest = [dest_queue(servic"
+      "e_index,1) dest_queue(service_index,2) 0];\n                trajectory = build_traj(source, dest, elevation_data"
+      ", altitude,quad_id);\n                if(trajectory(1,1) == 0)\n                    service_index = service_inde"
+      "x+1;\n                    break;\n                end\n                % get time for how long trajectory would "
+      "take to travel\n                t_traverse = calc_time(trajectory , speed);\n                t_traverse = t_trav"
+      "erse*to_min;\n                trajectories(:,:,1,quad_id) = trajectory;\n                destinations(1,:,quad_i"
+      "d) = dest;\n                trajectory_times(1,quad_id) = t_traverse;\n                service_index = service_i"
+      "ndex+1;\n                served = 1;\n                break\n            end\n        end\n    end\n    \n    \n"
+      "    \nend\n\ntraj = 0;\nend\n\n%%\n% @Function: build_traj    (trajectory_generator)\n% @parameter:   source    "
+      "       - [lat lng] of source node\n%               dest             - [lat lng] of destination node\n%          "
+      "     altitude(feet)       - min radius for destination around source\n%               elevation_data(feet) - max"
+      " radius for destination around source\n% \n% @return: traj - trajcetory between source and destination\n% @brief"
+      ": This function specifically builds the trajectory. The shortest\n%           path between the source and destin"
+      "ation nodes is found using\n%           Dijkstra's shortest path algorithm\n% @note: If the path length returned"
+      " is of length 0 then the path is\n%           invalid and that destination is skipped\n% @assumtion: ~ \n% @Auth"
+      "or: Quadcopter team(Daniel Lavell, Brandon Luu and Yegeta Zeleke)\n% @Revision: May 10, 2016 - Began Documentati"
+      "on\nfunction traj = build_traj(source, dest, elevation_data,altitude, id)\nglobal destinations curr_dest;\ncoder"
+      ".extrinsic('shortest_path');\ntraj_length = 40;\nheight_src = get_elevation(source(1),source(2),elevation_data);"
+      "\nheight_dst = get_elevation(dest(1),dest(2),elevation_data);\nindex = 1;\ntraj = zeros(traj_length,3);\n\npath "
+      "= zeros(15,2);\npath_len = 0;\n[path, path_len] = shortest_path(source,dest);\n\nif(path_len == 0)\n    SHOULDNT"
+      "_BE_HERE = 2;\n    curr_dest(id) = 1;\n    return\nend\n%path\ntraj(index,:) = [source(1) source(2) height_src ]"
+      ";\nindex = index +1;\ntraj(index,:) = [source(1) source(2) height_src+altitude ];\nindex = index +1;\nfor i = 1:"
+      "path_len\n    height = get_elevation(path(i,1), path(i,2),elevation_data);\n    %height = 0;\n    traj(index,:) "
+      "= [path(i,1) path(i,2) height+altitude];\n    index = index +1;\nend\ntraj(index,:) = [dest(1) dest(2) height_ds"
+      "t+altitude];\nindex = index +1;\ntraj(index,:) = [dest(1) dest(2) height_dst];\n\nend\n\n%%\n% @Function: incTim"
+      "eOnGround    (trajectory_generator)\n% @parameter: ~\n% \n% @return: ~\n% @brief: This function increments the t"
+      "imeOnGround variable for each\n%           quadcopter that has a package assigned to it but has yet to\n%       "
+      "    take off\n% @note: ~\n% @assumtion: ~ \n% @Author: Quadcopter team(Daniel Lavell, Brandon Luu and Yegeta Zel"
+      "eke)\n% @Revision: May 10, 2016 - Began Documentation\nfunction incTimeOnGround()\nglobal timeOnGround n_quads t"
+      "akeoff trajectories;\nsimTimeStep = 1;\n\nfor quad_id = 1:n_quads\n    if(~takeoff(quad_id) && trajectories(1,1,"
+      "1,quad_id) ~= 0)\n        timeOnGround(quad_id) = timeOnGround(quad_id) + simTimeStep; \n    end\nend\n\nend"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
@@ -7002,13 +7026,20 @@ Stateflow {
     decomposition	    CLUSTER_STATE
     eml {
       isEML		      1
-      script		      "\nfunction dest_generator(lat_s, lng_s, radius_min, radius_max, Queue_Head)\ncoder.extrinsic('spr"
-      "intf')\n%\n%   proc_simulate_destination\n%\nglobal destinations n_quads time_stamp current_que Queue_idx dest_q"
-      "ueue ...\n        dest_queue_index service_index takeoff;\nEMPTY = 0;\n\nsend_quad = Queue_Head;\n\nif(send_quad"
-      ")\n    [lat,lng]=simulate_destination_v2(lat_s,lng_s,radius_min,radius_max);\n    d = deg2nm(lat_s,lng_s,lat,lng"
-      ");\n    if(d < radius_max && d > 0)\n        dest_queue(dest_queue_index,:) = [lat lng 0];\n        send_quad = "
-      "EMPTY;\n        if(dest_queue_index == length(dest_queue))\n            dest_queue_index = length(dest_queue);\n"
-      "        else\n            dest_queue_index = dest_queue_index+1;\n        end\n    end\nend\nend\n"
+      script		      "%%\n% @Function: dest_generator\n% @parameter:   lat_s          - latitude of source node\n%     "
+      "          lng_s          - longitude of source node\n%               radius_min(nm) - min radius for destination"
+      " around source\n%               radius_max(nm) - max radius for destination around source\n%               Queue"
+      "_Head     - Comes from quue manager determines how\n%                                many quads to send\n% @retu"
+      "rn: ~\n% @brief: This function looks at the queue_head to determine if a request\n%           has been made. If "
+      "there is a request, a destination is\n%           generated and added to the destination queue\n% @note: ~\n% @a"
+      "ssumtion: ~ \n% @Author: Quadcopter team(Daniel Lavell, Brandon Luu and Yegeta Zeleke)\n% @Revision: May 10, 201"
+      "6 - Began Documentation\nfunction dest_generator(lat_s, lng_s, radius_min, radius_max, Queue_Head)\ncoder.extrin"
+      "sic('sprintf')\n%\n%   proc_simulate_destination\n%\nglobal destinations n_quads time_stamp current_que Queue_id"
+      "x dest_queue ...\n        dest_queue_index service_index takeoff;\nEMPTY = 0;\n\nsend_quad = Queue_Head;\n\nif(s"
+      "end_quad)\n    [lat,lng]=simulate_destination_v2(lat_s,lng_s,radius_min,radius_max);\n    d = deg2nm(lat_s,lng_s"
+      ",lat,lng);\n    if(d < radius_max && d > 0)\n        dest_queue(dest_queue_index,:) = [lat lng 0];\n        send"
+      "_quad = EMPTY;\n        if(dest_queue_index == length(dest_queue))\n            dest_queue_index = length(dest_q"
+      "ueue);\n        else\n            dest_queue_index = dest_queue_index+1;\n        end\n    end\nend\nend\n"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
@@ -7403,11 +7434,11 @@ Stateflow {
       " tracking angle (degrees)\n    % Great Circle Navigation Law - Gano's slides\n    Xg = atan2d((sind(Ey)*cosd(ref"
       "(quad_id,1))),(sind(ref(quad_id,1))*cosd(state(3*quad_id-2)) ...\n        - cosd(ref(quad_id,1))*sind(state(3*qu"
       "ad_id-2))*cosd(Ey)));\n    \n    % Set ground speed\n    % If any error in latitude or longitude move laterally\n"
-      "    % Else don't move laterally\n    if Ex ~= 0 || Ey ~= 0\n        Vg = 50;\n    else\n        Vg = 0;\n    end"
-      "\n    \n    % Set climb rate\n    % If reference point is above then climb\n    % If reference point is below th"
-      "en descend\n    % Else climb rate is zero\n    if Ez > 0\n        Vh = 50;\n    elseif Ez < 0\n        Vh = -50;"
-      "\n    else \n        Vh = 0;\n    end\n    % output command\n    cmd(quad_id,:) = [ Xg  Vh  Vg ];\n    \nend % e"
-      "nd for-loop\n\nend"
+      "    % Else don't move laterally\n    if Ex ~= 0 || Ey ~= 0\n        Vg = 500;\n    else\n        Vg = 0;\n    en"
+      "d\n    \n    % Set climb rate\n    % If reference point is above then climb\n    % If reference point is below t"
+      "hen descend\n    % Else climb rate is zero\n    if Ez > 0\n        Vh = 5;\n    elseif Ez < 0\n        Vh = -5;\n"
+      "    else \n        Vh = 0;\n    end\n    % output command\n    cmd(quad_id,:) = [ Xg  Vh  Vg ];\n    \nend % end"
+      " for-loop\n\nend"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
@@ -7565,10 +7596,7 @@ Stateflow {
     firstTransition	    83
     firstJunction	    82
     viewObj		    76
-    visible		    1
     machine		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    14
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
