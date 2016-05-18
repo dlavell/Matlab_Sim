@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.3448"
+    ComputedModelVersion    "1.3451"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -40,7 +40,7 @@ Model {
       $ObjectID		      3
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [2.0, 0.0, 1278.0, 994.0]
+      Location		      [567.0, 17.0, 1605.0, 994.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		4
@@ -64,7 +64,7 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkSubsys"
 	LoadSaveID		"988"
-	Extents			[1228.0, 820.0]
+	Extents			[1555.0, 820.0]
 	ZoomFactor		[1.29]
 	Offset			[0.0, 0.0]
       }
@@ -76,9 +76,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "dlavell"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed May 18 15:24:30 2016"
-  RTWModifiedTimeStamp	  385485869
-  ModelVersionFormat	  "1.%<AutoIncrement:3448>"
+  LastModifiedDate	  "Wed May 18 15:40:08 2016"
+  RTWModifiedTimeStamp	  385486807
+  ModelVersionFormat	  "1.%<AutoIncrement:3451>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -4962,7 +4962,7 @@ Model {
       RequestExecContextInheritance off
       System {
 	Name			"      "
-	Location		[2, 0, 1280, 994]
+	Location		[567, 17, 2172, 1011]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -6561,21 +6561,21 @@ Stateflow {
       "de, elevation_data)\n%% Initialize variables\nglobal destinations n_quads trajectories curr_dest dest_queue ...\n"
       "        dest_queue_index service_index takeoff trajectory_times ...\n        timeOnGround;\ncoder.extrinsic('sho"
       "rtest_path');\n\norigin = [origin_lat origin_lng 0];\nheight_ori = 0;\nheight_dst = 0;\ntraj_length = 40;\n\nto_"
-      "min = 1/(100);\nT_constraint = 30;\nspeed = 10; %m/s\n\nincTimeOnGround();\n\n% If there are more destinations t"
-      "hat have not been serviced\nif(dest_queue_index > service_index)\n    % If -> the destination can be assigned to"
-      " a quad that already has one\n    % dest... check all quads that have one dest, see if new dest is within\n    %"
-      " time radius\n    % Else -> build trajectory and assign to a quad that is on the ground\n    served = 0;\n    fo"
-      "r quad_id = 1:n_quads\n        if(~takeoff(quad_id) && trajectories(1,1,1,quad_id) ~= 0)\n            % if quad "
-      "doesnt have a destination.. continue\n            % build trajectory for quad from first dest to new dest\n     "
-      "       source = destinations(1,:,quad_id);\n            dest = [dest_queue(service_index,1) dest_queue(service_i"
-      "ndex,2) 0];\n            trajectory = build_traj(source, dest, elevation_data, altitude,quad_id);\n            i"
-      "f(trajectory(1,1) == 0)\n                served = 1;\n                service_index = service_index+1;\n        "
-      "        break;\n            end\n            % get time for how long trajectory would take to travel\n          "
-      "  t_traverse = calc_time(trajectory , speed);\n            t_traverse = t_traverse*to_min;\n            \n      "
-      "      if(t_traverse < T_constraint - trajectory_times(1,quad_id))\n                two_package = 2\n            "
-      "    % Assign second trajectory\n                trajectories(:,:,2,quad_id) = trajectory;\n                desti"
-      "nations(2,:,quad_id) = dest;\n                trajectory_times(2,quad_id) = t_traverse;\n                \n     "
-      "           % Assign trajectory home and takeoff\n                source = dest;\n                dest = origin;\n"
+      "min = 1/(60);\nT_constraint = 30;\nspeed = 10; %m/s\n\nincTimeOnGround();\n\n% If there are more destinations th"
+      "at have not been serviced\nif(dest_queue_index > service_index)\n    % If -> the destination can be assigned to "
+      "a quad that already has one\n    % dest... check all quads that have one dest, see if new dest is within\n    % "
+      "time radius\n    % Else -> build trajectory and assign to a quad that is on the ground\n    served = 0;\n    for"
+      " quad_id = 1:n_quads\n        if(~takeoff(quad_id) && trajectories(1,1,1,quad_id) ~= 0)\n            % if quad d"
+      "oesnt have a destination.. continue\n            % build trajectory for quad from first dest to new dest\n      "
+      "      source = destinations(1,:,quad_id);\n            dest = [dest_queue(service_index,1) dest_queue(service_in"
+      "dex,2) 0];\n            trajectory = build_traj(source, dest, elevation_data, altitude,quad_id);\n            if"
+      "(trajectory(1,1) == 0)\n                served = 1;\n                service_index = service_index+1;\n         "
+      "       break;\n            end\n            % get time for how long trajectory would take to travel\n           "
+      " t_traverse = calc_time(trajectory , speed);\n            t_traverse = t_traverse*to_min;\n            \n       "
+      "     if(t_traverse < T_constraint - trajectory_times(1,quad_id))\n                two_package = 2\n             "
+      "   % Assign second trajectory\n                trajectories(:,:,2,quad_id) = trajectory;\n                destin"
+      "ations(2,:,quad_id) = dest;\n                trajectory_times(2,quad_id) = t_traverse;\n                \n      "
+      "          % Assign trajectory home and takeoff\n                source = dest;\n                dest = origin;\n"
       "                trajectory = build_traj(source, dest, elevation_data, altitude,quad_id);\n                if(tra"
       "jectory(1,1) == 0)\n                    help_me = 1;\n                    served = 1;\n                    break"
       ";\n                end\n                trajectories(:,:,3,quad_id) = trajectory;\n                destinations("
@@ -6616,8 +6616,9 @@ Stateflow {
       "imeOnGround variable for each\n%           quadcopter that has a package assigned to it but has yet to\n%       "
       "    take off\n% @note: ~\n% @assumtion: ~ \n% @Author: Quadcopter team(Daniel Lavell, Brandon Luu and Yegeta Zel"
       "eke)\n% @Revision: May 10, 2016 - Began Documentation\nfunction incTimeOnGround()\nglobal timeOnGround n_quads t"
-      "akeoff trajectories;\nsimTimeStep = 1;\n\nfor quad_id = 1:n_quads\n    if(~takeoff(quad_id) && trajectories(1,1,"
-      "1,quad_id) ~= 0)\n        timeOnGround(quad_id) = timeOnGround(quad_id) + simTimeStep; \n    end\nend\n\nend"
+      "akeoff trajectories;\nsimTimeStep = 1/6000;\n\nfor quad_id = 1:n_quads\n    if(~takeoff(quad_id) && trajectories"
+      "(1,1,1,quad_id) ~= 0)\n        timeOnGround(quad_id) = timeOnGround(quad_id) + simTimeStep; \n    end\nend\n\nen"
+      "d"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
