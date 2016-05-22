@@ -1,0 +1,24 @@
+The popularity and usage of domain-specific languages has been growing over the years; in the past few years, they have attracted attention from researchers due to their various applications. DSLs are different from general-purpose programming languages in the sense that they are specialized for a specific domain or problem, such as HTML for the creation of web pages \cite{van2000domain}, SQL for developing queries on relational database \cite{leijen1999domain}, data storage and exchange languages such as XML and many others.  DSL programs are relatively synced, self-documenting, and have various use cases \cite{USENIX}. A well formed DSL is capable of optimizing a system at domain level. Despite their many benefits, the limited availability of DSLs and the difficulty of obtaining valid scope for a DSL are major challenges when considering DSLs \cite{ krueger1992software,van2000domain}.
+
+\iffalse
+NOTE -- include some stuff about what a domain specific modeling 
+language is. We should also talk about the benefits to using one, such 
+as how inexperienced people can use it and be effective without a great 
+deal of technical knowledge. 
+\fi
+
+\par
+Programming autonomous vehicles is generally done with low-level 
+general-purpose languages and middleware. Although there are standards to the interface of 
+the autonomous vehicle, such as the Joint Architecture for Unmanned Systems 
+(JAUS), and there are methods to send JAUS command using Robot Operating System (ROS) \cite{morley2013generating}, there is no standard language used to program these vehicles.
+Safety is a major concern in autonomous vehicles, and simple software mistakes may be catastrophic when implementing new control software.  
+A single system may be developed and be provably safe for a certain behavioral model, however later changes to the model may require further tests to be performed.
+High scalability in the development of safe autonomous vehicles is not achievable when using such low-level languages.
+Instead, small primitive behaviors may be designed to be provably safe.
+Domain-specific modeling languages may further be used to combine such primitive behaviors to form a more complex model and quickly generate code for any high level changes.
+Some behaviors may not be combinable depending on the state of the vehicle, so primitive motions may have constraints that must be met before being performed.
+The domain-specific modeling language may also perform constraint checking to ensure that constraints are not violated for any primitive motion.
+
+\par
+%Should we discuss the creation of different controllers for each new vehicle archite...
