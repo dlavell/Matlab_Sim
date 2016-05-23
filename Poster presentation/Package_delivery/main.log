@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  23 MAY 2016 14:21
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  23 MAY 2016 15:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1045,27 +1045,27 @@ Package: booktabs 2005/04/14 v1.61803 publication quality tables
 (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 57.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 57.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 54.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 54.
  (/usr/local/texlive/2012/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Try loading font information for T1+lmss on input line 57.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Try loading font information for T1+lmss on input line 54.
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1134,7 +1134,7 @@ e
 ))
 ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box59
-Package hyperref Info: Link coloring OFF on input line 57.
+Package hyperref Info: Link coloring OFF on input line 54.
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
@@ -1144,9 +1144,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count184
 )
-LaTeX Info: Redefining \ref on input line 57.
-LaTeX Info: Redefining \pageref on input line 57.
-LaTeX Info: Redefining \nameref on input line 57.
+LaTeX Info: Redefining \ref on input line 54.
+LaTeX Info: Redefining \pageref on input line 54.
+LaTeX Info: Redefining \nameref on input line 54.
 
 (./main.out) (./main.out)
 \@outlinefile=\write5
@@ -1177,41 +1177,41 @@ Dictionary: translator-numbers-dictionary, Language: English
 r-theorem-dictionary/translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-LaTeX Info: Redefining \includegraphics on input line 57.
+LaTeX Info: Redefining \includegraphics on input line 54.
 
 ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 57.
+LaTeX Info: Redefining \selectfont on input line 54.
  (./main.nav)
-LaTeX Font Info:    Calculating math sizes for size <17.86> on input line 57.
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 57.
+LaTeX Font Info:    Calculating math sizes for size <17.86> on input line 54.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 54.
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 57.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 54.
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 57.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 54.
 
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 57.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 54.
 
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <17.86> on input line 57.
+(Font)              <17.86> on input line 54.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12.50194> on input line 57.
+(Font)              <12.50194> on input line 54.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8.93> on input line 57.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 268.
+(Font)              <8.93> on input line 54.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 288.
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1220,7 +1220,7 @@ t>
 File: images/delivery-drone.jpg Graphic file (type jpg)
 
 <use images/delivery-drone.jpg>
-Package pdftex.def Info: images/delivery-drone.jpg used on input line 268.
+Package pdftex.def Info: images/delivery-drone.jpg used on input line 288.
 (pdftex.def)             Requested size: 610.54266pt x 542.41797pt.
  (./src/Introduction.tex) (./src/Approach.tex
 LaTeX Font Info:    Try loading font information for TS1+lmss on input line 3.
@@ -1239,7 +1239,7 @@ Package pdftex.def Info: images/TopLevelDesign.png used on input line 4.
 File: images/poster_terrain.png Graphic file (type png)
 
 <use images/poster_terrain.png>
-Package pdftex.def Info: images/poster_terrain.png used on input line 268.
+Package pdftex.def Info: images/poster_terrain.png used on input line 288.
 (pdftex.def)             Requested size: 1609.6131pt x 816.5458pt.
  (./src/Result.tex
 LaTeX Font Info:    Calculating math sizes for size <25.72> on input line 8.
@@ -1251,20 +1251,39 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <12.86> on input line 8.
 ) (./src/Conclusion.tex)
 (./src/Acknowledgements.tex)
-Overfull \hbox (4.99402pt too wide) detected at line 268
+Overfull \hbox (4.99402pt too wide) detected at line 288
 [][][] [][][][][][][][][] [][][][][][][][][] [][][][][][][][][] [][][][][][][][
 ][] [][][][][][][][][] [][][][][][][] 
  []
 
+<./images/baskin-logo-normal.jpg, id=18, 227.83118pt x 95.3964pt>
+File: ./images/baskin-logo-normal.jpg Graphic file (type jpg)
+
+<use ./images/baskin-logo-normal.jpg>
+Package pdftex.def Info: ./images/baskin-logo-normal.jpg used on input line 288
+.
+(pdftex.def)             Requested size: 598.28001pt x 250.52838pt.
+
+<./images/hsl-logo.png, id=19, 604.2575pt x 390.45876pt>
+File: ./images/hsl-logo.png Graphic file (type png)
+
+<use ./images/hsl-logo.png>
+Package pdftex.def Info: ./images/hsl-logo.png used on input line 288.
+(pdftex.def)             Requested size: 598.28001pt x 386.59706pt.
 
 Overfull \hbox (88.20334pt too wide) has occurred while \output is active
 []
  []
 
+
+Overfull \vbox (114.90474pt too high) has occurred while \output is active []
+
+
 [1{/usr/local/texlive/2012/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
- <./images/delivery-drone.jpg> <./images/TopLevelDesign.png> <./images/poster_t
-errain.png (PNG copy)>]
+ <./images/baskin-logo-normal.jpg> <./images/hsl-logo.png> <./images/delivery-d
+rone.jpg> <./images/TopLevelDesign.png> <./images/poster_terrain.png (PNG copy)
+>]
 \tf@nav=\write6
 \openout6 = `main.nav'.
 
@@ -1274,20 +1293,21 @@ errain.png (PNG copy)>]
 \tf@snm=\write8
 \openout8 = `main.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 270.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 270.
- (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 270.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 270.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 290.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 290.
+
+(./main.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 290.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 290.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 270.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 290.
  ) 
 Here is how much of TeX's memory you used:
- 19923 strings out of 493488
- 374743 string characters out of 3141326
- 502162 words of memory out of 3000000
- 22674 multiletter control sequences out of 15000+200000
+ 19934 strings out of 493488
+ 375032 string characters out of 3141326
+ 503227 words of memory out of 3000000
+ 22682 multiletter control sequences out of 15000+200000
  79941 words of font info for 66 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
  52i,18n,66p,957b,1416s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1298,10 +1318,10 @@ texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2012/texmf-dist
 pe1/public/lm/lmr17.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/
 lm/lmss17.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/lm/lmssbx1
 0.pfb>
-Output written on main.pdf (1 page, 582408 bytes).
+Output written on main.pdf (1 page, 801455 bytes).
 PDF statistics:
- 55 PDF objects out of 1000 (max. 8388607)
+ 57 PDF objects out of 1000 (max. 8388607)
  35 compressed objects within 1 object stream
  4 named destinations out of 1000 (max. 500000)
- 64 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 74 words of extra memory for PDF output out of 10000 (max. 10000000)
 

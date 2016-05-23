@@ -1,5 +1,3 @@
-
-
 %----------------------------------------------------------------------------------------
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
@@ -53,15 +51,37 @@
 \institute{University of California, Santa Cruz} % Institution(s)
 
 %----------------------------------------------------------------------------------------
-
 \begin{document}
-
-
+\setbeamertemplate{headline}{
+ \leavevmode
+  \begin{columns}
+   \begin{column}{.2\linewidth}
+    \includegraphics[width=0.9\linewidth]{./images/baskin-logo-normal.jpg}
+   \end{column}
+   \begin{column}{.6\linewidth}
+    \vskip1cm
+    \centering
+    \usebeamercolor{title in headline}{\color{jblue}\Huge{\textbf{\inserttitle}}\\[0.5ex]}
+    \usebeamercolor{author in headline}{\color{fg}\Large{\insertauthor}\\[1ex]}
+    \usebeamercolor{institute in headline}{\color{fg}\large{\insertinstitute}\\[1ex]}
+    \vskip1cm
+   \end{column}
+   \begin{column}{.2\linewidth}
+    \includegraphics[width=0.9\linewidth]{./images/hsl-logo.png}
+   \end{column}
+   \vspace{1cm}
+  \end{columns}
+ \vspace{0.5in}
+ %\hspace{0.5in}\begin{beamercolorbox}[wd=47in,colsep=0.15cm]{cboxb}\end{beamercolorbox}
+ \vspace{0.1in}
+}
 \addtobeamertemplate{block end}{}{\vspace*{2ex}} % White space under blocks
 \addtobeamertemplate{block alerted end}{}{\vspace*{2ex}} % White space under highlighted (alert) blocks
 
 \setlength{\belowcaptionskip}{2ex} % White space under figures
 \setlength\belowdisplayshortskip{2ex} % White space under equations
+
+
 
 \begin{frame}[t] % The whole poster is enclosed in one beamer frame
 
