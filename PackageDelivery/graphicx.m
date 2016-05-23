@@ -89,5 +89,33 @@ for t2 = 0:step:T
     frame = frame+1;
 end
 
+hold on;
+%{
+% Terrain Graph
+x = 37:.001:38;
+y = 121:.001:122.5;
+y = y * -1;
+z = csvread('SJ-lat-lng-3decimal.csv');
+z = transpose(z(:,1:1501));
+
+%source lat and long
+lat_s = 37.3154997;
+lng_s = -121.8728929;
+
+% Terrain Graph 
+mesh(x,y,z);
+shading interp;
+
+c = colorbar;
+c.Label.String = 'Altitude (meters)';
+set(c,'fontsize',18);
+set(gca,'fontsize',18);
+title('San Jose Terrain Graph', 'FontSize', 18);
+xlabel('Latitude', 'FontSize', 18);
+ylabel('Longitude', 'FontSize', 18);
+zlabel('Altitude', 'FontSize', 18);
+set(gca,'Xlim',[lat_s-.15 lat_s+.15], 'YLim', [lng_s-.225 lng_s+.225], 'ZLim', [0 1500]);
+%}
+
 hold off;
 grid off;
