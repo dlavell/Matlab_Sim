@@ -8,7 +8,8 @@ pdflatex main.tex
 pdflatex main.tex
 
 #make clean
-mv main.pdf "Poster: QuadcopterTeam.pdf"
-#evince "Poster: QuadcopterTeam.pdf" &
-#zenity --error --text="Respect! It compiled successfully\!" --title="Success!"
+mv main.pdf "Poster.pdf"
+evince "Poster.pdf" &
+#zenity --error --text="Hell yeah! It compiled successfully\!" --title="Success!"
+
 
