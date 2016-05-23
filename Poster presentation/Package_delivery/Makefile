@@ -18,10 +18,8 @@ all: $(PAPER)
 
  
 clean::
-	rm -fv *.aux *.log *.blg *.toc *.out *.lot *.lof *.bbl *.out *.nav *.toc
+	rm -fv *.aux *.log *.blg *.toc *.out *.lot *.lof *.bbl *.out *.nav *.toc *.pdf
 
-clean_all::
-	rm -fv *.aux *.log *.blg *.toc *.out *.lot *.lof *.bbl *.pdf
  
 $(PAPER).pdf: $(PAPER).tex $(PAPER).bbl 
 	$(TEX) $(PAPER) 
