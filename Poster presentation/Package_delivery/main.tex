@@ -1,9 +1,9 @@
 %----------------------------------------------------------------------------------------
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
-
+%----------------------------------------------
 \documentclass[final]{beamer}
-
+\usepackage{mwe} %added this to use other package
 \usepackage[scale=1.24]{beamerposter} % Use the beamerposter package for laying out the poster
 
 \usetheme{confposter} % Use the confposter theme supplied with this template
@@ -75,6 +75,8 @@
  %\hspace{0.5in}\begin{beamercolorbox}[wd=47in,colsep=0.15cm]{cboxb}\end{beamercolorbox}
  \vspace{0.1in}
 }
+%--------------------------------------------------------------------------------------------
+
 \addtobeamertemplate{block end}{}{\vspace*{2ex}} % White space under blocks
 \addtobeamertemplate{block alerted end}{}{\vspace*{2ex}} % White space under highlighted (alert) blocks
 
@@ -103,8 +105,8 @@
 
 
 \begin{figure}
-\includegraphics[width=0.8\linewidth]{images/delivery-drone.jpg}
-\caption{Figure caption}
+\includegraphics[width=0.8\linewidth]{images/prime-air.jpg}
+\caption{Amazon Prime Air Vehicle}
 \end{figure}
 
 
@@ -155,6 +157,11 @@
 
 {\small\input{./src/Model.tex}\par}
 
+\begin{figure}
+\includegraphics[width=1\linewidth]{images/TopLevelDesign.png}
+%\caption{Figure caption}
+\end{figure}
+
 \end{block}
 
 %----------------------------------------------------------------------------------------
@@ -185,8 +192,8 @@
 {\small\input{./src/OverView.tex}\par}
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{images/poster_terrain.png}
-\caption{Simulation run with 25 vehicles delivering around warehouse located in San Jose.}
+\includegraphics[width=1\linewidth]{images/terrain-side.png}
+\caption{Figure caption}
 \end{figure}
 
 %\end{alertblock} 
@@ -221,6 +228,12 @@
 {\small\input{./src/Result.tex}\par}
 
 
+
+\begin{figure}
+\includegraphics[width=0.8\linewidth]{images/delivery-drone.jpg}
+\caption{Figure caption}
+\end{figure}
+
 \end{block}
 
 %----------------------------------------------------------------------------------------
@@ -239,13 +252,13 @@
 %	REFERENCES
 %----------------------------------------------------------------------------------------
 
-%\begin{block}{References}
+\begin{block}{References}
 
-%\nocite{*} % Insert publications even if they are not cited in the poster
-%\small{\bibliographystyle{unsrt}
-%\bibliography{sample}\vspace{0.75in}}
+\nocite{*} % Insert publications even if they are not cited in the poster
+\small{\bibliographystyle{unsrt}
+\bibliography{sample}\vspace{0.75in}}
 
-%\end{block}
+\end{block}
 
 %----------------------------------------------------------------------------------------
 %	ACKNOWLEDGEMENTS
@@ -259,6 +272,11 @@
 \end{block}
 
 
+\begin{center}
+\begin{tabular}{ccc}
+\includegraphics[width=0.4\linewidth]{images/baskin-logo-normal.jpg} & \hfill & \includegraphics[width=0.4\linewidth]{images/hsl-logo.png}
+\end{tabular}
+\end{center}
 
 
 %----------------------------------------------------------------------------------------
@@ -287,4 +305,10 @@
 
 \end{frame} % End of the enclosing frame
 
+<<<<<<< HEAD
 \end{document}
+=======
+\end{document}
+Status API Training Shop Blog About
+© 2016 GitHub, Inc. Terms Privacy Security Contact Help
+>>>>>>> 7c4fca8c05d66b23836663634d44b250328a8a6d
