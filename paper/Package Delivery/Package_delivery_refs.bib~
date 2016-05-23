@@ -1,0 +1,149 @@
+@book{CodeGenerationBook,
+  title={Code generation with templates},
+    author={Arnoldus, Jeroen and Van den Brand, Mark and Serebrenik, 
+    Alexander and Brunekreef, Johannes Jacobus},
+      volume={1},
+        year={2012},
+          publisher={Springer Science \& Business Media}
+          }
+
+@book{USENIX,
+  title={Two application languagesin software production. In USENIX Very High Level Languages Symposium Proceedings},
+  author={D. A. Ladd and J. C. Ramming},
+  year={1994},
+  pages={169 -- 178}
+}
+@inproceedings{leijen1999domain,
+  title={Domain specific embedded compilers},
+  author={Leijen, Daan and Meijer, Erik},
+  booktitle={ACM Sigplan Notices},
+  volume={35},
+  number={1},
+  pages={109--122},
+  year={1999},
+  organization={ACM}
+}
+@article{krueger1992software,
+  title={Software reuse},
+  author={Krueger, Charles W},
+  journal={ACM Computing Surveys (CSUR)},
+  volume={24},
+  number={2},
+  pages={131--183},
+  year={1992},
+  publisher={ACM}
+}
+
+@article{van2000domain,
+  title={Domain-Specific Languages: An Annotated Bibliography.},
+  author={Van Deursen, Arie and Klint, Paul and Visser, Joost},
+  journal={Sigplan Notices},
+  volume={35},
+  number={6},
+  pages={26--36},
+  year={2000}
+}
+
+@book{SHIFT_1,
+  title={SHIFT: A formalism and a programming language for dynamic networks of hybrid automata},
+  author={Deshpande, Akash and G{\"o}ll{\"u}, Aleks and Varaiya, Pravin},
+  year={1997},
+  publisher={Springer}
+}
+
+@article{asarin2000effective,
+  title={Effective synthesis of switching controllers for linear systems},
+  author={Asarin, Eugene and Bournez, Olivier and Dang, Thao and Maler, Oded and Pnueli, Amir},
+  journal={Proceedings of the IEEE},
+  volume={88},
+  number={7},
+  pages={1011--1025},
+  year={2000},
+  publisher={IEEE}
+}
+
+@inproceedings{contsynth,
+  title={Controller synthesis: From modelling to enactment},
+  author={Braberman, V{\'\i}ctor and D'Ippolito, Nicolas and Piterman, Nir and Sykes, Daniel and Uchitel, Sebastian},
+  booktitle={Proceedings of the 2013 International Conference on Software Engineering},
+  pages={1347--1350},
+  year={2013},
+  organization={IEEE Press}
+}
+
+@article{SwitchingControl,
+  title={Switching controls},
+    author={Zuazua, Enrique},
+      journal={Journal of the European Mathematical Society},
+        year={2008}
+        }
+
+@article{van2002domain,
+  title={Domain-specific language design requires feature descriptions},
+  author={Van Deursen, Arie and Klint, Paul},
+  journal={CIT. Journal of computing and information technology},
+  volume={10},
+  number={1},
+  pages={1--17},
+  year={2002},
+  publisher={SRCE-Sveu{\v{c}}ili{\v{s}}ni ra{\v{c}}unski centar}
+}
+
+@article{mernik2005and,
+  title={When and how to develop domain-specific languages},
+  author={Mernik, Marjan and Heering, Jan and Sloane, Anthony M},
+  journal={ACM computing surveys (CSUR)},
+  volume={37},
+  number={4},
+  pages={316--344},
+  year={2005},
+  publisher={ACM}
+}
+
+@article{macrakis1993uncol,
+  title={From UNCOL to ANDF: Progress in standard intermediate languages},
+  author={Macrakis, Stavros},
+  journal={Open Software Foundation, macrakis@ osf. org},
+  pages={1--18},
+  year={1993}
+}
+
+@inproceedings{morley2013generating,
+  title={Generating a ROS/JAUS bridge for an autonomous ground vehicle},
+  author={Morley, Patrick and Warren, Alex and Rabb, Ethan and Whitsitt, Sean and Bunting, Matt and Sprinkle, Jonathan},
+  booktitle={Proceedings of the 2013 ACM workshop on Domain-specific modeling},
+  pages={13--18},
+  year={2013},
+  organization={ACM}
+}
+
+@misc{ECENews,
+	title={Look Ma -- No Hands!},
+	author={Sydney Donaldson},
+	publisher={University of Arizona, Electrical and Computer Engineering},
+	url={http://ece.arizona.edu/look-ma-no-hands},
+	year={2015},
+	day=11,
+	month=aug
+}
+
+@misc{AzStar,
+	title={Hands off the Wheel, Please},
+	author={Momta Popat},
+	publisher={Arizona Daily Star},
+	url={http://tucson.com/news/local/take-a-ride-in-ua-s-driverless-car/youtube_00f86f2c-408f-11e5-b94f-3bb8d0df702b.html},
+	page={1},
+	year={2015},
+	day=12,
+	month=aug
+}
+
+@inproceedings{VanderbiltMetaGME,
+  title={The generic modeling environment},
+  author={Ledeczi, Akos and Maroti, Miklos and Bakay, Arpad and Karsai, Gabor and Garrett, Jason and Thomason, Charles and Nordstrom, Greg and Sprinkle, 
+  Jonathan and Volgyesi, Peter},
+  booktitle={Workshop on Intelligent Signal Processing, Budapest, Hungary},
+  volume={17},
+  pages={1},
+  year={2001}
+}

@@ -1,0 +1,19 @@
+\iffalse
+	The conclusion will most likely wrap up every major idea that was 
+	discussed in the paper and touch all the points that were introduced in 
+	the introduction.
+\fi
+
+In this article, we have introduced a domain-specific modeling language for 
+programming autonomous vehicles. This is a much more effective than current 
+methods for programming AVs because the DSL is much more expressive than a 
+general-purpose language. Additionally, larger projects are easy to 
+manage because the DSML allows for metaprogramming. 
+\par
+The constraint language included is also a crucial part of the DSML because 
+it allows the programmer to guarantee the safety of a trajectory using the 
+predefined set of constraints. It also allows for the creation of 
+user-defined constraints that can guarantee custom controller 
+safety, guarantee safe operation of a different AV, and offer adaptability 
+to the needs of the testing environment.
+

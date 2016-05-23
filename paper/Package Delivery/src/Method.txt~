@@ -1,0 +1,8 @@
+%This section will discuss our method used for creating the
+%domain-specific modeling language. It will discuss GME,
+%metaprogramming, and (possibly) switching control.
+
+\iffalse
+	Add stuff about the Method
+\fi
+\par The method we used for .. 

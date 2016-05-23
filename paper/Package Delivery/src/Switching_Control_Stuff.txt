@@ -1,0 +1,89 @@
+%This section will discuss switching control and the reason to use switching 
+%control in such a system. It will also touch on how we can guarantee safe 
+%operation using switching control. This will most likely include information 
+%about the algorithm that, given a switching controller acting on a plant that 
+%models "a piecewise-linear dynamical system," is able to find safe switching 
+%surfaces within your state space, as presented in
+%\cite{asarin2000effective}.
+
+\subsection{Switching Control}
+%<<FIXME<< Update this section so that it discusses switching control 
+%and uses a citation to do so.\par
+%We chose to use switching control in our project implementation. 
+
+Switching control is the use of multiple controllers or 
+algorithms operating alternatively to control a switched system
+\cite{SwitchingControl}. These 
+different controllers are typically specialized to perform well for 
+certain conditions within a system. In order to operate effectively, 
+these different controllers are managed by a governing rule that 
+handles which controller is operational at any given time based on the 
+system's circumstances.
+\par
+We decided that switching control was an effective way to implement 
+controllers for our modeling language. We designed a controller for 
+each primitive motion described in section \ref{ssec:PrimitiveMotions}. 
+The transitions between these controllers then corresponded with the 
+natural transitions defined in the user's sequence model 
+of the vehicle trajectory, yielding a simple way to define the rule 
+used to govern the individual controllers.
+
+\iffalse
+The 
+transitions between these controllers simply became the transitions 
+defined in the user's sequence model of the vehicle trajectory. 
+We designed a 
+specialized controller for each primitive motion described in section 
+\ref{ssec:PrimitiveMotions}. The transitions between these 
+controllers was then naturally transitions between primitive motions 
+defined 
+in the 
+user's sequence model of the vehicle trajectory.
+
+since the sequence model provided 
+by the user transitions from one primitive motion to the next, the 
+natural transitions for our switching controller
+
+
+%Because the trajectories described by our modeling language are built using primitive motions described in section \ref{ssec:Primitive Motions}, we decided that switching control was an effective way to implement controllers for our modeling language because the paths divided into primitive motions 
+natural fit for our application because each primitive motion has its own 
+specialized controller. Since the sequence model that the user provides 
+naturally transitions from one state to another, it is logical that these 
+transitions are also natural transitions between our primitive motion 
+controllers.
+\fi
+
+\par
+In addition to these natural transition points, it is important to note that 
+the implementation of certain controllers may require additional 
+transitions. For example, one might choose to add more controllers that 
+handle changing speeds more effectively than the basic controllers. In this 
+scenario, one would have to identify what conditions justify switching to 
+these new controllers and when these conditions occur. In our 
+implementation however, there was no need for these intermediary 
+controllers because we prevented such conditions from occurring due to the 
+constraint language.
+
+\subsection{Switching Control Safety}
+Our system is guaranteed to be safe in the sense that it is impossible for 
+the system to transition into an invalid state. An example of an invalid 
+state in this sense would be taking a sharp turn immediately following a 
+piece of the path with a high velocity. As described in 
+\cite{asarin2000effective}, there is an algorithm to find safe switching 
+surfaces within our state space. This can be done in future work but 
+our current implementation involves very basic controllers, so we 
+guaranteed that the controllers remain in safe sates by imposing restrictions 
+on generated paths with the constraint language described in 
+section \ref{ssec:num2}.
+\par
+
+\iffalse
+	In addition, the fact that our language enforces constraints on sequence 
+	models of paths makes the check for safety a built-in feature. We have 
+	added our own constraints that guarantee that unsafe behaviors are not 
+	possible by the output path.<<FIXME>> WE SHOULD PROBABLY FIND THESE BY 
+	SOME MORE SCHOLARLY METHOD THAN PURE TESTING
+\fi
+
+
+
