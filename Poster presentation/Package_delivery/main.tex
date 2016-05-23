@@ -137,43 +137,6 @@
 \begin{column}{\onecolwid}\vspace{-.6in} % The second column within column 2 (column 2.2)
 
 %----------------------------------------------------------------------------------------
-%	Analysis
-%----------------------------------------------------------------------------------------
-
-\begin{block}{Analysis}
-
-\input{./src/Analysis.tex}
-
-\end{block}
-
-
-%----------------------------------------------------------------------------------------
-
-\end{column} % End of column 2.2
-
-\end{columns} % End of the split of column 2 - any content after this will now take up 2 columns width
-
-%----------------------------------------------------------------------------------------
-%	 Overview
-%----------------------------------------------------------------------------------------
-
-\begin{alertblock}{OverView}
-
-\input{./src/OverView.tex}
-\begin{figure}
-\includegraphics[width=0.8\linewidth]{terrain-side.png}
-\caption{Figure caption}
-\end{figure}
-
-\end{alertblock} 
-
-%----------------------------------------------------------------------------------------
-
-\begin{columns}[t,totalwidth=\twocolwid] % Split up the two columns wide column again
-
-\begin{column}{\onecolwid} % The first column within column 2 (column 2.1)
-
-%----------------------------------------------------------------------------------------
 %	System Model
 %----------------------------------------------------------------------------------------
 
@@ -190,9 +153,58 @@
 
 %----------------------------------------------------------------------------------------
 
-\end{column} % End of column 2.1
+%%----------------------------------------------------------------------------------------
+%%	Analysis
+%%----------------------------------------------------------------------------------------
+%
+%\begin{block}{Analysis}
+%
+%\input{./src/Analysis.tex}
+%
+%\end{block}
+%
 
-\begin{column}{\onecolwid} % The second column within column 2 (column 2.2)
+%----------------------------------------------------------------------------------------
+
+\end{column} % End of column 2.2
+
+\end{columns} % End of the split of column 2 - any content after this will now take up 2 columns width
+
+%----------------------------------------------------------------------------------------
+%	 Overview
+%----------------------------------------------------------------------------------------
+
+%\begin{alertblock}{OverView}
+
+\input{./src/OverView.tex}
+\begin{figure}
+\includegraphics[width=1\linewidth]{terrain-side.png}
+\caption{Figure caption}
+\end{figure}
+
+%\end{alertblock} 
+
+%----------------------------------------------------------------------------------------
+
+%\begin{columns}[t,totalwidth=\twocolwid] % Split up the two columns wide column again
+
+%\begin{column}{\onecolwid} % The first column within column 2 (column 2.1)
+
+
+%\end{column} % End of column 2.1
+
+%\begin{column}{\onecolwid} % The second column within column 2 (column 2.2)
+
+
+%\end{column} % End of column 2.2
+
+%\end{columns} % End of the split of column 2
+
+\end{column} % End of the second column
+
+\begin{column}{\sepwid}\end{column} % Empty spacer column
+
+\begin{column}{\onecolwid} % The third column
 
 %----------------------------------------------------------------------------------------
 %	RESULTS
@@ -205,16 +217,6 @@
 
 %----------------------------------------------------------------------------------------
 
-\end{column} % End of column 2.2
-
-\end{columns} % End of the split of column 2
-
-\end{column} % End of the second column
-
-\begin{column}{\sepwid}\end{column} % Empty spacer column
-
-\begin{column}{\onecolwid} % The third column
-
 %----------------------------------------------------------------------------------------
 %	CONCLUSION
 %----------------------------------------------------------------------------------------
@@ -224,16 +226,6 @@ In order to show feasibility of Package delivery using drones, this project took
 \end{block}
 
 %----------------------------------------------------------------------------------------
-%	FUTURE WORK
-%----------------------------------------------------------------------------------------
-
-\begin{block}{Future Work}
-Add stuff here
-\begin{itemize}
-\item added stuff here
-\end{itemize}
-
-\end{block}
 
 %----------------------------------------------------------------------------------------
 %	REFERENCES

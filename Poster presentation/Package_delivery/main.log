@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  23 MAY 2016 01:41
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  23 MAY 2016 02:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1211,70 +1211,69 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <12.50194> on input line 60.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <8.93> on input line 60.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 290.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 282.
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) (./src/Abstract.tex) <delivery-drone.jpg, id=14, 602.25pt x 534.99875pt>
 File: delivery-drone.jpg Graphic file (type jpg)
  <use delivery-drone.jpg>
-Package pdftex.def Info: delivery-drone.jpg used on input line 290.
+Package pdftex.def Info: delivery-drone.jpg used on input line 282.
 (pdftex.def)             Requested size: 610.54266pt x 542.41797pt.
 
 (./src/Introduction.tex) <placeholder.jpg, id=16, 351.3125pt x 193.72375pt>
 File: placeholder.jpg Graphic file (type jpg)
 
 <use placeholder.jpg>
-Package pdftex.def Info: placeholder.jpg used on input line 290.
+Package pdftex.def Info: placeholder.jpg used on input line 282.
 (pdftex.def)             Requested size: 610.54266pt x 336.72778pt.
  (./src/Approach.tex
 LaTeX Font Info:    Try loading font information for TS1+lmss on input line 3.
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/lm/ts1lmss.fd
 File: ts1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
-))
-(./src/Analysis.tex) (./src/OverView.tex)
-<terrain-side.png, id=17, 1445.4pt x 733.23938pt>
-File: terrain-side.png Graphic file (type png)
- <use terrain-side.png>
-Package pdftex.def Info: terrain-side.png used on input line 290.
-(pdftex.def)             Requested size: 1253.55197pt x 635.9216pt.
-LaTeX Font Info:    Calculating math sizes for size <37.03> on input line 290.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <37.03> on input line 290.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <25.92088> on input line 290.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <18.515> on input line 290.
-
-(./src/Model.tex) <TopLevelDesign.png, id=18, 765.86125pt x 253.94875pt>
+)) (./src/Model.tex) <TopLevelDesign.png, id=17, 765.86125pt x 253.94875pt>
 File: TopLevelDesign.png Graphic file (type png)
 
 <use TopLevelDesign.png>
-Package pdftex.def Info: TopLevelDesign.png used on input line 290.
+Package pdftex.def Info: TopLevelDesign.png used on input line 282.
 (pdftex.def)             Requested size: 763.17543pt x 253.07237pt.
- (./src/Result.tex) (./main.bbl)
-(./src/Acknowledgements.tex)
+ (./src/OverView.tex)
+<terrain-side.png, id=19, 1445.4pt x 733.23938pt>
+File: terrain-side.png Graphic file (type png)
+ <use terrain-side.png>
+Package pdftex.def Info: terrain-side.png used on input line 282.
+(pdftex.def)             Requested size: 1609.6131pt x 816.5458pt.
+
+(./src/Result.tex) (./main.bbl) (./src/Acknowledgements.tex)
+LaTeX Font Info:    Calculating math sizes for size <37.03> on input line 282.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <37.03> on input line 282.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <25.92088> on input line 282.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <18.515> on input line 282.
+
 <images/baskin-logo-normal.jpg, id=22, 227.83118pt x 95.3964pt>
 File: images/baskin-logo-normal.jpg Graphic file (type jpg)
 
 <use images/baskin-logo-normal.jpg>
-Package pdftex.def Info: images/baskin-logo-normal.jpg used on input line 290.
+Package pdftex.def Info: images/baskin-logo-normal.jpg used on input line 282.
 (pdftex.def)             Requested size: 305.2655pt x 127.82901pt.
  <logo.png, id=23, 1401.235pt x 521.95pt>
 File: logo.png Graphic file (type png)
 
 <use logo.png>
-Package pdftex.def Info: logo.png used on input line 290.
+Package pdftex.def Info: logo.png used on input line 282.
 (pdftex.def)             Requested size: 305.2655pt x 113.70638pt.
 
-Overfull \hbox (4.99402pt too wide) detected at line 290
+Overfull \hbox (4.99402pt too wide) detected at line 282
 [][][] [][][][][][][][][] [][][][][][][][][] [][][][][][][][][] [][][][][][][][
 ][] [][][][][][][][][] [][][][][][][] 
  []
 
 
-Overfull \vbox (1166.30795pt too high) detected at line 290
+Overfull \vbox (1166.30795pt too high) detected at line 282
  []
 
 
@@ -1284,8 +1283,8 @@ Overfull \hbox (88.20334pt too wide) has occurred while \output is active
 
 [1{/usr/local/texlive/2012/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
- <./delivery-drone.jpg> <./placeholder.jpg> <./terrain-side.png (PNG copy)> <./
-TopLevelDesign.png> <./images/baskin-logo-normal.jpg> <./logo.png>]
+ <./delivery-drone.jpg> <./placeholder.jpg> <./TopLevelDesign.png> <./terrain-s
+ide.png (PNG copy)> <./images/baskin-logo-normal.jpg> <./logo.png>]
 \tf@nav=\write6
 \openout6 = `main.nav'.
 
@@ -1295,21 +1294,21 @@ TopLevelDesign.png> <./images/baskin-logo-normal.jpg> <./logo.png>]
 \tf@snm=\write8
 \openout8 = `main.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 292.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 292.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 284.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 284.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 292.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 292.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 284.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 284.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 292.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 284.
  ) 
 Here is how much of TeX's memory you used:
- 20004 strings out of 493488
- 377194 string characters out of 3141326
- 516784 words of memory out of 3000000
- 22747 multiletter control sequences out of 15000+200000
- 79908 words of font info for 65 fonts, out of 3000000 for 9000
+ 19999 strings out of 493488
+ 377091 string characters out of 3141326
+ 503127 words of memory out of 3000000
+ 22745 multiletter control sequences out of 15000+200000
+ 78414 words of font info for 65 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
  52i,16n,66p,872b,1416s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/local/texlive/2012/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/
@@ -1319,7 +1318,7 @@ texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2012/texmf-dist
 pe1/public/lm/lmr17.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/
 lm/lmri12.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/lm/lmss17.
 pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb>
-Output written on main.pdf (1 page, 1136851 bytes).
+Output written on main.pdf (1 page, 1133364 bytes).
 PDF statistics:
  68 PDF objects out of 1000 (max. 8388607)
  43 compressed objects within 1 object stream
