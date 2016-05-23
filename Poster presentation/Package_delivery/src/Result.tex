@@ -1,22 +1,19 @@
 
-%According to our testing our results shows that...
-%\begin{figure}
-%\includegraphics[width=0.8\linewidth]{placeholder.jpg}
-%\caption{Figure caption}
-%\end{figure}
+For both 8 and 4 hours of simulated delivey time, the multiple package delivery scheme out performed the single package delivery scheme in overall performace and cost for the delivery service. 
+{\footnotesize
+\begin{table}[]
+\centering
+\caption{Simulation Results - Comparing single and multiple packages per vehicle with a 25 vehicle fleet}
+\label{my-label}
+\begin{tabular}{|l|l|l|l|}
+\hline
+\begin{tabular}[c]{@{}l@{}}Packages Per\\ Vehicle\end{tabular} & Simulation Time & \begin{tabular}[c]{@{}l@{}}Average Distance\\ Traveled\end{tabular} & Packages Delivered \\ \hline
+One-Package                                                    & 8 Hours         & 120 Km    & 121    \\ \hline
+One-Package                                                    & 4 Hours         &  67.07 Km & 77     \\ \hline
+Two-Packages                                                   & 8 Hours        & 101 Km     & 127    \\ \hline
+One-Package                                                    & 4 Hours         &  64.4 Km   & 81     \\ \hline
+\end{tabular}
+\end{table}
+}
 
-%Nunc tempus venenatis facilisis. Curabitur suscipit consequat eros non porttitor. Sed a massa dolor, id ornare enim:
-
-%\begin{table}
-%\vspace{2ex}
-%\begin{tabular}{l l l}
-%\toprule
-%\textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2}\\
-%\midrule
-%Treatment 1 & 0.0003262 & 0.562 \\
-%Treatment 2 & 0.0015681 & 0.910 \\
-%Treatment 3 & 0.0009271 & 0.296 \\
-%\bottomrule
-%\end{tabular}
-%\caption{Table caption}
-%\end{table}
+By showing that more packages can be delivered when multiple packages are transported by one vehicle we prove that it woud be more cost efficient for a warehouse to invest in vehicles with larger payload capacity. Our simulations also shows that by using the right logic for which packages are assigned to which vehicle, we can ensure that deliveries are made within the time constraint set by the warehouse. We have proved our delivery concept as a success since we can deliver more packages in the same amount of time using the same number of vehicles while reducing the average distance each vehicle has to traverse.
