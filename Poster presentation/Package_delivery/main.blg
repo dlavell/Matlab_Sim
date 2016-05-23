@@ -1,0 +1,65 @@
+This is BibTeX, Version 0.99d (TeX Live 2012)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: main.aux
+The style file: unsrt.bst
+Database file #1: sample.bib
+You're missing a field name---line 3 of file sample.bib
+ : 
+ : %title = {{A}rticle {T}itle},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 12 of file sample.bib
+ : 
+ : % author = {Jones, A.~B. and Smith, J.~M.},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--empty author and editor in Davidson:2012qr
+Warning--empty title in Davidson:2012qr
+Warning--empty publisher in Davidson:2012qr
+Warning--empty year in Davidson:2012qr
+Warning--empty author in Smith:2013jd
+Warning--empty title in Smith:2013jd
+Warning--empty journal in Smith:2013jd
+Warning--empty year in Smith:2013jd
+You've used 3 entries,
+            1791 wiz_defined-function locations,
+            456 strings with 3714 characters,
+and the built_in function-call counts, 386 in all, are:
+= -- 20
+> -- 10
+< -- 0
++ -- 5
+- -- 2
+* -- 31
+:= -- 50
+add.period$ -- 5
+call.type$ -- 3
+change.case$ -- 1
+chr.to.int$ -- 0
+cite$ -- 11
+duplicate$ -- 27
+empty$ -- 48
+format.name$ -- 2
+if$ -- 78
+int.to.chr$ -- 0
+int.to.str$ -- 3
+missing$ -- 3
+newline$ -- 14
+num.names$ -- 1
+pop$ -- 22
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 15
+stack$ -- 0
+substring$ -- 0
+swap$ -- 1
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 8
+while$ -- 1
+width$ -- 4
+write$ -- 20
+(There were 2 error messages)
