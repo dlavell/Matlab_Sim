@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  23 MAY 2016 11:29
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  23 MAY 2016 14:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1211,85 +1211,49 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <12.50194> on input line 57.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <8.93> on input line 57.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 284.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 268.
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) (./src/Abstract.tex) <images/prime-air.jpg, id=14, 4091.285pt x 2826.56pt>
-File: images/prime-air.jpg Graphic file (type jpg)
+) (./src/Abstract.tex) <images/delivery-drone.jpg, id=14, 602.25pt x 534.99875p
+t>
+File: images/delivery-drone.jpg Graphic file (type jpg)
 
-<use images/prime-air.jpg>
-Package pdftex.def Info: images/prime-air.jpg used on input line 284.
-(pdftex.def)             Requested size: 610.54266pt x 421.80922pt.
+<use images/delivery-drone.jpg>
+Package pdftex.def Info: images/delivery-drone.jpg used on input line 268.
+(pdftex.def)             Requested size: 610.54266pt x 542.41797pt.
  (./src/Introduction.tex) (./src/Approach.tex
 LaTeX Font Info:    Try loading font information for TS1+lmss on input line 3.
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/lm/ts1lmss.fd
 File: ts1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)) (./src/Model.tex) <images/TopLevelDesign.png, id=15, 765.86125pt x 253.94875
-pt>
+)) (./src/Model.tex
+<images/TopLevelDesign.png, id=15, 765.86125pt x 253.94875pt>
 File: images/TopLevelDesign.png Graphic file (type png)
 
 <use images/TopLevelDesign.png>
-Package pdftex.def Info: images/TopLevelDesign.png used on input line 284.
+Package pdftex.def Info: images/TopLevelDesign.png used on input line 4.
 (pdftex.def)             Requested size: 763.17543pt x 253.07237pt.
- (./src/OverView.tex)
-<images/terrain-side.png, id=17, 1445.4pt x 733.23938pt>
-File: images/terrain-side.png Graphic file (type png)
+) (./src/OverView.tex)
+<images/poster_terrain.png, id=17, 1445.4pt x 733.23938pt>
+File: images/poster_terrain.png Graphic file (type png)
 
-<use images/terrain-side.png>
-Package pdftex.def Info: images/terrain-side.png used on input line 284.
+<use images/poster_terrain.png>
+Package pdftex.def Info: images/poster_terrain.png used on input line 268.
 (pdftex.def)             Requested size: 1609.6131pt x 816.5458pt.
  (./src/Result.tex
-LaTeX Font Info:    Calculating math sizes for size <30.85> on input line 8.
+LaTeX Font Info:    Calculating math sizes for size <25.72> on input line 8.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <30.85> on input line 8.
+(Font)              <25.72> on input line 8.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <21.59491> on input line 8.
+(Font)              <18.00392> on input line 8.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <15.425> on input line 8.
-
-Overfull \hbox (443.19728pt too wide) in paragraph at lines 8--16
- [] 
- []
-
-) <images/delivery-drone.jpg, id=18, 602.25pt x 534.99875pt>
-File: images/delivery-drone.jpg Graphic file (type jpg)
-
-<use images/delivery-drone.jpg>
-Package pdftex.def Info: images/delivery-drone.jpg used on input line 284.
-(pdftex.def)             Requested size: 610.54266pt x 542.41797pt.
- (./src/Conclusion.tex) (./main.bbl)
+(Font)              <12.86> on input line 8.
+) (./src/Conclusion.tex)
 (./src/Acknowledgements.tex)
-LaTeX Font Info:    Calculating math sizes for size <37.03> on input line 284.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <37.03> on input line 284.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <25.92088> on input line 284.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <18.515> on input line 284.
-
-<images/baskin-logo-normal.jpg, id=19, 227.83118pt x 95.3964pt>
-File: images/baskin-logo-normal.jpg Graphic file (type jpg)
-
-<use images/baskin-logo-normal.jpg>
-Package pdftex.def Info: images/baskin-logo-normal.jpg used on input line 284.
-(pdftex.def)             Requested size: 305.2655pt x 127.82901pt.
-
-<images/hsl-logo.png, id=20, 604.2575pt x 390.45876pt>
-File: images/hsl-logo.png Graphic file (type png)
-
-<use images/hsl-logo.png>
-Package pdftex.def Info: images/hsl-logo.png used on input line 284.
-(pdftex.def)             Requested size: 305.2655pt x 197.25458pt.
-
-Overfull \hbox (4.99402pt too wide) detected at line 284
+Overfull \hbox (4.99402pt too wide) detected at line 268
 [][][] [][][][][][][][][] [][][][][][][][][] [][][][][][][][][] [][][][][][][][
 ][] [][][][][][][][][] [][][][][][][] 
- []
-
-
-Overfull \vbox (535.50085pt too high) detected at line 284
  []
 
 
@@ -1299,9 +1263,8 @@ Overfull \hbox (88.20334pt too wide) has occurred while \output is active
 
 [1{/usr/local/texlive/2012/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
- <./images/prime-air.jpg> <./images/TopLevelDesign.png> <./images/terrain-side.
-png (PNG copy)> <./images/delivery-drone.jpg> <./images/baskin-logo-normal.jpg>
- <./images/hsl-logo.png>]
+ <./images/delivery-drone.jpg> <./images/TopLevelDesign.png> <./images/poster_t
+errain.png (PNG copy)>]
 \tf@nav=\write6
 \openout6 = `main.nav'.
 
@@ -1311,34 +1274,34 @@ png (PNG copy)> <./images/delivery-drone.jpg> <./images/baskin-logo-normal.jpg>
 \tf@snm=\write8
 \openout8 = `main.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 286.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 286.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 270.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 270.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 286.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 286.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 270.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 270.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 286.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 270.
  ) 
 Here is how much of TeX's memory you used:
- 20004 strings out of 493488
- 377038 string characters out of 3141326
- 501416 words of memory out of 3000000
- 22745 multiletter control sequences out of 15000+200000
- 90510 words of font info for 80 fonts, out of 3000000 for 9000
+ 19923 strings out of 493488
+ 374743 string characters out of 3141326
+ 502162 words of memory out of 3000000
+ 22674 multiletter control sequences out of 15000+200000
+ 79941 words of font info for 66 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
- 52i,16n,66p,957b,1416s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/local/texlive/2012/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/
-texlive/2012/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}</usr/local/texlive/2012/
+ 52i,18n,66p,957b,1416s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/local/texlive/2012/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/local
+/texlive/2012/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}</usr/local/texlive/2012/
 texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2012/texmf-dist
 /fonts/type1/public/lm/lmbxi10.pfb></usr/local/texlive/2012/texmf-dist/fonts/ty
 pe1/public/lm/lmr17.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/
-lm/lmri12.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/lm/lmss17.
-pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb>
-Output written on main.pdf (1 page, 4221151 bytes).
+lm/lmss17.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/lm/lmssbx1
+0.pfb>
+Output written on main.pdf (1 page, 582408 bytes).
 PDF statistics:
- 67 PDF objects out of 1000 (max. 8388607)
- 43 compressed objects within 1 object stream
- 7 named destinations out of 1000 (max. 500000)
- 79 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 55 PDF objects out of 1000 (max. 8388607)
+ 35 compressed objects within 1 object stream
+ 4 named destinations out of 1000 (max. 500000)
+ 64 words of extra memory for PDF output out of 10000 (max. 10000000)
 
