@@ -1,3 +1,5 @@
+#!/bin/sh
+
 pdflatex main.tex
 #bibtex main
 bibtex main
