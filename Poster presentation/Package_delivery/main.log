@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  23 MAY 2016 21:58
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  23 MAY 2016 22:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1314,11 +1314,11 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 306.
 Here is how much of TeX's memory you used:
  19972 strings out of 493488
  375959 string characters out of 3141326
- 507902 words of memory out of 3000000
+ 507294 words of memory out of 3000000
  22721 multiletter control sequences out of 15000+200000
  113255 words of font info for 86 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
- 52i,20n,66p,957b,1506s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 52i,20n,66p,862b,1506s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/local/texlive/2012/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/
 texlive/2012/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2012/t
 exmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}</usr/local/texlive/2012/texmf-dist/
@@ -1328,7 +1328,7 @@ lm/lmmi12.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/lm/lmr17.p
 fb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/l
 ocal/texlive/2012/texmf-dist/fonts/type1/public/lm/lmss17.pfb></usr/local/texli
 ve/2012/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb>
-Output written on main.pdf (1 page, 2206656 bytes).
+Output written on main.pdf (1 page, 2206928 bytes).
 PDF statistics:
  68 PDF objects out of 1000 (max. 8388607)
  42 compressed objects within 1 object stream
